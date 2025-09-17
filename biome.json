@@ -1,11 +1,11 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
   "extends": ["ultracite"],
   "files": {
     "includes": [
       "**",
       ".github/workflows/*",
-      "!core",
+      "!template",
       "!apps/docs/src/components/ui",
       "!apps/zap-studio/components/ui"
     ]

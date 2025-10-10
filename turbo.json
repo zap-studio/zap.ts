@@ -3,21 +3,19 @@
   "ui": "tui",
   "tasks": {
     "dev": {
-      "cache": false,
-      "dependsOn": ["^dev"]
+      "persistent": true,
+      "cache": false
     },
     "build": {
-      "outputs": ["dist/**", ".next/**", "build/**"],
-      "dependsOn": ["^build"]
-    },
-    "lint": {
-      "outputs": []
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**", "build/**", "!.next/cache/**"]
     },
     "test": {
-      "outputs": []
+      "outputs": ["coverage/**"],
+      "dependsOn": ["^test"]
     },
     "typecheck": {
-      "outputs": []
+      "dependsOn": ["^typecheck"]
     }
   }
 }

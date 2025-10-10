@@ -75,3 +75,9 @@ Thumbs.db
 coverage/
 .nyc_output/
 /.cache/
+
+# fyai
+fyai.txt
+
+# todo
+todo.json

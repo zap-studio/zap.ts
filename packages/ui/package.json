@@ -1,5 +1,5 @@
 {
-  "name": "@zap-ts-template/ui",
+  "name": "@zap/ui",
   "version": "0.0.0",
   "type": "module",
   "private": true,
@@ -23,7 +23,7 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
-    "@zap-ts-template/typescript-config": "workspace:*",
+    "@zap/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "^4.1.11",
     "@turbo/gen": "^2.5.5",
     "@types/node": "^24.7.1",

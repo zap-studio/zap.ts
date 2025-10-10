@@ -1,5 +1,5 @@
 {
-  "name": "@zap-ts-template/typescript-config",
+  "name": "@zap/typescript-config",
   "version": "0.0.0",
   "private": true,
   "license": "PROPRIETARY",

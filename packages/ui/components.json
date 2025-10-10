@@ -11,10 +11,10 @@
   },
   "iconLibrary": "lucide",
   "aliases": {
-    "components": "@zap-ts-template/ui/components",
-    "utils": "@zap-ts-template/ui/lib/utils",
-    "hooks": "@zap-ts-template/ui/hooks",
-    "lib": "@zap-ts-template/ui/lib",
-    "ui": "@zap-ts-template/ui/components"
+    "components": "@zap/ui/components",
+    "utils": "@zap/ui/lib/utils",
+    "hooks": "@zap/ui/hooks",
+    "lib": "@zap/ui/lib",
+    "ui": "@zap/ui/components"
   }
 }

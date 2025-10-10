@@ -1,5 +1,5 @@
 {
-  "extends": "@zap-ts-template/typescript-config/nextjs.json",
+  "extends": "@zap/typescript-config/nextjs.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

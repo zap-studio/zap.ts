@@ -1,8 +1,9 @@
 {
-  "extends": "@zap-ts-template/typescript-config/react-library.json",
+  "extends": "@zap/typescript-config/react-library.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./src/*"],
       "@zap/ui/*": ["./src/*"]
     }
   },

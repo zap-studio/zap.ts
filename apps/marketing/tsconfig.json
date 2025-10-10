@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@zap-ts-template/ui/*": ["../../packages/ui/src/*"]
+      "@zap/ui/*": ["../../packages/ui/src/*"]
     },
     "plugins": [
       {

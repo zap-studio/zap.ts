@@ -10,10 +10,11 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
-    "lint": "turbo run lint",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
-    "bootstrap": "bun install"
+    "bootstrap": "bun install",
+    "format": "bun x ultracite fix",
+    "lint": "bun x biome check ."
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.5",

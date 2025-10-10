@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"lib": ["DOM", "ESNext"],
+		"moduleResolution": "bundler",
+		"strict": true,
+		"jsx": "react-jsx",
+		"baseUrl": ".",
+		"paths": {
+			"@zap/*": ["packages/*/src"]
+		}
+	},
+	"include": ["apps/**/*", "packages/**/*"]
+}

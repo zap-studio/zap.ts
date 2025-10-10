@@ -16,6 +16,11 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v5
 
+      - name: Setup GitHub CLI
+        uses: cli/gh-action@v3
+        with:
+          token: ${{ secrets.ZAP_STUDIO_GH_TOKEN }}
+
       - name: Create PR to main (if not exists)
         run: |
           SOURCE_BRANCH="${GITHUB_REF#refs/heads/}"

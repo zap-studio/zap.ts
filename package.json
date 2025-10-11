@@ -1,5 +1,5 @@
 {
-  "name": "zap-ts-template",
+  "name": "@zap/monorepo",
   "version": "0.0.0",
   "devDependencies": {
     "@zap/typescript-config": "workspace:*",

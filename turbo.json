@@ -22,7 +22,7 @@
       "cache": false
     },
     "check-types": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^check-types"],
       "outputs": ["*.tsbuildinfo"]
     },
     "typegen": {

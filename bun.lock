@@ -73,15 +73,6 @@
         "typescript": "^5",
       },
     },
-    "packages/env": {
-      "name": "@zap/env",
-      "devDependencies": {
-        "@types/node": "^24.7.1",
-      },
-      "peerDependencies": {
-        "typescript": "^5",
-      },
-    },
     "packages/shadcn": {
       "name": "@zap/shadcn",
       "version": "0.0.0",
@@ -595,8 +586,6 @@
     "@zap/app": ["@zap/app@workspace:apps/app"],
 
     "@zap/config": ["@zap/config@workspace:packages/config"],
-
-    "@zap/env": ["@zap/env@workspace:packages/env"],
 
     "@zap/marketing": ["@zap/marketing@workspace:apps/marketing"],
 

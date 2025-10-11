@@ -17,14 +17,14 @@
       "cache": false
     },
     "test": {
-      "outputs": ["coverage/**"],
-      "dependsOn": ["^test"]
+      "dependsOn": ["^test"],
+      "outputs": ["coverage/**"]
     },
     "typecheck": {
-      "dependsOn": ["^typecheck"]
+      "cache": false
     },
     "typegen": {
-      "dependsOn": ["^typegen"]
+      "outputs": [".next/types/**"]
     }
   }
 }

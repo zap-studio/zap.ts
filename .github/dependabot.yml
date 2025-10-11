@@ -11,6 +11,7 @@ updates:
       - "/apps/marketing"
       - "/apps/app"
       - "/apps/docs"
+      - "/packages/ui"
     schedule:
       interval: "weekly"
   - package-ecosystem: "github-actions"

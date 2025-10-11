@@ -1,10 +1,3 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "outDir": "dist",
-    "composite": true,
-    "strictNullChecks": true,
-    "baseUrl": "."
-  },
-  "exclude": ["node_modules", "dist"]
+  "extends": "@zap/typescript-config/base.json"
 }

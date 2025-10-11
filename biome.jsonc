@@ -2,10 +2,6 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": ["ultracite"],
   "files": {
-    "includes": [
-      "**",
-      "!apps/app/src/components/ui",
-      "!apps/marketing/src/components/ui"
-    ]
+    "includes": ["**", "!packages/shadcn/src"]
   }
 }

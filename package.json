@@ -1,12 +1,17 @@
 {
   "name": "zap-ts-template",
-  "private": false,
   "version": "0.0.0",
+  "devDependencies": {
+    "@zap/typescript-config": "workspace:*",
+    "@biomejs/biome": "2.2.5",
+    "@changesets/cli": "^2.29.7",
+    "lefthook": "^1.13.6",
+    "turbo": "^2.5.8",
+    "typescript": "^5.9.3",
+    "ultracite": "5.6.1"
+  },
   "packageManager": "bun@1.2.23",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "private": false,
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
@@ -16,12 +21,8 @@
     "format": "bun x ultracite fix",
     "lint": "bun x biome check ."
   },
-  "devDependencies": {
-    "@biomejs/biome": "2.2.5",
-    "@changesets/cli": "^2.29.7",
-    "lefthook": "^1.13.6",
-    "turbo": "^2.5.8",
-    "typescript": "^5.3.0",
-    "ultracite": "5.6.1"
-  }
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }

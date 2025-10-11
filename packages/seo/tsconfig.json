@@ -7,6 +7,5 @@
     }
   },
   "include": ["."],
-  "exclude": ["node_modules", "dist"],
-  "exports": {}
+  "exclude": ["node_modules", "dist"]
 }

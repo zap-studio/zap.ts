@@ -15,7 +15,7 @@
   "peerDependencies": {
     "@zap/errors": "workspace:*",
     "@zap/fonts": "workspace:*",
-    "client-only": "^0.1.0",
+    "client-only": "^0.0.1",
     "next": "^15.5.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"

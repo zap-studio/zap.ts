@@ -1,4 +1,4 @@
-import { Button } from "@zap/shadcn/components/ui/button";
+import { Button } from "@zap/shadcn/ui/button";
 import { Loader2 } from "lucide-react";
 
 type ButtonProps = React.ComponentProps<typeof Button>;

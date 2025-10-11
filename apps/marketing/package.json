@@ -6,6 +6,7 @@
     "dev": "next dev --turbopack --port 3001",
     "dev:debug": "cross-env NODE_OPTIONS='--inspect' next dev --turbopack --port 3001",
     "dev:scan": "next dev --turbopack --port 3001 & react-scan localhost:3001",
+    "dev:trace": "NEXT_TURBOPACK_TRACING=1 next dev --turbopack --port 3001",
     "build": "next build --turbopack",
     "build:analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",

@@ -1,0 +1,19 @@
+{
+  "name": "@zap/next-config",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^24.7.1"
+  },
+  "peerDependencies": {
+    "@zap/security": "workspace:*",
+    "@next/bundle-analyzer": "^15.5.4",
+    "@next/mdx": "^15.5.4",
+    "typescript": "^5",
+    "next": "^15.5.4"
+  },
+  "exports": {
+    ".": "./src/next-config.base.ts",
+    "./types": "./src/types/index.ts"
+  }
+}

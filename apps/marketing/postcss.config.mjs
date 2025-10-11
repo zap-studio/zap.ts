@@ -1,5 +1,3 @@
-const config = {
-  plugins: ["@tailwindcss/postcss"],
-};
+import { createPostCSSConfig } from "@zap/shadcn/postcss.config";
 
-export default config;
+export default createPostCSSConfig();

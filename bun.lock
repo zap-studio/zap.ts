@@ -63,6 +63,25 @@
         "typescript": "^5.9.3",
       },
     },
+    "packages/config": {
+      "name": "@zap/config",
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+      },
+      "peerDependencies": {
+        "next": "^15.5.4",
+        "typescript": "^5",
+      },
+    },
+    "packages/env": {
+      "name": "@zap/env",
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
     "packages/shadcn": {
       "name": "@zap/shadcn",
       "version": "0.0.0",
@@ -574,6 +593,10 @@
     "@types/tinycolor2": ["@types/tinycolor2@1.4.6", "", {}, "sha512-iEN8J0BoMnsWBqjVbWH/c0G0Hh7O21lpR2/+PrvAVgWdzL7eexIFm4JN/Wn10PTcmNdtS6U67r499mlWMXOxNw=="],
 
     "@zap/app": ["@zap/app@workspace:apps/app"],
+
+    "@zap/config": ["@zap/config@workspace:packages/config"],
+
+    "@zap/env": ["@zap/env@workspace:packages/env"],
 
     "@zap/marketing": ["@zap/marketing@workspace:apps/marketing"],
 

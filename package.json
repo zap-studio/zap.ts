@@ -15,6 +15,7 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
+    "start": "turbo run start",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
     "bootstrap": "bun install",

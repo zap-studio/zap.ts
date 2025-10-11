@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "dev:debug": "cross-env NODE_OPTIONS='--inspect' next dev --turbopack",
-    "dev:scan": "next dev --turbopack & react-scan localhost:3000",
+    "dev": "next dev --turbopack --port 3001",
+    "dev:debug": "cross-env NODE_OPTIONS='--inspect' next dev --turbopack --port 3001",
+    "dev:scan": "next dev --turbopack --port 3001 & react-scan localhost:3001",
     "build": "next build --turbopack",
     "build:analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
-    "start": "next start",
+    "start": "next start --port 3001",
     "typecheck": "tsc --noEmit",
     "typegen": "next typegen"
   },

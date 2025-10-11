@@ -11,6 +11,11 @@
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", ".next/**", "build/**", "!.next/cache/**"]
     },
+    "start": {
+      "dependsOn": ["build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "cache": false
+    },
     "test": {
       "outputs": ["coverage/**"],
       "dependsOn": ["^test"]

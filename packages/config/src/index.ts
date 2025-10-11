@@ -1,6 +1,4 @@
 /**
- * ZAP Core Configuration
- *
  * This file contains only the core application configuration.
  *
  * ZAP:TODO

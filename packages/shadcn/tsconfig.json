@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@zap/ui/*": ["./src/*"]
+      "@zap/shadcn/*": ["./src/*"]
     }
   },
   "include": ["."],

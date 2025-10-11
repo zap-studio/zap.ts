@@ -15,6 +15,7 @@
     "typegen": "next typegen"
   },
   "dependencies": {
+    "@bprogress/next": "^3.2.12",
     "@next/bundle-analyzer": "^15.5.4",
     "@next/mdx": "^15.5.4",
     "@zap/config": "workspace:*",

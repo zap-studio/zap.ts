@@ -1,0 +1,12 @@
+{
+  "extends": "@zap/typescript-config/react-library.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["."],
+  "exclude": ["node_modules", "dist"],
+  "exports": {}
+}

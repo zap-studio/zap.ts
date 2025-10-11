@@ -1,0 +1,16 @@
+{
+  "name": "@zap/seo",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^24.7.1"
+  },
+  "peerDependencies": {
+    "@zap/config": "workspace:*",
+    "typescript": "^5",
+    "next": "^15.5.4"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

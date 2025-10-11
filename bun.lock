@@ -91,6 +91,17 @@
         "typescript": "^5",
       },
     },
+    "packages/seo": {
+      "name": "@zap/seo",
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+      },
+      "peerDependencies": {
+        "@zap/config": "workspace:*",
+        "next": "^15.5.4",
+        "typescript": "^5",
+      },
+    },
     "packages/shadcn": {
       "name": "@zap/shadcn",
       "version": "0.0.0",
@@ -616,6 +627,8 @@
     "@zap/marketing": ["@zap/marketing@workspace:apps/marketing"],
 
     "@zap/security": ["@zap/security@workspace:packages/security"],
+
+    "@zap/seo": ["@zap/seo@workspace:packages/seo"],
 
     "@zap/shadcn": ["@zap/shadcn@workspace:packages/shadcn"],
 

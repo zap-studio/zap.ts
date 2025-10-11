@@ -1,7 +1,7 @@
 import createBundleAnalyzer from "@next/bundle-analyzer";
 import createMDX from "@next/mdx";
 import { BASE_URL } from "@zap/config";
-import { buildCSPHeader, buildPermissionsPolicy } from "@zap/config/utils";
+import { buildCSPHeader, buildPermissionsPolicy } from "@zap/security/utils";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {

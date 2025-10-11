@@ -11,9 +11,6 @@
 import type { Metadata } from "next";
 import type { ZapCoreSettings } from "./types";
 
-// ─────────────────────────────────────────────────────────────
-// Core App Info
-// ─────────────────────────────────────────────────────────────
 export const NAME = "Zap.ts";
 export const APP_NAME = `${NAME} | Build applications as fast as a zap`;
 export const APP_DESCRIPTION =
@@ -25,9 +22,6 @@ export const BASE_URL =
 export const SALES_EMAIL = "sales@example.com";
 export const SUPPORT_EMAIL = "support@example.com";
 
-// ─────────────────────────────────────────────────────────────
-// Core Configuration
-// ─────────────────────────────────────────────────────────────
 export const ZAP_CORE_CONFIG: ZapCoreSettings = {
   APP: {
     NAME,
@@ -37,55 +31,6 @@ export const ZAP_CORE_CONFIG: ZapCoreSettings = {
     SALES_EMAIL,
     SUPPORT_EMAIL,
     APP_URL: "/app",
-  },
-  SECURITY: {
-    CSP: {
-      DEFAULT_SRC: ["'self'"],
-      SCRIPT_SRC: ["'self'", "'unsafe-eval'", "'unsafe-inline'"],
-      STYLE_SRC: ["'self'", "'unsafe-inline'"],
-      IMG_SRC: [
-        "'self'",
-        "blob:",
-        "data:",
-        "https://www.gravatar.com",
-        "https://*.googleusercontent.com",
-      ],
-      FONT_SRC: ["'self'"],
-      OBJECT_SRC: ["'none'"],
-      BASE_URI: ["'self'"],
-      FORM_ACTION: ["'self'"],
-      FRAME_ANCESTORS: ["'none'"],
-      FRAME_SRC: ["'self'", "https://www.youtube.com"],
-      BLOCK_ALL_MIXED_CONTENT: false,
-      UPGRADE_INSECURE_REQUESTS: true,
-    },
-    PERMISSIONS_POLICY: {
-      CAMERA: ["self"],
-      GEOLOCATION: ["self"],
-      MICROPHONE: ["self"],
-      PAYMENT: ["self"],
-      DISPLAY_CAPTURE: ["self"],
-      FULLSCREEN: ["self"],
-      PICTURE_IN_PICTURE: ["self"],
-      AUTOPLAY: ["self"],
-      ENCRYPTED_MEDIA: ["self"],
-      WEB_SHARE: ["self"],
-      ACCELEROMETER: ["self"],
-      GYROSCOPE: ["self"],
-      MAGNETOMETER: ["self"],
-      SCREEN_WAKE_LOCK: ["self"],
-      GAMEPAD: [],
-      HID: [],
-      IDLE_DETECTION: [],
-      LOCAL_FONTS: [],
-      MIDI: [],
-      BLUETOOTH: [],
-      SERIAL: [],
-      XR_SPATIAL_TRACKING: [],
-      CROSS_ORIGIN_ISOLATED: [],
-      PUBLICKEY_CREDENTIALS_GET: [],
-      USB: [],
-    },
   },
 };
 

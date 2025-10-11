@@ -1,7 +1,7 @@
-import { ZAP_CORE_CONFIG } from "..";
+import { ZAP_SECURITY_CONFIG } from "..";
 
 export function buildCSPHeader(): string {
-  const { CSP } = ZAP_CORE_CONFIG.SECURITY;
+  const { CSP } = ZAP_SECURITY_CONFIG;
 
   const directives = [
     `default-src ${CSP.DEFAULT_SRC.join(" ")}`,
@@ -28,7 +28,9 @@ export function buildCSPHeader(): string {
 }
 
 export function buildPermissionsPolicy(): string {
-  return Object.entries(ZAP_CORE_CONFIG.SECURITY.PERMISSIONS_POLICY)
+  const { PERMISSIONS_POLICY } = ZAP_SECURITY_CONFIG;
+
+  return Object.entries(PERMISSIONS_POLICY)
     .map(([feature, values]) => {
       const policyFeature = feature.toLowerCase().replace(/_/g, "-");
       if (values.length === 0) {

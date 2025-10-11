@@ -20,6 +20,7 @@
         "@next/bundle-analyzer": "^15.5.4",
         "@next/mdx": "^15.5.4",
         "@zap/config": "workspace:*",
+        "@zap/security": "workspace:*",
         "@zap/shadcn": "workspace:*",
         "lucide-react": "^0.545.0",
         "next": "15.5.4",
@@ -48,6 +49,7 @@
         "@next/bundle-analyzer": "^15.5.4",
         "@next/mdx": "^15.5.4",
         "@zap/config": "workspace:*",
+        "@zap/security": "workspace:*",
         "@zap/shadcn": "workspace:*",
         "lucide-react": "^0.545.0",
         "next": "15.5.4",
@@ -71,6 +73,16 @@
     },
     "packages/config": {
       "name": "@zap/config",
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+      },
+      "peerDependencies": {
+        "next": "^15.5.4",
+        "typescript": "^5",
+      },
+    },
+    "packages/security": {
+      "name": "@zap/security",
       "devDependencies": {
         "@types/node": "^24.7.1",
       },
@@ -602,6 +614,8 @@
     "@zap/config": ["@zap/config@workspace:packages/config"],
 
     "@zap/marketing": ["@zap/marketing@workspace:apps/marketing"],
+
+    "@zap/security": ["@zap/security@workspace:packages/security"],
 
     "@zap/shadcn": ["@zap/shadcn@workspace:packages/shadcn"],
 

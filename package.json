@@ -20,7 +20,7 @@
     "lint": "bun x biome check .",
     "start": "turbo run start",
     "test": "turbo run test",
-    "typecheck": "turbo run typecheck",
+    "check-types": "turbo run check-types",
     "typegen": "turbo run typegen"
   },
   "workspaces": [

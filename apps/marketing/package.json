@@ -11,7 +11,7 @@
     "build:analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
     "start": "next start --port 3001",
-    "typecheck": "tsc --noEmit",
+    "check-types": "tsc --noEmit",
     "typegen": "next typegen"
   },
   "dependencies": {

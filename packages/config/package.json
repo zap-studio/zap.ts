@@ -2,6 +2,9 @@
   "name": "@zap/config",
   "type": "module",
   "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
   "devDependencies": {
     "@types/node": "^24.7.1"
   },

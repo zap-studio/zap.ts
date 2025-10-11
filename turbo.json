@@ -18,10 +18,12 @@
     },
     "test": {
       "dependsOn": ["^test"],
-      "outputs": ["coverage/**"]
-    },
-    "typecheck": {
+      "outputs": ["coverage/**"],
       "cache": false
+    },
+    "check-types": {
+      "dependsOn": ["^build"],
+      "outputs": ["*.tsbuildinfo"]
     },
     "typegen": {
       "outputs": [".next/types/**"]

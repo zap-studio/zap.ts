@@ -15,7 +15,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  transpilePackages: ["@zap/shadcn"],
+  transpilePackages: [
+    "@zap/config",
+    "@zap/security",
+    "@zap/seo",
+    "@zap/shadcn",
+    "@zap/ui",
+  ],
   async headers() {
     return await Promise.resolve([
       {

@@ -41,10 +41,11 @@
     "typescript": "^5.9.2"
   },
   "exports": {
+    "./postcss.config.ts": "./src/postcss.config.ts",
     "./globals.css": "./src/styles/globals.css",
-    "./postcss.config": "./postcss.config.mjs",
-    "./lib/*": "./src/lib/*.ts",
     "./components/*": "./src/components/*.tsx",
+    "./lib/*": "./src/lib/*.ts",
+    "./ui/*": "./src/components/ui/*.tsx",
     "./hooks/*": "./src/hooks/*.ts"
   }
 }

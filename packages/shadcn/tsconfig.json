@@ -7,11 +7,5 @@
     }
   },
   "include": ["."],
-  "exclude": ["node_modules", "dist"],
-  "exports": {
-    "./lib/*": "./src/lib/*.ts",
-    "./components/*": "./src/components/ui/*.tsx",
-    "./hooks/*": "./src/hooks/*.ts",
-    "./styles/*": "./src/styles/*.css"
-  }
+  "exclude": ["node_modules", "dist"]
 }

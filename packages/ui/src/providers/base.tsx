@@ -2,7 +2,7 @@
 import "client-only";
 
 import { ProgressProvider } from "@bprogress/next/app";
-import { ThemeProvider } from "./theme.provider";
+import { ThemeProvider } from "./theme";
 
 type ProvidersProps = {
   children: React.ReactNode;

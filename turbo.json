@@ -22,6 +22,9 @@
     },
     "typecheck": {
       "dependsOn": ["^typecheck"]
+    },
+    "typegen": {
+      "dependsOn": ["^typegen"]
     }
   }
 }

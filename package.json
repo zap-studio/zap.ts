@@ -14,13 +14,14 @@
   "private": false,
   "scripts": {
     "dev": "turbo run dev --parallel",
+    "bootstrap": "bun install",
     "build": "turbo run build",
+    "format": "bun x ultracite fix",
+    "lint": "bun x biome check .",
     "start": "turbo run start",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
-    "bootstrap": "bun install",
-    "format": "bun x ultracite fix",
-    "lint": "bun x biome check ."
+    "typegen": "turbo run typegen"
   },
   "workspaces": [
     "apps/*",

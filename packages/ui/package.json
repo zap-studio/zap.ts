@@ -8,10 +8,15 @@
   },
   "dependencies": {
     "@bprogress/next": "^3.2.12",
+    "@zap/shadcn": "workspace:*",
+    "lucide-react": "^0.545.0",
     "next-themes": "^0.4.6"
   },
   "peerDependencies": {
+    "@zap/errors": "workspace:*",
+    "@zap/fonts": "workspace:*",
     "client-only": "^0.1.0",
+    "next": "^15.5.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

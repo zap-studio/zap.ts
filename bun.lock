@@ -20,6 +20,7 @@
         "@next/bundle-analyzer": "^15.5.4",
         "@next/mdx": "^15.5.4",
         "@zap/config": "workspace:*",
+        "@zap/fonts": "workspace:*",
         "@zap/next-config": "workspace:*",
         "@zap/security": "workspace:*",
         "@zap/seo": "workspace:*",
@@ -54,6 +55,7 @@
         "@next/bundle-analyzer": "^15.5.4",
         "@next/mdx": "^15.5.4",
         "@zap/config": "workspace:*",
+        "@zap/fonts": "workspace:*",
         "@zap/next-config": "workspace:*",
         "@zap/security": "workspace:*",
         "@zap/seo": "workspace:*",
@@ -82,6 +84,16 @@
     },
     "packages/config": {
       "name": "@zap/config",
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+      },
+      "peerDependencies": {
+        "next": "^15.5.4",
+        "typescript": "^5",
+      },
+    },
+    "packages/fonts": {
+      "name": "@zap/fonts",
       "devDependencies": {
         "@types/node": "^24.7.1",
       },
@@ -173,6 +185,8 @@
       "version": "0.0.0",
       "dependencies": {
         "@bprogress/next": "^3.2.12",
+        "@zap/shadcn": "workspace:*",
+        "lucide-react": "^0.545.0",
         "next-themes": "^0.4.6",
       },
       "devDependencies": {
@@ -182,7 +196,9 @@
         "typescript": "^5.9.2",
       },
       "peerDependencies": {
+        "@zap/fonts": "workspace:*",
         "client-only": "^0.1.0",
+        "next": "^15.5.4",
         "react": "^19.2.0",
         "react-dom": "^19.2.0",
       },
@@ -674,6 +690,8 @@
     "@zap/app": ["@zap/app@workspace:apps/app"],
 
     "@zap/config": ["@zap/config@workspace:packages/config"],
+
+    "@zap/fonts": ["@zap/fonts@workspace:packages/fonts"],
 
     "@zap/marketing": ["@zap/marketing@workspace:apps/marketing"],
 

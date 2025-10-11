@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  lint-monorepo:
+  typecheck-monorepo:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5

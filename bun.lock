@@ -100,6 +100,7 @@
       "peerDependencies": {
         "@next/bundle-analyzer": "^15.5.4",
         "@next/mdx": "^15.5.4",
+        "@zap/config": "workspace:*",
         "@zap/security": "workspace:*",
         "next": "^15.5.4",
         "typescript": "^5",

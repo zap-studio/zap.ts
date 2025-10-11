@@ -17,6 +17,7 @@
       "name": "@zap/app",
       "version": "0.1.0",
       "dependencies": {
+        "@zap/config": "workspace:*",
         "@zap/shadcn": "workspace:*",
         "lucide-react": "^0.545.0",
         "next": "15.5.4",
@@ -42,6 +43,7 @@
       "name": "@zap/marketing",
       "version": "0.1.0",
       "dependencies": {
+        "@zap/config": "workspace:*",
         "@zap/shadcn": "workspace:*",
         "lucide-react": "^0.545.0",
         "next": "15.5.4",

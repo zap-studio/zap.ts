@@ -8,9 +8,7 @@
   "peerDependencies": {
     "@zap/config": "workspace:*",
     "typescript": "^5",
-    "next": "^15.5.4"
-  },
-  "dependencies": {
+    "next": "^15.5.4",
     "next-sitemap": "^4.2.3"
   },
   "exports": {

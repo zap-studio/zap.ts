@@ -24,6 +24,7 @@ export function createBaseConfig(appType: NextAppType = "default"): NextConfig {
     transpilePackages: [
       "@zap/config",
       "@zap/fonts",
+      "@zap/next-config",
       "@zap/security",
       "@zap/seo",
       "@zap/shadcn",

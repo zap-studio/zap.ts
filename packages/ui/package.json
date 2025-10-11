@@ -1,0 +1,27 @@
+{
+  "name": "@zap/ui",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next-themes": "^0.4.6"
+  },
+  "peerDependencies": {
+    "client-only": "^0.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.1",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "typescript": "^5.9.2"
+  },
+  "exports": {
+    "./components/*": "./src/components/ui/*.tsx",
+    "./providers/*": "./src/providers/*.tsx"
+  }
+}

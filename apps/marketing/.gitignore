@@ -36,6 +36,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# public seo files
+public/robots.txt
+public/sitemap*.xml
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

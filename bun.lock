@@ -21,6 +21,7 @@
         "@next/bundle-analyzer": "^15.5.4",
         "@next/mdx": "^15.5.4",
         "@zap/config": "workspace:*",
+        "@zap/next-config": "workspace:*",
         "@zap/security": "workspace:*",
         "@zap/seo": "workspace:*",
         "@zap/shadcn": "workspace:*",
@@ -55,6 +56,7 @@
         "@next/bundle-analyzer": "^15.5.4",
         "@next/mdx": "^15.5.4",
         "@zap/config": "workspace:*",
+        "@zap/next-config": "workspace:*",
         "@zap/security": "workspace:*",
         "@zap/seo": "workspace:*",
         "@zap/shadcn": "workspace:*",
@@ -86,6 +88,19 @@
         "@types/node": "^24.7.1",
       },
       "peerDependencies": {
+        "next": "^15.5.4",
+        "typescript": "^5",
+      },
+    },
+    "packages/next-config": {
+      "name": "@zap/next-config",
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+      },
+      "peerDependencies": {
+        "@next/bundle-analyzer": "^15.5.4",
+        "@next/mdx": "^15.5.4",
+        "@zap/security": "workspace:*",
         "next": "^15.5.4",
         "typescript": "^5",
       },
@@ -661,6 +676,8 @@
     "@zap/config": ["@zap/config@workspace:packages/config"],
 
     "@zap/marketing": ["@zap/marketing@workspace:apps/marketing"],
+
+    "@zap/next-config": ["@zap/next-config@workspace:packages/next-config"],
 
     "@zap/security": ["@zap/security@workspace:packages/security"],
 

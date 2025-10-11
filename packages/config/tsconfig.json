@@ -1,5 +1,5 @@
 {
-  "extends": "@zap/typescript-config/react-library.json",
+  "extends": "@zap/typescript-config/base.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

@@ -20,6 +20,7 @@
     "@zap/config": "workspace:*",
     "@zap/fonts": "workspace:*",
     "@zap/next-config": "workspace:*",
+    "@zap/pwa": "workspace:*",
     "@zap/security": "workspace:*",
     "@zap/seo": "workspace:*",
     "@zap/shadcn": "workspace:*",

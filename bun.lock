@@ -22,6 +22,7 @@
         "@zap/config": "workspace:*",
         "@zap/fonts": "workspace:*",
         "@zap/next-config": "workspace:*",
+        "@zap/pwa": "workspace:*",
         "@zap/security": "workspace:*",
         "@zap/seo": "workspace:*",
         "@zap/shadcn": "workspace:*",
@@ -148,10 +149,14 @@
     "packages/pwa": {
       "name": "@zap/pwa",
       "version": "0.0.0",
+      "dependencies": {
+        "@zap/config": "workspace:*",
+      },
       "devDependencies": {
         "@types/node": "^24.7.1",
       },
       "peerDependencies": {
+        "next": "^15.5.4",
         "typescript": "^5",
       },
     },

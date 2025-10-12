@@ -1,9 +1,9 @@
 "use client";
 import "client-only";
 
+import { useZapMutation } from "@zap/async-state/tanstack-query/hooks";
 import { PushNotificationError } from "@zap/errors";
 import { handleClientError } from "@zap/errors/client";
-import { useZapMutation } from "@zap/rpc/hooks";
 import { orpcReactQuery } from "@zap/rpc/lib/orpc";
 
 import { usePushNotificationsStore } from "../stores";

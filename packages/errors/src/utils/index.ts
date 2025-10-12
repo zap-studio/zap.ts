@@ -3,14 +3,8 @@ export async function toORPCError(
   message: string,
   cause?: unknown
 ) {
-  try {
-    const { ORPCError } = await import("@orpc/server");
-    return new ORPCError(code, { message, cause });
-  } catch {
-    throw new Error(
-      "@orpc/server is required to convert errors. Install it as a peer dependency."
-    );
-  }
+  const { ORPCError } = await import("@orpc/server");
+  return new ORPCError(code, { message, cause });
 }
 
 export function toJSONBase(

@@ -25,24 +25,20 @@ export async function handleClientError(
   }
 
   // Show error details in toast in DEV mode
-  try {
-    const { toast } = await import("sonner");
+  const { toast } = await import("sonner");
 
-    // Show error details in toast in DEV mode
-    if (process.env.NODE_ENV === "development") {
-      toast.error(`${title}: ${description}`, {
-        description:
-          typeof error === "object"
-            ? JSON.stringify(error, null, 2)
-            : String(error),
-      });
-      return;
-    }
-
-    toast.error(description);
-  } catch {
-    // Nothing we can do
+  // Show error details in toast in DEV mode
+  if (process.env.NODE_ENV === "development") {
+    toast.error(`${title}: ${description}`, {
+      description:
+        typeof error === "object"
+          ? JSON.stringify(error, null, 2)
+          : String(error),
+    });
+    return;
   }
+
+  toast.error(description);
 }
 
 type SuccessOptions = {
@@ -51,12 +47,8 @@ type SuccessOptions = {
 };
 
 export async function handleSuccess({ message, title }: SuccessOptions) {
-  try {
-    const { toast } = await import("sonner");
-    toast.success(title, {
-      description: message,
-    });
-  } catch {
-    // Nothing we can do
-  }
+  const { toast } = await import("sonner");
+  toast.success(title, {
+    description: message,
+  });
 }

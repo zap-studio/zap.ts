@@ -7,7 +7,11 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@orpc/client": "^1.9.3",
+    "@orpc/react-query": "^1.9.3",
+    "@orpc/server": "^1.9.3",
     "@tanstack/react-query": "^5.90.2",
+    "@tanstack/react-query-devtools": "^5.90.2",
     "@zap/errors": "workspace:*",
     "client-only": "^0.0.1",
     "server-only": "^0.0.1"
@@ -23,6 +27,10 @@
   "exports": {
     ".": "./src/index.ts",
     "./hooks": "./src/hooks/index.ts",
+    "./middlewares": "./src/middlewares/index.ts",
+    "./orpc/client": "./src/providers/orpc/client.ts",
+    "./orpc/server": "./src/providers/orpc/server.ts",
+    "./providers/*": "./src/providers/*.ts",
     "./types": "./src/types/index.ts"
   }
 }

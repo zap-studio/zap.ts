@@ -190,7 +190,11 @@
       "name": "@zap/rpc",
       "version": "0.0.0",
       "dependencies": {
+        "@orpc/client": "^1.9.3",
+        "@orpc/react-query": "^1.9.3",
+        "@orpc/server": "^1.9.3",
         "@tanstack/react-query": "^5.90.2",
+        "@tanstack/react-query-devtools": "^5.90.2",
         "@zap/errors": "workspace:*",
         "client-only": "^0.0.1",
         "server-only": "^0.0.1",
@@ -570,6 +574,8 @@
 
     "@orpc/interop": ["@orpc/interop@1.9.3", "", {}, "sha512-RuUwnsYBdDCqJ6x6INh/kRuXqOl2mQreK/oXZDp1Af4vhyESj+SW0AP56KM5x67Ww1UxcQLROJo10cGIsAWB6Q=="],
 
+    "@orpc/react-query": ["@orpc/react-query@1.9.3", "", { "dependencies": { "@orpc/shared": "1.9.3", "@orpc/tanstack-query": "1.9.3" }, "peerDependencies": { "@orpc/client": "1.9.3", "@tanstack/react-query": ">=5.80.2", "react": ">=18.3.0" } }, "sha512-3KX2SUKd6tC0tj64KKZRCH6pXRHAse9M8JfE9O9A5kM+nrTO2R1r3vQr58mbv+OHzfcG3e89v3dfUNPI62Rx/A=="],
+
     "@orpc/server": ["@orpc/server@1.9.3", "", { "dependencies": { "@orpc/client": "1.9.3", "@orpc/contract": "1.9.3", "@orpc/interop": "1.9.3", "@orpc/shared": "1.9.3", "@orpc/standard-server": "1.9.3", "@orpc/standard-server-aws-lambda": "1.9.3", "@orpc/standard-server-fetch": "1.9.3", "@orpc/standard-server-node": "1.9.3", "@orpc/standard-server-peer": "1.9.3", "cookie": "^1.0.2" }, "peerDependencies": { "crossws": ">=0.3.4", "ws": ">=8.18.1" }, "optionalPeers": ["crossws", "ws"] }, "sha512-+FGFh+71Ya154xz6N8+0iT+cA77IPRSzplSt3T2Jlv86cLCy5ky0D12IvDW5LFHCWocONLZQSnMjWOcymTHZoA=="],
 
     "@orpc/shared": ["@orpc/shared@1.9.3", "", { "dependencies": { "radash": "^12.1.1", "type-fest": "^5.0.1" }, "peerDependencies": { "@opentelemetry/api": ">=1.9.0" }, "optionalPeers": ["@opentelemetry/api"] }, "sha512-9XwaKQ7bevh4r4112g2M7sAHZBIeJgMdCkw81UjvwkJD+WShGdWkdt/ieOJSYqxBB/CXD0NHDs4g2C4NrmLsNg=="],
@@ -583,6 +589,8 @@
     "@orpc/standard-server-node": ["@orpc/standard-server-node@1.9.3", "", { "dependencies": { "@orpc/shared": "1.9.3", "@orpc/standard-server": "1.9.3", "@orpc/standard-server-fetch": "1.9.3" } }, "sha512-QKscNdQbDIhbUGp6dkukVwW59frhIAf/WzmrYNgVuUIsAGWibqobtgOTkgwGRWd9ZxRMYYIijVIJCy13pGrhHw=="],
 
     "@orpc/standard-server-peer": ["@orpc/standard-server-peer@1.9.3", "", { "dependencies": { "@orpc/shared": "1.9.3", "@orpc/standard-server": "1.9.3" } }, "sha512-L5lOe9PQhPiJ5AAB63dj50DrTvjoHTc64AXanxkIEZa0koaypR419Hh2inydyHTdIm8cgMdV4k6kAq9n6il/TQ=="],
+
+    "@orpc/tanstack-query": ["@orpc/tanstack-query@1.9.3", "", { "dependencies": { "@orpc/shared": "1.9.3" }, "peerDependencies": { "@orpc/client": "1.9.3", "@tanstack/query-core": ">=5.80.2" } }, "sha512-Frlg7UUA4k1oiUtvPHpieZvuyjaVUt0piOrrzk4e6x9PnGVlD7VpRDofNFx3YnQWx6qoDf1tzeIUPWxmukRC/Q=="],
 
     "@pivanov/utils": ["@pivanov/utils@0.0.2", "", { "peerDependencies": { "react": ">=18", "react-dom": ">=18" } }, "sha512-q9CN0bFWxWgMY5hVVYyBgez1jGiLBa6I+LkG37ycylPhFvEGOOeaADGtUSu46CaZasPnlY8fCdVJZmrgKb1EPA=="],
 
@@ -750,7 +758,11 @@
 
     "@tanstack/query-core": ["@tanstack/query-core@5.90.2", "", {}, "sha512-k/TcR3YalnzibscALLwxeiLUub6jN5EDLwKDiO7q5f4ICEoptJ+n9+7vcEFy5/x/i6Q+Lb/tXrsKCggf5uQJXQ=="],
 
+    "@tanstack/query-devtools": ["@tanstack/query-devtools@5.90.1", "", {}, "sha512-GtINOPjPUH0OegJExZ70UahT9ykmAhmtNVcmtdnOZbxLwT7R5OmRztR5Ahe3/Cu7LArEmR6/588tAycuaWb1xQ=="],
+
     "@tanstack/react-query": ["@tanstack/react-query@5.90.2", "", { "dependencies": { "@tanstack/query-core": "5.90.2" }, "peerDependencies": { "react": "^18 || ^19" } }, "sha512-CLABiR+h5PYfOWr/z+vWFt5VsOA2ekQeRQBFSKlcoW6Ndx/f8rfyVmq4LbgOM4GG2qtxAxjLYLOpCNTYm4uKzw=="],
+
+    "@tanstack/react-query-devtools": ["@tanstack/react-query-devtools@5.90.2", "", { "dependencies": { "@tanstack/query-devtools": "5.90.1" }, "peerDependencies": { "@tanstack/react-query": "^5.90.2", "react": "^18 || ^19" } }, "sha512-vAXJzZuBXtCQtrY3F/yUNJCV4obT/A/n81kb3+YqLbro5Z2+phdAbceO+deU3ywPw8B42oyJlp4FhO0SoivDFQ=="],
 
     "@trpc/server": ["@trpc/server@11.6.0", "", { "peerDependencies": { "typescript": ">=5.7.2" } }, "sha512-skTso0AWbOZck40jwNeYv++AMZXNWLUWdyk+pB5iVaYmEKTuEeMoPrEudR12VafbEU6tZa8HK3QhBfTYYHDCdg=="],
 

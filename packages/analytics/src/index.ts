@@ -11,8 +11,8 @@ const __VERCEL__ = !!process.env.VERCEL;
  * const config = createAnalyticsConfig({
  *   POSTHOG: {
  *     ENABLED: true,
- *     API_KEY: "your-posthog-api-key",
- *     HOST: "https://app.posthog.com",
+ *     API_KEY: "your-posthog-api-key", // recommended to be set via environment variable
+ *     HOST: "https://app.posthog.com", // recommended to be set via environment variable
  *   }
  * });
  * ```

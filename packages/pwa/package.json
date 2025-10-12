@@ -7,10 +7,13 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@zap/config": "workspace:*"
+    "@zap/config": "workspace:*",
+    "@zap/errors": "workspace:*",
+    "web-push": "^3.6.7"
   },
   "devDependencies": {
-    "@types/node": "^24.7.1"
+    "@types/node": "^24.7.1",
+    "@types/web-push": "^3.6.4"
   },
   "peerDependencies": {
     "next": "^15.5.4",

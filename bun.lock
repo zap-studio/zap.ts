@@ -107,12 +107,12 @@
       "name": "@zap/errors",
       "version": "0.0.0",
       "dependencies": {
+        "client-only": "^0.0.1",
+        "server-only": "^0.0.1",
         "zod": "^4.1.12",
       },
       "devDependencies": {
         "@types/node": "^24.7.1",
-        "client-only": "^0.0.1",
-        "server-only": "^0.0.1",
       },
       "peerDependencies": {
         "@orpc/server": "^1.9.3",

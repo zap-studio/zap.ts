@@ -19,6 +19,7 @@
     "@next/mdx": "^15.5.4",
     "@orpc/client": "^1.9.3",
     "@orpc/server": "^1.9.3",
+    "@zap/analytics": "workspace:*",
     "@zap/async-state": "workspace:*",
     "@zap/config": "workspace:*",
     "@zap/fonts": "workspace:*",

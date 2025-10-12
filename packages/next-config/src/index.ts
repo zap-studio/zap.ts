@@ -18,6 +18,7 @@ export function createBaseConfig(appType: NextAppType = "default"): NextConfig {
       remotePatterns: [{ protocol: "https", hostname: "avatar.vercel.sh" }],
     },
     transpilePackages: [
+      "@zap/analytics",
       "@zap/async-state",
       "@zap/config",
       "@zap/fonts",

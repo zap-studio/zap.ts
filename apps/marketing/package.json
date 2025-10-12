@@ -17,6 +17,7 @@
   "dependencies": {
     "@next/bundle-analyzer": "^15.5.4",
     "@next/mdx": "^15.5.4",
+    "@zap/analytics": "workspace:*",
     "@zap/config": "workspace:*",
     "@zap/fonts": "workspace:*",
     "@zap/next-config": "workspace:*",

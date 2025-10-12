@@ -1,6 +1,7 @@
 import { HttpStatus } from "./http";
 import type { HttpStatusCode } from "./types";
-import { toJSONBase, toORPCError } from "./utils";
+import { toJSONBase } from "./utils";
+import { toORPCError } from "./utils/orpc";
 
 /** Common base for all errors with consistent serialization and metadata */
 export class CommonErrorBase extends Error {
@@ -19,8 +20,8 @@ export class CommonErrorBase extends Error {
     return toJSONBase(this);
   }
 
-  async toORPCError() {
-    return await toORPCError(this.code, this.message, this.cause);
+  toORPCError() {
+    return toORPCError(this.code, this.message, this.cause);
   }
 }
 

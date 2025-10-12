@@ -28,6 +28,7 @@
     "./http": "./src/http.ts",
     "./server": "./src/server/index.ts",
     "./types": "./src/types/index.ts",
-    "./utils": "./src/utils/index.ts"
+    "./utils": "./src/utils/index.ts",
+    "./utils/orpc": "./src/utils/orpc.ts"
   }
 }

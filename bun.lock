@@ -104,6 +104,19 @@
         "typescript": "^5",
       },
     },
+    "packages/crypto": {
+      "name": "@zap/crypto",
+      "version": "0.0.0",
+      "dependencies": {
+        "server-only": "^0.0.1",
+      },
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
     "packages/errors": {
       "name": "@zap/errors",
       "version": "0.0.0",
@@ -751,6 +764,8 @@
     "@zap/app": ["@zap/app@workspace:apps/app"],
 
     "@zap/config": ["@zap/config@workspace:packages/config"],
+
+    "@zap/crypto": ["@zap/crypto@workspace:packages/crypto"],
 
     "@zap/errors": ["@zap/errors@workspace:packages/errors"],
 

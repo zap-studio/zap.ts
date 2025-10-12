@@ -1,0 +1,23 @@
+{
+  "name": "@zap/crypto",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./encrypt": "./src/encrypt.ts",
+    "./decrypt": "./src/decrypt.ts"
+  }
+}

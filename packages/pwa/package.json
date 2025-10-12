@@ -7,6 +7,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@zap/async-state": "workspace:*",
     "@zap/config": "workspace:*",
     "@zap/errors": "workspace:*",
     "@zap/rpc": "workspace:*",

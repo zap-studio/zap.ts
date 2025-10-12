@@ -186,6 +186,7 @@
       "name": "@zap/pwa",
       "version": "0.0.0",
       "dependencies": {
+        "@zap/async-state": "workspace:*",
         "@zap/config": "workspace:*",
         "@zap/errors": "workspace:*",
         "@zap/rpc": "workspace:*",

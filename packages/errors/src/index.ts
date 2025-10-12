@@ -1,4 +1,3 @@
-import { ORPCError } from "@orpc/server";
 import { HttpStatus } from "./http";
 import type { HttpStatusCode } from "./types";
 
@@ -21,11 +20,18 @@ export class BaseError extends Error {
     Error.captureStackTrace(this, this.constructor);
   }
 
-  toORPCError() {
-    return new ORPCError(this.code, {
-      message: this.message,
-      cause: this.cause,
-    });
+  async toORPCError() {
+    try {
+      const { ORPCError } = await import("@orpc/server");
+      return new ORPCError(this.code, {
+        message: this.message,
+        cause: this.cause,
+      });
+    } catch {
+      throw new Error(
+        "@orpc/server is required to convert errors. Install it as a peer dependency."
+      );
+    }
   }
 
   toJSON() {
@@ -93,11 +99,18 @@ export class BaseApplicationError extends Error {
     Error.captureStackTrace(this, this.constructor);
   }
 
-  toORPCError() {
-    return new ORPCError(this.code, {
-      message: this.message,
-      cause: this.cause,
-    });
+  async toORPCError() {
+    try {
+      const { ORPCError } = await import("@orpc/server");
+      return new ORPCError(this.code, {
+        message: this.message,
+        cause: this.cause,
+      });
+    } catch {
+      throw new Error(
+        "@orpc/server is required to convert errors. Install it as a peer dependency."
+      );
+    }
   }
 
   toJSON() {

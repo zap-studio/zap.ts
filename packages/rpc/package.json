@@ -27,8 +27,8 @@
   "exports": {
     ".": "./src/index.ts",
     "./hooks": "./src/hooks/index.ts",
-    "./middlewares": "./src/middlewares/index.ts",
     "./orpc/client": "./src/providers/orpc/client.ts",
+    "./orpc/middlewares/*": "./src/providers/orpc/middlewares/*.ts",
     "./orpc/server": "./src/providers/orpc/server.ts",
     "./providers/*": "./src/providers/*.ts",
     "./types": "./src/types/index.ts"

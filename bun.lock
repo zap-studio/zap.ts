@@ -185,6 +185,16 @@
         "typescript": "^5",
       },
     },
+    "packages/rpc": {
+      "name": "@zap/rpc",
+      "version": "0.0.0",
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
     "packages/security": {
       "name": "@zap/security",
       "version": "0.0.0",
@@ -778,6 +788,8 @@
     "@zap/next-config": ["@zap/next-config@workspace:packages/next-config"],
 
     "@zap/pwa": ["@zap/pwa@workspace:packages/pwa"],
+
+    "@zap/rpc": ["@zap/rpc@workspace:packages/rpc"],
 
     "@zap/security": ["@zap/security@workspace:packages/security"],
 

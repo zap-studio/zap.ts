@@ -1,3 +1,6 @@
+"use client";
+import "client-only";
+
 import motion from "motion/react-client";
 import type { ReactNode } from "react";
 

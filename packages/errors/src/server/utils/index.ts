@@ -190,12 +190,6 @@ export function handleError<R>(
     `[${correlationId}] ${options.handlerType} failed after ${duration}ms ${JSON.stringify(meta)}\n`
   );
 
-  // For RPC procedures, convert BaseError to ORPC error
-  if (options.handlerType === HANDLER_TYPES.RPC) {
-    const baseError = transformError(error);
-    throw baseError.toORPCError();
-  }
-
   // For server actions, transform to BaseError
   if (options.handlerType === HANDLER_TYPES.SERVER_ACTION) {
     throw transformError(error);

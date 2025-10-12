@@ -1,8 +1,8 @@
 import "server-only";
 
-import { __DEV__ } from "../constants";
-import type { HandlerFunction, HandlerOptions, HandlerType } from "../types";
-import { generateCorrelationId, handleError, logSuccess } from "./utils";
+import { __DEV__ } from "../../constants";
+import type { HandlerFunction, HandlerOptions, HandlerType } from "../../types";
+import { generateCorrelationId, handleError, logSuccess } from "../utils";
 
 /**
  * Creates a wrapped handler function with built-in error handling, logging, and correlation tracking.
@@ -87,39 +87,6 @@ export function withApiHandler<T extends unknown[], R>(
   return createHandler(handler, {
     ...options,
     handlerType: "api-route",
-  });
-}
-
-/**
- * Creates an RPC handler by wrapping a handler function with error handling and options.
- *
- * This function is a convenience wrapper around `createHandler` that automatically
- * sets the `handlerType` to "rpc-procedures" for RPC-specific error handling.
- *
- * @template T - A tuple type representing the argument types of the handler function
- * @template R - The return type of the handler function
- *
- * @param handler - The handler function to wrap with RPC error handling
- * @param options - Optional configuration options for the handler (defaults to an empty object)
- *
- * @returns A wrapped handler function with RPC-specific error handling applied
- *
- * @example
- * ```typescript
- * import { myAsyncRpcProcedure } from "./myRpcProcedures";
- * const myRpcHandler = withRpcHandler(
- *   myAsyncRpcProcedure,
- *   { correlationId: 'optional-correlation-id' }
- * );
- * ```
- */
-export function withRpcHandler<T extends unknown[], R>(
-  handler: HandlerFunction<T, R>,
-  options: HandlerOptions = {}
-) {
-  return createHandler(handler, {
-    ...options,
-    handlerType: "rpc-procedures",
   });
 }
 

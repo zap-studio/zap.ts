@@ -19,8 +19,12 @@
     "./data": "./src/data/index.ts",
     "./types": "./src/types/index.ts",
     "./http": "./src/http.ts",
+    "./client": "./src/client/index.ts",
     "./edge": "./src/edge/index.ts",
     "./server": "./src/server/index.ts",
-    "./client": "./src/client/index.ts"
+    "./utils": "./src/utils/index.ts"
+  },
+  "dependencies": {
+    "zod": "^4.1.12"
   }
 }

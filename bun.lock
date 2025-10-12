@@ -105,6 +105,9 @@
     "packages/errors": {
       "name": "@zap/errors",
       "version": "0.0.0",
+      "dependencies": {
+        "zod": "^4.1.12",
+      },
       "devDependencies": {
         "@types/node": "^24.7.1",
       },

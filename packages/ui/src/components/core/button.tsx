@@ -4,11 +4,10 @@ import type { ComponentProps } from "react";
 
 type ButtonProps = ComponentProps<typeof Button>;
 
-interface ZapButtonProps extends ButtonProps {
+type ZapButtonProps = ButtonProps & {
   loading?: boolean;
   loadingText?: string;
-  children: React.ReactNode;
-}
+};
 
 /**
  * A button component that shows a loading spinner when loading is true. Built on top of the base shadcn/ui `Button` component.

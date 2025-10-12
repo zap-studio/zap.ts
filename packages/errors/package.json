@@ -11,13 +11,15 @@
   },
   "peerDependencies": {
     "@orpc/server": "^1.9.3",
+    "sonner": "^2.0.7",
     "typescript": "^5"
   },
   "exports": {
     ".": "./src/index.ts",
     "./types": "./src/types/index.ts",
     "./http": "./src/http.ts",
-    "./logger/edge": "./src/logger/edge.ts",
-    "./logger/server": "./src/logger/server.ts"
+    "./runtime/edge": "./src/logger/edge.ts",
+    "./runtime/server": "./src/logger/server.ts",
+    "./runtime/client": "./src/logger/client.ts"
   }
 }

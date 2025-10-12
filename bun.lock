@@ -110,6 +110,7 @@
       },
       "peerDependencies": {
         "@orpc/server": "^1.9.3",
+        "sonner": "^2.0.7",
         "typescript": "^5",
       },
     },

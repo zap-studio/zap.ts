@@ -4,12 +4,11 @@ import "client-only";
 import { useZapMutation } from "@zap/async-state/tanstack-query/hooks";
 import { PushNotificationError } from "@zap/errors";
 import { handleClientError } from "@zap/errors/client";
-import { orpcReactQuery } from "@zap/rpc/lib/orpc";
 
 import { usePushNotificationsStore } from "../stores";
 import { arrayBufferToBase64, urlBase64ToUint8Array } from "../utils";
 
-export function usePushNotifications() {
+export function usePushNotifications(orpcReactQuery) {
   const subscription = usePushNotificationsStore((state) => state.subscription);
   const setSubscription = usePushNotificationsStore(
     (state) => state.setSubscription

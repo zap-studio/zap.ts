@@ -229,3 +229,38 @@ export async function parseRequestBody<T>(
   const body = await request.json();
   return schema.parse(body);
 }
+
+export async function toORPCError(
+  code: string,
+  message: string,
+  cause?: unknown
+) {
+  try {
+    const { ORPCError } = await import("@orpc/server");
+    return new ORPCError(code, { message, cause });
+  } catch {
+    throw new Error(
+      "@orpc/server is required to convert errors. Install it as a peer dependency."
+    );
+  }
+}
+
+export function toJSONBase(
+  error: Error & { code?: string; statusCode?: number; cause?: unknown }
+) {
+  const base = {
+    error: error.name,
+    message: error.message,
+    code: error.code,
+  };
+
+  if ("statusCode" in error) {
+    return { ...base, statusCode: error.statusCode };
+  }
+
+  if (error.cause) {
+    return { ...base, cause: error.cause };
+  }
+
+  return base;
+}

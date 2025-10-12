@@ -11,6 +11,8 @@
   },
   "peerDependencies": {
     "@orpc/server": "^1.9.3",
+    "client-only": "^0.0.1",
+    "server-only": "^0.0.1",
     "sonner": "^2.0.7",
     "typescript": "^5"
   },

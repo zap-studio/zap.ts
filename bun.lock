@@ -239,7 +239,9 @@
       "version": "0.0.0",
       "dependencies": {
         "@bprogress/next": "^3.2.12",
+        "@zap/errors": "workspace:*",
         "@zap/shadcn": "workspace:*",
+        "client-only": "^0.0.1",
         "lucide-react": "^0.545.0",
         "next-themes": "^0.4.6",
       },
@@ -250,9 +252,6 @@
         "typescript": "^5.9.2",
       },
       "peerDependencies": {
-        "@zap/errors": "workspace:*",
-        "@zap/fonts": "workspace:*",
-        "client-only": "^0.0.1",
         "next": "^15.5.4",
         "react": "^19.2.0",
         "react-dom": "^19.2.0",

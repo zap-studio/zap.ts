@@ -3,7 +3,7 @@ import "client-only";
 
 import { BaseError } from "@zap/errors";
 import { geist } from "@zap/fonts";
-import { ZapButton } from "./button";
+import { ZapButton } from "../components/core/button";
 
 type ErrorBoundaryProps = {
   reset: () => void;

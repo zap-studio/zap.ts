@@ -13,6 +13,35 @@ export function generateCorrelationId(): string {
   return generateUuid();
 }
 
+/**
+ * Creates a standardized error response object with appropriate HTTP status code.
+ *
+ * @param error - The error to be processed. Can be a BaseError, ZodError, Error, or unknown type.
+ * @param correlationId - A unique identifier to track the error across systems.
+ * @param includeStack - Optional flag to include stack traces in development mode. Defaults to false.
+ *
+ * @returns An object containing:
+ * - `response`: The formatted error response with error details, timestamp, and correlation ID
+ * - `statusCode`: The HTTP status code corresponding to the error type
+ *
+ * @remarks
+ * The function handles different error types:
+ * - `BaseError`: Returns custom error properties (name, code, statusCode)
+ * - `ZodError`: Returns validation error with detailed issues (400 Bad Request)
+ * - `Error`: Returns internal server error (500)
+ * - Unknown types: Returns unknown error response (500)
+ *
+ * Stack traces and additional details are only included in development mode (`__DEV__` flag).
+ *
+ * @example
+ * ```typescript
+ * const { response, statusCode } = createErrorResponse(
+ *   new Error('Something went wrong'),
+ *   'req-123',
+ *   true
+ * );
+ * ```
+ */
 export function createErrorResponse(
   error: unknown,
   correlationId: string,
@@ -116,6 +145,32 @@ export function transformError(error: unknown): BaseError {
   return new InternalServerError("Operation failed", error);
 }
 
+/**
+ * Handles errors across different handler types (RPC, server actions, API routes) with proper logging and transformation.
+ *
+ * @template R - The return type, typically a Response object for API routes
+ * @param error - The error to handle, can be any type
+ * @param correlationId - Unique identifier for tracking the request across logs
+ * @param startTime - Timestamp (in milliseconds) when the operation started, used to calculate duration
+ * @param options - Configuration options including handler type, context, and stack trace inclusion
+ * @param options.handlerType - Type of handler: RPC, SERVER_ACTION, or api-route
+ * @param options.context - Additional context information for error logging
+ * @param options.includeStack - Whether to include stack traces in error responses
+ *
+ * @returns For API routes, returns a Response object with error details and appropriate headers.
+ *          For other handler types, this function throws and does not return.
+ *
+ * @throws {ORPCError} When handlerType is RPC, throws an ORPC-formatted error
+ * @throws {BaseError} When handlerType is SERVER_ACTION, throws a transformed BaseError
+ * @throws {unknown} For unsupported handler types, re-throws the original error
+ *
+ * @remarks
+ * This function:
+ * - Calculates operation duration
+ * - Logs errors to stderr with correlation ID and metadata
+ * - Transforms errors based on handler type
+ * - For API routes, returns a JSON response with appropriate status code and headers
+ */
 export function handleError<R>(
   error: unknown,
   correlationId: string,

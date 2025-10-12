@@ -1,8 +1,9 @@
 import "client-only";
+import { toast } from "sonner";
 
 import { BaseApplicationError, BaseError, BaseFetchError } from "..";
 
-export async function handleClientError(
+export function handleClientError(
   error: unknown,
   fallbackMessage = "Something went wrong"
 ) {
@@ -25,9 +26,6 @@ export async function handleClientError(
   }
 
   // Show error details in toast in DEV mode
-  const { toast } = await import("sonner");
-
-  // Show error details in toast in DEV mode
   if (process.env.NODE_ENV === "development") {
     toast.error(`${title}: ${description}`, {
       description:
@@ -46,8 +44,7 @@ type SuccessOptions = {
   message?: string;
 };
 
-export async function handleSuccess({ message, title }: SuccessOptions) {
-  const { toast } = await import("sonner");
+export function handleSuccess({ message, title }: SuccessOptions) {
   toast.success(title, {
     description: message,
   });

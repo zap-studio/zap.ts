@@ -3,8 +3,8 @@ import "client-only";
 
 import { PushNotificationError } from "@zap/errors";
 import { handleClientError } from "@zap/errors/client";
-import { useZapMutation } from "@/zap/api/hooks";
-import { orpcQuery } from "@/zap/api/lib/orpc";
+import { useZapMutation } from "@zap/rpc/hooks";
+import { orpcQuery } from "@zap/rpc/lib/orpc";
 
 import { usePushNotificationsStore } from "../stores";
 import { arrayBufferToBase64, urlBase64ToUint8Array } from "../utils";

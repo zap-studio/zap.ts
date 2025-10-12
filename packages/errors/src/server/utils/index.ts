@@ -15,32 +15,6 @@ export function generateCorrelationId(): string {
 
 /**
  * Creates a standardized error response object with appropriate HTTP status code.
- *
- * @param error - The error to be processed. Can be a BaseError, ZodError, Error, or unknown type.
- * @param correlationId - A unique identifier to track the error across systems.
- * @param includeStack - Optional flag to include stack traces in development mode. Defaults to false.
- *
- * @returns An object containing:
- * - `response`: The formatted error response with error details, timestamp, and correlation ID
- * - `statusCode`: The HTTP status code corresponding to the error type
- *
- * @remarks
- * The function handles different error types:
- * - `BaseError`: Returns custom error properties (name, code, statusCode)
- * - `ZodError`: Returns validation error with detailed issues (400 Bad Request)
- * - `Error`: Returns internal server error (500)
- * - Unknown types: Returns unknown error response (500)
- *
- * Stack traces and additional details are only included in development mode (`__DEV__` flag).
- *
- * @example
- * ```typescript
- * const { response, statusCode } = createErrorResponse(
- *   new Error('Something went wrong'),
- *   'req-123',
- *   true
- * );
- * ```
  */
 export function createErrorResponse(
   error: unknown,
@@ -116,6 +90,9 @@ export function createErrorResponse(
   };
 }
 
+/**
+ * Logs successful handler execution with duration and context.
+ */
 export function logSuccess(
   correlationId: string,
   startTime: number,
@@ -133,6 +110,9 @@ export function logSuccess(
   );
 }
 
+/**
+ * Transforms unknown errors into BaseError instances for consistent error handling.
+ */
 export function transformError(error: unknown): BaseError {
   if (error instanceof BaseError) {
     return error;
@@ -146,37 +126,14 @@ export function transformError(error: unknown): BaseError {
 }
 
 /**
- * Handles errors across different handler types (RPC, server actions, API routes) with proper logging and transformation.
- *
- * @template R - The return type, typically a Response object for API routes
- * @param error - The error to handle, can be any type
- * @param correlationId - Unique identifier for tracking the request across logs
- * @param startTime - Timestamp (in milliseconds) when the operation started, used to calculate duration
- * @param options - Configuration options including handler type, context, and stack trace inclusion
- * @param options.handlerType - Type of handler: RPC, SERVER_ACTION, or api-route
- * @param options.context - Additional context information for error logging
- * @param options.includeStack - Whether to include stack traces in error responses
- *
- * @returns For API routes, returns a Response object with error details and appropriate headers.
- *          For other handler types, this function throws and does not return.
- *
- * @throws {ORPCError} When handlerType is RPC, throws an ORPC-formatted error
- * @throws {BaseError} When handlerType is SERVER_ACTION, throws a transformed BaseError
- * @throws {unknown} For unsupported handler types, re-throws the original error
- *
- * @remarks
- * This function:
- * - Calculates operation duration
- * - Logs errors to stderr with correlation ID and metadata
- * - Transforms errors based on handler type
- * - For API routes, returns a JSON response with appropriate status code and headers
+ * Logs error metadata including duration and context.
  */
-export function handleError<R>(
+export function logErrorMetadata(
   error: unknown,
   correlationId: string,
   startTime: number,
   options: HandlerOptions & { handlerType: HandlerType }
-): R {
+): void {
   const duration = Date.now() - startTime;
 
   logServerError(error);
@@ -189,6 +146,41 @@ export function handleError<R>(
   process.stderr.write(
     `[${correlationId}] ${options.handlerType} failed after ${duration}ms ${JSON.stringify(meta)}\n`
   );
+}
+
+/**
+ * Type for custom error handler that can be injected to handle specific handler types.
+ * Returns true if the error was handled, false to continue with default handling.
+ */
+export type CustomErrorHandler<R> = (
+  error: unknown,
+  correlationId: string,
+  options: HandlerOptions & { handlerType: HandlerType }
+) => { handled: true; result?: R } | { handled: false };
+
+/**
+ * Handles errors across different handler types with proper logging and transformation.
+ * Supports custom error handlers for extensibility (e.g., ORPC).
+ */
+export function handleError<R>(
+  error: unknown,
+  correlationId: string,
+  startTime: number,
+  options: HandlerOptions & {
+    handlerType: HandlerType;
+    customHandler?: CustomErrorHandler<R>;
+  }
+): R {
+  logErrorMetadata(error, correlationId, startTime, options);
+
+  // Allow custom handler to intercept (e.g., for RPC)
+  if (options.customHandler) {
+    const result = options.customHandler(error, correlationId, options);
+    if (result.handled) {
+      // Custom handler threw or will throw
+      return result.result as R;
+    }
+  }
 
   // For server actions, transform to BaseError
   if (options.handlerType === HANDLER_TYPES.SERVER_ACTION) {
@@ -216,6 +208,9 @@ export function handleError<R>(
   throw error;
 }
 
+/**
+ * Parses and validates the JSON body of a Request using the provided Zod schema.
+ */
 export async function parseRequestBody<T>(
   request: Request,
   schema: z.ZodSchema<T>

@@ -9,6 +9,8 @@
   "dependencies": {
     "@zap/config": "workspace:*",
     "@zap/errors": "workspace:*",
+    "client-only": "^0.0.1",
+    "server-only": "^0.0.1",
     "web-push": "^3.6.7",
     "zustand": "^5.0.8"
   },

@@ -9,8 +9,6 @@ import type { NextAppType } from "./types";
  * Additional plugins can be composed with this base configuration.
  *
  * When `appType` is set to "pwa", it adds specific headers for service workers.
- * @param appType - The type of application, either "default" or "pwa". Defaults to "default".
- * @returns A Next.js configuration object.
  */
 export function createBaseConfig(appType: NextAppType = "default"): NextConfig {
   return {
@@ -77,9 +75,6 @@ export function createBaseConfig(appType: NextAppType = "default"): NextConfig {
 
 /**
  * Composes a Next.js configuration by applying a series of plugins to a base configuration.
- * @param baseConfig - The base Next.js configuration object.
- * @param plugins - An array of plugin functions that take a Next.js configuration and return an enhanced configuration.
- * @returns The final composed Next.js configuration object.
  *
  * @example
  * import { withMDX } from "@zap/next-config/plugins/mdx";

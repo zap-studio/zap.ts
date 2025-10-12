@@ -7,8 +7,6 @@ export const config: Config = {
 /**
  * Create a PostCSS configuration object with optional overrides.
  * This function merges the default configuration with any provided overrides.
- * @param overrides - Partial configuration to override the default settings.
- * @returns A complete PostCSS configuration object.
  */
 export const createPostCSSConfig = (overrides: Partial<Config> = {}): Config => {
   return {

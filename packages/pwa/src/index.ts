@@ -5,19 +5,6 @@ import type { PWAConfig, PWAConfigOptions } from "./types";
 /**
  * Creates a Progressive Web App (PWA) configuration object with default settings and custom options.
  *
- * @param options - Configuration options for the PWA
- * @param options.ZAP_MAIL - The VAPID email address used for push notifications
- *
- * @returns A complete PWA configuration object containing:
- * - `NAME` - The application name
- * - `SHORT_NAME` - The short application name (same as NAME)
- * - `DESCRIPTION` - The application description
- * - `START_URL` - The starting URL of the PWA (defaults to "/")
- * - `BACKGROUND_COLOR` - The background color (defaults to white "#ffffff")
- * - `THEME_COLOR` - The theme color (defaults to black "#000000")
- * - `ICONS` - Array of icon configurations for different sizes (192x192 and 512x512)
- * - `VAPID_MAIL` - The VAPID email for push notifications
- *
  * @example
  * ```typescript
  * const config = createPWAConfig({
@@ -45,9 +32,6 @@ export const createPWAConfig = (options: PWAConfigOptions): PWAConfig => ({
  * This function takes PWA configuration options, processes them through `createPWAConfig`,
  * and returns a manifest object compatible with Next.js MetadataRoute.Manifest type.
  * The manifest includes essential PWA properties like name, icons, theme colors, and display mode.
- *
- * @param options - The PWA configuration options used to generate the manifest
- * @returns A manifest object containing PWA metadata including name, description, icons, colors, and display settings
  *
  * @example
  * ```typescript

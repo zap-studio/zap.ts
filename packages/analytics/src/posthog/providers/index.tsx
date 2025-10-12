@@ -2,7 +2,7 @@
 import "client-only";
 
 import posthog from "posthog-js";
-import { PostHogProvider } from "posthog-js/react";
+import { PostHogProvider as _PostHogProvider } from "posthog-js/react";
 import { useEffect } from "react";
 import { SuspendedPostHogPageView } from "../components";
 
@@ -15,10 +15,7 @@ type AnalyticsProviderProps = {
   };
 };
 
-export function AnalyticsProvider({
-  children,
-  config,
-}: AnalyticsProviderProps) {
+export function PostHogProvider({ children, config }: AnalyticsProviderProps) {
   useEffect(() => {
     posthog.init(config.apiKey || "", {
       api_host: config.host || "",
@@ -32,9 +29,9 @@ export function AnalyticsProvider({
   }
 
   return (
-    <PostHogProvider client={posthog}>
+    <_PostHogProvider client={posthog}>
       <SuspendedPostHogPageView />
       {children}
-    </PostHogProvider>
+    </_PostHogProvider>
   );
 }

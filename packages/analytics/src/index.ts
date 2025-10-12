@@ -1,4 +1,6 @@
-import type { AnalyticsConfig, AnalyticsConfigOptions } from "./types";
+import type { AnalyticsConfig } from "./types";
+
+const __VERCEL__ = !!process.env.VERCEL;
 
 /**
  * Create an analytics configuration object.
@@ -7,16 +9,30 @@ import type { AnalyticsConfig, AnalyticsConfigOptions } from "./types";
  * ```ts
  * import { createAnalyticsConfig } from "@zap/analytics";
  * const config = createAnalyticsConfig({
- *   ENABLE_POSTHOG: true,
- *   ENABLE_VERCEL_ANALYTICS: false,
- *   ENABLE_VERCEL_SPEED_INSIGHTS: true,
+ *   POSTHOG: {
+ *     ENABLED: true,
+ *     API_KEY: "your-posthog-api-key",
+ *     HOST: "https://app.posthog.com",
+ *   }
  * });
  * ```
  */
-export const createAnalyticsConfig = (
-  options: AnalyticsConfigOptions
-): AnalyticsConfig => ({
-  ENABLE_POSTHOG: options.ENABLE_POSTHOG,
-  ENABLE_VERCEL_ANALYTICS: options.ENABLE_VERCEL_ANALYTICS,
-  ENABLE_VERCEL_SPEED_INSIGHTS: options.ENABLE_VERCEL_SPEED_INSIGHTS,
-});
+export function createAnalyticsConfig(
+  options?: Partial<AnalyticsConfig>
+): AnalyticsConfig {
+  return {
+    POSTHOG: {
+      ENABLED: options?.POSTHOG?.ENABLED ?? false,
+      API_KEY: options?.POSTHOG?.API_KEY || "",
+      HOST: options?.POSTHOG?.HOST || "",
+    },
+    VERCEL: {
+      ANALYTICS: {
+        ENABLED: options?.VERCEL?.ANALYTICS?.ENABLED ?? __VERCEL__,
+      },
+      SPEED_INSIGHTS: {
+        ENABLED: options?.VERCEL?.SPEED_INSIGHTS?.ENABLED ?? __VERCEL__,
+      },
+    },
+  };
+}

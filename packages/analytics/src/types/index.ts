@@ -1,7 +1,15 @@
-export type AnalyticsConfig = AnalyticsConfigOptions;
-
-export type AnalyticsConfigOptions = {
-  ENABLE_POSTHOG: boolean;
-  ENABLE_VERCEL_ANALYTICS: boolean;
-  ENABLE_VERCEL_SPEED_INSIGHTS: boolean;
+export type AnalyticsConfig = {
+  POSTHOG: {
+    ENABLED: boolean;
+    API_KEY: string;
+    HOST: string;
+  };
+  VERCEL: {
+    ANALYTICS: {
+      ENABLED: boolean;
+    };
+    SPEED_INSIGHTS: {
+      ENABLED: boolean;
+    };
+  };
 };

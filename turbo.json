@@ -1,7 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
-  "globalDependencies": ["tsconfig.json", ".env*"],
+  "globalDependencies": ["tsconfig.json", ".env*", "package.json"],
   "globalEnv": ["NODE_ENV", "SITE_URL", "NEXT_PUBLIC_SITE_URL"],
   "tasks": {
     "dev": {
@@ -10,7 +10,12 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env*",
+        "!**/*.test.{ts,tsx,js,jsx}",
+        "!**/*.spec.{ts,tsx,js,jsx}"
+      ],
       "outputs": ["dist/**", ".next/**", "build/**", "!.next/cache/**"],
       "env": ["NODE_ENV", "SITE_URL", "NEXT_PUBLIC_SITE_URL", "ANALYZE"]
     },
@@ -18,19 +23,33 @@
       "dependsOn": ["build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "cache": false,
-      "env": ["NODE_ENV", "SITE_URL", "NEXT_PUBLIC_SITE_URL"]
+      "persistent": true
     },
     "test": {
-      "dependsOn": ["^test"],
+      "dependsOn": ["^build"],
+      "inputs": [
+        "src/**",
+        "test/**",
+        "**/*.test.{ts,tsx,js,jsx}",
+        "**/*.spec.{ts,tsx,js,jsx}",
+        "jest.config.*",
+        "vitest.config.*"
+      ],
       "outputs": ["coverage/**"],
-      "cache": false
+      "outputLogs": "new-only"
     },
     "check-types": {
-      "dependsOn": ["^check-types"],
-      "outputs": ["*.tsbuildinfo"]
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", "tsconfig.json"],
+      "outputs": ["*.tsbuildinfo"],
+      "outputLogs": "new-only"
     },
     "typegen": {
+      "cache": false,
       "outputs": [".next/types/**"]
+    },
+    "clean": {
+      "cache": false
     }
   }
 }

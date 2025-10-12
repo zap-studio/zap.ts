@@ -31,6 +31,7 @@
     "./orpc/middlewares/*": "./src/providers/orpc/middlewares/*.ts",
     "./orpc/server": "./src/providers/orpc/server.ts",
     "./providers/*": "./src/providers/*.ts",
+    "./tanstack-query": "./src/tanstack-query/index.ts",
     "./types": "./src/types/index.ts"
   }
 }

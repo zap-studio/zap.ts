@@ -22,3 +22,9 @@ export const UUID_SECTION_LENGTHS = [
   UUID_CLOCK_SEQ_LENGTH,
   UUID_NODE_LENGTH,
 ] as const; // standard 8-4-4-4-12
+
+export const HANDLER_TYPES = {
+  RPC: "rpc-procedures",
+  SERVER_ACTION: "server-action",
+  API_ROUTE: "api-route",
+} as const;

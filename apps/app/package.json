@@ -17,10 +17,12 @@
   "dependencies": {
     "@next/bundle-analyzer": "^15.5.4",
     "@next/mdx": "^15.5.4",
+    "@zap/async-state": "workspace:*",
     "@zap/config": "workspace:*",
     "@zap/fonts": "workspace:*",
     "@zap/next-config": "workspace:*",
     "@zap/pwa": "workspace:*",
+    "@zap/rpc": "workspace:*",
     "@zap/security": "workspace:*",
     "@zap/seo": "workspace:*",
     "@zap/shadcn": "workspace:*",

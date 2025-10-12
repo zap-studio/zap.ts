@@ -9,7 +9,8 @@
   "dependencies": {
     "@zap/config": "workspace:*",
     "@zap/errors": "workspace:*",
-    "web-push": "^3.6.7"
+    "web-push": "^3.6.7",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@types/node": "^24.7.1",
@@ -21,6 +22,7 @@
   },
   "exports": {
     ".": "./src/index.ts",
+    "./stores": "./src/stores/index.ts",
     "./types": "./src/types/index.ts",
     "./utils": "./src/utils/index.ts"
   }

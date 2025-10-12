@@ -1,6 +1,7 @@
 "use client";
 import "client-only";
 
+import { geist } from "@zap/fonts";
 import { _GlobalError } from "@zap/ui/pages/global-error";
 
 type ErrorBoundaryProps = {
@@ -9,5 +10,5 @@ type ErrorBoundaryProps = {
 };
 
 export default function GlobalError({ reset, error }: ErrorBoundaryProps) {
-  return <_GlobalError error={error} reset={reset} />;
+  return <_GlobalError error={error} font={geist} reset={reset} />;
 }

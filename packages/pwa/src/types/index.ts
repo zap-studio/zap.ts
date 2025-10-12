@@ -14,5 +14,5 @@ export type PWAConfig = {
 };
 
 export type PWAConfigOptions = {
-  ZAP_MAIL?: string;
+  VAPID_MAIL?: string;
 };

@@ -22,7 +22,10 @@ export class BaseError extends Error {
   }
 
   toORPCError() {
-    return new ORPCError(this.code, { message: this.message });
+    return new ORPCError(this.code, {
+      message: this.message,
+      cause: this.cause,
+    });
   }
 
   toJSON() {
@@ -76,29 +79,6 @@ export class ConflictError extends BaseError {
   }
 }
 
-export class AuthenticationError extends BaseError {
-  constructor(message = "Authentication Error", cause?: unknown) {
-    super(message, HttpStatus.UNAUTHORIZED, "AUTHENTICATION_ERROR", cause);
-  }
-}
-
-export class MailError extends BaseError {
-  constructor(message = "Mail Error", cause?: unknown) {
-    super(message, HttpStatus.INTERNAL_SERVER_ERROR, "MAIL_ERROR", cause);
-  }
-}
-
-export class PushNotificationError extends BaseError {
-  constructor(message = "Push Notification Error", cause?: unknown) {
-    super(
-      message,
-      HttpStatus.INTERNAL_SERVER_ERROR,
-      "PUSH_NOTIFICATION_ERROR",
-      cause
-    );
-  }
-}
-
 export class BaseApplicationError extends Error {
   code: string;
   constructor(
@@ -114,7 +94,10 @@ export class BaseApplicationError extends Error {
   }
 
   toORPCError() {
-    return new ORPCError(this.code, { message: this.message });
+    return new ORPCError(this.code, {
+      message: this.message,
+      cause: this.cause,
+    });
   }
 
   toJSON() {
@@ -123,6 +106,18 @@ export class BaseApplicationError extends Error {
       message: this.message,
       cause: this.cause,
     };
+  }
+}
+
+export class MailError extends BaseApplicationError {
+  constructor(message = "Mail Error", cause?: unknown) {
+    super(message, "MAIL_ERROR", cause);
+  }
+}
+
+export class PushNotificationError extends BaseApplicationError {
+  constructor(message = "Push Notification Error", cause?: unknown) {
+    super(message, "PUSH_NOTIFICATION_ERROR", cause);
   }
 }
 
@@ -144,16 +139,23 @@ export class FileOperationError extends BaseApplicationError {
   }
 }
 
-export class FetchError extends Error {
+export class BaseFetchError extends Error {
   status: number;
   statusText: string;
   body?: unknown;
+  cause?: unknown;
 
-  constructor(message: string, response: Response, body?: unknown) {
+  constructor(
+    message: string,
+    response: Response,
+    body?: unknown,
+    cause?: unknown
+  ) {
     super(message);
     this.name = "FetchError";
     this.status = response.status;
     this.statusText = response.statusText;
     this.body = body;
+    this.cause = cause;
   }
 }

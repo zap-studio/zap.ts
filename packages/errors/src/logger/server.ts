@@ -1,6 +1,6 @@
 import "server-only";
 
-export function logError(error: unknown) {
+export function logServerError(error: unknown) {
   let message: string;
   if (error instanceof Error) {
     message = `[${error.name}] ${error.message}\n${error.stack}`;

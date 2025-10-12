@@ -15,9 +15,9 @@
     "next-themes": "^0.4.6"
   },
   "peerDependencies": {
-    "next": "^15.5.4",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "next": "^15",
+    "react": "^19",
+    "react-dom": "^19"
   },
   "devDependencies": {
     "@types/node": "^24.7.1",

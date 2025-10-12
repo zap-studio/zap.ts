@@ -14,10 +14,10 @@
     "@types/node": "^24.7.1"
   },
   "peerDependencies": {
-    "@next/bundle-analyzer": "^15.5.4",
-    "@next/mdx": "^15.5.4",
+    "@next/bundle-analyzer": "^15",
+    "@next/mdx": "^15",
     "typescript": "^5",
-    "next": "^15.5.4"
+    "next": "^15"
   },
   "exports": {
     ".": "./src/index.ts",

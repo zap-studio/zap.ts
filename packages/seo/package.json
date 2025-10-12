@@ -14,8 +14,8 @@
   },
   "peerDependencies": {
     "typescript": "^5",
-    "next": "^15.5.4",
-    "next-sitemap": "^4.2.3"
+    "next": "^15",
+    "next-sitemap": "^4"
   },
   "exports": {
     ".": "./src/index.ts",

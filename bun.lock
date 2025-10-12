@@ -128,7 +128,7 @@
         "@types/node": "^24.7.1",
       },
       "peerDependencies": {
-        "next": "^15.5.4",
+        "next": "^15",
         "typescript": "^5",
       },
     },
@@ -143,9 +143,9 @@
         "@types/node": "^24.7.1",
       },
       "peerDependencies": {
-        "@next/bundle-analyzer": "^15.5.4",
-        "@next/mdx": "^15.5.4",
-        "next": "^15.5.4",
+        "@next/bundle-analyzer": "^15",
+        "@next/mdx": "^15",
+        "next": "^15",
         "typescript": "^5",
       },
     },
@@ -166,8 +166,8 @@
         "@types/web-push": "^3.6.4",
       },
       "peerDependencies": {
-        "next": "^15.5.4",
-        "react": "^19.2.0",
+        "next": "^15",
+        "react": "^19",
         "typescript": "^5",
       },
     },
@@ -191,8 +191,8 @@
         "@types/node": "^24.7.1",
       },
       "peerDependencies": {
-        "next": "^15.5.4",
-        "next-sitemap": "^4.2.3",
+        "next": "^15",
+        "next-sitemap": "^4",
         "typescript": "^5",
       },
     },
@@ -230,8 +230,8 @@
         "typescript": "^5.9.2",
       },
       "peerDependencies": {
-        "react": "^19.2.0",
-        "react-dom": "^19.2.0",
+        "react": "^19",
+        "react-dom": "^19",
       },
     },
     "packages/typescript-config": {
@@ -256,9 +256,9 @@
         "typescript": "^5.9.2",
       },
       "peerDependencies": {
-        "next": "^15.5.4",
-        "react": "^19.2.0",
-        "react-dom": "^19.2.0",
+        "next": "^15",
+        "react": "^19",
+        "react-dom": "^19",
       },
     },
   },

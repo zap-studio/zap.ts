@@ -24,7 +24,7 @@
   "exports": {
     "./tanstack-query": "./src/tanstack-query/index.ts",
     "./tanstack-query/hooks": "./src/tanstack-query/hooks/index.ts",
-    "./tanstack-query/providers": "./src/tanstack-query/providers/index.ts",
+    "./tanstack-query/providers": "./src/tanstack-query/providers/index.tsx",
     "./tanstack-query/types": "./src/tanstack-query/types.ts",
     "./tanstack-query/orpc": "./src/tanstack-query/orpc.ts"
   }

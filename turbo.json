@@ -1,6 +1,8 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
+  "globalDependencies": ["tsconfig.json", ".env*"],
+  "globalEnv": ["NODE_ENV", "SITE_URL", "NEXT_PUBLIC_SITE_URL"],
   "tasks": {
     "dev": {
       "persistent": true,
@@ -9,12 +11,14 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["dist/**", ".next/**", "build/**", "!.next/cache/**"]
+      "outputs": ["dist/**", ".next/**", "build/**", "!.next/cache/**"],
+      "env": ["NODE_ENV", "SITE_URL", "NEXT_PUBLIC_SITE_URL", "ANALYZE"]
     },
     "start": {
       "dependsOn": ["build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "cache": false
+      "cache": false,
+      "env": ["NODE_ENV", "SITE_URL", "NEXT_PUBLIC_SITE_URL"]
     },
     "test": {
       "dependsOn": ["^test"],

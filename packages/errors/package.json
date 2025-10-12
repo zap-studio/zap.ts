@@ -16,6 +16,7 @@
   },
   "exports": {
     ".": "./src/index.ts",
+    "./data": "./src/data/index.ts",
     "./types": "./src/types/index.ts",
     "./http": "./src/http.ts",
     "./runtime/edge": "./src/logger/edge.ts",

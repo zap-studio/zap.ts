@@ -1,0 +1,37 @@
+import "server-only";
+import {
+  type AnyRouter,
+  type ClientContext,
+  createRouterClient,
+  type InferRouterInitialContext,
+} from "@orpc/server";
+
+/**
+ * Create an oRPC client instance for server-side usage.
+ *
+ * This client instance can be used in server components or API routes.
+ *
+ * @example
+ * ```ts
+ * import { createOrpcServer } from "@zap/rpc/providers/orpc/server";
+ * import { appRouter } from "@/lib/rpc/index.ts";
+ *
+ * export const orpcServer = createOrpcServer(appRouter, {
+ *   context: {
+ *     // Add global context shared across all requests.
+ *     // For per-request context, use middleware or a function.
+ *   },
+ * })
+ * ```
+ */
+export function createOrpcServer<
+  T extends AnyRouter,
+  TClientContext extends ClientContext,
+>(router: T, options?: { context?: TClientContext }) {
+  return createRouterClient<T, TClientContext>(router, {
+    context: async () =>
+      ({
+        ...options?.context,
+      }) as InferRouterInitialContext<T>,
+  });
+}

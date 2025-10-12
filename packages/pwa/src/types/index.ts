@@ -10,9 +10,5 @@ export type PWAConfig = {
   SHORT_NAME: string;
   START_URL: string;
   THEME_COLOR: string;
-  VAPID_MAIL?: string;
-};
-
-export type PWAConfigOptions = {
-  VAPID_MAIL?: string;
+  VAPID_MAIL: string;
 };

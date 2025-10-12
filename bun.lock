@@ -107,6 +107,7 @@
       "name": "@zap/errors",
       "version": "0.0.0",
       "dependencies": {
+        "@orpc/client": "^1.9.3",
         "@orpc/server": "^1.9.3",
         "client-only": "^0.0.1",
         "server-only": "^0.0.1",

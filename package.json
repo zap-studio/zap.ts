@@ -28,5 +28,8 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@orpc/react-query": "^1.9.3"
+  }
 }

@@ -24,6 +24,7 @@
   },
   "exports": {
     ".": "./src/index.ts",
+    "./providers": "./src/providers/index.tsx",
     "./posthog/client": "./src/posthog/client.ts",
     "./posthog/components": "./src/posthog/components/index.ts",
     "./posthog/providers": "./src/posthog/providers/index.tsx",

@@ -28,6 +28,7 @@
   },
   "exports": {
     "./components/*": "./src/components/ui/*.tsx",
+    "./pages/*": "./src/pages/*.tsx",
     "./providers/*": "./src/providers/*.tsx"
   }
 }

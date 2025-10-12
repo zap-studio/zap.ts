@@ -6,11 +6,13 @@
   "scripts": {
     "check-types": "tsc --noEmit"
   },
+  "dependencies": {
+    "@zap/config": "workspace:*"
+  },
   "devDependencies": {
     "@types/node": "^24.7.1"
   },
   "peerDependencies": {
-    "@zap/config": "workspace:*",
     "typescript": "^5",
     "next": "^15.5.4",
     "next-sitemap": "^4.2.3"

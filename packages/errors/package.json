@@ -16,12 +16,13 @@
   },
   "exports": {
     ".": "./src/index.ts",
-    "./data": "./src/data/index.ts",
-    "./types": "./src/types/index.ts",
-    "./http": "./src/http.ts",
     "./client": "./src/client/index.ts",
+    "./data": "./src/data/index.ts",
     "./edge": "./src/edge/index.ts",
+    "./handlers": "./src/handlers/index.ts",
+    "./http": "./src/http.ts",
     "./server": "./src/server/index.ts",
+    "./types": "./src/types/index.ts",
     "./utils": "./src/utils/index.ts"
   },
   "dependencies": {

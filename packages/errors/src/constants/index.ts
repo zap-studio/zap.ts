@@ -28,3 +28,5 @@ export const HANDLER_TYPES = {
   SERVER_ACTION: "server-action",
   API_ROUTE: "api-route",
 } as const;
+
+export const __DEV__ = process.env.NODE_ENV === "development";

@@ -1,15 +1,13 @@
 import "server-only";
 
-import { HANDLER_TYPES } from "src/constants";
 import type { z } from "zod";
 import { ZodError } from "zod";
 import { BaseError, InternalServerError } from "..";
+import { __DEV__, HANDLER_TYPES } from "../constants";
 import { HttpStatus } from "../http";
 import { logServerError } from "../server";
 import type { ErrorResponse, HandlerOptions, HandlerType } from "../types";
 import { generateUuid } from "../uuid";
-
-const __DEV__ = process.env.NODE_ENV === "development";
 
 export function generateCorrelationId(): string {
   return generateUuid();

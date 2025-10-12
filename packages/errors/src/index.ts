@@ -2,10 +2,31 @@ import { HttpStatus } from "./http";
 import type { HttpStatusCode } from "./types";
 import { toJSONBase, toORPCError } from "./utils";
 
-export class BaseError extends Error {
-  statusCode: HttpStatusCode;
+/** Common base for all errors with consistent serialization and metadata */
+export class CommonErrorBase extends Error {
   code: string;
   cause?: unknown;
+
+  constructor(message: string, code: string, cause?: unknown) {
+    super(message);
+    this.name = new.target.name;
+    this.code = code;
+    this.cause = cause;
+    Error.captureStackTrace?.(this, new.target);
+  }
+
+  toJSON() {
+    return toJSONBase(this);
+  }
+
+  async toORPCError() {
+    return await toORPCError(this.code, this.message, this.cause);
+  }
+}
+
+/** HTTP-specific error base */
+export class BaseError extends CommonErrorBase {
+  statusCode: HttpStatusCode;
 
   constructor(
     message: string,
@@ -13,117 +34,106 @@ export class BaseError extends Error {
     code = "INTERNAL_SERVER_ERROR",
     cause?: unknown
   ) {
-    super(message);
-    this.name = this.constructor.name;
+    super(message, code, cause);
     this.statusCode = statusCode;
-    this.code = code;
-    this.cause = cause;
-    Error.captureStackTrace(this, this.constructor);
   }
 
-  toJSON() {
-    return toJSONBase(this);
-  }
-
-  async toORPCError() {
-    return await toORPCError(this.code, this.message, this.cause);
-  }
-}
-
-export class InternalServerError extends BaseError {
-  constructor(message = "Internal Server Error", cause?: unknown) {
-    super(
-      message,
-      HttpStatus.INTERNAL_SERVER_ERROR,
-      "INTERNAL_SERVER_ERROR",
-      cause
-    );
+  static create(
+    statusCode: HttpStatusCode,
+    code: string,
+    defaultMessage: string
+  ) {
+    return class extends BaseError {
+      constructor(message = defaultMessage, cause?: unknown) {
+        super(message, statusCode, code, cause);
+      }
+    };
   }
 }
 
-export class NotFoundError extends BaseError {
-  constructor(message = "Not Found", cause?: unknown) {
-    super(message, HttpStatus.NOT_FOUND, "NOT_FOUND", cause);
-  }
-}
+/** Define HTTP error subclasses */
+export const InternalServerError = BaseError.create(
+  HttpStatus.INTERNAL_SERVER_ERROR,
+  "INTERNAL_SERVER_ERROR",
+  "Internal Server Error"
+);
 
-export class BadRequestError extends BaseError {
-  constructor(message = "Bad Request", cause?: unknown) {
-    super(message, HttpStatus.BAD_REQUEST, "BAD_REQUEST", cause);
-  }
-}
+export const NotFoundError = BaseError.create(
+  HttpStatus.NOT_FOUND,
+  "NOT_FOUND",
+  "Not Found"
+);
 
-export class UnauthorizedError extends BaseError {
-  constructor(message = "Unauthorized", cause?: unknown) {
-    super(message, HttpStatus.UNAUTHORIZED, "UNAUTHORIZED", cause);
-  }
-}
+export const BadRequestError = BaseError.create(
+  HttpStatus.BAD_REQUEST,
+  "BAD_REQUEST",
+  "Bad Request"
+);
 
-export class ForbiddenError extends BaseError {
-  constructor(message = "Forbidden", cause?: unknown) {
-    super(message, HttpStatus.FORBIDDEN, "FORBIDDEN", cause);
-  }
-}
+export const UnauthorizedError = BaseError.create(
+  HttpStatus.UNAUTHORIZED,
+  "UNAUTHORIZED",
+  "Unauthorized"
+);
 
-export class ConflictError extends BaseError {
-  constructor(message = "Conflict", cause?: unknown) {
-    super(message, HttpStatus.CONFLICT, "CONFLICT", cause);
-  }
-}
+export const ForbiddenError = BaseError.create(
+  HttpStatus.FORBIDDEN,
+  "FORBIDDEN",
+  "Forbidden"
+);
 
-export class BaseApplicationError extends Error {
-  code: string;
+export const ConflictError = BaseError.create(
+  HttpStatus.CONFLICT,
+  "CONFLICT",
+  "Conflict"
+);
+
+/** Application-level error base (non-HTTP) */
+export class BaseApplicationError extends CommonErrorBase {
   constructor(
     message = "An unexpected error occurred",
     code = "APPLICATION_ERROR",
     cause?: unknown
   ) {
-    super(message);
-    this.name = this.constructor.name;
-    this.code = code;
-    this.cause = cause;
-    Error.captureStackTrace(this, this.constructor);
+    super(message, code, cause);
   }
 
-  toJSON() {
-    return toJSONBase(this);
-  }
-
-  async toORPCError() {
-    return await toORPCError(this.code, this.message, this.cause);
+  static create(code: string, defaultMessage: string) {
+    return class extends BaseApplicationError {
+      constructor(message = defaultMessage, cause?: unknown) {
+        super(message, code, cause);
+      }
+    };
   }
 }
 
-export class MailError extends BaseApplicationError {
-  constructor(message = "Mail Error", cause?: unknown) {
-    super(message, "MAIL_ERROR", cause);
-  }
-}
+/** Define application error subclasses */
+export const MailError = BaseApplicationError.create(
+  "MAIL_ERROR",
+  "Mail Error"
+);
 
-export class PushNotificationError extends BaseApplicationError {
-  constructor(message = "Push Notification Error", cause?: unknown) {
-    super(message, "PUSH_NOTIFICATION_ERROR", cause);
-  }
-}
+export const PushNotificationError = BaseApplicationError.create(
+  "PUSH_NOTIFICATION_ERROR",
+  "Push Notification Error"
+);
 
-export class ApplicationError extends BaseApplicationError {
-  constructor(message = "Application Error", cause?: unknown) {
-    super(message, "APPLICATION_ERROR", cause);
-  }
-}
+export const ApplicationError = BaseApplicationError.create(
+  "APPLICATION_ERROR",
+  "Application Error"
+);
 
-export class ClientError extends BaseApplicationError {
-  constructor(message = "Client Error", cause?: unknown) {
-    super(message, "CLIENT_ERROR", cause);
-  }
-}
+export const ClientError = BaseApplicationError.create(
+  "CLIENT_ERROR",
+  "Client Error"
+);
 
-export class FileOperationError extends BaseApplicationError {
-  constructor(message = "File Operation Error", cause?: unknown) {
-    super(message, "FILE_OPERATION_ERROR", cause);
-  }
-}
+export const FileOperationError = BaseApplicationError.create(
+  "FILE_OPERATION_ERROR",
+  "File Operation Error"
+);
 
+/** Fetch error type for network operations */
 export class BaseFetchError extends Error {
   status: number;
   statusText: string;

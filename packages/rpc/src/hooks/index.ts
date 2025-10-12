@@ -82,7 +82,7 @@ export function useZapQuery<
       hasHandledSuccess.current = true;
 
       if (showSuccessToast && options?.successMessage) {
-        handleSuccess(options.successMessage);
+        handleSuccess({ message: options.successMessage, title: "Success" });
       }
 
       options?.onSuccess?.(queryResult.data);
@@ -194,7 +194,7 @@ export function useZapMutation<
       context: MutationFunctionContext
     ) => {
       if (!error && showSuccessToast && options?.successMessage) {
-        handleSuccess(options.successMessage);
+        handleSuccess({ title: options.successMessage });
       }
       options?.onSettled?.(data, error, variables, onMutateResult, context);
     },

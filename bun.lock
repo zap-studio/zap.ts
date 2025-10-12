@@ -94,6 +94,25 @@
         "typescript": "^5",
       },
     },
+    "packages/async-state": {
+      "name": "@zap/async-state",
+      "version": "0.0.0",
+      "dependencies": {
+        "@orpc/client": "^1.9.3",
+        "@tanstack/react-query": "^5.90.2",
+        "@tanstack/react-query-devtools": "^5.90.2",
+        "@zap/errors": "workspace:*",
+        "client-only": "^0.0.1",
+      },
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+        "@types/react": "^19.2.2",
+      },
+      "peerDependencies": {
+        "react": "^19",
+        "typescript": "^5",
+      },
+    },
     "packages/config": {
       "name": "@zap/config",
       "version": "0.0.0",
@@ -193,8 +212,6 @@
         "@orpc/client": "^1.9.3",
         "@orpc/react-query": "^1.9.3",
         "@orpc/server": "^1.9.3",
-        "@tanstack/react-query": "^5.90.2",
-        "@tanstack/react-query-devtools": "^5.90.2",
         "@zap/errors": "workspace:*",
         "client-only": "^0.0.1",
         "server-only": "^0.0.1",
@@ -799,6 +816,8 @@
     "@zap/__to_replace__": ["@zap/__to_replace__@workspace:packages/__example__"],
 
     "@zap/app": ["@zap/app@workspace:apps/app"],
+
+    "@zap/async-state": ["@zap/async-state@workspace:packages/async-state"],
 
     "@zap/config": ["@zap/config@workspace:packages/config"],
 

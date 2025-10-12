@@ -1,5 +1,5 @@
 {
-  "name": "@zap/rpc",
+  "name": "@zap/async-state",
   "version": "0.0.0",
   "type": "module",
   "private": true,
@@ -8,11 +8,10 @@
   },
   "dependencies": {
     "@orpc/client": "^1.9.3",
-    "@orpc/react-query": "^1.9.3",
-    "@orpc/server": "^1.9.3",
+    "@tanstack/react-query": "^5.90.2",
+    "@tanstack/react-query-devtools": "^5.90.2",
     "@zap/errors": "workspace:*",
-    "client-only": "^0.0.1",
-    "server-only": "^0.0.1"
+    "client-only": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "^24.7.1",
@@ -23,8 +22,6 @@
     "typescript": "^5"
   },
   "exports": {
-    "./orpc/client": "./src/orpc/client.ts",
-    "./orpc/middlewares/*": "./src/orpc/middlewares/*.ts",
-    "./orpc/server": "./src/orpc/server.ts"
+    ".": "./src/index.ts"
   }
 }

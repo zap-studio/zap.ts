@@ -145,6 +145,16 @@
         "typescript": "^5",
       },
     },
+    "packages/pwa": {
+      "name": "@zap/pwa",
+      "version": "0.0.0",
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
     "packages/security": {
       "name": "@zap/security",
       "version": "0.0.0",
@@ -723,6 +733,8 @@
     "@zap/marketing": ["@zap/marketing@workspace:apps/marketing"],
 
     "@zap/next-config": ["@zap/next-config@workspace:packages/next-config"],
+
+    "@zap/pwa": ["@zap/pwa@workspace:packages/pwa"],
 
     "@zap/security": ["@zap/security@workspace:packages/security"],
 

@@ -14,10 +14,12 @@
   },
   "devDependencies": {
     "@types/node": "^24.7.1",
+    "@types/react": "^19.2.2",
     "@types/web-push": "^3.6.4"
   },
   "peerDependencies": {
     "next": "^15.5.4",
+    "react": "^19.2.0",
     "typescript": "^5"
   },
   "exports": {

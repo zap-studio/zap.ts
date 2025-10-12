@@ -1,6 +1,6 @@
 import "server-only";
 
-import { MAX_STACK_LINES } from "../data";
+import { MAX_STACK_LINES } from "../constants";
 
 export function logMiddlewareError(error: unknown): void {
   const timestamp = new Date().toISOString();

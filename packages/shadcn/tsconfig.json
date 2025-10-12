@@ -1,8 +1,5 @@
 {
   "extends": "@zap/typescript-config/react-library.json",
-  "compilerOptions": {
-    "baseUrl": "."
-  },
   "include": ["."],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist", ".turbo"]
 }

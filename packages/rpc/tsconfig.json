@@ -1,5 +1,10 @@
 {
-  "extends": "@zap/typescript-config/react-library.json",
-  "include": ["."],
+  "extends": "@zap/typescript-config/base.json",
+  "include": [
+    ".",
+    "../async-state/src/tanstack-query/providers",
+    "../async-state/src/tanstack-query/hooks",
+    "../async-state/src/tanstack-query/types"
+  ],
   "exclude": ["node_modules", "dist", ".turbo"]
 }

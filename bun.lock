@@ -17,7 +17,7 @@
       },
     },
     "apps/app": {
-      "name": "@zap/app",
+      "name": "app",
       "version": "0.1.0",
       "dependencies": {
         "@next/bundle-analyzer": "^15.5.4",
@@ -58,7 +58,7 @@
       },
     },
     "apps/marketing": {
-      "name": "@zap/marketing",
+      "name": "marketing",
       "version": "0.1.0",
       "dependencies": {
         "@next/bundle-analyzer": "^15.5.4",
@@ -105,11 +105,12 @@
       "devDependencies": {
         "@types/node": "^24.7.1",
         "@types/react": "^19.2.2",
+        "@zap/typescript-config": "workspace:*",
+        "typescript": "^5",
       },
       "peerDependencies": {
         "next": "^15",
         "react": "^19",
-        "typescript": "^5",
       },
     },
     "packages/async-state": {
@@ -125,10 +126,11 @@
       "devDependencies": {
         "@types/node": "^24.7.1",
         "@types/react": "^19.2.2",
+        "@zap/typescript-config": "workspace:*",
+        "typescript": "^5",
       },
       "peerDependencies": {
         "react": "^19",
-        "typescript": "^5",
       },
     },
     "packages/config": {
@@ -136,8 +138,7 @@
       "version": "0.0.0",
       "devDependencies": {
         "@types/node": "^24.7.1",
-      },
-      "peerDependencies": {
+        "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
       },
     },
@@ -149,8 +150,7 @@
       },
       "devDependencies": {
         "@types/node": "^24.7.1",
-      },
-      "peerDependencies": {
+        "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
       },
     },
@@ -167,8 +167,7 @@
       },
       "devDependencies": {
         "@types/node": "^24.7.1",
-      },
-      "peerDependencies": {
+        "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
       },
     },
@@ -177,10 +176,11 @@
       "version": "0.0.0",
       "devDependencies": {
         "@types/node": "^24.7.1",
+        "@zap/typescript-config": "workspace:*",
+        "typescript": "^5",
       },
       "peerDependencies": {
         "next": "^15",
-        "typescript": "^5",
       },
     },
     "packages/next-config": {
@@ -192,12 +192,13 @@
       },
       "devDependencies": {
         "@types/node": "^24.7.1",
+        "@zap/typescript-config": "workspace:*",
+        "typescript": "^5",
       },
       "peerDependencies": {
         "@next/bundle-analyzer": "^15",
         "@next/mdx": "^15",
         "next": "^15",
-        "typescript": "^5",
       },
     },
     "packages/orpc": {
@@ -211,8 +212,7 @@
       },
       "devDependencies": {
         "@types/node": "^24.7.1",
-      },
-      "peerDependencies": {
+        "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
       },
     },
@@ -233,11 +233,12 @@
         "@types/node": "^24.7.1",
         "@types/react": "^19.2.2",
         "@types/web-push": "^3.6.4",
+        "@zap/typescript-config": "workspace:*",
+        "typescript": "^5",
       },
       "peerDependencies": {
         "next": "^15",
         "react": "^19",
-        "typescript": "^5",
       },
     },
     "packages/rpc": {
@@ -254,10 +255,11 @@
       "devDependencies": {
         "@types/node": "^24.7.1",
         "@types/react": "^19.2.2",
+        "@zap/typescript-config": "workspace:*",
+        "typescript": "^5",
       },
       "peerDependencies": {
         "react": "^19",
-        "typescript": "^5",
       },
     },
     "packages/security": {
@@ -265,8 +267,7 @@
       "version": "0.0.0",
       "devDependencies": {
         "@types/node": "^24.7.1",
-      },
-      "peerDependencies": {
+        "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
       },
     },
@@ -278,11 +279,12 @@
       },
       "devDependencies": {
         "@types/node": "^24.7.1",
+        "@zap/typescript-config": "workspace:*",
+        "typescript": "^5",
       },
       "peerDependencies": {
         "next": "^15",
         "next-sitemap": "^4",
-        "typescript": "^5",
       },
     },
     "packages/shadcn": {
@@ -344,7 +346,8 @@
         "@types/node": "^24.7.1",
         "@types/react": "^19.1.9",
         "@types/react-dom": "^19.1.7",
-        "typescript": "^5.9.2",
+        "@zap/typescript-config": "workspace:*",
+        "typescript": "^5",
       },
       "peerDependencies": {
         "next": "^15",
@@ -856,8 +859,6 @@
 
     "@zap/analytics": ["@zap/analytics@workspace:packages/analytics"],
 
-    "@zap/app": ["@zap/app@workspace:apps/app"],
-
     "@zap/async-state": ["@zap/async-state@workspace:packages/async-state"],
 
     "@zap/config": ["@zap/config@workspace:packages/config"],
@@ -867,8 +868,6 @@
     "@zap/errors": ["@zap/errors@workspace:packages/errors"],
 
     "@zap/fonts": ["@zap/fonts@workspace:packages/fonts"],
-
-    "@zap/marketing": ["@zap/marketing@workspace:apps/marketing"],
 
     "@zap/next-config": ["@zap/next-config@workspace:packages/next-config"],
 
@@ -899,6 +898,8 @@
     "ansi-regex": ["ansi-regex@5.0.1", "", {}, "sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ=="],
 
     "ansi-styles": ["ansi-styles@6.2.3", "", {}, "sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg=="],
+
+    "app": ["app@workspace:apps/app"],
 
     "argparse": ["argparse@1.0.10", "", { "dependencies": { "sprintf-js": "~1.0.2" } }, "sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg=="],
 
@@ -1060,7 +1061,7 @@
 
     "fs-extra": ["fs-extra@7.0.1", "", { "dependencies": { "graceful-fs": "^4.1.2", "jsonfile": "^4.0.0", "universalify": "^0.1.0" } }, "sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw=="],
 
-    "fsevents": ["fsevents@2.3.2", "", { "os": "darwin" }, "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="],
+    "fsevents": ["fsevents@2.3.3", "", { "os": "darwin" }, "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw=="],
 
     "gensync": ["gensync@1.0.0-beta.2", "", {}, "sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg=="],
 
@@ -1193,6 +1194,8 @@
     "lucide-react": ["lucide-react@0.545.0", "", { "peerDependencies": { "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-7r1/yUuflQDSt4f1bpn5ZAocyIxcTyVyBBChSVtBKn5M+392cPmI5YJMWOJKk/HUWGm5wg83chlAZtCcGbEZtw=="],
 
     "magic-string": ["magic-string@0.30.19", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.5" } }, "sha512-2N21sPY9Ws53PZvsEpVtNuSW+ScYbQdp4b9qUaL+9QkHUrGFKo56Lg9Emg5s9V/qrtNBmiR01sYhUOwu3H+VOw=="],
+
+    "marketing": ["marketing@workspace:apps/marketing"],
 
     "merge2": ["merge2@1.4.1", "", {}, "sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg=="],
 
@@ -1512,6 +1515,8 @@
 
     "next-sitemap/@next/env": ["@next/env@13.5.11", "", {}, "sha512-fbb2C7HChgM7CemdCY+y3N1n8pcTKdqtQLbC7/EQtPdLvlMUT9JX/dBYl8MMZAtYG4uVMyPFHXckb68q/NRwqg=="],
 
+    "playwright/fsevents": ["fsevents@2.3.2", "", { "os": "darwin" }, "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="],
+
     "prop-types/react-is": ["react-is@16.13.1", "", {}, "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="],
 
     "react-scan/@clack/prompts": ["@clack/prompts@0.8.2", "", { "dependencies": { "@clack/core": "0.3.5", "picocolors": "^1.0.0", "sisteransi": "^1.0.5" } }, "sha512-6b9Ab2UiZwJYA9iMyboYyW9yJvAO9V753ZhS+DHKEjZRKAxPPOb7MXXu84lsPFG+vZt6FRFniZ8rXi+zCIw4yQ=="],
@@ -1521,8 +1526,6 @@
     "string-width/strip-ansi": ["strip-ansi@7.1.2", "", { "dependencies": { "ansi-regex": "^6.0.1" } }, "sha512-gmBGslpoQJtgnMAvOVqGZpEz9dyoKTCzy2nfz/n8aIFhN/jCE/rCmcxabB6jOOHV+0WNnylOxaxBQPSvcWklhA=="],
 
     "string-width-cjs/emoji-regex": ["emoji-regex@8.0.0", "", {}, "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A=="],
-
-    "tsx/fsevents": ["fsevents@2.3.3", "", { "os": "darwin" }, "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw=="],
 
     "webpack-bundle-analyzer/commander": ["commander@7.2.0", "", {}, "sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw=="],
 

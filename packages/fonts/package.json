@@ -7,10 +7,11 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/node": "^24.7.1"
+    "@types/node": "^24.7.1",
+    "@zap/typescript-config": "workspace:*",
+    "typescript": "^5"
   },
   "peerDependencies": {
-    "typescript": "^5",
     "next": "^15"
   },
   "exports": {

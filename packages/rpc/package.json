@@ -16,11 +16,12 @@
   },
   "devDependencies": {
     "@types/node": "^24.7.1",
-    "@types/react": "^19.2.2"
+    "@types/react": "^19.2.2",
+    "@zap/typescript-config": "workspace:*",
+    "typescript": "^5"
   },
   "peerDependencies": {
-    "react": "^19",
-    "typescript": "^5"
+    "react": "^19"
   },
   "exports": {
     "./orpc/client": "./src/orpc/client.ts",

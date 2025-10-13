@@ -11,12 +11,13 @@
     "@zap/security": "workspace:*"
   },
   "devDependencies": {
-    "@types/node": "^24.7.1"
+    "@types/node": "^24.7.1",
+    "@zap/typescript-config": "workspace:*",
+    "typescript": "^5"
   },
   "peerDependencies": {
     "@next/bundle-analyzer": "^15",
     "@next/mdx": "^15",
-    "typescript": "^5",
     "next": "^15"
   },
   "exports": {

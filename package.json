@@ -4,7 +4,6 @@
   "devDependencies": {
     "@biomejs/biome": "2.2.5",
     "@changesets/cli": "^2.29.7",
-    "@zap/typescript-config": "workspace:*",
     "lefthook": "^1.13.6",
     "rimraf": "^6.0.1",
     "turbo": "^2.5.8",

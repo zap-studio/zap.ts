@@ -30,6 +30,7 @@
         "@zap/config": "workspace:*",
         "@zap/fonts": "workspace:*",
         "@zap/next-config": "workspace:*",
+        "@zap/orpc": "workspace:*",
         "@zap/pwa": "workspace:*",
         "@zap/rpc": "workspace:*",
         "@zap/security": "workspace:*",
@@ -214,6 +215,12 @@
     "packages/orpc": {
       "name": "@zap/orpc",
       "version": "0.0.0",
+      "dependencies": {
+        "@orpc/client": "^1.9.3",
+        "@orpc/react-query": "^1.9.3",
+        "@orpc/server": "^1.9.3",
+        "@zap/rpc": "workspace:*",
+      },
       "devDependencies": {
         "@types/node": "^24.7.1",
       },

@@ -1,6 +1,6 @@
 import "server-only";
 
+import { router } from "@zap/orpc/router";
 import { createOrpcServer } from "@zap/rpc/orpc/server";
-import { router } from "./router";
 
 export const orpcServer = createOrpcServer(router);

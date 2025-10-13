@@ -11,4 +11,9 @@
  *
  * Keep only what you need to reduce type surface & build time.
  */
-export const router = {};
+export const router = {
+  // Add your package routers here
+  // Example:
+  // auth: authRouter,
+  // pwa: pwaRouter,
+};

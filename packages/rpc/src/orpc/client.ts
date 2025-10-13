@@ -8,6 +8,8 @@ import { RPCLink } from "@orpc/client/fetch";
  * export const orpcClient: RouterClient<typeof router> = createORPCClient(link);
  * export const orpcReactQuery = createORPCReactQueryUtils(orpcClient);
  */
-export const link = new RPCLink({
-  url: `${typeof window !== "undefined" ? window.location.origin : "http://localhost:3000"}/rpc`,
-});
+export function createLink(fallbackUrl = "http://localhost:3000") {
+  return new RPCLink({
+    url: `${typeof window !== "undefined" ? window.location.origin : fallbackUrl}/rpc`,
+  });
+}

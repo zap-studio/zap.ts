@@ -5,7 +5,7 @@ import { QueryClient, type QueryClientConfig } from "@tanstack/react-query";
  *
  * @example
  * ```ts
- * import { createReactQueryClient } from "@zap/rpc/tanstack-query";
+ * import { createReactQueryClient } from "@zap/async-state/tanstack-query";
  *
  * const queryClient = createReactQueryClient({
  *   defaultOptions: {

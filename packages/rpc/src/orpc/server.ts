@@ -14,7 +14,7 @@ import {
  *
  * @example
  * ```ts
- * import { createOrpcServer } from "@zap/rpc/providers/orpc/server";
+ * import { createOrpcServer } from "@zap/rpc/orpc/server";
  * import { appRouter } from "@/lib/rpc/index.ts";
  *
  * export const orpcServer = createOrpcServer(appRouter, {

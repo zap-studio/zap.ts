@@ -25,7 +25,6 @@ export function createBaseConfig(appType: NextAppType = "default"): NextConfig {
       "@zap/next-config",
       "@zap/orpc",
       "@zap/pwa",
-      "@zap/rpc",
       "@zap/security",
       "@zap/seo",
       "@zap/shadcn",

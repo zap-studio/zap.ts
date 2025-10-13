@@ -12,7 +12,7 @@ export const serializer = new StandardRPCJsonSerializer({
  *
  * @example
  * ```ts
- * import { createOrpcReactQueryClient } from "@zap/rpc/tanstack-query";
+ * import { createOrpcReactQueryClient } from "@zap/async-state/tanstack-query/orpc";
  *
  * const queryClient = createOrpcReactQueryClient({
  *   defaultOptions: {

@@ -34,7 +34,7 @@
     "@zap/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "^4.1.11",
     "@turbo/gen": "^2.5.5",
-    "@types/node": "^24.7.1",
+    "@types/node": "^24.7.2",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "tailwindcss": "^4.1.11",

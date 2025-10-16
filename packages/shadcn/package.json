@@ -42,7 +42,7 @@
   "exports": {
     "./postcss.config.ts": "./src/postcss.config.ts",
     "./globals.css": "./src/styles/globals.css",
-    "./components/*": "./src/components/*.tsx",
+    "./ui/*": "./src/ui/*.tsx",
     "./lib/*": "./src/lib/*.ts",
     "./hooks/*": "./src/hooks/*.ts"
   }

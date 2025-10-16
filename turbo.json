@@ -38,8 +38,11 @@
       "outputs": ["coverage/**"],
       "outputLogs": "new-only"
     },
+    "topo": {
+      "dependsOn": ["^topo"]
+    },
     "check-types": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "topo"],
       "inputs": ["$TURBO_DEFAULT$", "tsconfig.json"],
       "outputs": ["*.tsbuildinfo"],
       "outputLogs": "new-only"

@@ -1,15 +1,6 @@
 {
   "name": "@zap/monorepo",
   "version": "0.0.0",
-  "devDependencies": {
-    "@biomejs/biome": "2.2.5",
-    "@changesets/cli": "^2.29.7",
-    "lefthook": "^1.13.6",
-    "rimraf": "^6.0.1",
-    "turbo": "^2.5.8",
-    "typescript": "^5.9.3",
-    "ultracite": "5.6.2"
-  },
   "packageManager": "bun@1.2.23",
   "private": false,
   "scripts": {
@@ -29,7 +20,22 @@
     "packages/*",
     "!packages/__example__"
   ],
-  "dependencies": {
-    "@orpc/react-query": "^1.9.3"
+  "devDependencies": {
+    "@biomejs/biome": "2.2.5",
+    "@changesets/cli": "^2.29.7",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "lefthook": "^1.13.6",
+    "rimraf": "^6.0.1",
+    "turbo": "^2.5.8",
+    "typescript": "^5.9.3",
+    "ultracite": "5.6.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

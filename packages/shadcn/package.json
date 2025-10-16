@@ -44,7 +44,6 @@
     "./globals.css": "./src/styles/globals.css",
     "./components/*": "./src/components/*.tsx",
     "./lib/*": "./src/lib/*.ts",
-    "./ui/*": "./src/components/ui/*.tsx",
     "./hooks/*": "./src/hooks/*.ts"
   }
 }

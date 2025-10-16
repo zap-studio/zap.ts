@@ -48,6 +48,7 @@
         "@types/node": "^24.7.2",
         "@types/react": "^19.2.2",
         "@types/react-dom": "^19.2.1",
+        "@zap/tailwind-config": "workspace:*",
         "@zap/typescript-config": "workspace:*",
         "cross-env": "^10.1.0",
         "react-scan": "^0.4.3",
@@ -83,6 +84,7 @@
         "@types/node": "^24.7.2",
         "@types/react": "^19.2.2",
         "@types/react-dom": "^19.2.1",
+        "@zap/tailwind-config": "workspace:*",
         "@zap/typescript-config": "workspace:*",
         "cross-env": "^10.1.0",
         "react-scan": "^0.4.3",
@@ -309,18 +311,30 @@
         "zod": "^4.1.12",
       },
       "devDependencies": {
-        "@tailwindcss/postcss": "^4.1.11",
+        "@tailwindcss/postcss": "^4.1.14",
         "@types/node": "^24.7.2",
         "@types/react": "^19.1.9",
         "@types/react-dom": "^19.1.7",
+        "@zap/tailwind-config": "workspace:*",
         "@zap/typescript-config": "workspace:*",
-        "postcss-load-config": "^6.0.1",
-        "tailwindcss": "^4.1.11",
+        "tailwindcss": "^4.1.14",
         "typescript": "^5.9.2",
       },
       "peerDependencies": {
         "react": "^19",
         "react-dom": "^19",
+      },
+    },
+    "packages/tailwind-config": {
+      "name": "@zap/tailwind-config",
+      "version": "0.0.0",
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+        "@zap/typescript-config": "workspace:*",
+        "postcss": "^8.5.6",
+        "postcss-load-config": "^6.0.1",
+        "tailwindcss": "^4.1.14",
+        "typescript": "^5",
       },
     },
     "packages/typescript-config": {
@@ -341,10 +355,13 @@
         "radix-ui": "^1.4.3",
       },
       "devDependencies": {
+        "@tailwindcss/postcss": "^4.1.14",
         "@types/node": "^24.7.1",
         "@types/react": "^19.1.9",
         "@types/react-dom": "^19.1.7",
+        "@zap/tailwind-config": "workspace:*",
         "@zap/typescript-config": "workspace:*",
+        "tailwindcss": "^4.1.14",
         "typescript": "^5",
       },
       "peerDependencies": {
@@ -917,6 +934,8 @@
 
     "@zap/shadcn": ["@zap/shadcn@workspace:packages/shadcn"],
 
+    "@zap/tailwind-config": ["@zap/tailwind-config@workspace:packages/tailwind-config"],
+
     "@zap/typescript-config": ["@zap/typescript-config@workspace:packages/typescript-config"],
 
     "@zap/ui": ["@zap/ui@workspace:packages/ui"],
@@ -1399,7 +1418,7 @@
 
     "playwright-core": ["playwright-core@1.56.0", "", { "bin": { "playwright-core": "cli.js" } }, "sha512-1SXl7pMfemAMSDn5rkPeZljxOCYAmQnYLBTExuh6E8USHXGSX3dx6lYZN/xPpTz1vimXmPA9CDnILvmJaB8aSQ=="],
 
-    "postcss": ["postcss@8.4.31", "", { "dependencies": { "nanoid": "^3.3.6", "picocolors": "^1.0.0", "source-map-js": "^1.0.2" } }, "sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ=="],
+    "postcss": ["postcss@8.5.6", "", { "dependencies": { "nanoid": "^3.3.11", "picocolors": "^1.1.1", "source-map-js": "^1.2.1" } }, "sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg=="],
 
     "postcss-load-config": ["postcss-load-config@6.0.1", "", { "dependencies": { "lilconfig": "^3.1.1" }, "peerDependencies": { "jiti": ">=1.21.0", "postcss": ">=8.0.9", "tsx": "^4.8.1", "yaml": "^2.4.2" }, "optionalPeers": ["jiti", "postcss", "tsx", "yaml"] }, "sha512-oPtTM4oerL+UXmx+93ytZVN82RrlY/wPUV8IeDxFrzIjXOLF1pN+EmKPLbubvKHT2HC20xXsCAH2Z+CKV6Oz/g=="],
 
@@ -1651,13 +1670,13 @@
 
     "@tailwindcss/oxide-wasm32-wasi/tslib": ["tslib@2.8.1", "", { "bundled": true }, "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="],
 
-    "@tailwindcss/postcss/postcss": ["postcss@8.5.6", "", { "dependencies": { "nanoid": "^3.3.11", "picocolors": "^1.1.1", "source-map-js": "^1.2.1" } }, "sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg=="],
-
     "cosmiconfig/js-yaml": ["js-yaml@4.1.0", "", { "dependencies": { "argparse": "^2.0.1" }, "bin": { "js-yaml": "bin/js-yaml.js" } }, "sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA=="],
 
     "import-fresh/resolve-from": ["resolve-from@4.0.0", "", {}, "sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g=="],
 
     "micromatch/picomatch": ["picomatch@2.3.1", "", {}, "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA=="],
+
+    "next/postcss": ["postcss@8.4.31", "", { "dependencies": { "nanoid": "^3.3.6", "picocolors": "^1.0.0", "source-map-js": "^1.0.2" } }, "sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ=="],
 
     "next-sitemap/@next/env": ["@next/env@13.5.11", "", {}, "sha512-fbb2C7HChgM7CemdCY+y3N1n8pcTKdqtQLbC7/EQtPdLvlMUT9JX/dBYl8MMZAtYG4uVMyPFHXckb68q/NRwqg=="],
 

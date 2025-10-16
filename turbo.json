@@ -5,7 +5,8 @@
   "globalEnv": ["NODE_ENV", "SITE_URL", "NEXT_PUBLIC_SITE_URL"],
   "tasks": {
     "dev": {
-      "persistent": true
+      "persistent": true,
+      "cache": false
     },
     "build": {
       "dependsOn": ["^build"],
@@ -21,6 +22,7 @@
     "start": {
       "dependsOn": ["build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "cache": false,
       "persistent": true
     },
     "test": {
@@ -36,10 +38,6 @@
       "outputs": ["coverage/**"],
       "outputLogs": "new-only"
     },
-    "//#lint": {},
-    "//#format": {
-      "cache": false
-    },
     "topo": {
       "dependsOn": ["^topo"]
     },
@@ -50,8 +48,11 @@
       "outputLogs": "new-only"
     },
     "typegen": {
+      "cache": false,
       "outputs": [".next/types/**"]
     },
-    "clean": {}
+    "clean": {
+      "cache": false
+    }
   }
 }

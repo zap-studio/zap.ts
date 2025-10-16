@@ -1,3 +1,3 @@
-import { createPostCSSConfig } from "@zap/shadcn/postcss.config";
+import { createPostCSSConfig } from "@zap/tailwind-config/postcss.config";
 
 export default createPostCSSConfig();

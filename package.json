@@ -5,7 +5,6 @@
   "private": false,
   "scripts": {
     "dev": "turbo run dev --parallel",
-    "bootstrap": "bun install",
     "build": "turbo run build",
     "format": "npx ultracite fix",
     "lint": "npx biome check .",

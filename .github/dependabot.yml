@@ -26,6 +26,7 @@ updates:
       - "/packages/security"
       - "/packages/seo"
       - "/packages/shadcn"
+      - "/packages/tailwind-config"
       - "/packages/typescript-config"
       - "/packages/ui"
     schedule:

@@ -38,6 +38,10 @@
       "outputs": ["coverage/**"],
       "outputLogs": "new-only"
     },
+    "//#lint": {},
+    "//#format": {
+      "cache": false
+    },
     "topo": {
       "dependsOn": ["^topo"]
     },

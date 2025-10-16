@@ -110,19 +110,25 @@ updates:
 
 ## Publishing Packages with Changesets
 
-If you plan to publish packages from this monorepo to npm, you should integrate [Changesets](https://github.com/changesets/changesets) with GitHub Actions.
+This project includes a pre-configured [Changesets](https://github.com/changesets/changesets) GitHub Action (`.github/workflows/release.yml`) that automatically creates release pull requests when changes are pushed to the main branch.
 
-### Setup Steps
+### Current Setup
 
-1. **Install Changesets** (if not already installed):
-   ```bash
-   bun add -D @changesets/cli
-   bun changeset init
-   ```
+The release workflow is already configured to:
+- Trigger on pushes to the `main` branch
+- Create release pull requests based on your changesets
+- Track version bumps and changelog updates
 
-2. **Add the Changesets GitHub Action** to automatically create release pull requests and publish packages.
+### Publishing to npm
+
+The current workflow **does not include a publishing step**. If you want to publish packages to npm, you'll need to:
+
+1. Add an npm token to your GitHub repository secrets
+2. Extend the release workflow with a publish step
 
 ### Resources
+
+For more information on configuring Changesets and adding publishing capabilities:
 
 - [Turborepo Publishing Guide](https://turborepo.com/docs/guides/publishing-libraries#publishing)
 - [Changesets Documentation](https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md)

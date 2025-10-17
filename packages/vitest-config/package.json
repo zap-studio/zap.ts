@@ -1,0 +1,17 @@
+{
+  "name": "@zap/vitest-config",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "vitest": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.1",
+    "@zap/typescript-config": "workspace:*",
+    "typescript": "^5"
+  }
+}

@@ -19,10 +19,12 @@
   },
   "workspaces": [
     "apps/*",
+    "configs/*",
+    "!configs/__example__",
     "packages/*",
     "!packages/__example__",
-    "tooling/*",
-    "!tooling/__example__"
+    "e2e/*",
+    "!e2e/__example__"
   ],
   "devDependencies": {
     "@biomejs/biome": "2.2.5",

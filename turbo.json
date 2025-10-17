@@ -26,10 +26,20 @@
       "persistent": true
     },
     "test": {
-      "dependsOn": ["transit"]
+      "dependsOn": ["transit", "@zap/vitest-config#build"],
+      "outputs": ["coverage.json"]
     },
     "transit": {
       "dependsOn": ["^transit"]
+    },
+    "merge-json-reports": {
+      "inputs": ["coverage/raw/**"],
+      "outputs": ["coverage/merged/**"]
+    },
+    "report": {
+      "dependsOn": ["merge-json-reports"],
+      "inputs": ["coverage/merge"],
+      "outputs": ["coverage/report/**"]
     },
     "test:watch": {
       "cache": false,

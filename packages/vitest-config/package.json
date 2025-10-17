@@ -13,5 +13,8 @@
     "@types/node": "^24.7.1",
     "@zap/typescript-config": "workspace:*",
     "typescript": "^5"
+  },
+  "exports": {
+    ".": "./src/index.ts"
   }
 }

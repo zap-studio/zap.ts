@@ -9,8 +9,8 @@
     "format": "npx ultracite fix",
     "lint": "npx biome check .",
     "start": "turbo run start",
-    "test:projects": "vitest run",
-    "test:projects:watch": "vitest --watch",
+    "test": "vitest run",
+    "test:watch": "vitest --watch",
     "check-types": "turbo run check-types",
     "typegen": "turbo run typegen",
     "clean": "turbo run clean && rimraf node_modules"

@@ -26,17 +26,14 @@
       "persistent": true
     },
     "test": {
-      "dependsOn": ["^build"],
-      "inputs": [
-        "src/**",
-        "test/**",
-        "**/*.test.{ts,tsx,js,jsx}",
-        "**/*.spec.{ts,tsx,js,jsx}",
-        "jest.config.*",
-        "vitest.config.*"
-      ],
-      "outputs": ["coverage/**"],
-      "outputLogs": "new-only"
+      "dependsOn": ["transit"]
+    },
+    "transit": {
+      "dependsOn": ["^transit"]
+    },
+    "test:watch": {
+      "cache": false,
+      "persistent": true
     },
     "//#lint": {},
     "//#format": {

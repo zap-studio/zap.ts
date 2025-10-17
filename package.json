@@ -19,7 +19,9 @@
   "workspaces": [
     "apps/*",
     "packages/*",
-    "!packages/__example__"
+    "!packages/__example__",
+    "tooling/*",
+    "!tooling/__example__"
   ],
   "devDependencies": {
     "@biomejs/biome": "2.2.5",

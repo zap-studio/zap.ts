@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.7.1",
-    "@zap/playwright-utilities": "workspace:*",
+    "@zap/playwright-config": "workspace:*",
     "@zap/typescript-config": "workspace:*",
     "playwright": "^1.56.1",
     "typescript": "^5"

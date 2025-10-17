@@ -47,7 +47,7 @@ jobs:
         run: bun x playwright install --with-deps
 
       - name: Run e2e tests
-        run: bun run turbo e2e
+        run: bun run e2e
 
       - name: Upload test results
         if: always()

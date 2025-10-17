@@ -408,17 +408,6 @@
         "typescript": "^5",
       },
     },
-    "tooling/test": {
-      "name": "@zap/test",
-      "version": "0.0.0",
-      "devDependencies": {
-        "@types/node": "^24.7.1",
-        "@zap/playwright-utilities": "workspace:*",
-        "@zap/typescript-config": "workspace:*",
-        "playwright": "^1.56.1",
-        "typescript": "^5",
-      },
-    },
   },
   "packages": {
     "@alloc/quick-lru": ["@alloc/quick-lru@5.2.0", "", {}, "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw=="],
@@ -1052,8 +1041,6 @@
     "@zap/shadcn": ["@zap/shadcn@workspace:packages/shadcn"],
 
     "@zap/tailwind-config": ["@zap/tailwind-config@workspace:packages/tailwind-config"],
-
-    "@zap/test": ["@zap/test@workspace:tooling/test"],
 
     "@zap/typescript-config": ["@zap/typescript-config@workspace:packages/typescript-config"],
 

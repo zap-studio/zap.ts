@@ -11,7 +11,7 @@ This project follows a purpose-driven, layered architecture designed to scale be
 ```
 apps/           # Integration layer - consumers
 configs/        # Shared tooling configuration (Next.js, TypeScript, etc.)
-packages/       # Agnostic, reusable modules (potential npm packages)
+packages/       # Agnostic, reusable modules
 e2e/           # End-to-end tests
 examples/      # Usage examples and reference implementations
 ```
@@ -53,7 +53,7 @@ Lightweight, flexible, and composable configuration packages that provide utilit
 
 #### 3. **packages/** - Agnostic Modules
 
-These are fully reusable, framework-agnostic modules that could potentially be published to npm. Think of them as your internal library ecosystem.
+These are fully reusable. Think of them as your internal library ecosystem.
 
 **Examples:**
 - `packages/analytics` - Analytics integration

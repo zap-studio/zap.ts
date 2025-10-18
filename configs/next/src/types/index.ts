@@ -5,6 +5,13 @@ import type { NextConfig } from "next";
  */
 export type NextAppType = "default" | "pwa";
 
+/**
+ * Options for overriding a base Next.js configuration.
+ */
 export type NextConfigOptions = {
-  transpilePackages?: NextConfig["transpilePackages"];
+  /**
+   * Override or extend any Next.js config properties.
+   * These will be deeply merged with the base configuration.
+   */
+  overrides?: Partial<NextConfig>;
 };

@@ -1,10 +1,3 @@
-import { sharedConfig } from "@zap/vitest-config";
-import { defineConfig } from "vitest/config";
+import { createVitestConfig } from "@zap/vitest-config";
 
-export default defineConfig({
-  ...sharedConfig,
-  test: {
-    ...sharedConfig.test,
-    // Package-specific overrides if needed
-  },
-});
+export default createVitestConfig();

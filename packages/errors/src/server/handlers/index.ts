@@ -1,6 +1,6 @@
 import "server-only";
 
-import { __DEV__ } from "../../constants";
+import { __DEV__ } from "@zap/env";
 import type { HandlerFunction, HandlerOptions, HandlerType } from "../../types";
 import { generateCorrelationId, handleError, logSuccess } from "../utils";
 

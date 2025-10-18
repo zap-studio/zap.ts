@@ -53,3 +53,5 @@ export function createOrpcReactQueryClient({
     defaultOptions: mergedDefaults,
   });
 }
+
+export const orpcQueryClient = createOrpcReactQueryClient();

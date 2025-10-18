@@ -1,16 +1,11 @@
 import { PostHogProvider } from "../posthog/providers";
-import type { AnalyticsConfig } from "../types";
 import { VercelProvider } from "../vercel/providers";
 
 type AnalyticsProviderProps = {
   children: React.ReactNode;
-  config: AnalyticsConfig;
 };
 
-export function AnalyticsProvider({
-  children,
-  config,
-}: AnalyticsProviderProps) {
+export function AnalyticsProvider({ children }: AnalyticsProviderProps) {
   return (
     <PostHogProvider
       config={{

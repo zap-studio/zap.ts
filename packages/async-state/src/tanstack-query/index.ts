@@ -26,3 +26,5 @@ export function createReactQueryClient(config: ReactQueryClientOptions = {}) {
     defaultOptions: mergedDefaults,
   });
 }
+
+export const queryClient = createReactQueryClient();

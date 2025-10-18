@@ -1,4 +1,4 @@
-import { ZAP_SECURITY_CONFIG } from "..";
+import { ZAP_SECURITY_CONFIG } from ".";
 
 export function buildCSPHeader(): string {
   const { CSP } = ZAP_SECURITY_CONFIG;

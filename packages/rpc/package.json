@@ -10,7 +10,6 @@
     "@orpc/client": "^1.9.3",
     "@orpc/react-query": "^1.9.3",
     "@orpc/server": "^1.9.3",
-    "@zap/api": "workspace:*",
     "@zap/db": "workspace:*",
     "@zap/errors": "workspace:*",
     "@zap/schemas": "workspace:*",

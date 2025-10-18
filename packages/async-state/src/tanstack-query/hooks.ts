@@ -16,7 +16,7 @@ import type {
   UseZapOptimisticMutationOptions,
   ZapMutationOptions,
   ZapQueryOptions,
-} from "../types";
+} from "./types";
 
 /**
  * A wrapper around `useQuery` that provides optional success/error handling and toast support.

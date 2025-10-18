@@ -1,12 +1,12 @@
 import "server-only";
 
 import { $betterAuthServer } from "@zap/auth/better-auth/server";
+import { redirectToLogin } from "@zap/auth/utils";
 import { db } from "@zap/db/drizzle";
 import { getUserIdFromMail } from "@zap/db/drizzle/queries/auth";
 import { user } from "@zap/db/drizzle/tables/auth";
 import { NotFoundError, UnauthorizedError } from "@zap/errors";
 import { headers } from "next/headers";
-import { redirectToLogin } from "../utils";
 
 export async function getNumberOfUsersService() {
   const count = await db.$count(user);

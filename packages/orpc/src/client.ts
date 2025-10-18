@@ -9,6 +9,3 @@ import { createLink } from "@zap/rpc/orpc/client";
 export const link = createLink();
 export const orpcClient: RouterClient<typeof router> = createORPCClient(link);
 export const orpcReactQuery = createORPCReactQueryUtils(orpcClient);
-
-export type ORPCClient = typeof orpcClient;
-export type ORPCReactQuery = typeof orpcReactQuery;

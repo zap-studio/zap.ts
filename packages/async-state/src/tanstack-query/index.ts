@@ -1,29 +1,30 @@
 import { QueryClient, type QueryClientConfig } from "@tanstack/react-query";
 
+export interface ReactQueryClientOptions extends QueryClientConfig {}
+
 /**
- * Create a React Query client with default options.
+ * Creates a configured React Query client with merged default options.
  *
  * @example
- * ```ts
- * import { createReactQueryClient } from "@zap/async-state/tanstack-query";
- *
+ * ```typescript
  * const queryClient = createReactQueryClient({
  *   defaultOptions: {
  *     queries: {
- *       staleTime: 1000 * 60, // 1 minute
+ *       staleTime: 5000,
  *     },
  *   },
  * });
  * ```
  */
-export function createReactQueryClient(options?: QueryClientConfig) {
-  const { defaultOptions } = options || {};
+export function createReactQueryClient(config: ReactQueryClientOptions = {}) {
+  const userDefaults = config.defaultOptions ?? {};
+
+  const mergedDefaults: QueryClientConfig["defaultOptions"] = {
+    ...userDefaults,
+  };
 
   return new QueryClient({
-    defaultOptions: {
-      queries: {
-        staleTime: defaultOptions?.queries?.staleTime || 0,
-      },
-    },
+    ...config,
+    defaultOptions: mergedDefaults,
   });
 }

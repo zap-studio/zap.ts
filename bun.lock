@@ -27,8 +27,10 @@
       "dependencies": {
         "@next/bundle-analyzer": "^15.5.4",
         "@next/mdx": "^15.5.4",
+        "@t3-oss/env-nextjs": "^0.13.8",
         "@zap/analytics": "workspace:*",
         "@zap/config": "workspace:*",
+        "@zap/env": "workspace:*",
         "@zap/fonts": "workspace:*",
         "@zap/next-config": "workspace:*",
         "@zap/security": "workspace:*",
@@ -42,6 +44,7 @@
         "react": "^19.2.0",
         "react-dom": "^19.2.0",
         "server-only": "^0.0.1",
+        "zod": "^4.1.12",
       },
       "devDependencies": {
         "@tailwindcss/postcss": "^4.1.14",
@@ -52,6 +55,7 @@
         "@zap/typescript-config": "workspace:*",
         "@zap/vitest-config": "workspace:*",
         "cross-env": "^10.1.0",
+        "jiti": "^2.4.2",
         "jsdom": "^27.0.0",
         "react-scan": "^0.4.3",
         "tailwindcss": "^4.1.14",
@@ -69,7 +73,11 @@
         "@orpc/client": "^1.9.3",
         "@orpc/react-query": "^1.9.4",
         "@orpc/server": "^1.9.3",
+        "@t3-oss/env-nextjs": "^0.13.8",
         "@zap/analytics": "workspace:*",
+        "@zap/crypto": "workspace:*",
+        "@zap/db": "workspace:*",
+        "@zap/env": "workspace:*",
         "@zap/fonts": "workspace:*",
         "@zap/next-config": "workspace:*",
         "@zap/rpc": "workspace:*",
@@ -85,6 +93,7 @@
         "react": "^19.2.0",
         "react-dom": "^19.2.0",
         "server-only": "^0.0.1",
+        "zod": "^4.1.12",
       },
       "devDependencies": {
         "@tailwindcss/postcss": "^4.1.14",
@@ -95,6 +104,7 @@
         "@zap/typescript-config": "workspace:*",
         "@zap/vitest-config": "workspace:*",
         "cross-env": "^10.1.0",
+        "jiti": "^2.4.2",
         "jsdom": "^27.0.0",
         "react-scan": "^0.4.3",
         "tailwindcss": "^4.1.14",
@@ -108,6 +118,8 @@
       "version": "0.0.0",
       "dependencies": {
         "@neondatabase/serverless": "^1.0.2",
+        "@t3-oss/env-core": "^0.13.8",
+        "@zap/env": "workspace:*",
         "drizzle-orm": "^0.44.6",
         "pg": "^8.16.3",
         "zod": "^4.1.12",
@@ -183,11 +195,14 @@
       "name": "@zap/analytics",
       "version": "0.0.0",
       "dependencies": {
+        "@t3-oss/env-core": "^0.13.8",
         "@vercel/analytics": "^1.5.0",
         "@vercel/speed-insights": "^1.2.0",
+        "@zap/env": "workspace:*",
         "client-only": "^0.0.1",
         "posthog-js": "^1.275.1",
         "posthog-node": "^5.9.5",
+        "zod": "^4.1.12",
       },
       "devDependencies": {
         "@types/node": "^24.7.1",
@@ -223,6 +238,9 @@
     "packages/config": {
       "name": "@zap/config",
       "version": "0.0.0",
+      "dependencies": {
+        "@zap/env": "workspace:*",
+      },
       "devDependencies": {
         "@types/node": "^24.7.1",
         "@zap/typescript-config": "workspace:*",
@@ -233,12 +251,27 @@
       "name": "@zap/crypto",
       "version": "0.0.0",
       "dependencies": {
+        "@t3-oss/env-core": "^0.13.8",
+        "@zap/env": "workspace:*",
         "server-only": "^0.0.1",
+        "zod": "^4.1.12",
       },
       "devDependencies": {
         "@types/node": "^24.7.1",
         "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
+      },
+    },
+    "packages/env": {
+      "name": "@zap/env",
+      "version": "0.0.0",
+      "dependencies": {
+        "@t3-oss/env-core": "^0.13.8",
+        "zod": "^3.24.1",
+      },
+      "devDependencies": {
+        "@zap/typescript-config": "workspace:*",
+        "typescript": "^5.8.3",
       },
     },
     "packages/errors": {
@@ -247,6 +280,7 @@
       "dependencies": {
         "@orpc/client": "^1.9.3",
         "@orpc/server": "^1.9.3",
+        "@zap/env": "workspace:*",
         "client-only": "^0.0.1",
         "server-only": "^0.0.1",
         "sonner": "^2.0.7",
@@ -924,6 +958,10 @@
 
     "@swc/helpers": ["@swc/helpers@0.5.15", "", { "dependencies": { "tslib": "^2.8.0" } }, "sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g=="],
 
+    "@t3-oss/env-core": ["@t3-oss/env-core@0.13.8", "", { "peerDependencies": { "arktype": "^2.1.0", "typescript": ">=5.0.0", "valibot": "^1.0.0-beta.7 || ^1.0.0", "zod": "^3.24.0 || ^4.0.0-beta.0" }, "optionalPeers": ["arktype", "typescript", "valibot", "zod"] }, "sha512-L1inmpzLQyYu4+Q1DyrXsGJYCXbtXjC4cICw1uAKv0ppYPQv656lhZPU91Qd1VS6SO/bou1/q5ufVzBGbNsUpw=="],
+
+    "@t3-oss/env-nextjs": ["@t3-oss/env-nextjs@0.13.8", "", { "dependencies": { "@t3-oss/env-core": "0.13.8" }, "peerDependencies": { "arktype": "^2.1.0", "typescript": ">=5.0.0", "valibot": "^1.0.0-beta.7 || ^1.0.0", "zod": "^3.24.0 || ^4.0.0-beta.0" }, "optionalPeers": ["arktype", "typescript", "valibot", "zod"] }, "sha512-QmTLnsdQJ8BiQad2W2nvV6oUpH4oMZMqnFEjhVpzU0h3sI9hn8zb8crjWJ1Amq453mGZs6A4v4ihIeBFDOrLeQ=="],
+
     "@tailwindcss/node": ["@tailwindcss/node@4.1.14", "", { "dependencies": { "@jridgewell/remapping": "^2.3.4", "enhanced-resolve": "^5.18.3", "jiti": "^2.6.0", "lightningcss": "1.30.1", "magic-string": "^0.30.19", "source-map-js": "^1.2.1", "tailwindcss": "4.1.14" } }, "sha512-hpz+8vFk3Ic2xssIA3e01R6jkmsAhvkQdXlEbRTk6S10xDAtiQiM3FyvZVGsucefq764euO/b8WUW9ysLdThHw=="],
 
     "@tailwindcss/oxide": ["@tailwindcss/oxide@4.1.14", "", { "dependencies": { "detect-libc": "^2.0.4", "tar": "^7.5.1" }, "optionalDependencies": { "@tailwindcss/oxide-android-arm64": "4.1.14", "@tailwindcss/oxide-darwin-arm64": "4.1.14", "@tailwindcss/oxide-darwin-x64": "4.1.14", "@tailwindcss/oxide-freebsd-x64": "4.1.14", "@tailwindcss/oxide-linux-arm-gnueabihf": "4.1.14", "@tailwindcss/oxide-linux-arm64-gnu": "4.1.14", "@tailwindcss/oxide-linux-arm64-musl": "4.1.14", "@tailwindcss/oxide-linux-x64-gnu": "4.1.14", "@tailwindcss/oxide-linux-x64-musl": "4.1.14", "@tailwindcss/oxide-wasm32-wasi": "4.1.14", "@tailwindcss/oxide-win32-arm64-msvc": "4.1.14", "@tailwindcss/oxide-win32-x64-msvc": "4.1.14" } }, "sha512-23yx+VUbBwCg2x5XWdB8+1lkPajzLmALEfMb51zZUBYaYVPDQvBSD/WYDqiVyBIo2BZFa3yw1Rpy3G2Jp+K0dw=="],
@@ -1053,6 +1091,8 @@
     "@zap/crypto": ["@zap/crypto@workspace:packages/crypto"],
 
     "@zap/db": ["@zap/db@workspace:configs/db"],
+
+    "@zap/env": ["@zap/env@workspace:packages/env"],
 
     "@zap/errors": ["@zap/errors@workspace:packages/errors"],
 
@@ -2195,6 +2235,8 @@
     "@types/inquirer/rxjs": ["rxjs@6.6.7", "", { "dependencies": { "tslib": "^1.9.0" } }, "sha512-hTdwr+7yYNIT5n4AMYp85KA6yw2Va0FLa3Rguvbpa4W3I5xynaBZo41cM3XM+4Q6fRMj3sBYIR1VAmZMXYJvRQ=="],
 
     "@types/minimatch/minimatch": ["minimatch@10.0.3", "", { "dependencies": { "@isaacs/brace-expansion": "^5.0.0" } }, "sha512-IPZ167aShDZZUMdRk66cyQAW3qr0WzbHkPdMYa8bzZhlHhO3jALbKdxcaak7W9FfT2rZNpQuUu4Od7ILEpXSaw=="],
+
+    "@zap/env/zod": ["zod@3.25.76", "", {}, "sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ=="],
 
     "ansi-escapes/type-fest": ["type-fest@0.21.3", "", {}, "sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w=="],
 

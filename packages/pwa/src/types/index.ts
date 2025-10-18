@@ -14,12 +14,3 @@ export type PWAConfig = {
   VAPID_PUBLIC_KEY: string;
   VAPID_PRIVATE_KEY: string;
 };
-
-export type VapidKeys = {
-  publicKey: string;
-  privateKey: string;
-};
-
-export type VapidConfigs = VapidKeys & {
-  mail: string;
-};

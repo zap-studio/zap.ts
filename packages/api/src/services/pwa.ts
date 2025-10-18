@@ -1,11 +1,11 @@
 import "server-only";
 
-import { db } from "@zap/db/drizzle/index";
+import { db } from "@zap/db/drizzle";
 import { pushNotifications } from "@zap/db/drizzle/tables/pwa";
 import { PushNotificationError } from "@zap/errors";
+import type { VapidConfigs } from "@zap/types/pwa";
 import { eq } from "drizzle-orm";
 import type webpush from "web-push";
-import type { VapidConfigs } from "../types";
 import { getUserIdService } from "./auth";
 
 let webpushInstance: typeof import("web-push") | null = null;

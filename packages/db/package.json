@@ -21,6 +21,7 @@
   },
   "exports": {
     "./constants": "./src/constants/index.ts",
+    "./drizzle": "./src/drizzle/index.ts",
     "./drizzle/*": "./src/drizzle/*.ts",
     "./drizzle/queries/*": "./src/drizzle/queries/*.ts",
     "./drizzle/tables/*": "./src/drizzle/tables/*.ts",

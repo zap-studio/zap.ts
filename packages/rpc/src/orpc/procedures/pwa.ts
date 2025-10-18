@@ -2,12 +2,12 @@ import "server-only";
 
 import { withRpcHandler } from "@zap/errors/server/handlers/orpc";
 import { base } from "@zap/rpc/orpc/middlewares/base";
-import { $authMiddleware } from "../middlewares/auth";
-import { SubscriptionSchema } from "../schemas";
 import {
   subscribeUserToPushNotificationsService,
   unsubscribeUserFromPushNotificationsService,
-} from "../services/pwa";
+} from "../../../../api/src/services/pwa";
+import { $authMiddleware } from "../middlewares/auth";
+import { SubscriptionSchema } from "../schemas";
 import type { VapidConfigs } from "../types";
 
 type SubscribeUserParams = {

@@ -158,6 +158,21 @@
         "typescript": "^5",
       },
     },
+    "features/orpc": {
+      "name": "@zap/orpc",
+      "version": "0.0.0",
+      "dependencies": {
+        "@orpc/client": "^1.9.3",
+        "@orpc/react-query": "^1.9.3",
+        "@orpc/server": "^1.9.3",
+        "@zap/rpc": "workspace:*",
+      },
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+        "@zap/typescript-config": "workspace:*",
+        "typescript": "^5",
+      },
+    },
     "packages/analytics": {
       "name": "@zap/analytics",
       "version": "0.0.0",
@@ -247,21 +262,6 @@
       },
       "peerDependencies": {
         "next": "^15",
-      },
-    },
-    "packages/orpc": {
-      "name": "@zap/orpc",
-      "version": "0.0.0",
-      "dependencies": {
-        "@orpc/client": "^1.9.3",
-        "@orpc/react-query": "^1.9.3",
-        "@orpc/server": "^1.9.3",
-        "@zap/rpc": "workspace:*",
-      },
-      "devDependencies": {
-        "@types/node": "^24.7.1",
-        "@zap/typescript-config": "workspace:*",
-        "typescript": "^5",
       },
     },
     "packages/pwa": {
@@ -1035,7 +1035,7 @@
 
     "@zap/next-config": ["@zap/next-config@workspace:configs/next"],
 
-    "@zap/orpc": ["@zap/orpc@workspace:packages/orpc"],
+    "@zap/orpc": ["@zap/orpc@workspace:features/orpc"],
 
     "@zap/playwright-config": ["@zap/playwright-config@workspace:configs/playwright"],
 

@@ -12,7 +12,6 @@ This project follows a purpose-driven, layered architecture designed to scale be
 apps/           # Integration layer - consumers
 configs/        # Shared tooling configuration (Next.js, TypeScript, etc.)
 packages/       # Agnostic, reusable modules (potential npm packages)
-features/       # App-bound, composable logic (semi-agnostic)
 e2e/           # End-to-end tests
 examples/      # Usage examples and reference implementations
 ```
@@ -26,7 +25,6 @@ Apps are *consumers* that configure and stitch together functionality.
 **Responsibilities:**
 - Import shared configs from `configs/`
 - Import reusable modules from `packages/`
-- Import app-bound logic from `features/`
 - Compose and configure the final application
 
 **Current apps:**
@@ -50,7 +48,7 @@ Lightweight, flexible, and composable configuration packages that provide utilit
 
 **Characteristics:**
 - Universal and stateless
-- Don't depend on `packages/` or `features/`
+- Don't depend on `packages/`
 - Export composable helper functions (e.g., `withBundleAnalyzer`, `withMDX`)
 
 #### 3. **packages/** - Agnostic Modules
@@ -73,7 +71,7 @@ These are fully reusable, framework-agnostic modules that could potentially be p
 
 **Dependency rules:**
 - Can import from `configs/`
-- Never import from `apps/` or `features/`
+- Never import from `apps/`
 - These packages are the foundation — they don't know about your apps
 
 ## Switching Package Managers

@@ -12,7 +12,6 @@
     "@orpc/server": "^1.9.3",
     "@zap/db": "workspace:*",
     "@zap/errors": "workspace:*",
-    "@zap/schemas": "workspace:*",
     "client-only": "^0.0.1",
     "drizzle-orm": "^0.44.6",
     "server-only": "^0.0.1"

@@ -96,6 +96,23 @@
         "vitest": "^3.2.4",
       },
     },
+    "configs/db": {
+      "name": "@zap/db",
+      "version": "0.0.0",
+      "dependencies": {
+        "@neondatabase/serverless": "^1.0.2",
+        "drizzle-orm": "^0.44.6",
+        "pg": "^8.16.3",
+        "zod": "^4.1.12",
+      },
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+        "@types/pg": "^8.15.5",
+        "@types/web-push": "^3.6.4",
+        "@zap/typescript-config": "workspace:*",
+        "typescript": "^5",
+      },
+    },
     "configs/next": {
       "name": "@zap/next-config",
       "version": "0.0.0",
@@ -217,23 +234,6 @@
         "typescript": "^5",
       },
     },
-    "packages/db": {
-      "name": "@zap/db",
-      "version": "0.0.0",
-      "dependencies": {
-        "@neondatabase/serverless": "^1.0.2",
-        "drizzle-orm": "^0.44.6",
-        "pg": "^8.16.3",
-        "zod": "^4.1.12",
-      },
-      "devDependencies": {
-        "@types/node": "^24.7.1",
-        "@types/pg": "^8.15.5",
-        "@types/web-push": "^3.6.4",
-        "@zap/typescript-config": "workspace:*",
-        "typescript": "^5",
-      },
-    },
     "packages/errors": {
       "name": "@zap/errors",
       "version": "0.0.0",
@@ -272,7 +272,6 @@
         "@orpc/server": "^1.9.3",
         "@zap/db": "workspace:*",
         "@zap/errors": "workspace:*",
-        "@zap/schemas": "workspace:*",
         "client-only": "^0.0.1",
         "drizzle-orm": "^0.44.6",
         "server-only": "^0.0.1",
@@ -287,18 +286,6 @@
       "peerDependencies": {
         "next": "^15",
         "react": "^19",
-      },
-    },
-    "packages/schemas": {
-      "name": "@zap/schemas",
-      "version": "0.0.0",
-      "dependencies": {
-        "zod": "^4.1.12",
-      },
-      "devDependencies": {
-        "@types/node": "^24.7.1",
-        "@zap/typescript-config": "workspace:*",
-        "typescript": "^5",
       },
     },
     "packages/security": {
@@ -1024,7 +1011,7 @@
 
     "@zap/crypto": ["@zap/crypto@workspace:packages/crypto"],
 
-    "@zap/db": ["@zap/db@workspace:packages/db"],
+    "@zap/db": ["@zap/db@workspace:configs/db"],
 
     "@zap/errors": ["@zap/errors@workspace:packages/errors"],
 
@@ -1035,8 +1022,6 @@
     "@zap/playwright-config": ["@zap/playwright-config@workspace:configs/playwright"],
 
     "@zap/rpc": ["@zap/rpc@workspace:packages/rpc"],
-
-    "@zap/schemas": ["@zap/schemas@workspace:packages/schemas"],
 
     "@zap/security": ["@zap/security@workspace:packages/security"],
 

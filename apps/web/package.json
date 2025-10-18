@@ -22,7 +22,11 @@
     "@orpc/client": "^1.9.3",
     "@orpc/react-query": "^1.9.4",
     "@orpc/server": "^1.9.3",
+    "@t3-oss/env-nextjs": "^0.13.8",
     "@zap/analytics": "workspace:*",
+    "@zap/crypto": "workspace:*",
+    "@zap/db": "workspace:*",
+    "@zap/env": "workspace:*",
     "@zap/fonts": "workspace:*",
     "@zap/next-config": "workspace:*",
     "@zap/rpc": "workspace:*",
@@ -37,7 +41,8 @@
     "nuqs": "^2.7.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "server-only": "^0.0.1"
+    "server-only": "^0.0.1",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.14",
@@ -48,6 +53,7 @@
     "@zap/typescript-config": "workspace:*",
     "@zap/vitest-config": "workspace:*",
     "cross-env": "^10.1.0",
+    "jiti": "^2.4.2",
     "jsdom": "^27.0.0",
     "react-scan": "^0.4.3",
     "tailwindcss": "^4.1.14",

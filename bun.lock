@@ -195,6 +195,9 @@
         "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
       },
+      "peerDependencies": {
+        "next": "^15",
+      },
     },
     "packages/async-state": {
       "name": "@zap/async-state",

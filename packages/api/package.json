@@ -21,6 +21,9 @@
     "@zap/typescript-config": "workspace:*",
     "typescript": "^5"
   },
+  "peerDependencies": {
+    "next": "^15"
+  },
   "exports": {
     "./services/*": "./src/services/*.ts"
   }

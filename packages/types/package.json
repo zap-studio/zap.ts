@@ -12,6 +12,6 @@
     "typescript": "^5"
   },
   "exports": {
-    "./*": "./src/*.ts"
+    "./features/*": "./src/features/*.ts"
   }
 }

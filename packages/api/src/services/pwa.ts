@@ -4,7 +4,7 @@ import { PWA_CONFIG } from "@zap/config/features";
 import { db } from "@zap/db/drizzle";
 import { pushNotifications } from "@zap/db/drizzle/tables/pwa";
 import { PushNotificationError } from "@zap/errors";
-import type { VapidConfigs } from "@zap/types/pwa";
+import type { VapidConfigs } from "@zap/types/features/pwa";
 import { eq } from "drizzle-orm";
 import type webpush from "web-push";
 import { getUserIdService } from "./auth";

@@ -1,5 +1,5 @@
 import { createEnv } from "@t3-oss/env-nextjs";
-import { analyticsEnv } from "@zap/analytics/env";
+import { ANALYTICS_ENV } from "@zap/analytics/env";
 import { BASE_ENV } from "@zap/env";
 import { z } from "zod";
 
@@ -41,7 +41,7 @@ export const env = createEnv({
    * Extend environment variables from shared packages.
    * Order matters: later extends override earlier ones.
    */
-  extends: [BASE_ENV, analyticsEnv],
+  extends: [BASE_ENV, ANALYTICS_ENV],
 
   /**
    * Runtime environment mapping.

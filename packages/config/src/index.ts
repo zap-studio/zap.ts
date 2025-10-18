@@ -8,16 +8,16 @@
  * - Check `public/sw.js` file and change the URL in the `clients.openWindow` function
  */
 
+import { __DEV__ } from "@zap/env";
 import type { ZapCoreSettings } from "./types";
 
 export const NAME = "Zap.ts";
 export const APP_NAME = `${NAME} | Build applications as fast as a zap`;
 export const APP_DESCRIPTION =
   "Zap.ts is a monorepo designed to help you build applications faster using a modern set of tools.";
-export const BASE_URL =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:3000"
-    : "https://demo.zap-ts.zapstudio.dev";
+export const BASE_URL = __DEV__
+  ? "http://localhost:3000"
+  : "https://demo.zap-ts.zapstudio.dev";
 export const SALES_EMAIL = "sales@example.com";
 export const SUPPORT_EMAIL = "support@example.com";
 

@@ -1,6 +1,8 @@
 import "server-only";
 
-export const encryptionKeyHex = process.env.AES_ENCRYPTION_KEY_HEX as string; // TODO: use t3-env
+import { CRYPTO_ENV } from "./env";
+
+export const encryptionKeyHex = CRYPTO_ENV.AES_ENCRYPTION_KEY_HEX;
 export const algorithm = "AES-CBC";
 export const ivLength = 16; // bytes
 

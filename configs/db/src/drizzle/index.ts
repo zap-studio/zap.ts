@@ -1,7 +1,7 @@
 import "server-only";
 
+import { __PROD__ } from "@zap/env";
 import type { NeonHttpDatabase } from "drizzle-orm/neon-http";
-import { __PROD__ } from "../constants";
 import { db as dbDev } from "./db.dev";
 import { db as dbProd } from "./db.prod";
 import type { DatabaseSchema } from "./schema";

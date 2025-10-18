@@ -1,9 +1,10 @@
 import "server-only";
 
+import { __DEV__ } from "@zap/env";
 import type { z } from "zod";
 import { ZodError } from "zod";
 import { BaseError, InternalServerError } from "../..";
-import { __DEV__, HANDLER_TYPES } from "../../constants";
+import { HANDLER_TYPES } from "../../constants";
 import { HttpStatus } from "../../http";
 import type { ErrorResponse, HandlerOptions, HandlerType } from "../../types";
 import { generateUuid } from "../../uuid";

@@ -201,7 +201,6 @@
       "version": "0.0.0",
       "devDependencies": {
         "@types/node": "^24.7.1",
-        "@zap/types": "workspace:*",
         "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
       },
@@ -282,7 +281,6 @@
         "@types/node": "^24.7.1",
         "@types/react": "^19.2.2",
         "@types/web-push": "^3.6.4",
-        "@zap/types": "workspace:*",
         "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
       },
@@ -363,15 +361,6 @@
       "peerDependencies": {
         "react": "^19",
         "react-dom": "^19",
-      },
-    },
-    "packages/types": {
-      "name": "@zap/types",
-      "version": "0.0.0",
-      "devDependencies": {
-        "@types/node": "^24.7.1",
-        "@zap/typescript-config": "workspace:*",
-        "typescript": "^5",
       },
     },
     "packages/ui": {
@@ -1056,8 +1045,6 @@
     "@zap/shadcn": ["@zap/shadcn@workspace:packages/shadcn"],
 
     "@zap/tailwind-config": ["@zap/tailwind-config@workspace:configs/tailwind"],
-
-    "@zap/types": ["@zap/types@workspace:packages/types"],
 
     "@zap/typescript-config": ["@zap/typescript-config@workspace:configs/typescript"],
 

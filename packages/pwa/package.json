@@ -10,7 +10,6 @@
     "@zap/async-state": "workspace:*",
     "@zap/config": "workspace:*",
     "@zap/errors": "workspace:*",
-    "@zap/rpc": "workspace:*",
     "client-only": "^0.0.1",
     "drizzle-orm": "^0.44.6",
     "server-only": "^0.0.1",
@@ -31,11 +30,8 @@
   },
   "exports": {
     ".": "./src/index.ts",
-    "./db/drizzle/*": "./src/db/drizzle/*.ts",
     "./hooks": "./src/hooks/index.ts",
-    "./rpc/procedures": "./src/rpc/procedures.ts",
     "./schemas": "./src/schemas/index.ts",
-    "./services": "./src/services/index.ts",
     "./stores": "./src/stores/index.ts",
     "./types/*": "./src/types/*.ts",
     "./utils": "./src/utils/index.ts"

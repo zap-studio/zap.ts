@@ -13,7 +13,6 @@ import {
  * This client instance can be used in server components or API routes.
  *
  * @example
- * ```ts
  * import { createOrpcServer } from "@zap/rpc/orpc/server";
  * import { appRouter } from "@/lib/rpc/index.ts";
  *
@@ -23,7 +22,6 @@ import {
  *     // For per-request context, use middleware or a function.
  *   },
  * })
- * ```
  */
 export function createOrpcServer<
   T extends AnyRouter,

@@ -6,7 +6,6 @@ const __VERCEL__ = !!process.env.VERCEL;
  * Create an analytics configuration object.
  *
  * @example
- * ```ts
  * import { createAnalyticsConfig } from "@zap/analytics";
  * const config = createAnalyticsConfig({
  *   POSTHOG: {
@@ -15,7 +14,6 @@ const __VERCEL__ = !!process.env.VERCEL;
  *     HOST: "https://app.posthog.com", // recommended to be set via environment variable
  *   }
  * });
- * ```
  */
 export function createAnalyticsConfig(
   options?: Partial<AnalyticsConfig>

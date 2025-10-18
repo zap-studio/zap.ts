@@ -6,7 +6,6 @@ export interface ReactQueryClientOptions extends QueryClientConfig {}
  * Creates a configured React Query client with merged default options.
  *
  * @example
- * ```typescript
  * const queryClient = createReactQueryClient({
  *   defaultOptions: {
  *     queries: {
@@ -14,7 +13,6 @@ export interface ReactQueryClientOptions extends QueryClientConfig {}
  *     },
  *   },
  * });
- * ```
  */
 export function createReactQueryClient(config: ReactQueryClientOptions = {}) {
   const userDefaults = config.defaultOptions ?? {};

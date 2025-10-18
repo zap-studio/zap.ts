@@ -56,7 +56,6 @@ export function createHandler<T extends unknown[], R>(
  * designed for API routes. It applies the provided options along with a preset handler type.
  *
  * @example
- * ```typescript
  * const myApiHandler = withApiHandler(
  *   async (req, res) => {
  *     // Your API logic here
@@ -64,7 +63,6 @@ export function createHandler<T extends unknown[], R>(
  *   },
  *   { correlationId: 'optional-correlation-id' }
  * );
- * ```
  */
 export function withApiHandler<T extends unknown[], R>(
   handler: HandlerFunction<T, R>,
@@ -83,7 +81,6 @@ export function withApiHandler<T extends unknown[], R>(
  * logging, and other common middleware functionality for Next.js server actions.
  *
  * @example
- * ```typescript
  * const myServerAction = withServerActionHandler(
  *   async (userId: string) => {
  *     // server action logic
@@ -91,7 +88,6 @@ export function withApiHandler<T extends unknown[], R>(
  *   },
  *   { correlationId: 'optional-correlation-id' }
  * );
- * ```
  */
 export function withServerActionHandler<T extends unknown[], R>(
   handler: HandlerFunction<T, R>,

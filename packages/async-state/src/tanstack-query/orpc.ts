@@ -17,7 +17,6 @@ export interface OrpcReactQueryClientOptions extends QueryClientConfig {
  * server-side rendering (SSR) and data persistence scenarios.
  *
  * @example
- * ```typescript
  * const queryClient = createOrpcReactQueryClient({
  *   defaultOptions: {
  *     queries: {
@@ -25,7 +24,6 @@ export interface OrpcReactQueryClientOptions extends QueryClientConfig {
  *     },
  *   },
  * });
- * ```
  */
 export function createOrpcReactQueryClient({
   serializer = defaultSerializer,

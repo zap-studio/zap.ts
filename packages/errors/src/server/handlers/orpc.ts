@@ -9,13 +9,11 @@ import { createHandler } from ".";
  * sets the `handlerType` to "rpc-procedures" for RPC-specific error handling.
  *
  * @example
- * ```typescript
  * import { myAsyncRpcProcedure } from "./myRpcProcedures";
  * const myRpcHandler = withRpcHandler(
  *   myAsyncRpcProcedure,
  *   { correlationId: 'optional-correlation-id' }
  * );
- * ```
  */
 export function withRpcHandler<T extends unknown[], R>(
   handler: HandlerFunction<T, R>,

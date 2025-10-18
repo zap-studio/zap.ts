@@ -13,7 +13,6 @@ type TanStackQueryProviderProps = {
  * Provider component for TanStack Query.
  *
  * @example
- * ```tsx
  * import { TanStackQueryProvider } from "@zap/rpc/providers/tanstack-query";
  * import { createReactQueryClient } from "@zap/rpc/tanstack-query";
  *
@@ -32,7 +31,6 @@ type TanStackQueryProviderProps = {
  *     </TanStackQueryProvider>
  *   );
  * }
- * ```
  */
 export function TanStackQueryProvider({
   children,

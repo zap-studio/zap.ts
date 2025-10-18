@@ -6,13 +6,11 @@ import type { PWAConfig } from "./types";
  * Creates a Progressive Web App (PWA) configuration object with default settings and custom options.
  *
  * @example
- * ```typescript
  * const config = createPWAConfig("admin@example.com", {
  *   NAME: "My PWA",
  *   SHORT_NAME: "PWA",
  *   DESCRIPTION: "This is my PWA",
  * });
- * ```
  */
 export const createPWAConfig = (
   vapidMail: string,
@@ -39,13 +37,11 @@ export const createPWAConfig = (
  * The manifest includes essential PWA properties like name, icons, theme colors, and display mode.
  *
  * @example
- * ```typescript
  * const manifest = createManifest("admin@example.com", {
  *   NAME: "My PWA",
  *   SHORT_NAME: "PWA",
  *   DESCRIPTION: "This is my PWA",
  * });
- * ```
  */
 export const createManifest = (
   vapidMail: string,

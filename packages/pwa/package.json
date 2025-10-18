@@ -10,7 +10,7 @@
     "@zap/async-state": "workspace:*",
     "@zap/config": "workspace:*",
     "@zap/errors": "workspace:*",
-    "@zap/shared-rpc": "workspace:*",
+    "@zap/rpc": "workspace:*",
     "client-only": "^0.0.1",
     "server-only": "^0.0.1",
     "web-push": "^3.6.7",

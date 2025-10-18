@@ -4,7 +4,6 @@ import "client-only";
 import { useZapMutation } from "@zap/async-state/tanstack-query/hooks";
 import { PushNotificationError } from "@zap/errors";
 import { handleClientError } from "@zap/errors/client";
-import type { ORPCReactQuery } from "@zap/shared-rpc/types/client";
 
 import { usePushNotificationsStore } from "../stores";
 import { arrayBufferToBase64, urlBase64ToUint8Array } from "../utils";

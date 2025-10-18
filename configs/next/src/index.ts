@@ -23,7 +23,7 @@ export function createBaseConfig(appType: NextAppType = "default"): NextConfig {
       "@zap/config",
       "@zap/fonts",
       "@zap/next-config",
-      "@zap/orpc",
+      "@zap/shared-rpc",
       "@zap/pwa",
       "@zap/security",
       "@zap/seo",

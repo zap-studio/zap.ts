@@ -67,11 +67,11 @@
         "@zap/config": "workspace:*",
         "@zap/fonts": "workspace:*",
         "@zap/next-config": "workspace:*",
-        "@zap/orpc": "workspace:*",
         "@zap/pwa": "workspace:*",
         "@zap/security": "workspace:*",
         "@zap/seo": "workspace:*",
         "@zap/shadcn": "workspace:*",
+        "@zap/shared-rpc": "workspace:*",
         "@zap/ui": "workspace:*",
         "client-only": "^0.0.1",
         "lucide-react": "^0.545.0",
@@ -158,8 +158,8 @@
         "typescript": "^5",
       },
     },
-    "features/orpc": {
-      "name": "@zap/orpc",
+    "features/shared-rpc": {
+      "name": "@zap/shared-rpc",
       "version": "0.0.0",
       "dependencies": {
         "@orpc/client": "^1.9.3",
@@ -271,7 +271,7 @@
         "@zap/async-state": "workspace:*",
         "@zap/config": "workspace:*",
         "@zap/errors": "workspace:*",
-        "@zap/orpc": "workspace:*",
+        "@zap/shared-rpc": "workspace:*",
         "client-only": "^0.0.1",
         "server-only": "^0.0.1",
         "web-push": "^3.6.7",
@@ -1035,8 +1035,6 @@
 
     "@zap/next-config": ["@zap/next-config@workspace:configs/next"],
 
-    "@zap/orpc": ["@zap/orpc@workspace:features/orpc"],
-
     "@zap/playwright-config": ["@zap/playwright-config@workspace:configs/playwright"],
 
     "@zap/pwa": ["@zap/pwa@workspace:packages/pwa"],
@@ -1048,6 +1046,8 @@
     "@zap/seo": ["@zap/seo@workspace:packages/seo"],
 
     "@zap/shadcn": ["@zap/shadcn@workspace:packages/shadcn"],
+
+    "@zap/shared-rpc": ["@zap/shared-rpc@workspace:features/shared-rpc"],
 
     "@zap/tailwind-config": ["@zap/tailwind-config@workspace:configs/tailwind"],
 

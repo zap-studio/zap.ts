@@ -1,12 +1,12 @@
+import { __VERCEL__ } from "@zap/env";
+import { ANALYTICS_ENV } from "./env";
 import type { AnalyticsConfig } from "./types";
-
-const __VERCEL__ = !!process.env.VERCEL; // FIXME: move to @zap/env
 
 export const ANALYTYCS_CONFIG: AnalyticsConfig = {
   POSTHOG: {
     ENABLED: false,
-    API_KEY: "", // TODO: Add your PostHog API key here (using @zap/env)
-    HOST: "", // TODO: Add your PostHog host here (using @zap/env)
+    API_KEY: ANALYTICS_ENV.NEXT_PUBLIC_POSTHOG_API_KEY || "",
+    HOST: ANALYTICS_ENV.NEXT_PUBLIC_POSTHOG_HOST,
   },
   VERCEL: {
     ANALYTICS: {

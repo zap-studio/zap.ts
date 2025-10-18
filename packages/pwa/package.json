@@ -31,6 +31,9 @@
   },
   "exports": {
     ".": "./src/index.ts",
+    "./db/drizzle/*": "./src/db/drizzle/*.ts",
+    "./hooks": "./src/hooks/index.ts",
+    "./rpc/procedures": "./src/rpc/procedures/index.ts",
     "./schemas": "./src/schemas/index.ts",
     "./services": "./src/services/index.ts",
     "./stores": "./src/stores/index.ts",

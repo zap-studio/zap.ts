@@ -1,12 +1,15 @@
 import { APP_DESCRIPTION, NAME } from "@zap/config";
 import type { MetadataRoute } from "next";
-import type { PWAConfig } from "./types";
+import type { PWAConfig, VapidKeys } from "./types";
 
 /**
  * Creates a Progressive Web App (PWA) configuration object with default settings and custom options.
  *
  * @example
  * const config = createPWAConfig("admin@example.com", {
+ *   publicKey: process.env.VAPID_PUBLIC_KEY,
+ *   privateKey: process.env.VAPID_PRIVATE_KEY,
+ * }, {
  *   NAME: "My PWA",
  *   SHORT_NAME: "PWA",
  *   DESCRIPTION: "This is my PWA",
@@ -14,6 +17,7 @@ import type { PWAConfig } from "./types";
  */
 export const createPWAConfig = (
   vapidMail: string,
+  vapidKeys?: VapidKeys,
   options?: Partial<PWAConfig>
 ): PWAConfig => ({
   NAME: options?.NAME || NAME,
@@ -27,6 +31,8 @@ export const createPWAConfig = (
     { src: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
   ],
   VAPID_MAIL: vapidMail,
+  VAPID_PUBLIC_KEY: vapidKeys?.publicKey || "",
+  VAPID_PRIVATE_KEY: vapidKeys?.privateKey || "",
 });
 
 /**
@@ -37,7 +43,7 @@ export const createPWAConfig = (
  * The manifest includes essential PWA properties like name, icons, theme colors, and display mode.
  *
  * @example
- * const manifest = createManifest("admin@example.com", {
+ * const manifest = createManifest("admin@example.com", process.env.VAPID_PUBLIC_KEY, process.env.VAPID_PRIVATE_KEY, {
  *   NAME: "My PWA",
  *   SHORT_NAME: "PWA",
  *   DESCRIPTION: "This is my PWA",
@@ -47,7 +53,7 @@ export const createManifest = (
   vapidMail: string,
   options?: Partial<PWAConfig>
 ): MetadataRoute.Manifest => {
-  const config = createPWAConfig(vapidMail, options);
+  const config = createPWAConfig(vapidMail, undefined, options);
 
   return {
     name: config.NAME,

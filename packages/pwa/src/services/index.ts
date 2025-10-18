@@ -1,22 +1,23 @@
 import "server-only";
 
-import { db } from "@zap/db/providers/drizzle";
+import { getUserIdService } from "@zap/auth/services";
+import { db } from "@zap/db/drizzle";
 import { PushNotificationError } from "@zap/errors";
 import { eq } from "drizzle-orm";
 import type webpush from "web-push";
-import { pushNotifications } from "../db/providers/drizzle/schema";
+import { pushNotifications } from "../db/drizzle/schema";
 import type { VapidConfigs } from "../types";
 
 let webpushInstance: typeof import("web-push") | null = null;
 
-export async function getWebPushService(params: VapidConfigs = {}) {
+export async function getWebPushService(params: VapidConfigs) {
   if (webpushInstance) {
     return webpushInstance;
   }
 
-  const { vapidPublicKey, vapidPrivateKey, vapidMail } = params;
+  const { publicKey, privateKey, mail } = params;
 
-  if (!(vapidPublicKey && vapidPrivateKey && vapidMail)) {
+  if (!(publicKey && privateKey && mail)) {
     throw new PushNotificationError(
       "Web Push service is not properly configured. Please check your VAPID keys and email settings."
     );
@@ -25,9 +26,9 @@ export async function getWebPushService(params: VapidConfigs = {}) {
   const webpushModule = await import("web-push");
 
   webpushModule.default.setVapidDetails(
-    `mailto:${vapidMail}`,
-    vapidPublicKey,
-    vapidPrivateKey
+    `mailto:${mail}`,
+    publicKey,
+    privateKey
   );
 
   webpushInstance = webpushModule.default;
@@ -35,17 +36,17 @@ export async function getWebPushService(params: VapidConfigs = {}) {
 }
 
 type SubscribeUserService = {
-  userId: string;
   subscription: webpush.PushSubscription;
   vapidConfigs: VapidConfigs;
 };
 
 export async function subscribeUserToPushNotificationsService({
-  userId,
   subscription,
   vapidConfigs,
 }: SubscribeUserService) {
   await getWebPushService(vapidConfigs);
+
+  const userId = await getUserIdService();
 
   await db
     .insert(pushNotifications)
@@ -64,13 +65,15 @@ export async function subscribeUserToPushNotificationsService({
 }
 
 type UnsubscribeUserService = {
-  userId: string;
+  params: VapidConfigs;
 };
 
 export async function unsubscribeUserFromPushNotificationsService({
-  userId,
+  params,
 }: UnsubscribeUserService) {
-  await getWebPushService();
+  await getWebPushService(params);
+
+  const userId = await getUserIdService();
 
   await db
     .delete(pushNotifications)

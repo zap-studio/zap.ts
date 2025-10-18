@@ -11,10 +11,15 @@ export type PWAConfig = {
   START_URL: string;
   THEME_COLOR: string;
   VAPID_MAIL: string;
+  VAPID_PUBLIC_KEY: string;
+  VAPID_PRIVATE_KEY: string;
 };
 
-export type VapidConfigs = {
-  vapidPublicKey?: string;
-  vapidPrivateKey?: string;
-  vapidMail?: string;
+export type VapidKeys = {
+  publicKey: string;
+  privateKey: string;
+};
+
+export type VapidConfigs = VapidKeys & {
+  mail: string;
 };

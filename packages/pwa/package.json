@@ -12,8 +12,10 @@
     "@zap/errors": "workspace:*",
     "@zap/rpc": "workspace:*",
     "client-only": "^0.0.1",
+    "drizzle-orm": "^0.44.6",
     "server-only": "^0.0.1",
     "web-push": "^3.6.7",
+    "zod": "^4.1.12",
     "zustand": "^5.0.8"
   },
   "devDependencies": {
@@ -29,6 +31,8 @@
   },
   "exports": {
     ".": "./src/index.ts",
+    "./schemas": "./src/schemas/index.ts",
+    "./services": "./src/services/index.ts",
     "./stores": "./src/stores/index.ts",
     "./types": "./src/types/index.ts",
     "./utils": "./src/utils/index.ts"

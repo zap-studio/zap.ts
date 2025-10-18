@@ -20,8 +20,9 @@
   "workspaces": [
     "apps/*",
     "configs/*",
-    "packages/*",
-    "e2e/*"
+    "e2e/*",
+    "features/*",
+    "packages/*"
   ],
   "devDependencies": {
     "@biomejs/biome": "2.2.5",

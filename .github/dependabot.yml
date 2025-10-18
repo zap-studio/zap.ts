@@ -23,7 +23,6 @@ updates:
       - "/examples/e2e"
       - "/examples/feature"
       - "/examples/package"
-      - "/features/orpc"
       - "/packages/analytics"
       - "/packages/async-state"
       - "/packages/config"

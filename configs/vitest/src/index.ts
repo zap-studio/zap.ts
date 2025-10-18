@@ -1,6 +1,6 @@
-import { defineConfig } from "vitest/config";
+import type { ViteUserConfig } from "vitest/config";
 
-export const sharedConfig = defineConfig({
+export const config: ViteUserConfig = {
   test: {
     globals: true,
     environment: "jsdom",
@@ -22,5 +22,33 @@ export const sharedConfig = defineConfig({
     include: ["**/*.{test,spec}.{ts,tsx}"],
     exclude: ["node_modules", "dist", ".next", ".turbo"],
     // Other shared configuration
+  },
+};
+
+/**
+ * Create a Vitest configuration object with optional overrides.
+ * This function merges the default configuration with any provided overrides.
+ *
+ * @example
+ * import { createVitestConfig } from "@zap/vitest-config";
+ *
+ * export default createVitestConfig({
+ *   test: {
+ *     // Package-specific overrides
+ *   },
+ * });
+ */
+export const createVitestConfig = (
+  overrides: ViteUserConfig = {}
+): ViteUserConfig => ({
+  ...config,
+  ...overrides,
+  test: {
+    ...config.test,
+    ...overrides.test,
+    coverage: {
+      ...config.test?.coverage,
+      ...overrides.test?.coverage,
+    },
   },
 });

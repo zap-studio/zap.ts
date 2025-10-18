@@ -22,11 +22,11 @@
   "exports": {
     ".": "./src/index.ts",
     "./client": "./src/client/index.ts",
-    "./constants": "./src/constants.ts",
     "./edge": "./src/edge/index.ts",
     "./server": "./src/server/index.ts",
     "./server/handlers/*": "./src/server/handlers/*.ts",
     "./server/utils/*": "./src/server/utils/*.ts",
+    "./constants": "./src/constants.ts",
     "./types": "./src/types.ts",
     "./utils/*": "./src/utils/*.ts",
     "./http": "./src/http.ts",

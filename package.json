@@ -21,7 +21,6 @@
     "apps/*",
     "configs/*",
     "e2e/*",
-    "features/*",
     "packages/*"
   ],
   "devDependencies": {

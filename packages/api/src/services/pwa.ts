@@ -1,5 +1,6 @@
 import "server-only";
 
+import { PWA_CONFIG } from "@zap/config/features";
 import { db } from "@zap/db/drizzle";
 import { pushNotifications } from "@zap/db/drizzle/tables/pwa";
 import { PushNotificationError } from "@zap/errors";
@@ -10,12 +11,18 @@ import { getUserIdService } from "./auth";
 
 let webpushInstance: typeof import("web-push") | null = null;
 
-export async function getWebPushService(params: VapidConfigs) {
+export async function getWebPushService() {
   if (webpushInstance) {
     return webpushInstance;
   }
 
-  const { publicKey, privateKey, mail } = params;
+  const config: VapidConfigs = {
+    publicKey: PWA_CONFIG.VAPID_PUBLIC_KEY,
+    privateKey: PWA_CONFIG.VAPID_PRIVATE_KEY,
+    mail: PWA_CONFIG.VAPID_MAIL,
+  };
+
+  const { publicKey, privateKey, mail } = config;
 
   if (!(publicKey && privateKey && mail)) {
     throw new PushNotificationError(
@@ -37,14 +44,12 @@ export async function getWebPushService(params: VapidConfigs) {
 
 type SubscribeUserService = {
   subscription: webpush.PushSubscription;
-  vapidConfigs: VapidConfigs;
 };
 
 export async function subscribeUserToPushNotificationsService({
   subscription,
-  vapidConfigs,
 }: SubscribeUserService) {
-  await getWebPushService(vapidConfigs);
+  await getWebPushService();
 
   const userId = await getUserIdService();
 
@@ -64,14 +69,8 @@ export async function subscribeUserToPushNotificationsService({
   return { message: "User subscribed successfully" };
 }
 
-type UnsubscribeUserService = {
-  vapidConfigs: VapidConfigs;
-};
-
-export async function unsubscribeUserFromPushNotificationsService({
-  vapidConfigs,
-}: UnsubscribeUserService) {
-  await getWebPushService(vapidConfigs);
+export async function unsubscribeUserFromPushNotificationsService() {
+  await getWebPushService();
 
   const userId = await getUserIdService();
 

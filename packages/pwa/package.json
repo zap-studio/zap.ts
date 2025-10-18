@@ -33,7 +33,6 @@
     "./hooks": "./src/hooks/index.ts",
     "./schemas": "./src/schemas/index.ts",
     "./stores": "./src/stores/index.ts",
-    "./types/*": "./src/types/*.ts",
     "./utils": "./src/utils/index.ts"
   }
 }

@@ -1,22 +1,6 @@
-import { APP_DESCRIPTION, NAME } from "@zap/config";
+import { PWA_CONFIG } from "@zap/config/features";
+import type { PWAConfig } from "@zap/config/types/features";
 import type { MetadataRoute } from "next";
-import type { PWAConfig } from "./types";
-
-export const PWA_DEFAULT_CONFIG: PWAConfig = {
-  NAME,
-  SHORT_NAME: NAME,
-  DESCRIPTION: APP_DESCRIPTION,
-  START_URL: "/",
-  BACKGROUND_COLOR: "#ffffff",
-  THEME_COLOR: "#000000",
-  ICONS: [
-    { src: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
-    { src: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
-  ],
-  VAPID_MAIL: "",
-  VAPID_PUBLIC_KEY: "",
-  VAPID_PRIVATE_KEY: "",
-};
 
 /**
  * Creates a PWA manifest object based on the provided configuration options.
@@ -36,7 +20,7 @@ export const createManifest = (
   options?: Partial<PWAConfig>
 ): MetadataRoute.Manifest => {
   const config = {
-    ...PWA_DEFAULT_CONFIG,
+    ...PWA_CONFIG,
     ...options,
   };
 

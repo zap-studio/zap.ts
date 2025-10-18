@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@orpc/server": "^1.9.4",
+    "@zap/config": "workspace:*",
     "@zap/crypto": "workspace:*",
     "@zap/db": "workspace:*",
     "@zap/errors": "workspace:*",

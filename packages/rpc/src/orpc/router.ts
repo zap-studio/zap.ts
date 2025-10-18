@@ -1,7 +1,7 @@
-import { $pwa } from "./procedures/pwa";
+import { pwa } from "./procedures/pwa";
 
 export const router = {
-  pwa: $pwa(),
+  pwa,
 };
 
 export type Router = typeof router;

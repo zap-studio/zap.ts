@@ -182,6 +182,7 @@
       "version": "0.0.0",
       "dependencies": {
         "@orpc/server": "^1.9.4",
+        "@zap/config": "workspace:*",
         "@zap/crypto": "workspace:*",
         "@zap/db": "workspace:*",
         "@zap/errors": "workspace:*",
@@ -224,6 +225,7 @@
       "version": "0.0.0",
       "devDependencies": {
         "@types/node": "^24.7.1",
+        "@zap/types": "workspace:*",
         "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
       },
@@ -322,6 +324,7 @@
         "@zap/api": "workspace:*",
         "@zap/db": "workspace:*",
         "@zap/errors": "workspace:*",
+        "@zap/schemas": "workspace:*",
         "client-only": "^0.0.1",
         "drizzle-orm": "^0.44.6",
         "server-only": "^0.0.1",
@@ -330,11 +333,25 @@
         "@types/node": "^24.7.1",
         "@types/react": "^19.2.2",
         "@types/web-push": "^3.6.4",
+        "@zap/types": "workspace:*",
         "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
       },
       "peerDependencies": {
+        "next": "^15",
         "react": "^19",
+      },
+    },
+    "packages/schemas": {
+      "name": "@zap/schemas",
+      "version": "0.0.0",
+      "dependencies": {
+        "zod": "^4.1.12",
+      },
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+        "@zap/typescript-config": "workspace:*",
+        "typescript": "^5",
       },
     },
     "packages/security": {
@@ -1094,6 +1111,8 @@
     "@zap/pwa": ["@zap/pwa@workspace:packages/pwa"],
 
     "@zap/rpc": ["@zap/rpc@workspace:packages/rpc"],
+
+    "@zap/schemas": ["@zap/schemas@workspace:packages/schemas"],
 
     "@zap/security": ["@zap/security@workspace:packages/security"],
 

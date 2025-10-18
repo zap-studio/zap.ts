@@ -13,6 +13,7 @@
     "@zap/api": "workspace:*",
     "@zap/db": "workspace:*",
     "@zap/errors": "workspace:*",
+    "@zap/schemas": "workspace:*",
     "client-only": "^0.0.1",
     "drizzle-orm": "^0.44.6",
     "server-only": "^0.0.1"
@@ -21,11 +22,13 @@
     "@types/node": "^24.7.1",
     "@types/react": "^19.2.2",
     "@types/web-push": "^3.6.4",
+    "@zap/types": "workspace:*",
     "@zap/typescript-config": "workspace:*",
     "typescript": "^5"
   },
   "peerDependencies": {
-    "react": "^19"
+    "react": "^19",
+    "next": "^15"
   },
   "exports": {
     "./orpc/client": "./src/orpc/client.ts",

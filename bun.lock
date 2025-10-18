@@ -61,6 +61,7 @@
         "@next/bundle-analyzer": "^15.5.4",
         "@next/mdx": "^15.5.4",
         "@orpc/client": "^1.9.3",
+        "@orpc/react-query": "^1.9.4",
         "@orpc/server": "^1.9.3",
         "@zap/analytics": "workspace:*",
         "@zap/async-state": "workspace:*",

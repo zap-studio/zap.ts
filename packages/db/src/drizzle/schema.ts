@@ -1,10 +1,26 @@
+import { aiProviderCredentials } from "./tables/ai";
+import {
+  account,
+  invitation,
+  member,
+  organization,
+  passkey,
+  session,
+  twoFactor,
+  user,
+  verification,
+} from "./tables/auth";
+import { feedbacks } from "./tables/feedbacks";
+import { pushNotifications } from "./tables/pwa";
+import { waitlist } from "./tables/waitlist";
+
 /**
  * Aggregates Drizzle schemas from various plugins.
  * Add or remove tables in the `schema` object below as needed.
  */
 export const schema = {
   // AI
-  userAISettings,
+  aiProviderCredentials,
 
   // Auth
   user,
@@ -18,7 +34,7 @@ export const schema = {
   invitation,
 
   // Feedbacks
-  feedback,
+  feedbacks,
 
   // PWA
   pushNotifications,

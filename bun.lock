@@ -233,6 +233,7 @@
       "devDependencies": {
         "@types/node": "^24.7.1",
         "@types/pg": "^8.15.5",
+        "@types/web-push": "^3.6.4",
         "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
       },

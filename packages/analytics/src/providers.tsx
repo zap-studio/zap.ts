@@ -1,6 +1,6 @@
-import { ANALYTYCS_CONFIG } from "@zap/config/features";
-import { PostHogProvider } from "../posthog/providers";
-import { VercelProvider } from "../vercel/providers";
+import { ANALYTYCS_CONFIG } from ".";
+import { PostHogProvider } from "./posthog/providers";
+import { VercelProvider } from "./vercel/providers";
 
 type AnalyticsProviderProps = {
   children: React.ReactNode;

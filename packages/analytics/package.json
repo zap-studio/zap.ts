@@ -9,7 +9,6 @@
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "@zap/config": "workspace:*",
     "client-only": "^0.0.1",
     "posthog-js": "^1.275.1",
     "posthog-node": "^5.9.5"
@@ -25,7 +24,9 @@
     "react": "^19"
   },
   "exports": {
-    "./providers": "./src/providers/index.tsx",
+    ".": "./src/index.ts",
+    "./types": "./src/types.ts",
+    "./providers": "./src/providers.tsx",
     "./posthog/client": "./src/posthog/client.ts",
     "./posthog/components": "./src/posthog/components/index.ts",
     "./posthog/providers": "./src/posthog/providers/index.tsx",

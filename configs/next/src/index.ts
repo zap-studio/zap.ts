@@ -37,6 +37,11 @@ export function createBaseConfig(
     },
     pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
     typedRoutes: true,
+    transpilePackages: [
+      "@t3-oss/env-nextjs",
+      "@t3-oss/env-core",
+      ...(options?.overrides?.transpilePackages || []),
+    ],
     async headers() {
       const headers = [
         {

@@ -1,5 +1,3 @@
-# TODO
-
 This file serves as a supplement to the official documentation and provides guidance for common customization tasks. In the final release, all information will be integrated into the main documentation.
 
 ## Monorepo Architecture

@@ -372,6 +372,15 @@
         "react-dom": "^19",
       },
     },
+    "packages/tanstack-query": {
+      "name": "@zap/__to_replace__",
+      "version": "0.0.0",
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+        "@zap/typescript-config": "workspace:*",
+        "typescript": "^5",
+      },
+    },
     "packages/ui": {
       "name": "@zap/ui",
       "version": "0.0.0",
@@ -1020,6 +1029,8 @@
     "@vitest/spy": ["@vitest/spy@3.2.4", "", { "dependencies": { "tinyspy": "^4.0.3" } }, "sha512-vAfasCOe6AIK70iP5UD11Ac4siNUNJ9i/9PZ3NKx07sG6sUxeag1LWdNrMWeKKYBLlzuK+Gn65Yd5nyL6ds+nw=="],
 
     "@vitest/utils": ["@vitest/utils@3.2.4", "", { "dependencies": { "@vitest/pretty-format": "3.2.4", "loupe": "^3.1.4", "tinyrainbow": "^2.0.0" } }, "sha512-fB2V0JFrQSMsCo9HiSq3Ezpdv4iYaXRG1Sx8edX3MwxfyNn83mKiGzOcH+Fkxt4MHxr3y42fQi1oeAInqgX2QA=="],
+
+    "@zap/__to_replace__": ["@zap/__to_replace__@workspace:packages/tanstack-query"],
 
     "@zap/analytics": ["@zap/analytics@workspace:packages/analytics"],
 

@@ -14,5 +14,5 @@ const fakeRouter = {
 const { orpcClient, orpcReactQuery } =
   createFakeORPCClients<typeof fakeRouter>();
 
-export type PwaOrpcClient = typeof orpcClient.pwa;
-export type PwaOrpcReactQuery = typeof orpcReactQuery.pwa;
+export type PwaOrpcClient = typeof orpcClient;
+export type PwaOrpcReactQuery = typeof orpcReactQuery;

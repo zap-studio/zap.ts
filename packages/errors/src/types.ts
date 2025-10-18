@@ -1,5 +1,5 @@
-import type { HANDLER_TYPES } from "../constants";
-import type { HttpStatus } from "../http";
+import type { HANDLER_TYPES } from "./constants";
+import type { HttpStatus } from "./http";
 
 export type HttpStatusCode = (typeof HttpStatus)[keyof typeof HttpStatus];
 

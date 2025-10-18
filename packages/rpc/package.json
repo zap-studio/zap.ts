@@ -29,8 +29,8 @@
   },
   "exports": {
     "./orpc/client": "./src/orpc/client.ts",
-    "./orpc/fake": "./src/orpc/fake.ts",
     "./orpc/middlewares/*": "./src/orpc/middlewares/*.ts",
+    "./orpc/router": "./src/orpc/router.ts",
     "./orpc/server": "./src/orpc/server.ts"
   }
 }

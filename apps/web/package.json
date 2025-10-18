@@ -25,6 +25,7 @@
     "@zap/analytics": "workspace:*",
     "@zap/fonts": "workspace:*",
     "@zap/next-config": "workspace:*",
+    "@zap/rpc": "workspace:*",
     "@zap/security": "workspace:*",
     "@zap/seo": "workspace:*",
     "@zap/shadcn": "workspace:*",

@@ -22,14 +22,14 @@
   "exports": {
     ".": "./src/index.ts",
     "./client": "./src/client/index.ts",
-    "./data": "./src/data/index.ts",
+    "./constants": "./src/constants/index.ts",
     "./edge": "./src/edge/index.ts",
-    "./handlers": "./src/handlers/index.ts",
-    "./handlers/orpc": "./src/handlers/orpc.ts",
-    "./http": "./src/http.ts",
     "./server": "./src/server/index.ts",
+    "./server/handlers/*": "./src/server/handlers/*.ts",
+    "./server/utils/*": "./src/server/utils/*.ts",
     "./types": "./src/types/index.ts",
-    "./utils": "./src/utils/index.ts",
-    "./utils/orpc": "./src/utils/orpc.ts"
+    "./utils/*": "./src/utils/*.ts",
+    "./http": "./src/http.ts",
+    "./uuid": "./src/uuid.ts"
   }
 }

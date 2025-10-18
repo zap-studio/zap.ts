@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const InputSubscribeUserSchema = z.object({
+export const SubscriptionSchema = z.object({
   subscription: z.object({
     endpoint: z.string(),
     keys: z.object({

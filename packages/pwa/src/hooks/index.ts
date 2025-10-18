@@ -6,9 +6,10 @@ import { PushNotificationError } from "@zap/errors";
 import { handleClientError } from "@zap/errors/client";
 
 import { usePushNotificationsStore } from "../stores";
+import type { PwaOrpcReactQuery } from "../types/orpc";
 import { arrayBufferToBase64, urlBase64ToUint8Array } from "../utils";
 
-export function usePushNotifications(orpcReactQuery: ORPCReactQuery) {
+export function usePushNotifications(orpcReactQuery: PwaOrpcReactQuery) {
   const subscription = usePushNotificationsStore((state) => state.subscription);
   const setSubscription = usePushNotificationsStore(
     (state) => state.setSubscription

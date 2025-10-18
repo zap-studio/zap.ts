@@ -65,13 +65,13 @@ export async function subscribeUserToPushNotificationsService({
 }
 
 type UnsubscribeUserService = {
-  params: VapidConfigs;
+  vapidConfigs: VapidConfigs;
 };
 
 export async function unsubscribeUserFromPushNotificationsService({
-  params,
+  vapidConfigs,
 }: UnsubscribeUserService) {
-  await getWebPushService(params);
+  await getWebPushService(vapidConfigs);
 
   const userId = await getUserIdService();
 

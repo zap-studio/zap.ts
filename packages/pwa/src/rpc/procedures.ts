@@ -1,41 +1,54 @@
 import "server-only";
 
-import { $authMiddleware } from "@zap/auth/rpc/middlewares";
-import { withRpcHandler } from "@zap/errors/handlers";
-import { base } from "@zap/rpc/middlewares";
-import { InputSubscribeUserSchema } from "../../schemas";
+import { $authMiddleware } from "@zap/auth/rpc/orpc/middlewares";
+import { withRpcHandler } from "@zap/errors/server/handlers/orpc";
+import { base } from "@zap/rpc/orpc/middlewares/base";
+
+import { SubscriptionSchema } from "../schemas";
 import {
   subscribeUserToPushNotificationsService,
   unsubscribeUserFromPushNotificationsService,
-} from "../../services";
-import type { VapidConfigs } from "../../types";
+} from "../services";
+import type { VapidConfigs } from "../types";
 
 type SubscribeUserParams = {
   vapidConfigs: VapidConfigs;
 };
 
-const $subscribeUserToPushNotifications = (params: SubscribeUserParams) =>
-  base
+function $subscribeUserToPushNotifications(params: SubscribeUserParams) {
+  return base
     .use($authMiddleware())
-    .input(InputSubscribeUserSchema)
+    .input(SubscriptionSchema)
     .handler(
       withRpcHandler(({ input }) =>
         subscribeUserToPushNotificationsService({
-          subscription: input,
+          subscription: input.subscription,
           vapidConfigs: params.vapidConfigs,
         })
       )
     );
+}
 
-const $unsubscribeUserFromPushNotifications = () =>
-  base
-    .use($authMiddleware())
-    .handler(
-      withRpcHandler(() => unsubscribeUserFromPushNotificationsService())
-    );
+type UnsubscribeUserParams = {
+  vapidConfigs: VapidConfigs;
+};
 
-export const $pwa = (vapidConfigs: VapidConfigs) => ({
-  subscribeUserToPushNotifications:
-    $subscribeUserToPushNotifications(vapidConfigs),
-  unsubscribeUserFromPushNotifications: $unsubscribeUserFromPushNotifications(),
-});
+function $unsubscribeUserFromPushNotifications(params: UnsubscribeUserParams) {
+  return base.use($authMiddleware()).handler(
+    withRpcHandler(() =>
+      unsubscribeUserFromPushNotificationsService({
+        vapidConfigs: params.vapidConfigs,
+      })
+    )
+  );
+}
+
+export function $pwa(vapidConfigs: VapidConfigs) {
+  const params = { vapidConfigs };
+
+  return {
+    subscribeUserToPushNotifications: $subscribeUserToPushNotifications(params),
+    unsubscribeUserFromPushNotifications:
+      $unsubscribeUserFromPushNotifications(params),
+  };
+}

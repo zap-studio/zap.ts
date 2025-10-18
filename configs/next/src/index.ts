@@ -1,7 +1,7 @@
 import { BASE_URL } from "@zap/config";
 import { buildCSPHeader, buildPermissionsPolicy } from "@zap/security/utils";
 import type { NextConfig } from "next";
-import type { NextAppType } from "./types";
+import type { NextAppType, NextConfigOptions } from "./types";
 
 /**
  * Creates a base Next.js configuration object with common settings.
@@ -10,26 +10,17 @@ import type { NextAppType } from "./types";
  *
  * When `appType` is set to "pwa", it adds specific headers for service workers.
  */
-export function createBaseConfig(appType: NextAppType = "default"): NextConfig {
+export function createBaseConfig(
+  appType: NextAppType = "default",
+  options?: NextConfigOptions
+): NextConfig {
   return {
     typedRoutes: true,
     pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
     images: {
       remotePatterns: [{ protocol: "https", hostname: "avatar.vercel.sh" }],
     },
-    transpilePackages: [
-      "@zap/analytics",
-      "@zap/async-state",
-      "@zap/config",
-      "@zap/fonts",
-      "@zap/next-config",
-      "@zap/shared-rpc",
-      "@zap/pwa",
-      "@zap/security",
-      "@zap/seo",
-      "@zap/shadcn",
-      "@zap/ui",
-    ],
+    transpilePackages: options?.transpilePackages,
     async headers() {
       const headers = [
         {

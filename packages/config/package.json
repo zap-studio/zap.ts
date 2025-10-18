@@ -14,8 +14,6 @@
   },
   "exports": {
     ".": "./src/index.ts",
-    "./features": "./src/features.ts",
-    "./types": "./src/types/index.ts",
-    "./types/features": "./src/types/features.ts"
+    "./types": "./src/types.ts"
   }
 }

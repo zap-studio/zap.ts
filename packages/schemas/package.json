@@ -15,6 +15,6 @@
     "typescript": "^5"
   },
   "exports": {
-    "./zod/*": "./src/zod/*.ts"
+    "./zod/features/*": "./src/zod/features/*.ts"
   }
 }

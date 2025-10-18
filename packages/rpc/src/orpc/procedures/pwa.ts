@@ -5,9 +5,9 @@ import {
   unsubscribeUserFromPushNotificationsService,
 } from "@zap/api/services/pwa";
 import { withRpcHandler } from "@zap/errors/server/handlers/orpc";
-import { base } from "@zap/rpc/orpc/middlewares/base";
-import { SubscriptionSchema } from "@zap/schemas/zod/pwa";
+import { SubscriptionSchema } from "@zap/schemas/zod/features/pwa";
 import { authMiddleware } from "../middlewares/auth";
+import { base } from "../middlewares/base";
 
 const subscribeUserToPushNotifications = base
   .use(authMiddleware)

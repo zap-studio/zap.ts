@@ -6,10 +6,11 @@ import {
 } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
 
-import { DB_ENV } from "../env";
+import { getDatabaseUrl } from "../env";
 import { type DatabaseSchema, schema } from "./schema";
 
-const pool = new Pool({ connectionString: DB_ENV.DATABASE_URL_DEV });
+const url = getDatabaseUrl();
+const pool = new Pool({ connectionString: url });
 export const db: NodePgDatabase<DatabaseSchema> = drizzlePg({
   client: pool,
   schema,

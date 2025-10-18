@@ -6,6 +6,9 @@
   "scripts": {
     "check-types": "tsc --noEmit"
   },
+  "dependencies": {
+    "@zap/env": "workspace:*"
+  },
   "devDependencies": {
     "@types/node": "^24.7.1",
     "@zap/typescript-config": "workspace:*",

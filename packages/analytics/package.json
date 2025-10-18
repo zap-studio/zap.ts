@@ -7,11 +7,14 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@t3-oss/env-core": "^0.13.8",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
+    "@zap/env": "workspace:*",
     "client-only": "^0.0.1",
     "posthog-js": "^1.275.1",
-    "posthog-node": "^5.9.5"
+    "posthog-node": "^5.9.5",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@types/node": "^24.7.1",
@@ -25,11 +28,10 @@
   },
   "exports": {
     ".": "./src/index.ts",
-    "./types": "./src/types.ts",
+    "./env": "./src/env.ts",
     "./providers": "./src/providers.tsx",
-    "./posthog/client": "./src/posthog/client.ts",
-    "./posthog/components": "./src/posthog/components/index.ts",
-    "./posthog/providers": "./src/posthog/providers/index.tsx",
-    "./vercel/providers": "./src/vercel/providers/index.tsx"
+    "./types": "./src/types.ts",
+    "./vercel/*": "./src/vercel/*.{ts,tsx}",
+    "./posthog/*": "./src/posthog/*.{ts,tsx}"
   }
 }

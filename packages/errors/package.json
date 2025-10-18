@@ -9,6 +9,7 @@
   "dependencies": {
     "@orpc/client": "^1.9.3",
     "@orpc/server": "^1.9.3",
+    "@zap/env": "workspace:*",
     "client-only": "^0.0.1",
     "server-only": "^0.0.1",
     "sonner": "^2.0.7",

@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
+    "@t3-oss/env-core": "^0.13.8",
+    "@zap/env": "workspace:*",
     "drizzle-orm": "^0.44.6",
     "pg": "^8.16.3",
     "zod": "^4.1.12"
@@ -20,8 +22,8 @@
     "typescript": "^5"
   },
   "exports": {
-    "./constants": "./src/constants.ts",
     "./types": "./src/types.ts",
+    "./env": "./src/env.ts",
     "./drizzle": "./src/drizzle/index.ts",
     "./drizzle/*": "./src/drizzle/*.ts",
     "./drizzle/queries/*": "./src/drizzle/queries/*.ts",

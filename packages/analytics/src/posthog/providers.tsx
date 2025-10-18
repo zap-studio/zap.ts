@@ -4,7 +4,7 @@ import "client-only";
 import posthog from "posthog-js";
 import { PostHogProvider as _PostHogProvider } from "posthog-js/react";
 import { useEffect } from "react";
-import { SuspendedPostHogPageView } from "../components";
+import { SuspendedPostHogPageView } from "./components";
 
 type AnalyticsProviderProps = {
   children: React.ReactNode;

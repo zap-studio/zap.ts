@@ -11,7 +11,6 @@
     "start": "turbo run start",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",
-    "report": "turbo run test && turbo run report",
     "e2e": "turbo run e2e",
     "check-types": "turbo run check-types",
     "typegen": "turbo run typegen",

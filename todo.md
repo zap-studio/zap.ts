@@ -2,6 +2,80 @@
 
 This file serves as a supplement to the official documentation and provides guidance for common customization tasks. In the final release, all information will be integrated into the main documentation.
 
+## Monorepo Architecture
+
+This project follows a purpose-driven, layered architecture designed to scale beyond side projects into production platforms. The structure ensures clean dependency flow, prevents circular dependencies, and maintains clear boundaries between different types of code.
+
+### Directory Structure
+
+```
+apps/           # Integration layer - consumers
+configs/        # Shared tooling configuration (Next.js, TypeScript, etc.)
+packages/       # Agnostic, reusable modules (potential npm packages)
+features/       # App-bound, composable logic (semi-agnostic)
+e2e/           # End-to-end tests
+examples/      # Usage examples and reference implementations
+```
+
+### Layer Philosophy
+
+#### 1. **apps/** - Integration Layer
+
+Apps are *consumers* that configure and stitch together functionality.
+
+**Responsibilities:**
+- Import shared configs from `configs/`
+- Import reusable modules from `packages/`
+- Import app-bound logic from `features/`
+- Compose and configure the final application
+
+**Current apps:**
+- `apps/api` - Backend API
+- `apps/docs` - Documentation site
+- `apps/marketing` - Marketing website
+- `apps/storybook` - Component library showcase
+- `apps/waitlist` - Waitlist landing page
+- `apps/web` - Main web application
+
+#### 2. **configs/** - Tooling Configuration
+
+Lightweight, flexible, and composable configuration packages that provide utilities for different tools.
+
+**Examples:**
+- `configs/next` - Shared Next.js configuration
+- `configs/playwright` - E2E testing setup
+- `configs/tailwind` - Tailwind CSS setup
+- `configs/typescript` - TypeScript base configs
+- `configs/vitest` - Testing configuration
+
+**Characteristics:**
+- Universal and stateless
+- Don't depend on `packages/` or `features/`
+- Export composable helper functions (e.g., `withBundleAnalyzer`, `withMDX`)
+
+#### 3. **packages/** - Agnostic Modules
+
+These are fully reusable, framework-agnostic modules that could potentially be published to npm. Think of them as your internal library ecosystem.
+
+**Examples:**
+- `packages/analytics` - Analytics integration
+- `packages/async-state` - Asynchronous state management (TanStack Query)
+- `packages/config` - Global Zap.ts configuration
+- `packages/crypto` - Cryptography utilities
+- `packages/errors` - Error handling utilities
+- `packages/fonts` - Font utilities
+- `packages/pwa` - PWA utilities
+- `packages/rpc` - RPC wrapper (oRPC/tRPC)
+- `packages/security` - Security utilities
+- `packages/seo` - SEO utilities
+- `packages/shadcn` - All shadcn/ui components
+- `packages/ui` - Shared design system components
+
+**Dependency rules:**
+- Can import from `configs/`
+- Never import from `apps/` or `features/`
+- These packages are the foundation — they don't know about your apps
+
 ## Switching Package Managers
 
 This project is configured to use **Bun** by default, but you can easily switch to npm, yarn, or pnpm by updating configuration files.

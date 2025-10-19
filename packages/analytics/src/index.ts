@@ -2,7 +2,7 @@ import { __VERCEL__ } from "@zap/env";
 import { ANALYTICS_ENV } from "./env";
 import type { AnalyticsConfig } from "./types";
 
-export const ANALYTYCS_CONFIG: AnalyticsConfig = {
+export const ANALYTICS_CONFIG: AnalyticsConfig = {
   POSTHOG: {
     ENABLED: false,
     API_KEY: ANALYTICS_ENV.NEXT_PUBLIC_POSTHOG_API_KEY || "",

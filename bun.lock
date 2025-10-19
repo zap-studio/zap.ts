@@ -260,6 +260,7 @@
         "@zap/shadcn": "workspace:*",
         "@zap/ui": "workspace:*",
         "better-auth": "^1.3.28",
+        "client-only": "^0.0.1",
         "server-only": "^0.0.1",
         "sonner": "^2.0.7",
         "zod": "^4.1.12",

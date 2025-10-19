@@ -24,14 +24,14 @@ const formSchema = z
     password: z
       .string()
       .min(
-        AUTH_CONFIG.MINIMUM_PASSWORD_LENGTH,
-        `Password must be at least ${AUTH_CONFIG.MINIMUM_PASSWORD_LENGTH} characters`
+        AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MIN,
+        `Password must be at least ${AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MIN} characters`
       ),
     confirmPassword: z
       .string()
       .min(
-        AUTH_CONFIG.MINIMUM_PASSWORD_LENGTH,
-        `Password must be at least ${AUTH_CONFIG.MINIMUM_PASSWORD_LENGTH} characters`
+        AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MIN,
+        `Password must be at least ${AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MIN} characters`
       ),
   })
   .refine((data) => data.password === data.confirmPassword, {

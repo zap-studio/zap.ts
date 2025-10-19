@@ -3,8 +3,8 @@ import { AUTH_CONFIG } from ".";
 
 export const LoginFormSchema = z.object({
   email: z.email(),
-  password: z.string().min(AUTH_CONFIG.MINIMUM_PASSWORD_LENGTH, {
-    message: `Password must be at least ${AUTH_CONFIG.MINIMUM_PASSWORD_LENGTH} characters.`,
+  password: z.string().min(AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MIN, {
+    message: `Password must be at least ${AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MIN} characters.`,
   }),
 });
 

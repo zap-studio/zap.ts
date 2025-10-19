@@ -29,7 +29,6 @@ export type AuthConfig = {
     ENABLED: boolean;
     PROVIDERS: Provider[];
   };
-  MINIMUM_PASSWORD_LENGTH: number;
   PASSWORD_COMPROMISED_MESSAGE: string;
   REQUIRE_MAIL_VERIFICATION: boolean;
   VERIFIED_EMAIL_PATH: string;

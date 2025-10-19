@@ -1,5 +1,4 @@
-import type { ViteUserConfig } from "vitest/config";
-import { defineConfig } from "vitest/config";
+import { defineConfig, type ViteUserConfig } from "vitest/config";
 
 /**
  * Creates a Vitest configuration with default settings, allowing for overrides.
@@ -10,7 +9,7 @@ import { defineConfig } from "vitest/config";
  *
  * export default defineConfig(createConfig({
  *   test: {
- *     environment: "jsdom",
+ *     environment: "node",
  *   },
  * }));
  */

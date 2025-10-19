@@ -24,6 +24,7 @@
   },
   "exports": {
     "./tanstack-query": "./src/tanstack-query/index.ts",
-    "./tanstack-query/*": "./src/tanstack-query/*.ts"
+    "./tanstack-query/*": "./src/tanstack-query/*.ts",
+    "./tanstack-query/providers": "./src/tanstack-query/providers.tsx"
   }
 }

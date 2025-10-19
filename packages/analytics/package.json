@@ -31,7 +31,9 @@
     "./env": "./src/env.ts",
     "./providers": "./src/providers.tsx",
     "./types": "./src/types.ts",
-    "./vercel/*": "./src/vercel/*.{ts,tsx}",
-    "./posthog/*": "./src/posthog/*.{ts,tsx}"
+    "./vercel/providers": "./src/vercel/providers.tsx",
+    "./posthog/*": "./src/posthog/*.ts",
+    "./posthog/components": "./src/posthog/components.tsx",
+    "./posthog/providers": "./src/posthog/providers.tsx"
   }
 }

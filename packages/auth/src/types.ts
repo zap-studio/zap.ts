@@ -6,6 +6,7 @@ export type AuthConfig = {
     LOGIN: string;
     SIGN_UP: string;
     FORGOT_PASSWORD: string;
+    EMAIL_VERIFICATION: string;
   };
   REDIRECT_URLS: {
     AFTER_SIGN_IN: string;
@@ -22,14 +23,13 @@ export type AuthConfig = {
     };
   };
   MAILS: {
-    FROM: string;
-    SUPPORT: string;
+    REQUIRE_VERIFICATION: boolean;
   };
   SOCIAL_PROVIDERS: {
     ENABLED: boolean;
     PROVIDERS: Provider[];
   };
-  PASSWORD_COMPROMISED_MESSAGE: string;
-  REQUIRE_MAIL_VERIFICATION: boolean;
-  VERIFIED_EMAIL_PATH: string;
+  SECURITY: {
+    PASSWORD_COMPROMISED_MESSAGE: string;
+  };
 };

@@ -78,7 +78,7 @@ export function ResetPasswordForm() {
           "code" in error &&
           (error as { code?: string }).code === "PASSWORD_COMPROMISED"
         ) {
-          toast.error(AUTH_CONFIG.PASSWORD_COMPROMISED_MESSAGE);
+          toast.error(AUTH_CONFIG.SECURITY.PASSWORD_COMPROMISED_MESSAGE);
           return;
         }
 

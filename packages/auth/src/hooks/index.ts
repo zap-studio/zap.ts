@@ -25,7 +25,7 @@ export function useAuth(callbackURL?: string) {
     try {
       await betterAuthClient.sendVerificationEmail({
         email,
-        callbackURL: AUTH_CONFIG.VERIFIED_EMAIL_PATH,
+        callbackURL: AUTH_CONFIG.URLS.EMAIL_VERIFICATION,
       });
       startCooldown(MAILS_CONFIG.RATE_LIMIT_SECONDS);
     } catch (error) {
@@ -49,7 +49,7 @@ export function useAuth(callbackURL?: string) {
       }
 
       if (
-        !!AUTH_CONFIG.REQUIRE_MAIL_VERIFICATION &&
+        !!AUTH_CONFIG.MAILS.REQUIRE_VERIFICATION &&
         !response.data?.user?.emailVerified
       ) {
         await sendVerificationMail(email);
@@ -85,7 +85,7 @@ export function useAuth(callbackURL?: string) {
         );
       }
 
-      if (AUTH_CONFIG.REQUIRE_MAIL_VERIFICATION) {
+      if (AUTH_CONFIG.MAILS.REQUIRE_VERIFICATION) {
         await sendVerificationMail(email);
         toast.success(
           "Registration successful! Please check your email to verify your account."
@@ -104,7 +104,7 @@ export function useAuth(callbackURL?: string) {
         "code" in error &&
         (error as { code?: string }).code === "PASSWORD_COMPROMISED"
       ) {
-        toast.error(AUTH_CONFIG.PASSWORD_COMPROMISED_MESSAGE);
+        toast.error(AUTH_CONFIG.SECURITY.PASSWORD_COMPROMISED_MESSAGE);
         return;
       }
 

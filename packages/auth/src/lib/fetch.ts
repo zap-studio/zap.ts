@@ -5,7 +5,7 @@ import type { ZodType } from "zod";
 /**
  * Resolve the base URL depending on runtime.
  * - Client side: window.location.origin
- * - Server/Edge: BASE_URL from zap.config.ts
+ * - Server/Edge: BASE_URL from environment variables
  */
 function getBaseURL(): string {
   if (typeof window !== "undefined" && window.location?.origin) {
@@ -26,13 +26,6 @@ export interface FetchOptions<TData = unknown> extends RequestInit {
   raw?: boolean;
 }
 
-/**
- * A small wrapper around the native fetch providing:
- * - Base URL resolution
- * - JSON parsing
- * - Optional zod validation
- * - Consistent error throwing on non-ok responses
- */
 const ABSOLUTE_URL_REGEX = /^https?:/i; // hoisted per lint rule
 
 export async function $fetch<TData = unknown>(

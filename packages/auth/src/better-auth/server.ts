@@ -33,7 +33,7 @@ export const betterAuthServer = betterAuth({
     enabled: true,
     minPasswordLength: AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MIN,
     maxPasswordLength: AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MAX,
-    requireEmailVerification: AUTH_CONFIG.REQUIRE_MAIL_VERIFICATION,
+    requireEmailVerification: AUTH_CONFIG.MAILS.REQUIRE_VERIFICATION,
     sendResetPassword: async ({ user, url }) => {
       const { canSend, timeLeft } = await canSendMailService({
         userId: user.id,
@@ -73,7 +73,7 @@ export const betterAuthServer = betterAuth({
       const verificationUrl = new URL(url);
       verificationUrl.searchParams.set(
         "callbackURL",
-        AUTH_CONFIG.VERIFIED_EMAIL_PATH
+        AUTH_CONFIG.URLS.EMAIL_VERIFICATION
       );
 
       const modifiedUrl = verificationUrl.toString();
@@ -126,7 +126,7 @@ export const betterAuthServer = betterAuth({
     organization(),
     haveIBeenPwned({
       customPasswordCompromisedMessage:
-        AUTH_CONFIG.PASSWORD_COMPROMISED_MESSAGE,
+        AUTH_CONFIG.SECURITY.PASSWORD_COMPROMISED_MESSAGE,
     }),
   ],
 });

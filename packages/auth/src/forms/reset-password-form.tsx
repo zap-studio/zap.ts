@@ -2,8 +2,15 @@
 import "client-only";
 
 import { useRouter } from "@bprogress/next/app";
+import { useForm } from "@tanstack/react-form";
 import { UnauthorizedError } from "@zap/errors";
 import { handleClientError } from "@zap/errors/client";
+import {
+  Field,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "@zap/shadcn/ui/field";
 import { Input } from "@zap/shadcn/ui/input";
 import { ZapButton } from "@zap/ui/components/core/button";
 import { useEffect, useState } from "react";
@@ -32,19 +39,53 @@ const formSchema = z
     path: ["confirmPassword"],
   });
 
-type FormSchema = z.infer<typeof formSchema>;
-
 export function ResetPasswordForm() {
   const [submitting, setSubmitting] = useState(false);
   const [token, setToken] = useState<string | null>(null);
 
   const router = useRouter();
 
-  const form = useForm<FormSchema>({
-    resolver: zodResolver(formSchema),
+  const form = useForm({
     defaultValues: {
       password: "",
       confirmPassword: "",
+    },
+    validators: {
+      onSubmit: formSchema,
+    },
+    onSubmit: async ({ value }) => {
+      setSubmitting(true);
+      const { password } = value;
+
+      if (!token) {
+        setSubmitting(false);
+        throw new UnauthorizedError("Invalid token. Please try again.");
+      }
+
+      try {
+        await betterAuthClient.resetPassword({
+          newPassword: password,
+          token,
+        });
+
+        toast.success("Password reset successfully!");
+        form.reset();
+        router.push("/login");
+      } catch (error) {
+        if (
+          typeof error === "object" &&
+          error !== null &&
+          "code" in error &&
+          (error as { code?: string }).code === "PASSWORD_COMPROMISED"
+        ) {
+          toast.error(AUTH_CONFIG.PASSWORD_COMPROMISED_MESSAGE);
+          return;
+        }
+
+        handleClientError(error);
+      } finally {
+        setSubmitting(false);
+      }
     },
   });
 
@@ -53,91 +94,72 @@ export function ResetPasswordForm() {
     setToken(_token);
   }, []);
 
-  const onSubmit = async (values: FormSchema) => {
-    setSubmitting(true);
-    const { password } = values;
-
-    if (!token) {
-      setSubmitting(false);
-      throw new UnauthorizedError("Invalid token. Please try again.");
-    }
-
-    try {
-      await betterAuthClient.resetPassword({
-        newPassword: password,
-        token,
-      });
-
-      toast.success("Password reset successfully!");
-      form.reset();
-      router.push("/login");
-    } catch (error) {
-      if (
-        typeof error === "object" &&
-        error !== null &&
-        "code" in error &&
-        (error as { code?: string }).code === "PASSWORD_COMPROMISED"
-      ) {
-        toast.error(AUTH_CONFIG.PASSWORD_COMPROMISED_MESSAGE);
-        return;
-      }
-
-      handleClientError(error);
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
   return (
-    <Form {...form}>
-      <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
-        <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>New Password</FormLabel>
-              <FormControl>
+    <form
+      className="space-y-6"
+      onSubmit={(e) => {
+        e.preventDefault();
+        form.handleSubmit();
+      }}
+    >
+      <FieldGroup>
+        <form.Field name="password">
+          {(field) => {
+            const isInvalid =
+              field.state.meta.isTouched && !field.state.meta.isValid;
+            return (
+              <Field data-invalid={isInvalid}>
+                <FieldLabel htmlFor={field.name}>New Password</FieldLabel>
                 <Input
+                  aria-invalid={isInvalid}
+                  disabled={submitting}
+                  id={field.name}
+                  name={field.name}
+                  onBlur={field.handleBlur}
+                  onChange={(e) => field.handleChange(e.target.value)}
                   placeholder="••••••••"
                   type="password"
-                  {...field}
-                  disabled={submitting}
+                  value={field.state.value}
                 />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                {isInvalid && <FieldError errors={field.state.meta.errors} />}
+              </Field>
+            );
+          }}
+        </form.Field>
 
-        <FormField
-          control={form.control}
-          name="confirmPassword"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Confirm Password</FormLabel>
-              <FormControl>
+        <form.Field name="confirmPassword">
+          {(field) => {
+            const isInvalid =
+              field.state.meta.isTouched && !field.state.meta.isValid;
+            return (
+              <Field data-invalid={isInvalid}>
+                <FieldLabel htmlFor={field.name}>Confirm Password</FieldLabel>
                 <Input
+                  aria-invalid={isInvalid}
+                  disabled={submitting}
+                  id={field.name}
+                  name={field.name}
+                  onBlur={field.handleBlur}
+                  onChange={(e) => field.handleChange(e.target.value)}
                   placeholder="••••••••"
                   type="password"
-                  {...field}
-                  disabled={submitting}
+                  value={field.state.value}
                 />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                {isInvalid && <FieldError errors={field.state.meta.errors} />}
+              </Field>
+            );
+          }}
+        </form.Field>
+      </FieldGroup>
 
-        <ZapButton
-          className="w-full"
-          loading={submitting}
-          loadingText="Resetting..."
-          type="submit"
-        >
-          Reset Password
-        </ZapButton>
-      </form>
-    </Form>
+      <ZapButton
+        className="w-full"
+        loading={submitting}
+        loadingText="Resetting..."
+        type="submit"
+      >
+        Reset Password
+      </ZapButton>
+    </form>
   );
 }

@@ -1,115 +1,151 @@
 "use client";
 import "client-only";
 
+import { useForm } from "@tanstack/react-form";
+import {
+  Field,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "@zap/shadcn/ui/field";
 import { Input } from "@zap/shadcn/ui/input";
 import { ZapButton } from "@zap/ui/components/core/button";
-import type { z } from "zod";
 import { useAuth } from "../hooks";
-import type { RegisterFormSchema } from "../schemas";
-
-type RegisterFormValues = z.infer<typeof RegisterFormSchema>;
+import { RegisterFormSchema } from "../schemas";
 
 export function RegisterForm() {
   const { isInCooldown, cooldown, isSubmitting, handleRegisterSubmit } =
     useAuth();
 
-  const form = useForm<RegisterFormValues>({
-    resolver: zodResolver(RegisterFormSchema),
+  const form = useForm({
     defaultValues: {
       name: "",
       email: "",
       password: "",
       confirmPassword: "",
     },
+    validators: {
+      onSubmit: RegisterFormSchema,
+    },
+    onSubmit: async ({ value }) => {
+      await handleRegisterSubmit(value);
+    },
   });
 
   return (
-    <Form {...form}>
-      <form
-        className="grid gap-6"
-        onSubmit={form.handleSubmit(handleRegisterSubmit)}
-      >
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name</FormLabel>
-              <FormControl>
-                <Input autoComplete="name" placeholder="Your name" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
+    <form
+      className="grid gap-6"
+      onSubmit={(e) => {
+        e.preventDefault();
+        form.handleSubmit();
+      }}
+    >
+      <FieldGroup>
+        <form.Field name="name">
+          {(field) => {
+            const isInvalid =
+              field.state.meta.isTouched && !field.state.meta.isValid;
+            return (
+              <Field data-invalid={isInvalid}>
+                <FieldLabel htmlFor={field.name}>Name</FieldLabel>
                 <Input
+                  aria-invalid={isInvalid}
+                  autoComplete="name"
+                  id={field.name}
+                  name={field.name}
+                  onBlur={field.handleBlur}
+                  onChange={(e) => field.handleChange(e.target.value)}
+                  placeholder="Your name"
+                  value={field.state.value}
+                />
+                {isInvalid && <FieldError errors={field.state.meta.errors} />}
+              </Field>
+            );
+          }}
+        </form.Field>
+
+        <form.Field name="email">
+          {(field) => {
+            const isInvalid =
+              field.state.meta.isTouched && !field.state.meta.isValid;
+            return (
+              <Field data-invalid={isInvalid}>
+                <FieldLabel htmlFor={field.name}>Email</FieldLabel>
+                <Input
+                  aria-invalid={isInvalid}
                   autoComplete="email"
+                  id={field.name}
+                  name={field.name}
+                  onBlur={field.handleBlur}
+                  onChange={(e) => field.handleChange(e.target.value)}
                   placeholder="you@example.com"
                   type="email"
-                  {...field}
+                  value={field.state.value}
                 />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                {isInvalid && <FieldError errors={field.state.meta.errors} />}
+              </Field>
+            );
+          }}
+        </form.Field>
 
-        <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Password</FormLabel>
-              <FormControl>
+        <form.Field name="password">
+          {(field) => {
+            const isInvalid =
+              field.state.meta.isTouched && !field.state.meta.isValid;
+            return (
+              <Field data-invalid={isInvalid}>
+                <FieldLabel htmlFor={field.name}>Password</FieldLabel>
                 <Input
+                  aria-invalid={isInvalid}
                   autoComplete="new-password"
+                  id={field.name}
+                  name={field.name}
+                  onBlur={field.handleBlur}
+                  onChange={(e) => field.handleChange(e.target.value)}
                   placeholder="*********"
                   type="password"
-                  {...field}
+                  value={field.state.value}
                 />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                {isInvalid && <FieldError errors={field.state.meta.errors} />}
+              </Field>
+            );
+          }}
+        </form.Field>
 
-        <FormField
-          control={form.control}
-          name="confirmPassword"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Confirm Password</FormLabel>
-              <FormControl>
+        <form.Field name="confirmPassword">
+          {(field) => {
+            const isInvalid =
+              field.state.meta.isTouched && !field.state.meta.isValid;
+            return (
+              <Field data-invalid={isInvalid}>
+                <FieldLabel htmlFor={field.name}>Confirm Password</FieldLabel>
                 <Input
+                  aria-invalid={isInvalid}
                   autoComplete="new-password"
+                  id={field.name}
+                  name={field.name}
+                  onBlur={field.handleBlur}
+                  onChange={(e) => field.handleChange(e.target.value)}
                   placeholder="*********"
                   type="password"
-                  {...field}
+                  value={field.state.value}
                 />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                {isInvalid && <FieldError errors={field.state.meta.errors} />}
+              </Field>
+            );
+          }}
+        </form.Field>
+      </FieldGroup>
 
-        <ZapButton
-          className="w-full"
-          disabled={isInCooldown}
-          loading={isSubmitting}
-          loadingText="Creating account..."
-          type="submit"
-        >
-          {isInCooldown ? `Please wait ${cooldown}s` : "Create account"}
-        </ZapButton>
-      </form>
-    </Form>
+      <ZapButton
+        className="w-full"
+        disabled={isInCooldown}
+        loading={isSubmitting}
+        loadingText="Creating account..."
+        type="submit"
+      >
+        {isInCooldown ? `Please wait ${cooldown}s` : "Create account"}
+      </ZapButton>
+    </form>
   );
 }

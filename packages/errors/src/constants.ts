@@ -27,4 +27,5 @@ export const HANDLER_TYPES = {
   RPC: "rpc-procedures",
   SERVER_ACTION: "server-action",
   API_ROUTE: "api-route",
+  AUTHENTICATED_API_ROUTE: "authenticated-api-route",
 } as const;

@@ -1,8 +1,8 @@
 import "server-only";
 
 import { __DEV__ } from "@zap/env";
-import type { HandlerFunction, HandlerOptions, HandlerType } from "../../types";
-import { generateCorrelationId, handleError, logSuccess } from "../utils";
+import type { HandlerFunction, HandlerOptions, HandlerType } from "../types";
+import { generateCorrelationId, handleError, logSuccess } from "./utils";
 
 /**
  * Creates a wrapped handler function with built-in error handling, logging, and correlation tracking.

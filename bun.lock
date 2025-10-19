@@ -250,6 +250,8 @@
       "version": "0.0.0",
       "dependencies": {
         "@t3-oss/env-core": "^0.13.8",
+        "@zap/config": "workspace:*",
+        "@zap/db": "workspace:*",
         "@zap/env": "workspace:*",
         "@zap/errors": "workspace:*",
         "server-only": "^0.0.1",
@@ -259,6 +261,9 @@
         "@types/node": "^24.7.1",
         "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
+      },
+      "peerDependencies": {
+        "next": "^15",
       },
     },
     "packages/config": {

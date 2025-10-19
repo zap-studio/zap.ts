@@ -6,20 +6,28 @@
   "scripts": {
     "check-types": "tsc --noEmit"
   },
+  "dependencies": {
+    "@t3-oss/env-core": "^0.13.8",
+    "@zap/config": "workspace:*",
+    "@zap/db": "workspace:*",
+    "@zap/env": "workspace:*",
+    "@zap/errors": "workspace:*",
+    "server-only": "^0.0.1",
+    "zod": "^4.1.12"
+  },
   "devDependencies": {
     "@types/node": "^24.7.1",
     "@zap/typescript-config": "workspace:*",
     "typescript": "^5"
   },
+  "peerDependencies": {
+    "next": "^15"
+  },
   "exports": {
     ".": "./src/index.ts",
-    "./*": "./src/*"
-  },
-  "dependencies": {
-    "@t3-oss/env-core": "^0.13.8",
-    "@zap/env": "workspace:*",
-    "@zap/errors": "workspace:*",
-    "server-only": "^0.0.1",
-    "zod": "^4.1.12"
+    "./*": "./src/*",
+    "./pages/*": "./src/pages/*.tsx",
+    "./components/*": "./src/components/*.tsx",
+    "./forms/*": "./src/forms/*.tsx"
   }
 }

@@ -1,4 +1,4 @@
-import { defineConfig, type ViteUserConfig } from "vitest/config";
+import type { UserConfig } from "vitest/config";
 
 /**
  * Creates a Vitest configuration with default settings, allowing for overrides.
@@ -13,8 +13,8 @@ import { defineConfig, type ViteUserConfig } from "vitest/config";
  *   },
  * }));
  */
-export function createConfig(overrides: Partial<ViteUserConfig> = {}) {
-  return defineConfig({
+export function createConfig(overrides: Partial<UserConfig> = {}): UserConfig {
+  return {
     test: {
       globals: true,
       environment: "jsdom",
@@ -37,5 +37,5 @@ export function createConfig(overrides: Partial<ViteUserConfig> = {}) {
       ...overrides.test,
     },
     ...overrides,
-  });
+  };
 }

@@ -19,7 +19,7 @@ export function _MailVerifiedPage() {
         <ZapButton asChild variant={"ghost"}>
           <Link
             href={{
-              pathname: AUTH_CONFIG.LOGIN_URL,
+              pathname: AUTH_CONFIG.URLS.LOGIN,
             }}
           >
             Go to Login

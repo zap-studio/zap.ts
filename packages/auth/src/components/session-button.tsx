@@ -25,7 +25,7 @@ export function SessionButton() {
         <Link
           className="font-medium text-muted-foreground text-sm transition-colors hover:text-foreground active:text-foreground"
           href={{
-            pathname: AUTH_CONFIG.LOGIN_URL,
+            pathname: AUTH_CONFIG.URLS.LOGIN,
           }}
         >
           Login
@@ -35,7 +35,7 @@ export function SessionButton() {
       <ZapButton asChild size="sm">
         <Link
           href={{
-            pathname: AUTH_CONFIG.SIGN_UP_URL,
+            pathname: AUTH_CONFIG.URLS.SIGN_UP,
           }}
         >
           Get Started

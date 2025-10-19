@@ -31,8 +31,8 @@ export const betterAuthServer = betterAuth({
   database: drizzleAdapter(db, { provider: "pg" }),
   emailAndPassword: {
     enabled: true,
-    minPasswordLength: AUTH_CONFIG.MINIMUM_PASSWORD_LENGTH,
-    maxPasswordLength: AUTH_CONFIG.MAXIMUM_PASSWORD_LENGTH,
+    minPasswordLength: AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MIN,
+    maxPasswordLength: AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MAX,
     requireEmailVerification: AUTH_CONFIG.REQUIRE_MAIL_VERIFICATION,
     sendResetPassword: async ({ user, url }) => {
       const { canSend, timeLeft } = await canSendMailService({
@@ -116,8 +116,8 @@ export const betterAuthServer = betterAuth({
     }),
     twoFactor(),
     username({
-      minUsernameLength: AUTH_CONFIG.MINIMUM_USERNAME_LENGTH,
-      maxUsernameLength: AUTH_CONFIG.MAXIMUM_USERNAME_LENGTH,
+      minUsernameLength: AUTH_CONFIG.FIELD_LENGTH.USERNAME.MIN,
+      maxUsernameLength: AUTH_CONFIG.FIELD_LENGTH.USERNAME.MAX,
       usernameValidator: (name) => name !== "admin",
     }),
     anonymous(),

@@ -12,20 +12,20 @@ export const RegisterFormSchema = z
   .object({
     name: z
       .string()
-      .min(AUTH_CONFIG.MINIMUM_USERNAME_LENGTH, {
-        message: `Name must be at least ${AUTH_CONFIG.MINIMUM_USERNAME_LENGTH} characters.`,
+      .min(AUTH_CONFIG.FIELD_LENGTH.USERNAME.MIN, {
+        message: `Name must be at least ${AUTH_CONFIG.FIELD_LENGTH.USERNAME.MIN} characters.`,
       })
-      .max(AUTH_CONFIG.MAXIMUM_USERNAME_LENGTH, {
-        message: `Name must be at most ${AUTH_CONFIG.MAXIMUM_USERNAME_LENGTH} characters.`,
+      .max(AUTH_CONFIG.FIELD_LENGTH.USERNAME.MAX, {
+        message: `Name must be at most ${AUTH_CONFIG.FIELD_LENGTH.USERNAME.MAX} characters.`,
       }),
     email: z.email(),
     password: z
       .string()
-      .min(AUTH_CONFIG.MINIMUM_PASSWORD_LENGTH, {
-        message: `Password must be at least ${AUTH_CONFIG.MINIMUM_PASSWORD_LENGTH} characters.`,
+      .min(AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MIN, {
+        message: `Password must be at least ${AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MIN} characters.`,
       })
-      .max(AUTH_CONFIG.MAXIMUM_PASSWORD_LENGTH, {
-        message: `Password must be at most ${AUTH_CONFIG.MAXIMUM_PASSWORD_LENGTH} characters.`,
+      .max(AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MAX, {
+        message: `Password must be at most ${AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MAX} characters.`,
       }),
     confirmPassword: z.string(),
   })

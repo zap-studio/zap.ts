@@ -1,19 +1,36 @@
 export type Provider = "github" | "google";
 
 export type AuthConfig = {
-  LOGIN_URL: string;
-  SIGN_UP_URL: string;
-  FORGOT_PASSWORD_URL: string;
-  MAXIMUM_PASSWORD_LENGTH: number;
-  MAXIMUM_USERNAME_LENGTH: number;
+  PUBLIC_PATHS: string[];
+  URLS: {
+    LOGIN: string;
+    SIGN_UP: string;
+    FORGOT_PASSWORD: string;
+  };
+  REDIRECT_URLS: {
+    AFTER_SIGN_IN: string;
+    AFTER_SIGN_UP: string;
+  };
+  FIELD_LENGTH: {
+    USERNAME: {
+      MIN: number;
+      MAX: number;
+    };
+    PASSWORD: {
+      MIN: number;
+      MAX: number;
+    };
+  };
+  MAILS: {
+    FROM: string;
+    SUPPORT: string;
+  };
+  SOCIAL_PROVIDERS: {
+    ENABLED: boolean;
+    PROVIDERS: Provider[];
+  };
   MINIMUM_PASSWORD_LENGTH: number;
-  MINIMUM_USERNAME_LENGTH: number;
   PASSWORD_COMPROMISED_MESSAGE: string;
-  REDIRECT_URL_AFTER_SIGN_IN: string;
-  REDIRECT_URL_AFTER_SIGN_UP: string;
   REQUIRE_MAIL_VERIFICATION: boolean;
   VERIFIED_EMAIL_PATH: string;
-  ENABLE_SOCIAL_PROVIDER: boolean;
-  PROVIDERS: Provider[];
-  PUBLIC_PATHS: string[];
 };

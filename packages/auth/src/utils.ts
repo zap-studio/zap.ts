@@ -5,7 +5,7 @@ import { AUTH_CONFIG } from ".";
 
 export function redirectToLogin() {
   return Response.redirect(
-    AUTH_CONFIG.LOGIN_URL,
+    AUTH_CONFIG.URLS.LOGIN,
     HttpStatus.TEMPORARY_REDIRECT
   );
 }

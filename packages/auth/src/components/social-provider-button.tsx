@@ -24,7 +24,7 @@ export function SocialProviderButton({ provider }: SocialProviderButtonProps) {
     try {
       const { data, error } = await betterAuthClient.signIn.social({
         provider: _provider,
-        callbackURL: AUTH_CONFIG.REDIRECT_URL_AFTER_SIGN_IN,
+        callbackURL: AUTH_CONFIG.REDIRECT_URLS.AFTER_SIGN_IN,
       });
 
       if (error) {

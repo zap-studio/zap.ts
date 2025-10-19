@@ -3,7 +3,7 @@ import "client-only";
 
 import { useForm } from "@tanstack/react-form";
 import { handleClientError } from "@zap/errors/client";
-import { ZAP_MAILS_CONFIG } from "@zap/mails";
+import { MAILS_CONFIG } from "@zap/mails";
 import {
   Field,
   FieldError,
@@ -45,7 +45,7 @@ export function ForgotPasswordForm() {
         });
 
         toast.success("Check your email for the reset link!");
-        startCooldown(ZAP_MAILS_CONFIG.RATE_LIMIT_SECONDS);
+        startCooldown(MAILS_CONFIG.RATE_LIMIT_SECONDS);
       } catch (error) {
         handleClientError(error);
       } finally {

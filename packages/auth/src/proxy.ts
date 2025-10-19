@@ -44,7 +44,7 @@ export function createLoginRedirect(
   request: NextRequest,
   pathname: string
 ): NextResponse {
-  const loginUrl = new URL(AUTH_CONFIG.LOGIN_URL, request.url);
+  const loginUrl = new URL(AUTH_CONFIG.URLS.LOGIN, request.url);
   loginUrl.searchParams.set("redirect", pathname);
   return NextResponse.redirect(loginUrl);
 }
@@ -53,7 +53,7 @@ export function createLoginRedirect(
  * Gets the login URL from the auth configuration.
  */
 export function getLoginUrl(): string {
-  return AUTH_CONFIG.LOGIN_URL;
+  return AUTH_CONFIG.URLS.LOGIN;
 }
 
 /**

@@ -4,7 +4,7 @@ import "client-only";
 import { useRouter } from "@bprogress/next/app";
 import { UnauthorizedError } from "@zap/errors";
 import { handleClientError } from "@zap/errors/client";
-import { ZAP_MAILS_CONFIG } from "@zap/mails/zap.plugin.config";
+import { MAILS_CONFIG } from "@zap/mails";
 import { useState } from "react";
 import { toast } from "sonner";
 import type { z } from "zod";
@@ -27,7 +27,7 @@ export function useAuth(callbackURL?: string) {
         email,
         callbackURL: AUTH_CONFIG.VERIFIED_EMAIL_PATH,
       });
-      startCooldown(ZAP_MAILS_CONFIG.RATE_LIMIT_SECONDS);
+      startCooldown(MAILS_CONFIG.RATE_LIMIT_SECONDS);
     } catch (error) {
       handleClientError(error);
     }
@@ -59,7 +59,7 @@ export function useAuth(callbackURL?: string) {
       }
 
       toast.success("Login successful!");
-      router.push(loginCallbackURL ?? AUTH_CONFIG.REDIRECT_URL_AFTER_SIGN_IN);
+      router.push(loginCallbackURL ?? AUTH_CONFIG.REDIRECT_URLS.AFTER_SIGN_IN);
     } catch (error) {
       handleClientError(error);
     }
@@ -95,7 +95,7 @@ export function useAuth(callbackURL?: string) {
 
       toast.success("Registration successful!");
       router.push(
-        registerCallbackURL ?? AUTH_CONFIG.REDIRECT_URL_AFTER_SIGN_UP
+        registerCallbackURL ?? AUTH_CONFIG.REDIRECT_URLS.AFTER_SIGN_UP
       );
     } catch (error) {
       if (

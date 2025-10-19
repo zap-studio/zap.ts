@@ -83,7 +83,7 @@ export function _AuthPage({
 }
 
 function SocialProviders() {
-  const providers = AUTH_CONFIG.PROVIDERS;
+  const providers = AUTH_CONFIG.SOCIAL_PROVIDERS.PROVIDERS;
 
   if (!providers || providers.length === 0) {
     return null;

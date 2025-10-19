@@ -22,6 +22,7 @@
     "dev:db:up": "drizzle-kit up --config=drizzle.config.dev.ts",
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
+    "build:skip-env": "SKIP_ENV_VALIDATION=1 turbo run build",
     "format": "npx ultracite fix",
     "lint": "npx biome check .",
     "start": "turbo run start",

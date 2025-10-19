@@ -1,4 +1,4 @@
-import type { ViteUserConfig } from "vitest/config";
+import { defineConfig, type ViteUserConfig } from "vitest/config";
 
 export const config: ViteUserConfig = {
   test: {
@@ -38,17 +38,19 @@ export const config: ViteUserConfig = {
  *   },
  * });
  */
-export const createVitestConfig = (
+export function createVitestConfig(
   overrides: ViteUserConfig = {}
-): ViteUserConfig => ({
-  ...config,
-  ...overrides,
-  test: {
-    ...config.test,
-    ...overrides.test,
-    coverage: {
-      ...config.test?.coverage,
-      ...overrides.test?.coverage,
+): ViteUserConfig {
+  return defineConfig({
+    ...config,
+    ...overrides,
+    test: {
+      ...config.test,
+      ...overrides.test,
+      coverage: {
+        ...config.test?.coverage,
+        ...overrides.test?.coverage,
+      },
     },
-  },
-});
+  });
+}

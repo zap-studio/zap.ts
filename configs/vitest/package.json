@@ -15,6 +15,6 @@
     "typescript": "^5"
   },
   "exports": {
-    ".": "./src/index.mts"
+    ".": "./src/index.ts"
   }
 }

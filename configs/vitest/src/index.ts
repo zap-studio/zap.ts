@@ -1,7 +1,7 @@
-import type { UserConfigExport } from "vitest/config";
+import { defineConfig, type ViteUserConfig } from "vitest/config.js";
 
-export function createConfig(): UserConfigExport {
-  return {
+export function createConfig(overrides: Partial<ViteUserConfig> = {}) {
+  return defineConfig({
     test: {
       globals: true,
       environment: "jsdom",
@@ -21,6 +21,8 @@ export function createConfig(): UserConfigExport {
       clearMocks: true,
       include: ["**/*.{test,spec}.{ts,tsx}"],
       exclude: ["node_modules", "dist", ".next", ".turbo"],
+      ...overrides.test,
     },
-  };
+    ...overrides,
+  });
 }

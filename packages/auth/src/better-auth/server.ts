@@ -1,6 +1,17 @@
 import "server-only";
 
 import { checkout, polar, portal } from "@polar-sh/better-auth";
+import { db } from "@zap/db/drizzle";
+import { MailError } from "@zap/errors";
+import { MAILS_CONFIG } from "@zap/mails";
+import {
+  canSendMailService,
+  sendForgotPasswordMailService,
+  sendVerificationMailService,
+  updateLastTimestampMailSentService,
+} from "@zap/mails/services";
+import { PAYMENTS_CONFIG } from "@zap/payments";
+import { polarClient } from "@zap/payments/polar/server";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import {
@@ -12,20 +23,8 @@ import {
   username,
 } from "better-auth/plugins";
 import { passkey } from "better-auth/plugins/passkey";
-
-import { db } from "@/zap/db/providers/drizzle";
-import { SERVER_ENV } from "@/zap/env/server";
-import { MailError } from "@/zap/errors";
-import {
-  canSendMailService,
-  sendForgotPasswordMailService,
-  sendVerificationMailService,
-  updateLastTimestampMailSentService,
-} from "@/zap/mails/services";
-import { ZAP_MAILS_CONFIG } from "@/zap/mails/zap.plugin.config";
-import { polarClient } from "@/zap/payments/providers/polar/server";
-import { ZAP_PAYMENTS_CONFIG } from "@/zap/payments/zap.plugin.config";
 import { AUTH_CONFIG } from "..";
+import { AUTH_ENV } from "../env";
 
 export const betterAuthServer = betterAuth({
   appName: "Zap.ts",
@@ -48,7 +47,7 @@ export const betterAuthServer = betterAuth({
 
       await sendForgotPasswordMailService({
         recipients: [user.email],
-        subject: `${ZAP_MAILS_CONFIG.PREFIX} - Reset your password`,
+        subject: `${MAILS_CONFIG.PREFIX} - Reset your password`,
         url,
       });
 
@@ -81,7 +80,7 @@ export const betterAuthServer = betterAuth({
 
       await sendVerificationMailService({
         recipients: [user.email],
-        subject: `${ZAP_MAILS_CONFIG.PREFIX} - Verify your email`,
+        subject: `${MAILS_CONFIG.PREFIX} - Verify your email`,
         url: modifiedUrl,
       });
 
@@ -92,26 +91,25 @@ export const betterAuthServer = betterAuth({
   },
   socialProviders: {
     github: {
-      clientId: SERVER_ENV.GITHUB_CLIENT_ID || "",
-      clientSecret: SERVER_ENV.GITHUB_CLIENT_SECRET || "",
+      clientId: AUTH_ENV.GITHUB_CLIENT_ID || "",
+      clientSecret: AUTH_ENV.GITHUB_CLIENT_SECRET || "",
     },
     google: {
       enabled: true,
-      clientId: SERVER_ENV.GOOGLE_CLIENT_ID || "",
-      clientSecret: SERVER_ENV.GOOGLE_CLIENT_SECRET || "",
+      clientId: AUTH_ENV.GOOGLE_CLIENT_ID || "",
+      clientSecret: AUTH_ENV.GOOGLE_CLIENT_SECRET || "",
     },
   },
   plugins: [
     polar({
       client: polarClient,
-      createCustomerOnSignUp:
-        ZAP_PAYMENTS_CONFIG.POLAR?.CREATE_CUSTOMER_ON_SIGNUP,
+      createCustomerOnSignUp: PAYMENTS_CONFIG.POLAR?.CREATE_CUSTOMER_ON_SIGNUP,
       use: [
         checkout({
-          products: ZAP_PAYMENTS_CONFIG.POLAR?.PRODUCTS,
-          successUrl: `${ZAP_PAYMENTS_CONFIG.POLAR?.SUCCESS_URL}?checkout_id={CHECKOUT_ID}`,
+          products: PAYMENTS_CONFIG.POLAR?.PRODUCTS,
+          successUrl: `${PAYMENTS_CONFIG.POLAR?.SUCCESS_URL}?checkout_id={CHECKOUT_ID}`,
           authenticatedUsersOnly:
-            ZAP_PAYMENTS_CONFIG.POLAR?.AUTHENTICATED_USERS_ONLY,
+            PAYMENTS_CONFIG.POLAR?.AUTHENTICATED_USERS_ONLY,
         }),
         portal(),
       ],

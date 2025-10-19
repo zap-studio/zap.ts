@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@bprogress/next": "^3.2.12",
+    "@orpc/client": "^1.9.4",
     "@polar-sh/better-auth": "^1.1.9",
     "@t3-oss/env-core": "^0.13.8",
     "@tanstack/react-form": "^1.23.7",
@@ -45,6 +46,7 @@
     "./hooks": "./src/hooks/index.ts",
     "./hooks/*": "./src/hooks/*.ts",
     "./lib/*": "./src/lib/*.ts",
-    "./pages/*": "./src/pages/*.tsx"
+    "./pages/*": "./src/pages/*.tsx",
+    "./rpc/orpc/*": "./src/rpc/orpc/*.ts"
   }
 }

@@ -182,14 +182,13 @@
     "configs/vitest": {
       "name": "@zap/vitest-config",
       "version": "0.0.0",
-      "dependencies": {
-        "vitest": "^3.2.4",
-      },
       "devDependencies": {
         "@types/node": "^24.7.1",
         "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
-        "vite": "^7.1.10",
+      },
+      "peerDependencies": {
+        "vitest": "^3",
       },
     },
     "packages/analytics": {

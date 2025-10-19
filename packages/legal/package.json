@@ -1,0 +1,31 @@
+{
+  "name": "@zap/legal",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@zap/shadcn": "workspace:*",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.1",
+    "@types/react": "^19.2.2",
+    "@zap/typescript-config": "workspace:*",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "next": "^15",
+    "react": "^19"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./components/*": "./src/components/*.tsx",
+    "./data/*": "./src/data/*.mdx",
+    "./pages/*": "./src/pages/*.tsx",
+    "./layout": "./src/layout.tsx",
+    "./*": "./src/*.ts"
+  }
+}

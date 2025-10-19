@@ -1,5 +1,4 @@
 import "server-only";
-import { cn } from "@zap/shadcn/lib/utils";
 import {
   Card,
   CardContent,
@@ -20,6 +19,7 @@ type AuthPageProps = {
     linkText: string;
     linkHref: string;
   };
+  policyLinks?: React.ReactNode;
 };
 
 export function _AuthPage({
@@ -27,6 +27,7 @@ export function _AuthPage({
   description,
   form,
   bottomText,
+  policyLinks,
 }: AuthPageProps) {
   return (
     <div className="flex min-h-svh flex-col items-center justify-center gap-6 bg-muted/50 p-6 md:p-10">
@@ -75,7 +76,7 @@ export function _AuthPage({
             </CardContent>
           </Card>
 
-          <PolicyLinks />
+          {policyLinks}
         </div>
       </div>
     </div>
@@ -94,27 +95,6 @@ function SocialProviders() {
       {providers.map((provider) => (
         <SocialProviderButton key={provider} provider={provider} />
       ))}
-    </div>
-  );
-}
-
-function PolicyLinks({ className }: { className?: string }) {
-  return (
-    <div
-      className={cn(
-        "text-balance text-center text-muted-foreground text-xs [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-primary [&_a]:active:text-primary",
-        className
-      )}
-    >
-      By clicking continue, you agree to our{" "}
-      <Link href={{ pathname: LEGAL_CONFIG.TERMS_OF_SERVICE_URL }}>
-        Terms of Service
-      </Link>{" "}
-      and{" "}
-      <Link href={{ pathname: LEGAL_CONFIG.PRIVACY_POLICY_URL }}>
-        Privacy Policy
-      </Link>
-      .
     </div>
   );
 }

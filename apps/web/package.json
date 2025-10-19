@@ -25,6 +25,7 @@
     "@t3-oss/env-nextjs": "^0.13.8",
     "@zap/analytics": "workspace:*",
     "@zap/async-state": "workspace:*",
+    "@zap/auth": "workspace:*",
     "@zap/crypto": "workspace:*",
     "@zap/db": "workspace:*",
     "@zap/env": "workspace:*",

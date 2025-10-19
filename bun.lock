@@ -195,7 +195,9 @@
       "version": "0.0.0",
       "devDependencies": {
         "@types/node": "^24.7.1",
+        "@zap/tsdown-config": "workspace:*",
         "@zap/typescript-config": "workspace:*",
+        "tsdown": "^0.15.8",
         "typescript": "^5",
       },
     },

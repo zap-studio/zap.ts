@@ -1,3 +1,3 @@
-import type { AuthBaseConfig } from "./types";
+import type { AuthConfig } from "./types";
 
-export const AUTH_BASE_CONFIG: AuthBaseConfig = {};
+export const AUTH_CONFIG: AuthConfig = {};

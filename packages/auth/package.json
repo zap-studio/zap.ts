@@ -7,27 +7,38 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@bprogress/next": "^3.2.12",
     "@t3-oss/env-core": "^0.13.8",
+    "@zap/async-state": "workspace:*",
     "@zap/config": "workspace:*",
     "@zap/db": "workspace:*",
     "@zap/env": "workspace:*",
     "@zap/errors": "workspace:*",
+    "@zap/shadcn": "workspace:*",
+    "@zap/ui": "workspace:*",
     "server-only": "^0.0.1",
+    "sonner": "^2.0.7",
     "zod": "^4.1.12"
   },
   "devDependencies": {
     "@types/node": "^24.7.1",
+    "@types/react": "^19.2.2",
     "@zap/typescript-config": "workspace:*",
     "typescript": "^5"
   },
   "peerDependencies": {
-    "next": "^15"
+    "next": "^15",
+    "react": "^19"
   },
   "exports": {
     ".": "./src/index.ts",
     "./*": "./src/*",
-    "./pages/*": "./src/pages/*.tsx",
+    "./better-auth/*": "./src/better-auth/*.ts",
     "./components/*": "./src/components/*.tsx",
-    "./forms/*": "./src/forms/*.tsx"
+    "./forms/*": "./src/forms/*.tsx",
+    "./hooks": "./src/hooks/index.ts",
+    "./hooks/*": "./src/hooks/*.ts",
+    "./lib/*": "./src/lib/*.ts",
+    "./pages/*": "./src/pages/*.tsx"
   }
 }

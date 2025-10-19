@@ -1,6 +1,6 @@
 export type Provider = "github" | "google";
 
-export type AuthBaseConfig = {
+export type AuthConfig = {
   LOGIN_URL: string;
   SIGN_UP_URL: string;
   FORGOT_PASSWORD_URL: string;
@@ -13,12 +13,7 @@ export type AuthBaseConfig = {
   REDIRECT_URL_AFTER_SIGN_UP: string;
   REQUIRE_MAIL_VERIFICATION: boolean;
   VERIFIED_EMAIL_PATH: string;
-};
-
-export interface AuthServerConfig extends AuthBaseConfig {
   ENABLE_SOCIAL_PROVIDER: boolean;
   PROVIDERS: Provider[];
   PUBLIC_PATHS: string[];
-}
-
-export interface AuthClientConfig extends AuthBaseConfig {}
+};

@@ -1,5 +1,5 @@
 {
-  "extends": "@zap/typescript-config/base.json",
+  "extends": "@zap/typescript-config/react-library.json",
   "include": ["."],
   "exclude": ["node_modules", "dist", ".turbo"]
 }

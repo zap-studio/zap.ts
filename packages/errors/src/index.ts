@@ -150,3 +150,5 @@ export class BaseFetchError extends Error {
     this.cause = cause;
   }
 }
+
+export const FetchError = BaseFetchError;

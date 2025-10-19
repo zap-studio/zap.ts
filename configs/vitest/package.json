@@ -4,21 +4,14 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "tsdown --config tsdown.config.ts",
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^24.7.1",
-    "@zap/tsdown-config": "workspace:*",
     "@zap/typescript-config": "workspace:*",
-    "tsdown": "^0.15.8",
     "typescript": "^5"
   },
   "exports": {
-    ".": "./dist/index.js",
-    "./package.json": "./package.json"
-  },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts"
+    ".": "./src/index.ts"
+  }
 }

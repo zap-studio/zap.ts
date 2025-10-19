@@ -14,9 +14,6 @@
     "tsdown": "^0.15.8",
     "typescript": "^5"
   },
-  "peerDependencies": {
-    "vitest": "^3"
-  },
   "exports": {
     ".": "./dist/index.js",
     "./package.json": "./package.json"

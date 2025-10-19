@@ -1,41 +1,22 @@
-import type { UserConfig } from "vitest/config";
-
-/**
- * Creates a Vitest configuration with default settings, allowing for overrides.
- *
- * @example
- * import { createConfig } from "@zap/vitest-config";
- * import { defineConfig } from "vitest/config";
- *
- * export default defineConfig(createConfig({
- *   test: {
- *     environment: "node",
- *   },
- * }));
- */
-export function createConfig(overrides: Partial<UserConfig> = {}): UserConfig {
-  return {
-    test: {
-      globals: true,
-      environment: "jsdom",
-      coverage: {
-        provider: "v8",
-        reporter: ["text", "json", "html"],
-        exclude: [
-          "node_modules/",
-          "dist/",
-          "**/*.config.{ts,js}",
-          "**/*.d.ts",
-          "**/test/**",
-        ],
-      },
-      mockReset: true,
-      restoreMocks: true,
-      clearMocks: true,
-      include: ["**/*.{test,spec}.{ts,tsx}"],
-      exclude: ["node_modules", "dist", ".next", ".turbo"],
-      ...overrides.test,
+export const config = {
+  test: {
+    globals: true,
+    environment: "jsdom",
+    coverage: {
+      provider: "v8" as const,
+      reporter: ["text", "json", "html"],
+      exclude: [
+        "node_modules/",
+        "dist/",
+        "**/*.config.{ts,js}",
+        "**/*.d.ts",
+        "**/test/**",
+      ],
     },
-    ...overrides,
-  };
-}
+    mockReset: true,
+    restoreMocks: true,
+    clearMocks: true,
+    include: ["**/*.{test,spec}.{ts,tsx}"],
+    exclude: ["node_modules", "dist", ".next", ".turbo"],
+  },
+};

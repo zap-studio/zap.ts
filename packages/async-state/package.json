@@ -1,0 +1,30 @@
+{
+  "name": "@zap/async-state",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@orpc/client": "^1.9.3",
+    "@tanstack/react-query": "^5.90.2",
+    "@tanstack/react-query-devtools": "^5.90.2",
+    "@zap/errors": "workspace:*",
+    "client-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.1",
+    "@types/react": "^19.2.2",
+    "@zap/typescript-config": "workspace:*",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "react": "^19"
+  },
+  "exports": {
+    "./tanstack-query": "./src/tanstack-query/index.ts",
+    "./tanstack-query/*": "./src/tanstack-query/*.ts",
+    "./tanstack-query/providers": "./src/tanstack-query/providers.tsx"
+  }
+}

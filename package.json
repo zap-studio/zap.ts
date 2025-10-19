@@ -1,28 +1,59 @@
 {
-  "name": "zap-ts-template",
+  "name": "@zap/monorepo",
   "version": "0.0.0",
-  "devDependencies": {
-    "@zap/typescript-config": "workspace:*",
-    "@biomejs/biome": "2.2.5",
-    "@changesets/cli": "^2.29.7",
-    "lefthook": "^1.13.6",
-    "turbo": "^2.5.8",
-    "typescript": "^5.9.3",
-    "ultracite": "5.6.2"
-  },
   "packageManager": "bun@1.2.23",
   "private": false,
   "scripts": {
+    "db:check": "drizzle-kit check",
+    "dev:db:check": "drizzle-kit check --config=drizzle.config.dev.ts",
+    "db:export": "drizzle-kit export --config=drizzle.config.prod.ts",
+    "dev:db:export": "drizzle-kit export --config=drizzle.config.dev.ts",
+    "db:generate": "drizzle-kit generate --config=drizzle.config.prod.ts",
+    "dev:db:generate": "drizzle-kit generate --config=drizzle.config.dev.ts",
+    "db:migrate": "drizzle-kit migrate --config=drizzle.config.prod.ts",
+    "dev:db:migrate": "drizzle-kit migrate --config=drizzle.config.dev.ts",
+    "db:pull": "drizzle-kit pull --config=drizzle.config.prod.ts",
+    "dev:db:pull": "drizzle-kit pull --config=drizzle.config.dev.ts",
+    "db:push": "drizzle-kit push --config=drizzle.config.prod.ts",
+    "dev:db:push": "drizzle-kit push --config=drizzle.config.dev.ts",
+    "db:studio": "drizzle-kit studio --config=drizzle.config.prod.ts",
+    "dev:db:studio": "drizzle-kit studio --config=drizzle.config.dev.ts",
+    "db:up": "drizzle-kit up --config=drizzle.config.prod.ts",
+    "dev:db:up": "drizzle-kit up --config=drizzle.config.dev.ts",
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
+    "build:skip-env": "SKIP_ENV_VALIDATION=1 turbo run build",
+    "format": "npx ultracite fix",
+    "lint": "npx biome check .",
+    "start": "turbo run start",
     "test": "turbo run test",
-    "typecheck": "turbo run typecheck",
-    "bootstrap": "bun install",
-    "format": "bun x ultracite fix",
-    "lint": "bun x biome check ."
+    "test:watch": "turbo run test:watch",
+    "e2e": "turbo run e2e",
+    "check-types": "turbo run check-types",
+    "typegen": "turbo run typegen",
+    "clean": "turbo run clean && rimraf node_modules"
   },
   "workspaces": [
     "apps/*",
+    "configs/*",
+    "e2e/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.6",
+    "@changesets/cli": "^2.29.7",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@turbo/gen": "^2.5.8",
+    "@types/node": "^24.8.1",
+    "drizzle-kit": "^0.31.5",
+    "lefthook": "^1.13.6",
+    "rimraf": "^6.0.1",
+    "turbo": "^2.5.8",
+    "typescript": "^5.9.3",
+    "ultracite": "5.6.4"
+  }
 }

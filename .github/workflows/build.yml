@@ -10,19 +10,17 @@ permissions:
 jobs:
   build-monorepo:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
     steps:
       - uses: actions/checkout@v5
 
       - name: Setup bun
-        uses: oven-sh/setup-bun@v2.0.2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4.4.0
-        with:
-          node-version: 24.2.0
+        uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
       - name: Build monorepo
         run: bun run build
+        env:
+          SKIP_ENV_VALIDATION: true

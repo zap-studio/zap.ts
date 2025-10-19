@@ -10,21 +10,17 @@ permissions:
 jobs:
   lint-monorepo:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
     steps:
       - uses: actions/checkout@v5
 
       - name: Setup Biome
-        uses: biomejs/setup-biome@v2.6.0
+        uses: biomejs/setup-biome@v2
         with:
           version: latest
 
       - name: Setup bun
-        uses: oven-sh/setup-bun@v2.0.2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4.4.0
-        with:
-          node-version: 24.2.0
+        uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
         run: bun install --frozen-lockfile

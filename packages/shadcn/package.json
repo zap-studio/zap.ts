@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
@@ -17,7 +17,6 @@
     "next-themes": "^0.4.6",
     "radix-ui": "^1.4.3",
     "react-day-picker": "^9.11.1",
-    "react-hook-form": "^7.65.0",
     "react-resizable-panels": "^3.0.6",
     "recharts": "2.15.4",
     "sonner": "^2.0.7",
@@ -27,24 +26,23 @@
     "zod": "^4.1.12"
   },
   "peerDependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react": "^19",
+    "react-dom": "^19"
   },
   "devDependencies": {
-    "@zap/typescript-config": "workspace:*",
-    "@tailwindcss/postcss": "^4.1.11",
-    "@turbo/gen": "^2.5.5",
+    "@tailwindcss/postcss": "^4.1.14",
     "@types/node": "^24.7.2",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
-    "tailwindcss": "^4.1.11",
+    "@zap/tailwind-config": "workspace:*",
+    "@zap/typescript-config": "workspace:*",
+    "tailwindcss": "^4.1.14",
     "typescript": "^5.9.2"
   },
   "exports": {
     "./globals.css": "./src/styles/globals.css",
-    "./postcss.config": "./postcss.config.mjs",
+    "./ui/*": "./src/ui/*.tsx",
     "./lib/*": "./src/lib/*.ts",
-    "./components/*": "./src/components/*.tsx",
     "./hooks/*": "./src/hooks/*.ts"
   }
 }

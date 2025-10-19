@@ -1,8 +1,29 @@
-import type { NextConfig } from "next";
+import { fileURLToPath } from "node:url";
+import { composeConfig, createBaseConfig } from "@zap/next-config";
+import { withBundleAnalyzer } from "@zap/next-config/plugins/bundle-analyzer";
+import { withMDX } from "@zap/next-config/plugins/mdx";
+import { createJiti } from "jiti";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  transpilePackages: ["@zap/shadcn"],
-};
+// Validate environment variables at build time
+const jiti = createJiti(fileURLToPath(import.meta.url));
+jiti.import("./src/app/env");
 
-export default nextConfig;
+const base = createBaseConfig("default", {
+  overrides: {
+    transpilePackages: [
+      "@zap/analytics",
+      "@zap/config",
+      "@zap/env",
+      "@zap/fonts",
+      "@zap/next-config",
+      "@zap/security",
+      "@zap/seo",
+      "@zap/shadcn",
+      "@zap/tailwind-config",
+      "@zap/typescript-config",
+      "@zap/ui",
+      "@zap/vitest-config",
+    ],
+  },
+});
+export default composeConfig(base, [withMDX, withBundleAnalyzer]);

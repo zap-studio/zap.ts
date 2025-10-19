@@ -1,0 +1,36 @@
+{
+  "name": "@zap/errors",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@orpc/client": "^1.9.3",
+    "@orpc/server": "^1.9.3",
+    "@zap/env": "workspace:*",
+    "client-only": "^0.0.1",
+    "server-only": "^0.0.1",
+    "sonner": "^2.0.7",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.1",
+    "@zap/typescript-config": "workspace:*",
+    "typescript": "^5"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client/index.ts",
+    "./edge": "./src/edge/index.ts",
+    "./server": "./src/server/index.ts",
+    "./server/handlers/*": "./src/server/handlers/*.ts",
+    "./server/utils/*": "./src/server/utils/*.ts",
+    "./constants": "./src/constants.ts",
+    "./types": "./src/types.ts",
+    "./utils/*": "./src/utils/*.ts",
+    "./http": "./src/http.ts",
+    "./uuid": "./src/uuid.ts"
+  }
+}

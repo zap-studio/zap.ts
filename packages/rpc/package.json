@@ -1,0 +1,36 @@
+{
+  "name": "@zap/rpc",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@orpc/client": "^1.9.3",
+    "@orpc/react-query": "^1.9.3",
+    "@orpc/server": "^1.9.3",
+    "@zap/db": "workspace:*",
+    "@zap/errors": "workspace:*",
+    "client-only": "^0.0.1",
+    "drizzle-orm": "^0.44.6",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.1",
+    "@types/react": "^19.2.2",
+    "@types/web-push": "^3.6.4",
+    "@zap/typescript-config": "workspace:*",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "react": "^19",
+    "next": "^15"
+  },
+  "exports": {
+    "./orpc/client": "./src/orpc/client.ts",
+    "./orpc/middlewares/*": "./src/orpc/middlewares/*.ts",
+    "./orpc/router": "./src/orpc/router.ts",
+    "./orpc/server": "./src/orpc/server.ts"
+  }
+}

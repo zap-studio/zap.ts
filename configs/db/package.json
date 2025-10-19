@@ -1,0 +1,32 @@
+{
+  "name": "@zap/db",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "@t3-oss/env-core": "^0.13.8",
+    "@zap/env": "workspace:*",
+    "drizzle-orm": "^0.44.6",
+    "pg": "^8.16.3",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.1",
+    "@types/pg": "^8.15.5",
+    "@types/web-push": "^3.6.4",
+    "@zap/typescript-config": "workspace:*",
+    "typescript": "^5"
+  },
+  "exports": {
+    "./types": "./src/types.ts",
+    "./env": "./src/env.ts",
+    "./drizzle": "./src/drizzle/index.ts",
+    "./drizzle/*": "./src/drizzle/*.ts",
+    "./drizzle/queries/*": "./src/drizzle/queries/*.ts",
+    "./drizzle/tables/*": "./src/drizzle/tables/*.ts"
+  }
+}

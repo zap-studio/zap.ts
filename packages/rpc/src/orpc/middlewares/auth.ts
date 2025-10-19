@@ -14,11 +14,11 @@ export type SessionContext = {
 export const authMiddleware = base.middleware(async ({ next }) => {
   const _headers = await headers();
 
-  const session = await betterAuthServer.api.getSession({
+  const result = await betterAuthServer.api.getSession({
     headers: _headers,
   });
 
-  if (!session) {
+  if (!result) {
     throw new ORPCError("UNAUTHORIZED", {
       message: "Unauthorized access",
     });
@@ -26,7 +26,8 @@ export const authMiddleware = base.middleware(async ({ next }) => {
 
   return await next({
     context: {
-      session,
+      session: result.session,
+      user: result.user,
       headers: _headers,
     },
   });

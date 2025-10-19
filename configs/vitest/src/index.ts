@@ -1,4 +1,5 @@
-import { defineConfig, type ViteUserConfig } from "vitest/config.js";
+import type { ViteUserConfig } from "vitest/config.js";
+import { defineConfig } from "vitest/config.js";
 
 /**
  * Creates a Vitest configuration with default settings, allowing for overrides.

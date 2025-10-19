@@ -1,6 +1,7 @@
-import { defineConfig, type ViteUserConfig } from "vitest/config";
+import type { UserConfig } from "vite";
+import { defineConfig } from "vitest/config";
 
-export const config: ViteUserConfig = {
+export const config: UserConfig = {
   test: {
     globals: true,
     environment: "jsdom",
@@ -38,9 +39,7 @@ export const config: ViteUserConfig = {
  *   },
  * });
  */
-export function createVitestConfig(
-  overrides: ViteUserConfig = {}
-): ViteUserConfig {
+export function createVitestConfig(overrides: UserConfig = {}): UserConfig {
   return defineConfig({
     ...config,
     ...overrides,

@@ -189,6 +189,7 @@
         "@types/node": "^24.7.1",
         "@zap/typescript-config": "workspace:*",
         "typescript": "^5",
+        "vite": "^7.1.10",
       },
     },
     "packages/analytics": {

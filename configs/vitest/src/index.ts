@@ -1,5 +1,18 @@
 import { defineConfig, type ViteUserConfig } from "vitest/config.js";
 
+/**
+ * Creates a Vitest configuration with default settings, allowing for overrides.
+ *
+ * @example
+ * import { createConfig } from "@zap/vitest-config";
+ * import { defineConfig } from "vitest/config";
+ *
+ * export default defineConfig(createConfig({
+ *   test: {
+ *     environment: "jsdom",
+ *   },
+ * }));
+ */
 export function createConfig(overrides: Partial<ViteUserConfig> = {}) {
   return defineConfig({
     test: {

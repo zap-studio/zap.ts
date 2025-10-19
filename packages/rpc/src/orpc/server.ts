@@ -6,7 +6,6 @@ import {
   createRouterClient,
   type InferRouterInitialContext,
 } from "@orpc/server";
-import { router } from "./router";
 
 /**
  * Create an oRPC client instance for server-side usage.
@@ -35,5 +34,3 @@ export function createOrpcServer<
       }) as InferRouterInitialContext<T>,
   });
 }
-
-export const orpcServer = createOrpcServer(router);

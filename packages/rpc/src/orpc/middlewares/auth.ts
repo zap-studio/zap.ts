@@ -3,8 +3,8 @@ import "server-only";
 import { ORPCError } from "@orpc/client";
 import type { Session } from "@zap/auth/better-auth/client";
 import { betterAuthServer } from "@zap/auth/better-auth/server";
+import { base } from "@zap/rpc/orpc/middlewares/base";
 import { headers } from "next/headers";
-import { base } from "./base";
 
 export type SessionContext = {
   readonly session: Session;

@@ -13,6 +13,7 @@ const base = createBaseConfig("pwa", {
     transpilePackages: [
       "@zap/analytics",
       "@zap/async-state",
+      "@zap/auth",
       "@zap/config",
       "@zap/crypto",
       "@zap/db",

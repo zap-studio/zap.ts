@@ -245,6 +245,22 @@
         "react": "^19",
       },
     },
+    "packages/auth": {
+      "name": "@zap/auth",
+      "version": "0.0.0",
+      "dependencies": {
+        "@t3-oss/env-core": "^0.13.8",
+        "@zap/env": "workspace:*",
+        "@zap/errors": "workspace:*",
+        "server-only": "^0.0.1",
+        "zod": "^4.1.12",
+      },
+      "devDependencies": {
+        "@types/node": "^24.7.1",
+        "@zap/typescript-config": "workspace:*",
+        "typescript": "^5",
+      },
+    },
     "packages/config": {
       "name": "@zap/config",
       "version": "0.0.0",
@@ -1137,6 +1153,8 @@
     "@zap/analytics": ["@zap/analytics@workspace:packages/analytics"],
 
     "@zap/async-state": ["@zap/async-state@workspace:packages/async-state"],
+
+    "@zap/auth": ["@zap/auth@workspace:packages/auth"],
 
     "@zap/config": ["@zap/config@workspace:packages/config"],
 

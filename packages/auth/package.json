@@ -1,0 +1,25 @@
+{
+  "name": "@zap/auth",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.1",
+    "@zap/typescript-config": "workspace:*",
+    "typescript": "^5"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*"
+  },
+  "dependencies": {
+    "@t3-oss/env-core": "^0.13.8",
+    "@zap/env": "workspace:*",
+    "@zap/errors": "workspace:*",
+    "server-only": "^0.0.1",
+    "zod": "^4.1.12"
+  }
+}

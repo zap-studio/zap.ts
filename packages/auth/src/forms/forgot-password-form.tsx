@@ -57,6 +57,7 @@ export function ForgotPasswordForm() {
   return (
     <form
       className="space-y-6"
+      id="forgot-password-form"
       onSubmit={(e) => {
         e.preventDefault();
         form.handleSubmit();
@@ -91,6 +92,7 @@ export function ForgotPasswordForm() {
       <ZapButton
         className="w-full"
         disabled={isInCooldown}
+        form="forgot-password-form"
         loading={submitting}
         loadingText="Sending..."
         type="submit"

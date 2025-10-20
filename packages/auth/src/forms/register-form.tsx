@@ -35,6 +35,7 @@ export function RegisterForm() {
   return (
     <form
       className="grid gap-6"
+      id="register-form"
       onSubmit={(e) => {
         e.preventDefault();
         form.handleSubmit();
@@ -140,6 +141,7 @@ export function RegisterForm() {
       <ZapButton
         className="w-full"
         disabled={isInCooldown}
+        form="register-form"
         loading={isSubmitting}
         loadingText="Creating account..."
         type="submit"

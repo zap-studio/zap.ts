@@ -45,6 +45,7 @@ export function LoginForm() {
   return (
     <form
       className="grid gap-6"
+      id="login-form"
       onSubmit={(e) => {
         e.preventDefault();
         form.handleSubmit();
@@ -111,6 +112,7 @@ export function LoginForm() {
       <ZapButton
         className="w-full"
         disabled={isInCooldown}
+        form="login-form"
         loading={isSubmitting}
         loadingText="Logging in..."
         type="submit"

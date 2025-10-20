@@ -97,6 +97,7 @@ export function ResetPasswordForm() {
   return (
     <form
       className="space-y-6"
+      id="reset-password-form"
       onSubmit={(e) => {
         e.preventDefault();
         form.handleSubmit();
@@ -154,6 +155,7 @@ export function ResetPasswordForm() {
 
       <ZapButton
         className="w-full"
+        form="reset-password-form"
         loading={submitting}
         loadingText="Resetting..."
         type="submit"

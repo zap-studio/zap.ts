@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "devDependencies": {
     "@zap/typescript-config": "workspace:*",
-    "@biomejs/biome": "2.2.5",
+    "@biomejs/biome": "2.2.6",
     "@changesets/cli": "^2.29.7",
     "lefthook": "^1.13.6",
     "turbo": "^2.5.8",

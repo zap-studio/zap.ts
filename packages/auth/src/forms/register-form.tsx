@@ -22,7 +22,7 @@ export function RegisterForm() {
       name: "",
       email: "",
       password: "",
-      confirmPassword: "",
+      confirm_password: "",
     },
     validators: {
       onSubmit: RegisterFormSchema,
@@ -113,7 +113,18 @@ export function RegisterForm() {
           }}
         </form.Field>
 
-        <form.Field name="confirmPassword">
+        <form.Field
+          name="confirm_password"
+          validators={{
+            onChangeListenTo: ["password"],
+            onChange: ({ value, fieldApi }) => {
+              if (value !== fieldApi.form.getFieldValue("password")) {
+                return "Passwords do not match";
+              }
+              return;
+            },
+          }}
+        >
           {(field) => {
             const isInvalid =
               field.state.meta.isTouched && !field.state.meta.isValid;
@@ -131,7 +142,13 @@ export function RegisterForm() {
                   type="password"
                   value={field.state.value}
                 />
-                {isInvalid && <FieldError errors={field.state.meta.errors} />}
+                {isInvalid && (
+                  <FieldError
+                    errors={field.state.meta.errors.map((error) =>
+                      typeof error === "string" ? { message: error } : error
+                    )}
+                  />
+                )}
               </Field>
             );
           }}

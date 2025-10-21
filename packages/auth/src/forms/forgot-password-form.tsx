@@ -14,14 +14,10 @@ import { Input } from "@zap/shadcn/ui/input";
 import { ZapButton } from "@zap/ui/components/core/button";
 import { useState } from "react";
 import { toast } from "sonner";
-import z from "zod";
 
 import { betterAuthClient } from "../better-auth/client";
 import { useCooldown } from "../hooks/use-cooldown";
-
-const formSchema = z.object({
-  email: z.email("Please enter a valid email address"),
-});
+import { ForgotPasswordFormSchema } from "../schemas";
 
 export function ForgotPasswordForm() {
   const [submitting, setSubmitting] = useState(false);
@@ -32,7 +28,7 @@ export function ForgotPasswordForm() {
       email: "",
     },
     validators: {
-      onSubmit: formSchema,
+      onSubmit: ForgotPasswordFormSchema,
     },
     onSubmit: async ({ value }) => {
       setSubmitting(true);

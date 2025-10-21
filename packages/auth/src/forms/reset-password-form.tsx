@@ -15,29 +15,9 @@ import { Input } from "@zap/shadcn/ui/input";
 import { ZapButton } from "@zap/ui/components/core/button";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import z from "zod";
 import { AUTH_CONFIG } from "..";
 import { betterAuthClient } from "../better-auth/client";
-
-const formSchema = z
-  .object({
-    password: z
-      .string()
-      .min(
-        AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MIN,
-        `Password must be at least ${AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MIN} characters`
-      ),
-    confirmPassword: z
-      .string()
-      .min(
-        AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MIN,
-        `Password must be at least ${AUTH_CONFIG.FIELD_LENGTH.PASSWORD.MIN} characters`
-      ),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords don't match",
-    path: ["confirmPassword"],
-  });
+import { ResetPasswordFormSchema } from "../schemas";
 
 export function ResetPasswordForm() {
   const [submitting, setSubmitting] = useState(false);
@@ -48,10 +28,10 @@ export function ResetPasswordForm() {
   const form = useForm({
     defaultValues: {
       password: "",
-      confirmPassword: "",
+      confirm_password: "",
     },
     validators: {
-      onSubmit: formSchema,
+      onSubmit: ResetPasswordFormSchema,
     },
     onSubmit: async ({ value }) => {
       setSubmitting(true);
@@ -128,7 +108,18 @@ export function ResetPasswordForm() {
           }}
         </form.Field>
 
-        <form.Field name="confirmPassword">
+        <form.Field
+          name="confirm_password"
+          validators={{
+            onChangeListenTo: ["password"],
+            onChange: ({ value, fieldApi }) => {
+              if (value !== fieldApi.form.getFieldValue("password")) {
+                return "Passwords do not match";
+              }
+              return;
+            },
+          }}
+        >
           {(field) => {
             const isInvalid =
               field.state.meta.isTouched && !field.state.meta.isValid;
@@ -146,7 +137,13 @@ export function ResetPasswordForm() {
                   type="password"
                   value={field.state.value}
                 />
-                {isInvalid && <FieldError errors={field.state.meta.errors} />}
+                {isInvalid && (
+                  <FieldError
+                    errors={field.state.meta.errors.map((error) =>
+                      typeof error === "string" ? { message: error } : error
+                    )}
+                  />
+                )}
               </Field>
             );
           }}

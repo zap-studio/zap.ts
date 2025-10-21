@@ -31,10 +31,13 @@ export interface ZapQueryOptions<
  */
 export interface ZapMutationOptions<TData, TError, TVariables, TOnMutateResult>
   extends UseMutationOptions<TData, TError, TVariables, TOnMutateResult> {
+  /** Whether to show a success toast when the mutation succeeds */
   showSuccessToast?: boolean;
+  /** Optional success message to display */
   successMessage?: string;
+  /** Skip the built-in client error handling if true */
   skipErrorHandling?: boolean;
-
+  /** Callback invoked on mutation success */
   onSettled?: (
     data: TData | undefined,
     error: TError | null,
@@ -42,6 +45,7 @@ export interface ZapMutationOptions<TData, TError, TVariables, TOnMutateResult>
     onMutateResult: TOnMutateResult | undefined,
     context: MutationFunctionContext
   ) => void;
+  /** Callback invoked on mutation error */
   onError?: (
     error: TError,
     variables: TVariables,

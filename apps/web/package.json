@@ -30,6 +30,7 @@
     "@zap/db": "workspace:*",
     "@zap/env": "workspace:*",
     "@zap/fonts": "workspace:*",
+    "@zap/forms": "workspace:*",
     "@zap/next-config": "workspace:*",
     "@zap/rpc": "workspace:*",
     "@zap/security": "workspace:*",

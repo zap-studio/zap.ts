@@ -69,6 +69,7 @@ export function ForgotPasswordForm() {
                 <FieldLabel htmlFor={field.name}>Email address</FieldLabel>
                 <Input
                   aria-invalid={isInvalid}
+                  autoComplete="email"
                   disabled={submitting}
                   id={field.name}
                   name={field.name}

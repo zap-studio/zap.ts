@@ -2,22 +2,17 @@
 import "client-only";
 
 import { useRouter } from "@bprogress/next/app";
-import { useForm } from "@tanstack/react-form";
 import { UnauthorizedError } from "@zap/errors";
 import { handleClientError } from "@zap/errors/client";
-import {
-  Field,
-  FieldError,
-  FieldGroup,
-  FieldLabel,
-} from "@zap/shadcn/ui/field";
-import { Input } from "@zap/shadcn/ui/input";
+import { FieldGroup } from "@zap/shadcn/ui/field";
 import { ZapButton } from "@zap/ui/components/core/button";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { AUTH_CONFIG } from "..";
 import { betterAuthClient } from "../better-auth/client";
 import { ResetPasswordFormSchema } from "../schemas";
+import { usePasswordForm } from "./form-hook";
+import { createPasswordFieldMap, PasswordFieldGroup } from "./password-fields";
 
 export function ResetPasswordForm() {
   const [submitting, setSubmitting] = useState(false);
@@ -25,7 +20,7 @@ export function ResetPasswordForm() {
 
   const router = useRouter();
 
-  const form = useForm({
+  const form = usePasswordForm({
     defaultValues: {
       password: "",
       confirm_password: "",
@@ -84,64 +79,15 @@ export function ResetPasswordForm() {
       }}
     >
       <FieldGroup>
-        <form.Field name="password">
-          {(field) => {
-            const isInvalid =
-              field.state.meta.isTouched && !field.state.meta.isValid;
-            return (
-              <Field data-invalid={isInvalid}>
-                <FieldLabel htmlFor={field.name}>New Password</FieldLabel>
-                <Input
-                  aria-invalid={isInvalid}
-                  disabled={submitting}
-                  id={field.name}
-                  name={field.name}
-                  onBlur={field.handleBlur}
-                  onChange={(e) => field.handleChange(e.target.value)}
-                  placeholder="••••••••"
-                  type="password"
-                  value={field.state.value}
-                />
-                {isInvalid && <FieldError errors={field.state.meta.errors} />}
-              </Field>
-            );
-          }}
-        </form.Field>
-
-        <form.Field
-          name="confirm_password"
-          validators={{
-            onChangeListenTo: ["password"],
-            onChange: ({ value, fieldApi }) => {
-              if (value !== fieldApi.form.getFieldValue("password")) {
-                return { message: "Passwords do not match" };
-              }
-              return;
-            },
-          }}
-        >
-          {(field) => {
-            const isInvalid =
-              field.state.meta.isTouched && !field.state.meta.isValid;
-            return (
-              <Field data-invalid={isInvalid}>
-                <FieldLabel htmlFor={field.name}>Confirm Password</FieldLabel>
-                <Input
-                  aria-invalid={isInvalid}
-                  disabled={submitting}
-                  id={field.name}
-                  name={field.name}
-                  onBlur={field.handleBlur}
-                  onChange={(e) => field.handleChange(e.target.value)}
-                  placeholder="••••••••"
-                  type="password"
-                  value={field.state.value}
-                />
-                {isInvalid && <FieldError errors={field.state.meta.errors} />}
-              </Field>
-            );
-          }}
-        </form.Field>
+        <PasswordFieldGroup
+          confirmPasswordLabel="Confirm New Password"
+          confirmPasswordPlaceholder="••••••••"
+          disabled={submitting}
+          fields={createPasswordFieldMap()}
+          form={form}
+          passwordLabel="New Password"
+          passwordPlaceholder="••••••••"
+        />
       </FieldGroup>
 
       <ZapButton

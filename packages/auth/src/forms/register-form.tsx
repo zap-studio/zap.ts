@@ -1,7 +1,6 @@
 "use client";
 import "client-only";
 
-import { useForm } from "@tanstack/react-form";
 import {
   Field,
   FieldError,
@@ -12,12 +11,14 @@ import { Input } from "@zap/shadcn/ui/input";
 import { ZapButton } from "@zap/ui/components/core/button";
 import { useAuth } from "../hooks";
 import { RegisterFormSchema } from "../schemas";
+import { usePasswordForm } from "./form-hook";
+import { createPasswordFieldMap, PasswordFieldGroup } from "./password-fields";
 
 export function RegisterForm() {
   const { isInCooldown, cooldown, isSubmitting, handleRegisterSubmit } =
     useAuth();
 
-  const form = useForm({
+  const form = usePasswordForm({
     defaultValues: {
       name: "",
       email: "",
@@ -89,64 +90,15 @@ export function RegisterForm() {
           }}
         </form.Field>
 
-        <form.Field name="password">
-          {(field) => {
-            const isInvalid =
-              field.state.meta.isTouched && !field.state.meta.isValid;
-            return (
-              <Field data-invalid={isInvalid}>
-                <FieldLabel htmlFor={field.name}>Password</FieldLabel>
-                <Input
-                  aria-invalid={isInvalid}
-                  autoComplete="new-password"
-                  id={field.name}
-                  name={field.name}
-                  onBlur={field.handleBlur}
-                  onChange={(e) => field.handleChange(e.target.value)}
-                  placeholder="*********"
-                  type="password"
-                  value={field.state.value}
-                />
-                {isInvalid && <FieldError errors={field.state.meta.errors} />}
-              </Field>
-            );
-          }}
-        </form.Field>
-
-        <form.Field
-          name="confirm_password"
-          validators={{
-            onChangeListenTo: ["password"],
-            onChange: ({ value, fieldApi }) => {
-              if (value !== fieldApi.form.getFieldValue("password")) {
-                return { message: "Passwords do not match" };
-              }
-              return;
-            },
-          }}
-        >
-          {(field) => {
-            const isInvalid =
-              field.state.meta.isTouched && !field.state.meta.isValid;
-            return (
-              <Field data-invalid={isInvalid}>
-                <FieldLabel htmlFor={field.name}>Confirm Password</FieldLabel>
-                <Input
-                  aria-invalid={isInvalid}
-                  autoComplete="new-password"
-                  id={field.name}
-                  name={field.name}
-                  onBlur={field.handleBlur}
-                  onChange={(e) => field.handleChange(e.target.value)}
-                  placeholder="*********"
-                  type="password"
-                  value={field.state.value}
-                />
-                {isInvalid && <FieldError errors={field.state.meta.errors} />}
-              </Field>
-            );
-          }}
-        </form.Field>
+        <PasswordFieldGroup
+          confirmPasswordLabel="Confirm Password"
+          confirmPasswordPlaceholder="*********"
+          disabled={false}
+          fields={createPasswordFieldMap()}
+          form={form}
+          passwordLabel="Password"
+          passwordPlaceholder="*********"
+        />
       </FieldGroup>
 
       <ZapButton

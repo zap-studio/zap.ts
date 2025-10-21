@@ -43,6 +43,8 @@
     "./better-auth/*": "./src/better-auth/*.ts",
     "./components/*": "./src/components/*.tsx",
     "./forms/*": "./src/forms/*.tsx",
+    "./forms/form-context": "./src/forms/form-context.ts",
+    "./forms/form-hooks": "./src/forms/form-hooks.ts",
     "./hooks": "./src/hooks/index.ts",
     "./hooks/*": "./src/hooks/*.ts",
     "./lib/*": "./src/lib/*.ts",

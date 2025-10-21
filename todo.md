@@ -203,3 +203,103 @@ For more information on configuring Changesets and adding publishing capabilitie
 - [Turborepo Publishing Guide](https://turborepo.com/docs/guides/publishing-libraries#publishing)
 - [Changesets Documentation](https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md)
 - [Changesets GitHub Action](https://github.com/changesets/action)
+
+## Form Composition Pattern
+
+For building scalable applications, understanding form composition is a crucial pattern. Form composition reduces boilerplate code by creating reusable form components with pre-bound field and form components.
+
+### Why Form Composition Matters
+
+As applications grow, forms become increasingly verbose and repetitive. Form composition allows you to:
+
+- **Reduce boilerplate**: Create reusable field components that encapsulate common patterns
+- **Maintain type safety**: Preserve full TypeScript inference across composed forms
+- **Improve maintainability**: Share form logic and UI across your application
+- **Enable better organization**: Break large forms into smaller, manageable pieces
+
+### The `@zap/forms` Package (Planned)
+
+While not yet implemented, this project plans to introduce a `@zap/forms` package that will provide pre-configured form composition utilities. The package will:
+
+- Map shadcn/ui components from `@zap/shadcn`
+- Integrate custom components from `@zap/ui`
+- Provide reusable field components (TextField, SelectField, CheckboxField, etc.)
+- Export form components (SubmitButton, FormError, etc.)
+- Include a configured provider with TanStack Form DevTools
+
+**Note:** A basic forms provider with TanStack Form DevTools is already available and mounted in applications like `apps/web` where TanStack Form is used.
+
+### Performance Considerations
+
+Form composition introduces an important trade-off: **bundle size**.
+
+When you create a form hook with dozens of pre-bound components, every form that uses that hook will include all those components in its bundle, even if it only uses a few of them.
+
+**Solution: React's `lazy` and `Suspense` APIs**
+
+To mitigate bundle size issues, components should be lazy-loaded:
+
+```tsx
+// src/hooks/form.ts
+import { lazy } from 'react'
+import { createFormHook } from '@tanstack/react-form'
+
+const TextField = lazy(() => import('../components/text-field.tsx'))
+const SelectField = lazy(() => import('../components/select-field.tsx'))
+const CheckboxField = lazy(() => import('../components/checkbox-field.tsx'))
+
+const { useAppForm } = createFormHook({
+  fieldContext,
+  formContext,
+  fieldComponents: {
+    TextField,
+    SelectField,
+    CheckboxField,
+  },
+  formComponents: {},
+})
+```
+
+Then wrap your forms with Suspense:
+
+```tsx
+// src/App.tsx
+import { Suspense } from 'react'
+
+export default function App() {
+  return (
+    <Suspense fallback={<p>Loading form...</p>}>
+      <YourFormComponent />
+    </Suspense>
+  )
+}
+```
+
+### Implementation Status
+
+**Form composition is NOT implemented by default** in this template. This is an intentional decision because:
+
+1. **User responsibility**: The pattern requires end users to manage `Suspense` boundaries and loading states
+2. **Performance awareness**: Developers should consciously opt into this pattern understanding the trade-offs
+3. **Flexibility**: Different applications have different needs for form composition
+4. **Clean organization**: Use the `@zap/forms` package when you're ready to implement this pattern in your monorepo
+
+### Current State
+
+The project currently provides:
+- ✅ Individual form implementations with explicit field definitions (see `packages/auth/src/forms/`)
+- ✅ TanStack Form DevTools provider (available in apps where TanStack Form is used)
+- ⏳ `@zap/forms` package with pre-configured form composition utilities (planned)
+
+### When to Implement Form Composition
+
+Consider implementing form composition when:
+- You have multiple forms sharing similar field patterns
+- Form verbosity becomes a maintenance burden
+- You're comfortable managing lazy loading and Suspense boundaries
+- Your application benefits from centralized form component management
+
+### Learn More
+
+For detailed information about form composition patterns:
+- [TanStack Form Composition Guide](https://tanstack.com/form/latest/docs/framework/react/guides/form-composition)

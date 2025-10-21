@@ -30,27 +30,17 @@ export const LoginFormSchema = z.object({
   password: PasswordSchema,
 });
 
-export const RegisterFormSchema = z
-  .object({
-    name: NameSchema,
-    email: MailSchema,
-    password: PasswordSchema,
-    confirm_password: PasswordSchema,
-  })
-  .refine((data) => data.password === data.confirm_password, {
-    message: "Passwords do not match",
-    path: ["confirm_password"],
-  });
+export const RegisterFormSchema = z.object({
+  name: NameSchema,
+  email: MailSchema,
+  password: PasswordSchema,
+  confirm_password: PasswordSchema,
+});
 
-export const ResetPasswordFormSchema = z
-  .object({
-    password: PasswordSchema,
-    confirm_password: PasswordSchema,
-  })
-  .refine((data) => data.password === data.confirm_password, {
-    message: "Passwords do not match",
-    path: ["confirm_password"],
-  });
+export const ResetPasswordFormSchema = z.object({
+  password: PasswordSchema,
+  confirm_password: PasswordSchema,
+});
 
 export const ForgotPasswordFormSchema = z.object({
   email: MailSchema,

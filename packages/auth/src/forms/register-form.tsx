@@ -119,7 +119,7 @@ export function RegisterForm() {
             onChangeListenTo: ["password"],
             onChange: ({ value, fieldApi }) => {
               if (value !== fieldApi.form.getFieldValue("password")) {
-                return "Passwords do not match";
+                return { message: "Passwords do not match" };
               }
               return;
             },
@@ -142,13 +142,7 @@ export function RegisterForm() {
                   type="password"
                   value={field.state.value}
                 />
-                {isInvalid && (
-                  <FieldError
-                    errors={field.state.meta.errors.map((error) =>
-                      typeof error === "string" ? { message: error } : error
-                    )}
-                  />
-                )}
+                {isInvalid && <FieldError errors={field.state.meta.errors} />}
               </Field>
             );
           }}

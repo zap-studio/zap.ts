@@ -1,0 +1,28 @@
+{
+  "name": "@zap/markdown",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lucide-react": "^0.546.0",
+    "next-mdx-remote": "^5.0.0",
+    "react-syntax-highlighter": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.1",
+    "@types/react": "^19.2.0",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "@zap/typescript-config": "workspace:*",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "next": "^15",
+    "react": "^19"
+  },
+  "exports": {
+    "./mdx": "./src/mdx.tsx"
+  }
+}

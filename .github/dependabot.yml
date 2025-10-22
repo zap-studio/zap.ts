@@ -26,6 +26,7 @@ updates:
       - "/packages/crypto"
       - "/packages/errors"
       - "/packages/fonts"
+      - "/packages/markdown"
       - "/packages/rpc"
       - "/packages/security"
       - "/packages/seo"

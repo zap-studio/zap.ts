@@ -20,6 +20,7 @@ const base = createBaseConfig("pwa", {
       "@zap/env",
       "@zap/fonts",
       "@zap/forms",
+      "@zap/markdown",
       "@zap/next-config",
       "@zap/rpc",
       "@zap/security",

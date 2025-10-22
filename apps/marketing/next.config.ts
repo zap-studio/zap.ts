@@ -15,6 +15,7 @@ const base = createBaseConfig("default", {
       "@zap/config",
       "@zap/env",
       "@zap/fonts",
+      "@zap/markdown",
       "@zap/next-config",
       "@zap/security",
       "@zap/seo",

@@ -1,7 +1,6 @@
 import "server-only";
 
 import { checkout, polar, portal } from "@polar-sh/better-auth";
-import { db } from "@zap/db/drizzle";
 import { MailError } from "@zap/errors";
 import { MAILS_CONFIG } from "@zap/mails";
 import {
@@ -23,6 +22,7 @@ import {
   username,
 } from "better-auth/plugins";
 import { passkey } from "better-auth/plugins/passkey";
+import { db } from "../../../db/src/drizzle";
 import { AUTH_CONFIG } from "..";
 import { AUTH_ENV } from "../env";
 

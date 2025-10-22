@@ -1,10 +1,10 @@
 import "server-only";
 
-import { db } from "@zap/db/drizzle";
-import { getUserIdFromMail } from "@zap/db/drizzle/queries/auth";
-import { user } from "@zap/db/drizzle/tables/auth";
 import { NotFoundError, UnauthorizedError } from "@zap/errors";
 import { headers } from "next/headers";
+import { db } from "../../db/src/drizzle";
+import { getUserIdFromMail } from "../../db/src/drizzle/queries/auth";
+import { user } from "../../db/src/drizzle/tables/auth";
 import { betterAuthServer } from "./better-auth/server";
 import { redirectToLogin } from "./utils";
 

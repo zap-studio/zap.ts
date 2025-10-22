@@ -6,7 +6,7 @@ import type { Config } from "drizzle-kit";
  */
 export const baseDrizzleConfig = {
   out: "./drizzle",
-  schema: "./configs/db/src/drizzle/schema.ts",
+  schema: "./packages/db/src/drizzle/schema.ts",
   dialect: "postgresql",
 } as const satisfies Partial<Config>;
 

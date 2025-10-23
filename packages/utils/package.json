@@ -1,0 +1,22 @@
+{
+  "name": "@zap/utils",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@zap/config": "workspace:*",
+    "@zap/errors": "workspace:*",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.1",
+    "@zap/typescript-config": "workspace:*",
+    "typescript": "^5"
+  },
+  "exports": {
+    "./fetch": "./src/fetch.ts"
+  }
+}

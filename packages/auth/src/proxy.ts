@@ -1,10 +1,10 @@
 import "server-only";
 
+import { $fetch } from "@zap/utils/fetch";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { AUTH_CONFIG } from ".";
 import type { Session } from "./better-auth/client";
-import { $fetch } from "./lib/fetch";
 
 /**
  * Checks if the current path is a public path that doesn't require authentication.

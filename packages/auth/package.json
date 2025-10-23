@@ -19,6 +19,7 @@
     "@zap/errors": "workspace:*",
     "@zap/shadcn": "workspace:*",
     "@zap/ui": "workspace:*",
+    "@zap/utils": "workspace:*",
     "add": "^2.0.6",
     "better-auth": "^1.3.28",
     "bun": "^1.3.0",

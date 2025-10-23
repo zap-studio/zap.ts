@@ -32,6 +32,7 @@ updates:
       - "/packages/seo"
       - "/packages/shadcn"
       - "/packages/ui"
+      - "packages/utils"
     schedule:
       interval: "weekly"
   - package-ecosystem: "github-actions"

@@ -42,6 +42,7 @@
     "next": "catalog:",
     "next-sitemap": "catalog:",
     "nuqs": "catalog:",
+    "pg": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "server-only": "catalog:",

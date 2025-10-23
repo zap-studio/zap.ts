@@ -11,7 +11,6 @@
     "@t3-oss/env-core": "catalog:",
     "@zap/env": "workspace:*",
     "drizzle-orm": "catalog:",
-    "pg": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
@@ -20,6 +19,9 @@
     "@types/web-push": "catalog:",
     "@zap/typescript-config": "workspace:*",
     "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "pg": "catalog:"
   },
   "exports": {
     "./types": "./src/types.ts",

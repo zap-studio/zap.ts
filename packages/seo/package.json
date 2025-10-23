@@ -10,13 +10,13 @@
     "@zap/config": "workspace:*"
   },
   "devDependencies": {
-    "@types/node": "^24.7.1",
+    "@types/node": "catalog:",
     "@zap/typescript-config": "workspace:*",
-    "typescript": "^5"
+    "typescript": "catalog:"
   },
   "peerDependencies": {
-    "next": "^15",
-    "next-sitemap": "^4"
+    "next": "catalog:",
+    "next-sitemap": "catalog:"
   },
   "exports": {
     ".": "./src/index.ts",

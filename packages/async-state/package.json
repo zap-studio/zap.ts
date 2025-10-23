@@ -7,20 +7,20 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@orpc/client": "^1.9.3",
+    "@orpc/client": "catalog:",
     "@tanstack/react-query": "^5.90.2",
     "@tanstack/react-query-devtools": "^5.90.2",
     "@zap/errors": "workspace:*",
-    "client-only": "^0.0.1"
+    "client-only": "catalog:"
   },
   "devDependencies": {
-    "@types/node": "^24.7.1",
-    "@types/react": "^19.2.2",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
     "@zap/typescript-config": "workspace:*",
-    "typescript": "^5"
+    "typescript": "catalog:"
   },
   "peerDependencies": {
-    "react": "^19"
+    "react": "catalog:"
   },
   "exports": {
     "./tanstack-query": "./src/tanstack-query/index.ts",

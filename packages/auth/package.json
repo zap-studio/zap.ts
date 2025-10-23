@@ -7,11 +7,11 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@bprogress/next": "^3.2.12",
-    "@orpc/client": "^1.9.4",
-    "@polar-sh/better-auth": "^1.1.9",
-    "@t3-oss/env-core": "^0.13.8",
-    "@tanstack/react-form": "^1.23.7",
+    "@bprogress/next": "catalog:",
+    "@orpc/client": "catalog:",
+    "@polar-sh/better-auth": "catalog:",
+    "@t3-oss/env-core": "catalog:",
+    "@tanstack/react-form": "catalog:",
     "@zap/async-state": "workspace:*",
     "@zap/config": "workspace:*",
     "@zap/db": "workspace:*",
@@ -20,21 +20,21 @@
     "@zap/shadcn": "workspace:*",
     "@zap/ui": "workspace:*",
     "@zap/utils": "workspace:*",
-    "better-auth": "^1.3.28",
-    "client-only": "^0.0.1",
-    "server-only": "^0.0.1",
-    "sonner": "^2.0.7",
-    "zod": "^4.1.12"
+    "better-auth": "catalog:",
+    "client-only": "catalog:",
+    "server-only": "catalog:",
+    "sonner": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
-    "@types/node": "^24.7.1",
-    "@types/react": "^19.2.2",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
     "@zap/typescript-config": "workspace:*",
-    "typescript": "^5"
+    "typescript": "catalog:"
   },
   "peerDependencies": {
-    "next": "^15",
-    "react": "^19"
+    "next": "catalog:",
+    "react": "catalog:"
   },
   "exports": {
     ".": "./src/index.ts",

@@ -11,13 +11,13 @@
     "@tanstack/react-form-devtools": "^0.1.7"
   },
   "devDependencies": {
-    "@types/node": "^24.7.1",
-    "@types/react": "^19.2.2",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
     "@zap/typescript-config": "workspace:*",
-    "typescript": "^5"
+    "typescript": "catalog:"
   },
   "peerDependencies": {
-    "react": "^19"
+    "react": "catalog:"
   },
   "exports": {
     "./tanstack-form/providers": "./src/tanstack-form/providers.tsx"

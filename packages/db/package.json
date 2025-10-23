@@ -7,19 +7,19 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^1.0.2",
-    "@t3-oss/env-core": "^0.13.8",
+    "@neondatabase/serverless": "catalog:",
+    "@t3-oss/env-core": "catalog:",
     "@zap/env": "workspace:*",
-    "drizzle-orm": "^0.44.6",
-    "pg": "^8.16.3",
-    "zod": "^4.1.12"
+    "drizzle-orm": "catalog:",
+    "pg": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
-    "@types/node": "^24.7.1",
-    "@types/pg": "^8.15.5",
+    "@types/node": "catalog:",
+    "@types/pg": "catalog:",
     "@types/web-push": "^3.6.4",
     "@zap/typescript-config": "workspace:*",
-    "typescript": "^5"
+    "typescript": "catalog:"
   },
   "exports": {
     "./types": "./src/types.ts",

@@ -12,14 +12,14 @@
     "gray-matter": "^4.0.3"
   },
   "devDependencies": {
-    "@types/node": "^24.7.1",
-    "@types/react": "^19.2.2",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
     "@zap/typescript-config": "workspace:*",
-    "typescript": "^5"
+    "typescript": "catalog:"
   },
   "peerDependencies": {
-    "next": "^15",
-    "react": "^19"
+    "next": "catalog:",
+    "react": "catalog:"
   },
   "exports": {
     ".": "./src/index.ts",

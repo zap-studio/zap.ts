@@ -9,7 +9,7 @@
   "dependencies": {
     "@zap/markdown": "workspace:*",
     "@zap/shadcn": "workspace:*",
-    "gray-matter": "^4.0.3"
+    "gray-matter": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",

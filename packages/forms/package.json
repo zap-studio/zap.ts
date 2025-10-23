@@ -7,8 +7,8 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@tanstack/react-devtools": "^0.7.7",
-    "@tanstack/react-form-devtools": "^0.1.7"
+    "@tanstack/react-devtools": "catalog:",
+    "@tanstack/react-form-devtools": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",

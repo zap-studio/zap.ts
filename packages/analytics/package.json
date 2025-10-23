@@ -8,12 +8,12 @@
   },
   "dependencies": {
     "@t3-oss/env-core": "catalog:",
-    "@vercel/analytics": "^1.5.0",
-    "@vercel/speed-insights": "^1.2.0",
+    "@vercel/analytics": "catalog:",
+    "@vercel/speed-insights": "catalog:",
     "@zap/env": "workspace:*",
     "client-only": "catalog:",
-    "posthog-js": "^1.275.1",
-    "posthog-node": "^5.9.5",
+    "posthog-js": "catalog:",
+    "posthog-node": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {

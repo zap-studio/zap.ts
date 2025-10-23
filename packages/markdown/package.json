@@ -8,13 +8,13 @@
   },
   "dependencies": {
     "lucide-react": "catalog:",
-    "next-mdx-remote": "^5.0.0",
-    "react-syntax-highlighter": "^16.0.0"
+    "next-mdx-remote": "catalog:",
+    "react-syntax-highlighter": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",
     "@types/react": "catalog:",
-    "@types/react-syntax-highlighter": "^15.5.13",
+    "@types/react-syntax-highlighter": "catalog:",
     "@zap/typescript-config": "workspace:*",
     "typescript": "catalog:"
   },

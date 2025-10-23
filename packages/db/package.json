@@ -17,7 +17,7 @@
   "devDependencies": {
     "@types/node": "catalog:",
     "@types/pg": "catalog:",
-    "@types/web-push": "^3.6.4",
+    "@types/web-push": "catalog:",
     "@zap/typescript-config": "workspace:*",
     "typescript": "catalog:"
   },

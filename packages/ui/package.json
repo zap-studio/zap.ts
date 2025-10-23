@@ -12,9 +12,9 @@
     "@zap/shadcn": "workspace:*",
     "client-only": "catalog:",
     "lucide-react": "catalog:",
-    "motion": "^12.23.24",
+    "motion": "catalog:",
     "next-themes": "catalog:",
-    "radix-ui": "^1.4.3"
+    "radix-ui": "catalog:"
   },
   "peerDependencies": {
     "next": "catalog:",

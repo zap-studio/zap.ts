@@ -15,7 +15,7 @@
     "input-otp": "catalog:",
     "lucide-react": "catalog:",
     "next-themes": "catalog:",
-    "radix-ui": "^1.4.3",
+    "radix-ui": "catalog:",
     "react-day-picker": "catalog:",
     "react-resizable-panels": "catalog:",
     "recharts": "catalog:",

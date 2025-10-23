@@ -16,7 +16,7 @@ catalog:
   '@orpc/react-query': ^1.10.0
   '@orpc/server': ^1.10.0
   '@playwright/test': ^1.50.3
-  '@polar-sh/better-auth': ^1.1.9
+  '@polar-sh/better-auth': ^1.1.11
   '@radix-ui/react-slot': ^1.2.3
   '@t3-oss/env-core': ^0.13.8
   '@t3-oss/env-nextjs': ^0.13.8
@@ -40,7 +40,7 @@ catalog:
   input-otp: ^1.4.2
   jiti: ^2.4.2
   jsdom: ^27.0.0
-  lefthook: ^1.13.6
+  lefthook: ^2.0.0
   lucide-react: ^0.545.0
   next: 15.5.4
   next-sitemap: ^4.2.3

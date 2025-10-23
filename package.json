@@ -1,8 +1,8 @@
 {
   "name": "@zap/monorepo",
   "version": "0.0.0",
-  "packageManager": "bun@1.2.23",
-  "private": false,
+  "packageManager": "pnpm@10.19.1-oidc-test.2+sha512.b5543daf8ffc33a0ba7fa34cfeca2f91b991406f1c2f5f58b2d109de2f07d0346fdf5ac22c45ecb7542e116b12da1641022e95f562fc06d547e933029d06f7d3",
+  "private": true,
   "scripts": {
     "db:check": "drizzle-kit check",
     "dev:db:check": "drizzle-kit check --config=drizzle.config.dev.ts",
@@ -33,12 +33,6 @@
     "typegen": "turbo run typegen",
     "clean": "turbo run clean && rimraf node_modules"
   },
-  "workspaces": [
-    "apps/*",
-    "configs/*",
-    "e2e/*",
-    "packages/*"
-  ],
   "dependencies": {
     "dotenv": "^17.2.3"
   },

@@ -1,23 +1,22 @@
-import { BASE_URL } from "@zap/config";
 import { FetchError } from "@zap/errors";
 import type { ZodType } from "zod";
 
 /**
  * Resolve the base URL depending on runtime.
  * - Client side: window.location.origin
- * - Server/Edge: BASE_URL from environment variables
+ * - Server/Edge: fallbackUrl or "http://localhost:3000"
  */
-function getBaseURL(): string {
-  if (typeof window !== "undefined" && window.location?.origin) {
+function getBaseURL(fallbackUrl?: string): string {
+  if (typeof window !== "undefined") {
     return window.location.origin;
   }
-  return BASE_URL;
+  return fallbackUrl || "http://localhost:3000";
 }
-
-const BASE = getBaseURL();
 
 /** Options for the $fetch helper. */
 export interface FetchOptions<TData = unknown> extends RequestInit {
+  /** Optional base URL to prefix to input. Mostly useful on server/edge runtime. */
+  baseUrl?: string;
   /** Optional zod schema to validate & type the JSON response. */
   schema?: ZodType<TData>;
   /** Automatically treat non-2xx responses as errors (default true). */
@@ -33,6 +32,7 @@ export async function $fetch<TData = unknown>(
   options: FetchOptions<TData> = {}
 ): Promise<TData> {
   const {
+    baseUrl,
     schema,
     throwOnError = true,
     raw = false,
@@ -40,7 +40,10 @@ export async function $fetch<TData = unknown>(
     ...init
   } = options;
 
-  const url = ABSOLUTE_URL_REGEX.test(input) ? input : `${BASE}${input}`;
+  const resolvedBaseUrl = getBaseURL(baseUrl);
+  const url = ABSOLUTE_URL_REGEX.test(input)
+    ? input
+    : `${resolvedBaseUrl}${input}`;
 
   const response = await fetch(url, {
     ...init,

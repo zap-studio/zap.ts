@@ -529,7 +529,6 @@
       "name": "@zap/utils",
       "version": "0.0.0",
       "dependencies": {
-        "@zap/config": "workspace:*",
         "@zap/errors": "workspace:*",
         "zod": "^4.1.12",
       },

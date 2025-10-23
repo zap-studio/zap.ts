@@ -1,5 +1,6 @@
 import "server-only";
 
+import { BASE_URL } from "@zap/config";
 import { $fetch } from "@zap/utils/fetch";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
@@ -66,6 +67,7 @@ export async function getSessionInEdgeRuntime(
 ): Promise<Session | null> {
   try {
     const session = await $fetch<Session>("/api/auth/get-session", {
+      baseUrl: BASE_URL,
       headers: {
         cookie: request.headers.get("cookie") || "",
       },

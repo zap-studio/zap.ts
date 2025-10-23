@@ -7,7 +7,6 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@zap/config": "workspace:*",
     "@zap/errors": "workspace:*",
     "zod": "^4.1.12"
   },

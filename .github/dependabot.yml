@@ -5,7 +5,7 @@
 
 version: 2
 updates:
-  - package-ecosystem: "bun" # See documentation for possible values (use npm otherwise)
+  - package-ecosystem: "npm" # pnpm uses npm ecosystem in dependabot
     directories:
       - "/"
       - "/apps/api"

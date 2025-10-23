@@ -5,6 +5,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# pnpm
+.pnpm-store/
+.pnpm-debug.log
+
 # TypeScript
 dist/
 build/

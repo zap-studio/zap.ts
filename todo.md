@@ -72,44 +72,102 @@ These are fully reusable. Think of them as your internal library ecosystem.
 - Never import from `apps/`
 - These packages are the foundation — they don't know about your apps
 
-## Switching Package Managers
+## Package Manager: pnpm
 
-This project is configured to use **Bun** by default, but you can easily switch to npm, yarn, or pnpm by updating configuration files.
+This project uses **pnpm** with workspaces and catalogs, managed through **Corepack**. pnpm provides fast, disk-efficient installations with strict dependency management.
 
-### 1. Update Turborepo Package Manager
+### Why pnpm?
+
+- **Fast installations**: Content-addressable package storage
+- **Disk efficient**: Hard-links packages from a global store
+- **Strict dependency resolution**: Prevents phantom dependencies
+- **Built-in workspace support**: First-class monorepo features
+- **Catalogs**: Share dependency versions across workspace packages
+
+### Key Configuration Files
+
+- `pnpm-workspace.yaml` - Workspace patterns and dependency catalog
+- `package.json` - Package manager version controlled via Corepack
+
+### Using the Catalog
+
+The workspace catalog (in `pnpm-workspace.yaml`) defines shared dependency versions. To use a catalog version in any package:
+
+```json
+{
+  "dependencies": {
+    "react": "catalog:",
+    "next": "catalog:"
+  }
+}
+```
+
+### Common Commands
+
+```bash
+# Install all dependencies
+pnpm install
+
+# Add a dependency to specific workspace
+pnpm add <package> --filter <workspace-name>
+
+# Run command in all workspaces
+pnpm -r run build
+
+# Run command in specific workspace
+pnpm --filter marketing run dev
+
+# Update dependencies
+pnpm update
+
+# Use pnpm dlx instead of npx
+pnpm dlx <command>
+```
+
+### Switching to Another Package Manager
+
+If you need to switch to npm, yarn, or Bun:
+
+#### 1. Update Package Manager
 
 Modify the `packageManager` field in the root `package.json`:
 
 ```json
 {
-  "packageManager": "bun@x.x.x"
+  "packageManager": "pnpm@x.x.x"
   // Change to one of:
   // "packageManager": "npm@x.x.x"
   // "packageManager": "yarn@x.x.x"
-  // "packageManager": "pnpm@x.x.x"
+  // "packageManager": "bun@x.x.x"
 }
 ```
 
-### 2. Update GitHub Actions Workflows
+#### 2. Update GitHub Actions Workflows
 
-Update all workflow files in `.github/workflows/` to use your preferred package manager. Here's an example for the `build.yml` file:
+Update all workflow files in `.github/workflows/`. Here's an example for the `build.yml` file:
 
-**For Bun (default):**
+**For pnpm (current):**
 ```yaml
-- name: Setup bun
-  uses: oven-sh/setup-bun@v2 # change the version according to your need
+- name: Setup pnpm
+  uses: pnpm/action-setup@v4
+
+- name: Setup Node.js
+  uses: actions/setup-node@v4
+  with:
+    node-version: 20
+    cache: 'pnpm'
 
 - name: Install dependencies
-  run: bun install --frozen-lockfile
+  run: pnpm install --frozen-lockfile
 
 - name: Build monorepo
-  run: bun run build
+  run: pnpm run build
 ```
 
 **For npm:**
 ```yaml
 - name: Setup Node.js
-  uses: actions/setup-node@v6 # change the version according to your need
+  uses: actions/setup-node@v6
   with:
     node-version: "latest"
 
@@ -120,30 +178,22 @@ Update all workflow files in `.github/workflows/` to use your preferred package 
   run: npm run build
 ```
 
-**For pnpm:**
+**For Bun:**
 ```yaml
-- name: Setup pnpm
-  uses: pnpm/action-setup@v4 # change the version according to your need
-  with:
-    version: "latest"
-
-- name: Setup Node.js
-  uses: actions/setup-node@v6 # change the version according to your need
-  with:
-    node-version: "latest"
-    cache: 'pnpm'
+- name: Setup bun
+  uses: oven-sh/setup-bun@v2
 
 - name: Install dependencies
-  run: pnpm install --frozen-lockfile
+  run: bun install --frozen-lockfile
 
 - name: Build monorepo
-  run: pnpm run build
+  run: bun run build
 ```
 
 **For yarn:**
 ```yaml
 - name: Setup Node.js
-  uses: actions/setup-node@v6 # change the version according to your need
+  uses: actions/setup-node@v6
   with:
     node-version: "latest"
     cache: 'yarn'
@@ -155,21 +205,20 @@ Update all workflow files in `.github/workflows/` to use your preferred package 
   run: yarn run build
 ```
 
-> **Note:** Apply these changes to all workflow files: `build.yml`, `lint.yml`, and `typecheck.yml`.
+> **Note:** Apply these changes to all workflow files: `build.yml`, `lint.yml`, `test.yml`, `release.yml`, and `typecheck.yml`.
 
-### 3. Update Dependabot Configuration
+#### 3. Update Dependabot Configuration
 
-Modify the `package-ecosystem` field in `.github/dependabot.yml`:
+The `package-ecosystem` field in `.github/dependabot.yml` is already set to `"npm"` which works for pnpm:
 
 ```yaml
 version: 2
 updates:
-  - package-ecosystem: "bun" # Change to "npm" for npm/yarn/pnpm
+  - package-ecosystem: "npm" # Works for npm, yarn, and pnpm
     directories:
       - "/"
       - "/apps/marketing"
-      - "/apps/app"
-      - "/apps/docs"
+      - "/apps/web"
       - "/packages/ui"
       - # all your packages should be listed
     schedule:
@@ -177,6 +226,13 @@ updates:
 ```
 
 > **Important:** Dependabot uses `"npm"` as the ecosystem identifier for npm, yarn, and pnpm. Only use `"bun"` when using Bun.
+
+#### 4. Migration Notes
+
+When switching from pnpm:
+- Delete `pnpm-lock.yaml` and `pnpm-workspace.yaml`
+- Convert catalog references in `package.json` files to explicit versions
+- Run install with the new package manager to generate its lockfile
 
 ## Publishing Packages with Changesets
 

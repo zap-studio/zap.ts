@@ -11,7 +11,7 @@
     "@types/node": "catalog:",
     "@zap/tsdown-config": "workspace:*",
     "@zap/typescript-config": "workspace:*",
-    "tsdown": "^0.15.8",
+    "tsdown": "catalog:",
     "typescript": "catalog:"
   },
   "exports": {

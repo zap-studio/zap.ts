@@ -9,7 +9,7 @@
   "devDependencies": {
     "@types/node": "catalog:",
     "@zap/typescript-config": "workspace:*",
-    "tsdown": "^0.15.8",
+    "tsdown": "catalog:",
     "typescript": "catalog:"
   },
   "exports": {

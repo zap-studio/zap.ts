@@ -558,9 +558,6 @@ importers:
         specifier: 'catalog:'
         version: 15.5.4(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
-      '@types/node':
-        specifier: 'catalog:'
-        version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
@@ -577,9 +574,6 @@ importers:
       '@playwright/test':
         specifier: 'catalog:'
         version: 1.56.1
-      '@types/node':
-        specifier: 'catalog:'
-        version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
@@ -589,9 +583,6 @@ importers:
 
   configs/tailwind-config:
     devDependencies:
-      '@types/node':
-        specifier: 'catalog:'
-        version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
@@ -610,9 +601,6 @@ importers:
 
   configs/tsdown-config:
     devDependencies:
-      '@types/node':
-        specifier: 'catalog:'
-        version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
@@ -627,9 +615,6 @@ importers:
 
   configs/vitest-config:
     devDependencies:
-      '@types/node':
-        specifier: 'catalog:'
-        version: 24.9.1
       '@zap/tsdown-config':
         specifier: workspace:*
         version: link:../tsdown-config

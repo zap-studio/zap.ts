@@ -7,7 +7,6 @@
 		"check-types": "tsc --noEmit"
 	},
 	"devDependencies": {
-		"@types/node": "catalog:",
 		"@zap/typescript-config": "workspace:*",
 		"postcss": "catalog:",
 		"postcss-load-config": "catalog:",

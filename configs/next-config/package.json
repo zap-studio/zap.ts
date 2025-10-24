@@ -11,7 +11,6 @@
 		"@zap/security": "workspace:*"
 	},
 	"devDependencies": {
-		"@types/node": "catalog:",
 		"@zap/typescript-config": "workspace:*",
 		"typescript": "catalog:"
 	},

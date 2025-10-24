@@ -8,7 +8,6 @@
 		"check-types": "tsc --noEmit"
 	},
 	"devDependencies": {
-		"@types/node": "catalog:",
 		"@zap/tsdown-config": "workspace:*",
 		"@zap/typescript-config": "workspace:*",
 		"tsdown": "catalog:",

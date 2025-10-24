@@ -10,8 +10,7 @@
 	"include": [
 		"next-env.d.ts",
 		"next.config.ts",
-		"**/*.ts",
-		"**/*.tsx",
+		"**/*.{js,jsx,ts,tsx}",
 		".next/types/**/*.ts",
 		"vitest.config.ts"
 	],

@@ -5,6 +5,7 @@
 		"includes": [
 			"**",
 			"!**/.next",
+			"!**/.source",
 			"!!**/dist",
 			"!!**/node_modules",
 			"!packages/shadcn/src"

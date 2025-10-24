@@ -7,7 +7,7 @@
 		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {
-		"lucide-react": "^0.545.0",
+		"lucide-react": "^0.548.0",
 		"next-mdx-remote": "^5.0.0",
 		"react-syntax-highlighter": "^16.0.0"
 	},

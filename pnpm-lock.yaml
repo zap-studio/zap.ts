@@ -7,8 +7,8 @@ settings:
 catalogs:
   default:
     '@biomejs/biome':
-      specifier: 2.2.6
-      version: 2.2.6
+      specifier: 2.3.0
+      version: 2.3.0
     '@bprogress/next':
       specifier: ^3.2.12
       version: 3.2.12
@@ -142,8 +142,8 @@ catalogs:
       specifier: ^27.0.0
       version: 27.0.1
     lefthook:
-      specifier: ^2.0.0
-      version: 2.0.0
+      specifier: ^2.0.1
+      version: 2.0.1
     lucide-react:
       specifier: ^0.545.0
       version: 0.545.0
@@ -235,8 +235,8 @@ catalogs:
       specifier: ^5.9.3
       version: 5.9.3
     ultracite:
-      specifier: 5.6.4
-      version: 5.6.4
+      specifier: 6.0.0
+      version: 6.0.0
     vaul:
       specifier: ^1.1.2
       version: 1.1.2
@@ -257,7 +257,7 @@ importers:
     devDependencies:
       '@biomejs/biome':
         specifier: 'catalog:'
-        version: 2.2.6
+        version: 2.3.0
       '@changesets/cli':
         specifier: 'catalog:'
         version: 2.29.7(@types/node@24.9.1)
@@ -278,7 +278,7 @@ importers:
         version: 0.31.5
       lefthook:
         specifier: 'catalog:'
-        version: 2.0.0
+        version: 2.0.1
       rimraf:
         specifier: 'catalog:'
         version: 6.0.1
@@ -290,7 +290,7 @@ importers:
         version: 5.9.3
       ultracite:
         specifier: 'catalog:'
-        version: 5.6.4(@orpc/server@1.10.0(ws@8.18.3))(typescript@5.9.3)
+        version: 6.0.0(@orpc/server@1.10.0(ws@8.18.3))(typescript@5.9.3)
 
   apps/marketing:
     dependencies:
@@ -317,7 +317,7 @@ importers:
         version: link:../../packages/fonts
       '@zap/next-config':
         specifier: workspace:*
-        version: link:../../configs/next
+        version: link:../../configs/next-config
       '@zap/security':
         specifier: workspace:*
         version: link:../../packages/security
@@ -369,13 +369,13 @@ importers:
         version: 19.2.2(@types/react@19.2.2)
       '@zap/tailwind-config':
         specifier: workspace:*
-        version: link:../../configs/tailwind
+        version: link:../../configs/tailwind-config
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       '@zap/vitest-config':
         specifier: workspace:*
-        version: link:../../configs/vitest
+        version: link:../../configs/vitest-config
       cross-env:
         specifier: 'catalog:'
         version: 10.1.0
@@ -447,7 +447,7 @@ importers:
         version: link:../../packages/forms
       '@zap/next-config':
         specifier: workspace:*
-        version: link:../../configs/next
+        version: link:../../configs/next-config
       '@zap/rpc':
         specifier: workspace:*
         version: link:../../packages/rpc
@@ -508,13 +508,13 @@ importers:
         version: 19.2.2(@types/react@19.2.2)
       '@zap/tailwind-config':
         specifier: workspace:*
-        version: link:../../configs/tailwind
+        version: link:../../configs/tailwind-config
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       '@zap/vitest-config':
         specifier: workspace:*
-        version: link:../../configs/vitest
+        version: link:../../configs/vitest-config
       cross-env:
         specifier: 'catalog:'
         version: 10.1.0
@@ -540,7 +540,7 @@ importers:
         specifier: 'catalog:'
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1)
 
-  configs/next:
+  configs/next-config:
     dependencies:
       '@next/bundle-analyzer':
         specifier: 'catalog:'
@@ -563,12 +563,12 @@ importers:
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../typescript
+        version: link:../typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
 
-  configs/playwright:
+  configs/playwright-config:
     dependencies:
       playwright:
         specifier: 'catalog:'
@@ -582,19 +582,19 @@ importers:
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../typescript
+        version: link:../typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
 
-  configs/tailwind:
+  configs/tailwind-config:
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../typescript
+        version: link:../typescript-config
       postcss:
         specifier: 'catalog:'
         version: 8.5.6
@@ -608,14 +608,14 @@ importers:
         specifier: 'catalog:'
         version: 5.9.3
 
-  configs/tsdown:
+  configs/tsdown-config:
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../typescript
+        version: link:../typescript-config
       tsdown:
         specifier: 'catalog:'
         version: 0.15.9(typescript@5.9.3)
@@ -623,19 +623,19 @@ importers:
         specifier: 'catalog:'
         version: 5.9.3
 
-  configs/typescript: {}
+  configs/typescript-config: {}
 
-  configs/vitest:
+  configs/vitest-config:
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
         version: 24.9.1
       '@zap/tsdown-config':
         specifier: workspace:*
-        version: link:../tsdown
+        version: link:../tsdown-config
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../typescript
+        version: link:../typescript-config
       tsdown:
         specifier: 'catalog:'
         version: 0.15.9(typescript@5.9.3)
@@ -684,7 +684,7 @@ importers:
         version: 19.2.2
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -718,7 +718,7 @@ importers:
         version: 19.2.2
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -794,7 +794,7 @@ importers:
         version: 19.2.2
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -810,7 +810,7 @@ importers:
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -835,7 +835,7 @@ importers:
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -872,7 +872,7 @@ importers:
         version: 3.6.4
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -888,7 +888,7 @@ importers:
     devDependencies:
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -922,7 +922,7 @@ importers:
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -938,7 +938,7 @@ importers:
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -963,7 +963,7 @@ importers:
         version: 19.2.2
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -994,7 +994,7 @@ importers:
         version: 19.2.2
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -1028,7 +1028,7 @@ importers:
         version: 15.5.13
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -1080,7 +1080,7 @@ importers:
         version: 3.6.4
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -1092,7 +1092,7 @@ importers:
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -1114,7 +1114,7 @@ importers:
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -1193,10 +1193,10 @@ importers:
         version: 19.2.2(@types/react@19.2.2)
       '@zap/tailwind-config':
         specifier: workspace:*
-        version: link:../../configs/tailwind
+        version: link:../../configs/tailwind-config
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       tailwindcss:
         specifier: 'catalog:'
         version: 4.1.16
@@ -1254,10 +1254,10 @@ importers:
         version: 19.2.2(@types/react@19.2.2)
       '@zap/tailwind-config':
         specifier: workspace:*
-        version: link:../../configs/tailwind
+        version: link:../../configs/tailwind-config
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       tailwindcss:
         specifier: 'catalog:'
         version: 4.1.16
@@ -1279,7 +1279,7 @@ importers:
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript
+        version: link:../../configs/typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -1393,55 +1393,55 @@ packages:
   '@better-fetch/fetch@1.1.18':
     resolution: {integrity: sha512-rEFOE1MYIsBmoMJtQbl32PGHHXuG2hDxvEd7rUHE0vCBoFQVSDqaVs9hkZEtHCxRoY+CljXKFCOuJ8uxqw1LcA==}
 
-  '@biomejs/biome@2.2.6':
-    resolution: {integrity: sha512-yKTCNGhek0rL5OEW1jbLeZX8LHaM8yk7+3JRGv08my+gkpmtb5dDE+54r2ZjZx0ediFEn1pYBOJSmOdDP9xtFw==}
+  '@biomejs/biome@2.3.0':
+    resolution: {integrity: sha512-shdUY5H3S3tJVUWoVWo5ua+GdPW5lRHf+b0IwZ4OC1o2zOKQECZ6l2KbU6t89FNhtd3Qx5eg5N7/UsQWGQbAFw==}
     engines: {node: '>=14.21.3'}
     hasBin: true
 
-  '@biomejs/cli-darwin-arm64@2.2.6':
-    resolution: {integrity: sha512-UZPmn3M45CjTYulgcrFJFZv7YmK3pTxTJDrFYlNElT2FNnkkX4fsxjExTSMeWKQYoZjvekpH5cvrYZZlWu3yfA==}
+  '@biomejs/cli-darwin-arm64@2.3.0':
+    resolution: {integrity: sha512-3cJVT0Z5pbTkoBmbjmDZTDFYxIkRcrs9sYVJbIBHU8E6qQxgXAaBfSVjjCreG56rfDuQBr43GzwzmaHPcu4vlw==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [darwin]
 
-  '@biomejs/cli-darwin-x64@2.2.6':
-    resolution: {integrity: sha512-HOUIquhHVgh/jvxyClpwlpl/oeMqntlteL89YqjuFDiZ091P0vhHccwz+8muu3nTyHWM5FQslt+4Jdcd67+xWQ==}
+  '@biomejs/cli-darwin-x64@2.3.0':
+    resolution: {integrity: sha512-6LIkhglh3UGjuDqJXsK42qCA0XkD1Ke4K/raFOii7QQPbM8Pia7Qj2Hji4XuF2/R78hRmEx7uKJH3t/Y9UahtQ==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [darwin]
 
-  '@biomejs/cli-linux-arm64-musl@2.2.6':
-    resolution: {integrity: sha512-TjCenQq3N6g1C+5UT3jE1bIiJb5MWQvulpUngTIpFsL4StVAUXucWD0SL9MCW89Tm6awWfeXBbZBAhJwjyFbRQ==}
+  '@biomejs/cli-linux-arm64-musl@2.3.0':
+    resolution: {integrity: sha512-nDksoFdwZ2YrE7NiYDhtMhL2UgFn8Kb7Y0bYvnTAakHnqEdb4lKindtBc1f+xg2Snz0JQhJUYO7r9CDBosRU5w==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [linux]
 
-  '@biomejs/cli-linux-arm64@2.2.6':
-    resolution: {integrity: sha512-BpGtuMJGN+o8pQjvYsUKZ+4JEErxdSmcRD/JG3mXoWc6zrcA7OkuyGFN1mDggO0Q1n7qXxo/PcupHk8gzijt5g==}
+  '@biomejs/cli-linux-arm64@2.3.0':
+    resolution: {integrity: sha512-uhAsbXySX7xsXahegDg5h3CDgfMcRsJvWLFPG0pjkylgBb9lErbK2C0UINW52zhwg0cPISB09lxHPxCau4e2xA==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [linux]
 
-  '@biomejs/cli-linux-x64-musl@2.2.6':
-    resolution: {integrity: sha512-1ZcBux8zVM3JhWN2ZCPaYf0+ogxXG316uaoXJdgoPZcdK/rmRcRY7PqHdAos2ExzvjIdvhQp72UcveI98hgOog==}
+  '@biomejs/cli-linux-x64-musl@2.3.0':
+    resolution: {integrity: sha512-+i9UcJwl99uAhtRQDz9jUAh+Xkb097eekxs/D9j4deWDg5/yB/jPWzISe1nBHvlzTXsdUSj0VvB4Go2DSpKIMw==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [linux]
 
-  '@biomejs/cli-linux-x64@2.2.6':
-    resolution: {integrity: sha512-1HaM/dpI/1Z68zp8ZdT6EiBq+/O/z97a2AiHMl+VAdv5/ELckFt9EvRb8hDHpk8hUMoz03gXkC7VPXOVtU7faA==}
+  '@biomejs/cli-linux-x64@2.3.0':
+    resolution: {integrity: sha512-uxa8reA2s1VgoH8MhbGlCmMOt3JuSE1vJBifkh1ulaPiuk0SPx8cCdpnm9NWnTe2x/LfWInWx4sZ7muaXTPGGw==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [linux]
 
-  '@biomejs/cli-win32-arm64@2.2.6':
-    resolution: {integrity: sha512-h3A88G8PGM1ryTeZyLlSdfC/gz3e95EJw9BZmA6Po412DRqwqPBa2Y9U+4ZSGUAXCsnSQE00jLV8Pyrh0d+jQw==}
+  '@biomejs/cli-win32-arm64@2.3.0':
+    resolution: {integrity: sha512-ynjmsJLIKrAjC3CCnKMMhzcnNy8dbQWjKfSU5YA0mIruTxBNMbkAJp+Pr2iV7/hFou+66ZSD/WV8hmLEmhUaXA==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [win32]
 
-  '@biomejs/cli-win32-x64@2.2.6':
-    resolution: {integrity: sha512-yx0CqeOhPjYQ5ZXgPfu8QYkgBhVJyvWe36as7jRuPrKPO5ylVDfwVtPQ+K/mooNTADW0IhxOZm3aPu16dP8yNQ==}
+  '@biomejs/cli-win32-x64@2.3.0':
+    resolution: {integrity: sha512-zOCYmCRVkWXc9v8P7OLbLlGGMxQTKMvi+5IC4v7O8DkjLCOHRzRVK/Lno2pGZNo0lzKM60pcQOhH8HVkXMQdFg==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [win32]
@@ -5137,58 +5137,58 @@ packages:
     resolution: {integrity: sha512-QUOgl5ZrS9IRuhq5FvOKFSsD/3+IA6MLE81/bOOTRA/YQpKDza2sFdN5g6JCB9BOpqMJDGefLCQ9F12hRS13TA==}
     engines: {node: '>=20.0.0'}
 
-  lefthook-darwin-arm64@2.0.0:
-    resolution: {integrity: sha512-0p614LKJA1XZjw1m8WA0emK5kDDHwpiVzNWQBwM/kyY9dxDOV1ixRqm36J0fpshaoSFcwucma5xA3HTK1A23Dg==}
+  lefthook-darwin-arm64@2.0.1:
+    resolution: {integrity: sha512-en5tDduXeltmlbBR/wECkwkILpghR9LxexeBuHWwyTZnOunm3bk4XGg9WKwT1sWlMaKJiXl7Tv0dUB/K1d3ajg==}
     cpu: [arm64]
     os: [darwin]
 
-  lefthook-darwin-x64@2.0.0:
-    resolution: {integrity: sha512-IcixMsdUijl/NyKHapqA/MtNrrtm/WjhezikWSzCJc1dPy+aE8PYeZoBzNFIJJgB6zavO+sUxam10Zx/70AUHw==}
+  lefthook-darwin-x64@2.0.1:
+    resolution: {integrity: sha512-upD7B5kK3/sAqUKWfcejvWwXmBfu4LK+0bwUZWHE0cuPsn9KEZ8zG0Vw7JSBhuSZ8LeZA8PudlmQXHvR3YjDew==}
     cpu: [x64]
     os: [darwin]
 
-  lefthook-freebsd-arm64@2.0.0:
-    resolution: {integrity: sha512-APWEKechR2Gp5/rcf7QLkVqswShesnBZrMGmBnFh/nAtvWkkPVdBEc0VDFlU+ViUqHFepuQOSZD/G68F6NVStg==}
+  lefthook-freebsd-arm64@2.0.1:
+    resolution: {integrity: sha512-DqraAmqgSOllSzRjhjjaToswhpz0WWfnTo7HPws5BYOLghQJ/qErwXOXs2I76YqbHgXr831wtgkamQOVOfR0Jg==}
     cpu: [arm64]
     os: [freebsd]
 
-  lefthook-freebsd-x64@2.0.0:
-    resolution: {integrity: sha512-J7F/zKBgx5gJm2/EgKxqckzJRPaIHGZnKUY2h9MeKr4LBMk5kt+hwH9OeokGvGvPzLE4rEdUoFhJnmceyY4ZsA==}
+  lefthook-freebsd-x64@2.0.1:
+    resolution: {integrity: sha512-kdLmXvgWvSkFLBSIZGevkPEqoOwQIaHAtcXpbfn0unbsgqLG+u4V7Bnp73BfBUkc0ER+72W9gUas9HZALzTjEg==}
     cpu: [x64]
     os: [freebsd]
 
-  lefthook-linux-arm64@2.0.0:
-    resolution: {integrity: sha512-Olilio7szMSFkfYFf7vW+JltTOpq4ZFgvqQ+nKv4NKrKH55Ax+JmK69j/VvJ/8vgks55mMQmfCuukbt2PjeG3Q==}
+  lefthook-linux-arm64@2.0.1:
+    resolution: {integrity: sha512-pEQomhTh0SSeIv3G5337efm1BHQCBSrewYnUydkLFLMwkqzVzIW2119pk5bMNSKFQ2xoRs3AKww+odTgsQiLcQ==}
     cpu: [arm64]
     os: [linux]
 
-  lefthook-linux-x64@2.0.0:
-    resolution: {integrity: sha512-QOMRJ1paWjjTPPrGy8gf+8hmtXa3m63rOUeJUQo3N1xUL94NkKtqOCKz1qSmMuYW00clTGM27HdujNE+CSy5Iw==}
+  lefthook-linux-x64@2.0.1:
+    resolution: {integrity: sha512-8tOmdiUU/awCoW/PJ25QmhHuHXUbDQ9BF3tADYuxgGSSCLtvx1Zvr+F4pyB8jCOAPvsx9XAt3UM3n8/nFXKYcw==}
     cpu: [x64]
     os: [linux]
 
-  lefthook-openbsd-arm64@2.0.0:
-    resolution: {integrity: sha512-o99K0OuYgb4SfsqQQUwuxiAfgHhAnA/9eBDFVdUhGO69y7HenyXwaE52iaRiP64KH8TKMGJe+hiztmBrwOM5nA==}
+  lefthook-openbsd-arm64@2.0.1:
+    resolution: {integrity: sha512-SBOMOjkyM7bQTvzTlnNS5PzfhJigZJYdmdcJ/H4EadJfxl+72v0YG9SHY64AdfuvZUB39AvaBD6UothZCtLuEQ==}
     cpu: [arm64]
     os: [openbsd]
 
-  lefthook-openbsd-x64@2.0.0:
-    resolution: {integrity: sha512-hKFieYnE1V+EWgh5eBo/5Aj+TaYOal3lJ39OO/c61MZVbD6iOaQpZVAaQWmiVUo8p1bOK+0OjeeYfEF1OJ5IAg==}
+  lefthook-openbsd-x64@2.0.1:
+    resolution: {integrity: sha512-22E1V889hx1rMOxgGFUc0ujiOAcM7kX0x7bCK6rfXFsqYl30X7A+4hj2JTwxRxSTb7ZkaiSFF64UE7iGi/f4AA==}
     cpu: [x64]
     os: [openbsd]
 
-  lefthook-windows-arm64@2.0.0:
-    resolution: {integrity: sha512-Xzyr83kFVzjbRNzDMmlU1z5wtPXKWriPrRf3vwoVdsvHi/yvxNy9+ZH1LF0wXnH5agTgMMag/37XA+hZ/5cfmA==}
+  lefthook-windows-arm64@2.0.1:
+    resolution: {integrity: sha512-0dDrCj0AatmJj5voABZ/7H27eZiaa1CVtTFYfKDRJj2+acEo3F7x/iadknftMqfjOjgjZpmRwSx49NWA2vMQjg==}
     cpu: [arm64]
     os: [win32]
 
-  lefthook-windows-x64@2.0.0:
-    resolution: {integrity: sha512-r8p2nMht/gAgZHqNdysUAyealFOyozbI1W+fU/L4thFdZzWGVesP+Vd0hvvS1MDwTxbGkqP7vCvCurll64vggg==}
+  lefthook-windows-x64@2.0.1:
+    resolution: {integrity: sha512-vmbqUY7lsgYiDG9b9oc0zP9b/pHx6YpS310EBv6YkVEf8mseNRKRYwm6QqvOJ919rrmZfQpOFs5W+5O9K7zleg==}
     cpu: [x64]
     os: [win32]
 
-  lefthook@2.0.0:
-    resolution: {integrity: sha512-iR7cwnlojpRW/ixaE9d8lGSp+Twv2Sbg/1rlWX8WL/J1sn9xWcII8ddeBaY+6n6bWVPYBQfxc5uhd77efGzUfA==}
+  lefthook@2.0.1:
+    resolution: {integrity: sha512-3jL1AmEnjchHyFL9GzBaRVcfcPTQLUtXawaF6Y6MXPPCSbirTh8q/is+Ijbd1zn0FA5MwQDdSYm0guVXUkeVWg==}
     hasBin: true
 
   lightningcss-android-arm64@1.30.2:
@@ -6568,8 +6568,8 @@ packages:
   trough@2.2.0:
     resolution: {integrity: sha512-tmMpK00BjZiUyVyvrBK7knerNgmgvcV/KLVyuma/SC+TQN167GrMRciANTz09+k3zW8L8t60jWO1GpfkZdjTaw==}
 
-  trpc-cli@0.11.0:
-    resolution: {integrity: sha512-cFt5LVl1EzwmhZtWa6xPBWr6rgLXGgEOqmcTMIYcI6fLQE1REgu6tS55LmqUJs5kVSXrOd1z5/aufJS71xUUyA==}
+  trpc-cli@0.12.0:
+    resolution: {integrity: sha512-MRzoqm2rPbUsSpVWiMdmHsXJJezAsq8kDJlO9d/uOX17tImxiBjA0aU52RthVHrftn++wFOE1uqBSCVs+88e6w==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -6702,8 +6702,8 @@ packages:
     engines: {node: '>=0.8.0'}
     hasBin: true
 
-  ultracite@5.6.4:
-    resolution: {integrity: sha512-Ejgh8uYhqgV1QzKAE1vwRHHu24mTCg43DLOJG+gXi7hHSAPAWdDEs9fgBiuYZxH2bsQiWSsEF6hMv5aLJuM6/w==}
+  ultracite@6.0.0:
+    resolution: {integrity: sha512-Lu9rX70YCobQzh/1dRL8YqQHpKLW9PViMjg+KraKWXaDFJbMiHzLNS0n3xeNm6Ee6VacFJJpOAgdLwGfXnXKkg==}
     hasBin: true
 
   unconfig@7.3.3:
@@ -7192,39 +7192,39 @@ snapshots:
 
   '@better-fetch/fetch@1.1.18': {}
 
-  '@biomejs/biome@2.2.6':
+  '@biomejs/biome@2.3.0':
     optionalDependencies:
-      '@biomejs/cli-darwin-arm64': 2.2.6
-      '@biomejs/cli-darwin-x64': 2.2.6
-      '@biomejs/cli-linux-arm64': 2.2.6
-      '@biomejs/cli-linux-arm64-musl': 2.2.6
-      '@biomejs/cli-linux-x64': 2.2.6
-      '@biomejs/cli-linux-x64-musl': 2.2.6
-      '@biomejs/cli-win32-arm64': 2.2.6
-      '@biomejs/cli-win32-x64': 2.2.6
+      '@biomejs/cli-darwin-arm64': 2.3.0
+      '@biomejs/cli-darwin-x64': 2.3.0
+      '@biomejs/cli-linux-arm64': 2.3.0
+      '@biomejs/cli-linux-arm64-musl': 2.3.0
+      '@biomejs/cli-linux-x64': 2.3.0
+      '@biomejs/cli-linux-x64-musl': 2.3.0
+      '@biomejs/cli-win32-arm64': 2.3.0
+      '@biomejs/cli-win32-x64': 2.3.0
 
-  '@biomejs/cli-darwin-arm64@2.2.6':
+  '@biomejs/cli-darwin-arm64@2.3.0':
     optional: true
 
-  '@biomejs/cli-darwin-x64@2.2.6':
+  '@biomejs/cli-darwin-x64@2.3.0':
     optional: true
 
-  '@biomejs/cli-linux-arm64-musl@2.2.6':
+  '@biomejs/cli-linux-arm64-musl@2.3.0':
     optional: true
 
-  '@biomejs/cli-linux-arm64@2.2.6':
+  '@biomejs/cli-linux-arm64@2.3.0':
     optional: true
 
-  '@biomejs/cli-linux-x64-musl@2.2.6':
+  '@biomejs/cli-linux-x64-musl@2.3.0':
     optional: true
 
-  '@biomejs/cli-linux-x64@2.2.6':
+  '@biomejs/cli-linux-x64@2.3.0':
     optional: true
 
-  '@biomejs/cli-win32-arm64@2.2.6':
+  '@biomejs/cli-win32-arm64@2.3.0':
     optional: true
 
-  '@biomejs/cli-win32-x64@2.2.6':
+  '@biomejs/cli-win32-x64@2.3.0':
     optional: true
 
   '@bprogress/core@1.3.4': {}
@@ -10961,48 +10961,48 @@ snapshots:
 
   kysely@0.28.8: {}
 
-  lefthook-darwin-arm64@2.0.0:
+  lefthook-darwin-arm64@2.0.1:
     optional: true
 
-  lefthook-darwin-x64@2.0.0:
+  lefthook-darwin-x64@2.0.1:
     optional: true
 
-  lefthook-freebsd-arm64@2.0.0:
+  lefthook-freebsd-arm64@2.0.1:
     optional: true
 
-  lefthook-freebsd-x64@2.0.0:
+  lefthook-freebsd-x64@2.0.1:
     optional: true
 
-  lefthook-linux-arm64@2.0.0:
+  lefthook-linux-arm64@2.0.1:
     optional: true
 
-  lefthook-linux-x64@2.0.0:
+  lefthook-linux-x64@2.0.1:
     optional: true
 
-  lefthook-openbsd-arm64@2.0.0:
+  lefthook-openbsd-arm64@2.0.1:
     optional: true
 
-  lefthook-openbsd-x64@2.0.0:
+  lefthook-openbsd-x64@2.0.1:
     optional: true
 
-  lefthook-windows-arm64@2.0.0:
+  lefthook-windows-arm64@2.0.1:
     optional: true
 
-  lefthook-windows-x64@2.0.0:
+  lefthook-windows-x64@2.0.1:
     optional: true
 
-  lefthook@2.0.0:
+  lefthook@2.0.1:
     optionalDependencies:
-      lefthook-darwin-arm64: 2.0.0
-      lefthook-darwin-x64: 2.0.0
-      lefthook-freebsd-arm64: 2.0.0
-      lefthook-freebsd-x64: 2.0.0
-      lefthook-linux-arm64: 2.0.0
-      lefthook-linux-x64: 2.0.0
-      lefthook-openbsd-arm64: 2.0.0
-      lefthook-openbsd-x64: 2.0.0
-      lefthook-windows-arm64: 2.0.0
-      lefthook-windows-x64: 2.0.0
+      lefthook-darwin-arm64: 2.0.1
+      lefthook-darwin-x64: 2.0.1
+      lefthook-freebsd-arm64: 2.0.1
+      lefthook-freebsd-x64: 2.0.1
+      lefthook-linux-arm64: 2.0.1
+      lefthook-linux-x64: 2.0.1
+      lefthook-openbsd-arm64: 2.0.1
+      lefthook-openbsd-x64: 2.0.1
+      lefthook-windows-arm64: 2.0.1
+      lefthook-windows-x64: 2.0.1
 
   lightningcss-android-arm64@1.30.2:
     optional: true
@@ -12622,7 +12622,7 @@ snapshots:
 
   trough@2.2.0: {}
 
-  trpc-cli@0.11.0(@orpc/server@1.10.0(ws@8.18.3))(@trpc/server@11.6.0(typescript@5.9.3))(zod@4.1.12):
+  trpc-cli@0.12.0(@orpc/server@1.10.0(ws@8.18.3))(@trpc/server@11.6.0(typescript@5.9.3))(zod@4.1.12):
     dependencies:
       commander: 14.0.1
     optionalDependencies:
@@ -12730,14 +12730,14 @@ snapshots:
   uglify-js@3.19.3:
     optional: true
 
-  ultracite@5.6.4(@orpc/server@1.10.0(ws@8.18.3))(typescript@5.9.3):
+  ultracite@6.0.0(@orpc/server@1.10.0(ws@8.18.3))(typescript@5.9.3):
     dependencies:
       '@clack/prompts': 0.11.0
       '@trpc/server': 11.6.0(typescript@5.9.3)
       deepmerge: 4.3.1
       jsonc-parser: 3.3.1
       nypm: 0.6.2
-      trpc-cli: 0.11.0(@orpc/server@1.10.0(ws@8.18.3))(@trpc/server@11.6.0(typescript@5.9.3))(zod@4.1.12)
+      trpc-cli: 0.12.0(@orpc/server@1.10.0(ws@8.18.3))(@trpc/server@11.6.0(typescript@5.9.3))(zod@4.1.12)
       zod: 4.1.12
     transitivePeerDependencies:
       - '@orpc/server'

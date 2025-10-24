@@ -1,8 +1,10 @@
+import type { NextConfig } from "next";
+
 /**
  * Deep merges two objects, with the second object taking precedence.
  * Arrays are concatenated and deduplicated.
  */
-export function deepMerge<T extends Record<string, unknown>>(
+export function deepMerge<T extends NextConfig>(
 	target: T,
 	source: Partial<T>,
 ): T {

@@ -7,20 +7,20 @@
 		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {
-		"lucide-react": "catalog:",
-		"next-mdx-remote": "catalog:",
-		"react-syntax-highlighter": "catalog:"
+		"lucide-react": "^0.545.0",
+		"next-mdx-remote": "^5.0.0",
+		"react-syntax-highlighter": "^16.0.0"
 	},
 	"devDependencies": {
-		"@types/node": "catalog:",
-		"@types/react": "catalog:",
-		"@types/react-syntax-highlighter": "catalog:",
+		"@types/node": "^24.9.1",
+		"@types/react": "^19.2.0",
+		"@types/react-syntax-highlighter": "^15.5.13",
 		"@zap/typescript-config": "workspace:*",
-		"typescript": "catalog:"
+		"typescript": "^5.9.3"
 	},
 	"peerDependencies": {
-		"next": "catalog:",
-		"react": "catalog:"
+		"next": "15.5.4",
+		"react": "^19.2.0"
 	},
 	"exports": {
 		"./mdx": "./src/mdx.tsx"

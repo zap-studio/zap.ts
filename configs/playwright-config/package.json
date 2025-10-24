@@ -7,12 +7,12 @@
 		"check-types": "tsc --noEmit"
 	},
 	"devDependencies": {
-		"@playwright/test": "catalog:",
+		"@playwright/test": "^1.50.3",
 		"@zap/typescript-config": "workspace:*",
-		"typescript": "catalog:"
+		"typescript": "^5.9.3"
 	},
 	"peerDependencies": {
-		"playwright": "catalog:"
+		"playwright": "^1.56.1"
 	},
 	"exports": {
 		".": "./src/index.ts"

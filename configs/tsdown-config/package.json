@@ -8,8 +8,8 @@
 	},
 	"devDependencies": {
 		"@zap/typescript-config": "workspace:*",
-		"tsdown": "catalog:",
-		"typescript": "catalog:"
+		"tsdown": "^0.15.8",
+		"typescript": "^5.9.3"
 	},
 	"exports": {
 		".": "./src/index.ts"

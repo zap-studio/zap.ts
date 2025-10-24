@@ -9,17 +9,17 @@
 	"dependencies": {
 		"@zap/markdown": "workspace:*",
 		"@zap/shadcn": "workspace:*",
-		"gray-matter": "catalog:"
+		"gray-matter": "^4.0.3"
 	},
 	"devDependencies": {
-		"@types/node": "catalog:",
-		"@types/react": "catalog:",
+		"@types/node": "^24.9.1",
+		"@types/react": "^19.2.0",
 		"@zap/typescript-config": "workspace:*",
-		"typescript": "catalog:"
+		"typescript": "^5.9.3"
 	},
 	"peerDependencies": {
-		"next": "catalog:",
-		"react": "catalog:"
+		"next": "15.5.4",
+		"react": "^19.2.0"
 	},
 	"exports": {
 		".": "./src/index.ts",

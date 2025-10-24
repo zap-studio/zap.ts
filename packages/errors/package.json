@@ -7,18 +7,18 @@
 		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@orpc/client": "catalog:",
-		"@orpc/server": "catalog:",
+		"@orpc/client": "^1.10.0",
+		"@orpc/server": "^1.10.0",
 		"@zap/env": "workspace:*",
-		"client-only": "catalog:",
-		"server-only": "catalog:",
-		"sonner": "catalog:",
-		"zod": "catalog:"
+		"client-only": "^0.0.1",
+		"server-only": "^0.0.1",
+		"sonner": "^2.0.7",
+		"zod": "^4.1.12"
 	},
 	"devDependencies": {
-		"@types/node": "catalog:",
+		"@types/node": "^24.9.1",
 		"@zap/typescript-config": "workspace:*",
-		"typescript": "catalog:"
+		"typescript": "^5.9.3"
 	},
 	"exports": {
 		".": "./src/index.ts",

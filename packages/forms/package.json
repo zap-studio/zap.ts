@@ -7,17 +7,17 @@
 		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@tanstack/react-devtools": "catalog:",
-		"@tanstack/react-form-devtools": "catalog:"
+		"@tanstack/react-devtools": "^0.7.7",
+		"@tanstack/react-form-devtools": "^0.1.7"
 	},
 	"devDependencies": {
-		"@types/node": "catalog:",
-		"@types/react": "catalog:",
+		"@types/node": "^24.9.1",
+		"@types/react": "^19.2.0",
 		"@zap/typescript-config": "workspace:*",
-		"typescript": "catalog:"
+		"typescript": "^5.9.3"
 	},
 	"peerDependencies": {
-		"react": "catalog:"
+		"react": "^19.2.0"
 	},
 	"exports": {
 		"./tanstack-form/providers": "./src/tanstack-form/providers.tsx"

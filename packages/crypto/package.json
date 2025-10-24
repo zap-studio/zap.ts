@@ -7,15 +7,15 @@
 		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@t3-oss/env-core": "catalog:",
+		"@t3-oss/env-core": "^0.13.8",
 		"@zap/env": "workspace:*",
-		"server-only": "catalog:",
-		"zod": "catalog:"
+		"server-only": "^0.0.1",
+		"zod": "^4.1.12"
 	},
 	"devDependencies": {
-		"@types/node": "catalog:",
+		"@types/node": "^24.9.1",
 		"@zap/typescript-config": "workspace:*",
-		"typescript": "catalog:"
+		"typescript": "^5.9.3"
 	},
 	"exports": {
 		".": "./src/index.ts",

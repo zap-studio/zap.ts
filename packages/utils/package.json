@@ -8,12 +8,12 @@
 	},
 	"dependencies": {
 		"@zap/errors": "workspace:*",
-		"zod": "catalog:"
+		"zod": "^4.1.12"
 	},
 	"devDependencies": {
-		"@types/node": "catalog:",
+		"@types/node": "^24.9.1",
 		"@zap/typescript-config": "workspace:*",
-		"typescript": "catalog:"
+		"typescript": "^5.9.3"
 	},
 	"exports": {
 		"./fetch": "./src/fetch.ts"

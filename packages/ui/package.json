@@ -7,29 +7,29 @@
 		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@bprogress/next": "catalog:",
+		"@bprogress/next": "^3.2.12",
 		"@zap/errors": "workspace:*",
 		"@zap/shadcn": "workspace:*",
-		"client-only": "catalog:",
-		"lucide-react": "catalog:",
-		"motion": "catalog:",
-		"next-themes": "catalog:",
-		"radix-ui": "catalog:"
+		"client-only": "^0.0.1",
+		"lucide-react": "^0.545.0",
+		"motion": "^12.23.24",
+		"next-themes": "^0.4.6",
+		"radix-ui": "^1.4.3"
 	},
 	"peerDependencies": {
-		"next": "catalog:",
-		"react": "catalog:",
-		"react-dom": "catalog:"
+		"next": "15.5.4",
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0"
 	},
 	"devDependencies": {
-		"@tailwindcss/postcss": "catalog:",
-		"@types/node": "catalog:",
-		"@types/react": "catalog:",
-		"@types/react-dom": "catalog:",
+		"@tailwindcss/postcss": "^4.1.14",
+		"@types/node": "^24.9.1",
+		"@types/react": "^19.2.0",
+		"@types/react-dom": "^19.2.0",
 		"@zap/tailwind-config": "workspace:*",
 		"@zap/typescript-config": "workspace:*",
-		"tailwindcss": "catalog:",
-		"typescript": "catalog:"
+		"tailwindcss": "^4.1.14",
+		"typescript": "^5.9.3"
 	},
 	"exports": {
 		"./components/core/*": "./src/components/core/*.tsx",

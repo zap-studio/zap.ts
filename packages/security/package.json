@@ -7,9 +7,9 @@
 		"check-types": "tsc --noEmit"
 	},
 	"devDependencies": {
-		"@types/node": "catalog:",
+		"@types/node": "^24.9.1",
 		"@zap/typescript-config": "workspace:*",
-		"typescript": "catalog:"
+		"typescript": "^5.9.3"
 	},
 	"exports": {
 		".": "./src/index.ts",

@@ -7,24 +7,24 @@
 		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@t3-oss/env-core": "catalog:",
-		"@vercel/analytics": "catalog:",
-		"@vercel/speed-insights": "catalog:",
+		"@t3-oss/env-core": "^0.13.8",
+		"@vercel/analytics": "^1.5.0",
+		"@vercel/speed-insights": "^1.2.0",
 		"@zap/env": "workspace:*",
-		"client-only": "catalog:",
-		"posthog-js": "catalog:",
-		"posthog-node": "catalog:",
-		"zod": "catalog:"
+		"client-only": "^0.0.1",
+		"posthog-js": "^1.275.1",
+		"posthog-node": "^5.9.5",
+		"zod": "^4.1.12"
 	},
 	"devDependencies": {
-		"@types/node": "catalog:",
-		"@types/react": "catalog:",
+		"@types/node": "^24.9.1",
+		"@types/react": "^19.2.0",
 		"@zap/typescript-config": "workspace:*",
-		"typescript": "catalog:"
+		"typescript": "^5.9.3"
 	},
 	"peerDependencies": {
-		"next": "catalog:",
-		"react": "catalog:"
+		"next": "15.5.4",
+		"react": "^19.2.0"
 	},
 	"exports": {
 		".": "./src/index.ts",

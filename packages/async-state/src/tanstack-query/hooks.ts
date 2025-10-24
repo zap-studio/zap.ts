@@ -113,7 +113,6 @@ export function useZapMutation<
 
 	return useMutation({
 		...restOptions,
-		// biome-ignore lint/nursery/useMaxParams: We need all these parameters becaue it's a wrapper around Tanstack's useMutation
 		onSettled: (
 			data: TData | undefined,
 			error: TError | null,
@@ -175,7 +174,6 @@ export function useZapOptimisticMutation<
 				queryClient.setQueryData(queryKey, snapshot);
 			};
 		},
-		// biome-ignore lint/nursery/useMaxParams: We need all these parameters becaue it's a wrapper around Tanstack's useMutation
 		onSettled: (data, error, variables, onMutateResult, rollback) => {
 			restOptions.onSettled?.(data, error, variables, onMutateResult, rollback);
 

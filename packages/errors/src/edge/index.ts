@@ -24,6 +24,5 @@ export function logMiddlewareError(error: unknown): void {
 		message = `[${timestamp}] [UnknownError] ${JSON.stringify(error, null, 2)}`;
 	}
 
-	// biome-ignore lint/suspicious/noConsole: Edge runtime doesn't support process.stderr so we use console.error instead
 	console.error(`${message}\n`);
 }

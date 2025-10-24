@@ -12,13 +12,13 @@
 		"@vercel/speed-insights": "^1.2.0",
 		"@zap/env": "workspace:*",
 		"client-only": "^0.0.1",
-		"posthog-js": "^1.275.1",
-		"posthog-node": "^5.9.5",
+		"posthog-js": "^1.280.1",
+		"posthog-node": "^5.10.3",
 		"zod": "^4.1.12"
 	},
 	"devDependencies": {
 		"@types/node": "^24.9.1",
-		"@types/react": "^19.2.0",
+		"@types/react": "^19.2.2",
 		"@zap/typescript-config": "workspace:*",
 		"typescript": "^5.9.3"
 	},

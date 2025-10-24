@@ -7,26 +7,26 @@
 		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@orpc/client": "^1.10.0",
-		"@orpc/react-query": "^1.10.0",
-		"@orpc/server": "^1.10.0",
+		"@orpc/client": "^1.10.1",
+		"@orpc/react-query": "^1.10.1",
+		"@orpc/server": "^1.10.1",
 		"@zap/auth": "workspace:*",
 		"@zap/db": "workspace:*",
 		"@zap/errors": "workspace:*",
 		"client-only": "^0.0.1",
-		"drizzle-orm": "^0.44.6",
+		"drizzle-orm": "^0.44.7",
 		"server-only": "^0.0.1"
 	},
 	"devDependencies": {
 		"@types/node": "^24.9.1",
-		"@types/react": "^19.2.0",
+		"@types/react": "^19.2.2",
 		"@types/web-push": "^3.6.4",
 		"@zap/typescript-config": "workspace:*",
 		"typescript": "^5.9.3"
 	},
 	"peerDependencies": {
-		"react": "^19.2.0",
-		"next": "15.5.4"
+		"next": "15.5.4",
+		"react": "^19.2.0"
 	},
 	"exports": {
 		"./orpc/client": "./src/orpc/client.ts",

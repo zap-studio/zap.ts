@@ -7,7 +7,7 @@
 		"check-types": "tsc --noEmit"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.50.3",
+		"@playwright/test": "^1.56.1",
 		"@zap/typescript-config": "workspace:*",
 		"typescript": "^5.9.3"
 	},

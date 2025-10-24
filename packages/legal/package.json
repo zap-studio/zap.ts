@@ -13,7 +13,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^24.9.1",
-		"@types/react": "^19.2.0",
+		"@types/react": "^19.2.2",
 		"@zap/typescript-config": "workspace:*",
 		"typescript": "^5.9.3"
 	},

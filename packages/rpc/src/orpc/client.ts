@@ -12,22 +12,22 @@ import { createORPCReactQueryUtils } from "@orpc/react-query";
  */
 // biome-ignore lint/suspicious/noExplicitAny: We need to allow any here for the router type.
 export function createOrpcClient<TOrpcRouter extends NestedClient<any>>(
-  fallbackUrl = "http://localhost:3000"
+	fallbackUrl = "http://localhost:3000",
 ) {
-  const link = new RPCLink({
-    url: `${typeof window !== "undefined" ? window.location.origin : fallbackUrl}/rpc`,
-    headers: async () => {
-      if (typeof window !== "undefined") {
-        return {};
-      }
+	const link = new RPCLink({
+		url: `${typeof window !== "undefined" ? window.location.origin : fallbackUrl}/rpc`,
+		headers: async () => {
+			if (typeof window !== "undefined") {
+				return {};
+			}
 
-      const { headers } = await import("next/headers");
-      return await headers();
-    },
-  });
+			const { headers } = await import("next/headers");
+			return await headers();
+		},
+	});
 
-  const orpcClient = createORPCClient<TOrpcRouter>(link);
-  const orpcReactQuery = createORPCReactQueryUtils(orpcClient);
+	const orpcClient = createORPCClient<TOrpcRouter>(link);
+	const orpcReactQuery = createORPCReactQueryUtils(orpcClient);
 
-  return { link, orpcClient, orpcReactQuery };
+	return { link, orpcClient, orpcReactQuery };
 }

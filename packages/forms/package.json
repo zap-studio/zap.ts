@@ -1,25 +1,25 @@
 {
-  "name": "@zap/forms",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@tanstack/react-devtools": "catalog:",
-    "@tanstack/react-form-devtools": "catalog:"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "@types/react": "catalog:",
-    "@zap/typescript-config": "workspace:*",
-    "typescript": "catalog:"
-  },
-  "peerDependencies": {
-    "react": "catalog:"
-  },
-  "exports": {
-    "./tanstack-form/providers": "./src/tanstack-form/providers.tsx"
-  }
+	"name": "@zap/forms",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@tanstack/react-devtools": "catalog:",
+		"@tanstack/react-form-devtools": "catalog:"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:",
+		"@types/react": "catalog:",
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "catalog:"
+	},
+	"peerDependencies": {
+		"react": "catalog:"
+	},
+	"exports": {
+		"./tanstack-form/providers": "./src/tanstack-form/providers.tsx"
+	}
 }

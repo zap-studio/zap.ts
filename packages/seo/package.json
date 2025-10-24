@@ -1,25 +1,25 @@
 {
-  "name": "@zap/seo",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@zap/config": "workspace:*"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "@zap/typescript-config": "workspace:*",
-    "typescript": "catalog:"
-  },
-  "peerDependencies": {
-    "next": "catalog:",
-    "next-sitemap": "catalog:"
-  },
-  "exports": {
-    ".": "./src/index.ts",
-    "./next-sitemap": "./src/next-sitemap.ts"
-  }
+	"name": "@zap/seo",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@zap/config": "workspace:*"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:",
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "catalog:"
+	},
+	"peerDependencies": {
+		"next": "catalog:",
+		"next-sitemap": "catalog:"
+	},
+	"exports": {
+		".": "./src/index.ts",
+		"./next-sitemap": "./src/next-sitemap.ts"
+	}
 }

@@ -12,47 +12,47 @@ import type { Provider } from "../types";
 import { PROVIDER_ICONS } from "./provider-icons";
 
 type SocialProviderButtonProps = {
-  provider: Provider;
+	provider: Provider;
 };
 
 export function SocialProviderButton({ provider }: SocialProviderButtonProps) {
-  const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(false);
 
-  const handleSocialLogin = async (_provider: Provider) => {
-    setLoading(true);
+	const handleSocialLogin = async (_provider: Provider) => {
+		setLoading(true);
 
-    try {
-      const { data, error } = await betterAuthClient.signIn.social({
-        provider: _provider,
-        callbackURL: AUTH_CONFIG.REDIRECT_URLS.AFTER_SIGN_IN,
-      });
+		try {
+			const { data, error } = await betterAuthClient.signIn.social({
+				provider: _provider,
+				callbackURL: AUTH_CONFIG.REDIRECT_URLS.AFTER_SIGN_IN,
+			});
 
-      if (error) {
-        throw new UnauthorizedError("Login failed. Please try again.");
-      }
+			if (error) {
+				throw new UnauthorizedError("Login failed. Please try again.");
+			}
 
-      if (data) {
-        toast.success("Login successful!");
-      } else {
-        throw new UnauthorizedError("Login failed. Please try again.");
-      }
-    } catch (error) {
-      handleClientError(error);
-    } finally {
-      setLoading(false);
-    }
-  };
+			if (data) {
+				toast.success("Login successful!");
+			} else {
+				throw new UnauthorizedError("Login failed. Please try again.");
+			}
+		} catch (error) {
+			handleClientError(error);
+		} finally {
+			setLoading(false);
+		}
+	};
 
-  return (
-    <ZapButton
-      className="w-full gap-2"
-      loading={loading}
-      loadingText="Logging in..."
-      onClick={() => handleSocialLogin(provider)}
-      variant="outline"
-    >
-      {PROVIDER_ICONS[provider]}
-      {`Login with ${provider.charAt(0).toUpperCase() + provider.slice(1)}`}
-    </ZapButton>
-  );
+	return (
+		<ZapButton
+			className="w-full gap-2"
+			loading={loading}
+			loadingText="Logging in..."
+			onClick={() => handleSocialLogin(provider)}
+			variant="outline"
+		>
+			{PROVIDER_ICONS[provider]}
+			{`Login with ${provider.charAt(0).toUpperCase() + provider.slice(1)}`}
+		</ZapButton>
+	);
 }

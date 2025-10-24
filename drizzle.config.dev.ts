@@ -11,7 +11,7 @@ import { createDrizzleConfig } from "./drizzle.config.base";
 const DATABASE_URL_DEV = process.env.DATABASE_URL_DEV;
 
 if (!DATABASE_URL_DEV) {
-  throw new Error("DATABASE_URL_DEV environment variable is required");
+	throw new Error("DATABASE_URL_DEV environment variable is required");
 }
 
 export default defineConfig(createDrizzleConfig(DATABASE_URL_DEV));

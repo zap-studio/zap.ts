@@ -16,16 +16,16 @@ export const UUID_TIME_HI_LENGTH = 4 as const;
 export const UUID_CLOCK_SEQ_LENGTH = 4 as const;
 export const UUID_NODE_LENGTH = 12 as const;
 export const UUID_SECTION_LENGTHS = [
-  UUID_TIME_LOW_LENGTH,
-  UUID_TIME_MID_LENGTH,
-  UUID_TIME_HI_LENGTH,
-  UUID_CLOCK_SEQ_LENGTH,
-  UUID_NODE_LENGTH,
+	UUID_TIME_LOW_LENGTH,
+	UUID_TIME_MID_LENGTH,
+	UUID_TIME_HI_LENGTH,
+	UUID_CLOCK_SEQ_LENGTH,
+	UUID_NODE_LENGTH,
 ] as const; // standard 8-4-4-4-12
 
 export const HANDLER_TYPES = {
-  RPC: "rpc-procedure",
-  SERVER_ACTION: "server-action",
-  API_ROUTE: "api-route",
-  AUTHENTICATED_API_ROUTE: "authenticated-api-route",
+	RPC: "rpc-procedure",
+	SERVER_ACTION: "server-action",
+	API_ROUTE: "api-route",
+	AUTHENTICATED_API_ROUTE: "authenticated-api-route",
 } as const;

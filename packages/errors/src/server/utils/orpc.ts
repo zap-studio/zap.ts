@@ -12,21 +12,21 @@ import { handleError, transformError } from ".";
  * Maps custom error codes to valid ORPC error codes, defaulting to INTERNAL_SERVER_ERROR.
  */
 export function toORPCError<TCode extends ORPCErrorCode>(
-  baseError: BaseError
+	baseError: BaseError,
 ): ORPCError<TCode, { message: string; cause: unknown }> {
-  const validCodes = Object.keys(COMMON_ORPC_ERROR_DEFS) as ORPCErrorCode[];
-  const code: ORPCErrorCode = validCodes.includes(
-    baseError.code as ORPCErrorCode
-  )
-    ? (baseError.code as ORPCErrorCode)
-    : "INTERNAL_SERVER_ERROR";
+	const validCodes = Object.keys(COMMON_ORPC_ERROR_DEFS) as ORPCErrorCode[];
+	const code: ORPCErrorCode = validCodes.includes(
+		baseError.code as ORPCErrorCode,
+	)
+		? (baseError.code as ORPCErrorCode)
+		: "INTERNAL_SERVER_ERROR";
 
-  return new ORPCError(code as TCode, {
-    data: {
-      message: baseError.message,
-      cause: baseError.cause,
-    },
-  });
+	return new ORPCError(code as TCode, {
+		data: {
+			message: baseError.message,
+			cause: baseError.cause,
+		},
+	});
 }
 
 /**
@@ -35,15 +35,15 @@ export function toORPCError<TCode extends ORPCErrorCode>(
  * Otherwise, indicates that the error was not handled.
  */
 export function customOrpcErrorHandler<R>(
-  error: unknown,
-  _correlationId: string,
-  options: HandlerOptions & { handlerType: HandlerType }
+	error: unknown,
+	_correlationId: string,
+	options: HandlerOptions & { handlerType: HandlerType },
 ): { handled: boolean; result?: R } {
-  if (options.handlerType === HANDLER_TYPES.RPC) {
-    const baseError = transformError(error);
-    throw toORPCError(baseError);
-  }
-  return { handled: false };
+	if (options.handlerType === HANDLER_TYPES.RPC) {
+		const baseError = transformError(error);
+		throw toORPCError(baseError);
+	}
+	return { handled: false };
 }
 
 /**
@@ -51,13 +51,13 @@ export function customOrpcErrorHandler<R>(
  * with a custom oRPC error handler.
  */
 export function handleOrpcError<R>(
-  error: unknown,
-  correlationId: string,
-  startTime: number,
-  options: HandlerOptions & { handlerType: HandlerType }
+	error: unknown,
+	correlationId: string,
+	startTime: number,
+	options: HandlerOptions & { handlerType: HandlerType },
 ): R {
-  return handleError<R>(error, correlationId, startTime, {
-    ...options,
-    customHandler: customOrpcErrorHandler,
-  });
+	return handleError<R>(error, correlationId, startTime, {
+		...options,
+		customHandler: customOrpcErrorHandler,
+	});
 }

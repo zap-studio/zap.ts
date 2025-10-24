@@ -9,88 +9,88 @@ import { betterAuthServer } from "./better-auth/server";
 import { redirectToLogin } from "./utils";
 
 export async function getNumberOfUsersService() {
-  const count = await db.$count(user);
-  return count;
+	const count = await db.$count(user);
+	return count;
 }
 
 export async function getSessionService() {
-  const _headers = await headers();
-  const result = await betterAuthServer.api.getSession({
-    headers: _headers,
-  });
+	const _headers = await headers();
+	const result = await betterAuthServer.api.getSession({
+		headers: _headers,
+	});
 
-  return result?.session;
+	return result?.session;
 }
 
 export async function getAuthServerData() {
-  const _headers = await headers();
-  const result = await betterAuthServer.api.getSession({
-    headers: _headers,
-  });
+	const _headers = await headers();
+	const result = await betterAuthServer.api.getSession({
+		headers: _headers,
+	});
 
-  return result;
+	return result;
 }
 
 export async function getAuthServerDataOrRedirectToLoginService() {
-  const result = await getAuthServerData();
-  if (!result?.session) {
-    return redirectToLogin();
-  }
-  return { user: result.user, session: result.session };
+	const result = await getAuthServerData();
+	if (!result?.session) {
+		return redirectToLogin();
+	}
+	return { user: result.user, session: result.session };
 }
 
 export async function getUserIdService() {
-  const currentUser = await getUserService();
+	const currentUser = await getUserService();
 
-  if (!currentUser) {
-    throw new UnauthorizedError("User not authenticated");
-  }
+	if (!currentUser) {
+		throw new UnauthorizedError("User not authenticated");
+	}
 
-  return currentUser.id;
+	return currentUser.id;
 }
 
 export async function getUserService() {
-  const _headers = await headers();
-  const result = await betterAuthServer.api.getSession({
-    headers: _headers,
-  });
+	const _headers = await headers();
+	const result = await betterAuthServer.api.getSession({
+		headers: _headers,
+	});
 
-  return result?.user;
+	return result?.user;
 }
 
 export async function isAuthenticatedService() {
-  const session = await getSessionService();
+	const session = await getSessionService();
 
-  if (!session) {
-    return false;
-  }
+	if (!session) {
+		return false;
+	}
 
-  return true;
+	return true;
 }
 
 export async function isUserAdminService() {
-  const currentUser = await getUserService();
+	const currentUser = await getUserService();
 
-  if (!currentUser) {
-    throw new NotFoundError("User not found");
-  }
+	if (!currentUser) {
+		throw new NotFoundError("User not found");
+	}
 
-  return false; // FIXME: Implement actual admin check logic
+	return false; // FIXME: Implement actual admin check logic
 }
 
 type GetUserIdFromMailService = {
-  email: string;
+	email: string;
 };
 
 export async function getUserIdFromMailService({
-  email,
+	email,
 }: GetUserIdFromMailService) {
-  const records = await getUserIdFromMail.execute({ email });
+	const records = await getUserIdFromMail.execute({ email });
 
-  const record = records[0];
-  if (!record) {
-    throw new NotFoundError(`User with email ${email} not found`);
-  }
+	const record = records[0];
+	if (!record) {
+		throw new NotFoundError(`User with email ${email} not found`);
+	}
 
-  return record.userId;
+	return record.userId;
 }

@@ -11,9 +11,9 @@ import { createDrizzleConfig } from "./drizzle.config.base";
 const DATABASE_URL_PROD = process.env.DATABASE_URL_PROD;
 
 if (!DATABASE_URL_PROD) {
-  throw new Error("DATABASE_URL_PROD environment variable is required");
+	throw new Error("DATABASE_URL_PROD environment variable is required");
 }
 
 export default defineConfig(
-  createDrizzleConfig(DATABASE_URL_PROD, { ssl: "require" })
+	createDrizzleConfig(DATABASE_URL_PROD, { ssl: "require" }),
 );

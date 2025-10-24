@@ -28,71 +28,71 @@ import { deepMerge } from "./utils";
  * });
  */
 export function createBaseConfig(
-  appType: NextAppType = "default",
-  options?: NextConfigOptions
+	appType: NextAppType = "default",
+	options?: NextConfigOptions,
 ): NextConfig {
-  const baseConfig: NextConfig = {
-    images: {
-      remotePatterns: [{ protocol: "https", hostname: "avatar.vercel.sh" }],
-    },
-    pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-    typedRoutes: true,
-    transpilePackages: [
-      "@t3-oss/env-nextjs",
-      "@t3-oss/env-core",
-      ...(options?.overrides?.transpilePackages || []),
-    ],
-    async headers() {
-      const headers = [
-        {
-          source: "/(.*)",
-          headers: [
-            {
-              key: "Access-Control-Allow-Origin",
-              value: `'self' ${BASE_URL}`.trim(),
-            },
-            { key: "X-Content-Type-Options", value: "nosniff" },
-            { key: "X-Frame-Options", value: "DENY" },
-            {
-              key: "Referrer-Policy",
-              value: "strict-origin-when-cross-origin",
-            },
-            { key: "Content-Security-Policy", value: buildCSPHeader() },
-            { key: "Permissions-Policy", value: buildPermissionsPolicy() },
-          ],
-        },
-      ];
+	const baseConfig: NextConfig = {
+		images: {
+			remotePatterns: [{ protocol: "https", hostname: "avatar.vercel.sh" }],
+		},
+		pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+		typedRoutes: true,
+		transpilePackages: [
+			"@t3-oss/env-nextjs",
+			"@t3-oss/env-core",
+			...(options?.overrides?.transpilePackages || []),
+		],
+		async headers() {
+			const headers = [
+				{
+					source: "/(.*)",
+					headers: [
+						{
+							key: "Access-Control-Allow-Origin",
+							value: `'self' ${BASE_URL}`.trim(),
+						},
+						{ key: "X-Content-Type-Options", value: "nosniff" },
+						{ key: "X-Frame-Options", value: "DENY" },
+						{
+							key: "Referrer-Policy",
+							value: "strict-origin-when-cross-origin",
+						},
+						{ key: "Content-Security-Policy", value: buildCSPHeader() },
+						{ key: "Permissions-Policy", value: buildPermissionsPolicy() },
+					],
+				},
+			];
 
-      if (appType === "pwa") {
-        headers.push({
-          source: "/sw.js",
-          headers: [
-            {
-              key: "Content-Type",
-              value: "application/javascript; charset=utf-8",
-            },
-            {
-              key: "Cache-Control",
-              value: "no-cache, no-store, must-revalidate",
-            },
-            {
-              key: "Content-Security-Policy",
-              value: "default-src 'self'; script-src 'self'",
-            },
-          ],
-        });
-      }
+			if (appType === "pwa") {
+				headers.push({
+					source: "/sw.js",
+					headers: [
+						{
+							key: "Content-Type",
+							value: "application/javascript; charset=utf-8",
+						},
+						{
+							key: "Cache-Control",
+							value: "no-cache, no-store, must-revalidate",
+						},
+						{
+							key: "Content-Security-Policy",
+							value: "default-src 'self'; script-src 'self'",
+						},
+					],
+				});
+			}
 
-      return await Promise.resolve(headers);
-    },
-  };
+			return await Promise.resolve(headers);
+		},
+	};
 
-  // Apply overrides if provided
-  if (options?.overrides) {
-    return deepMerge(baseConfig, options.overrides);
-  }
+	// Apply overrides if provided
+	if (options?.overrides) {
+		return deepMerge(baseConfig, options.overrides);
+	}
 
-  return baseConfig;
+	return baseConfig;
 }
 
 /**
@@ -114,18 +114,18 @@ export function createBaseConfig(
  * });
  */
 export function composeConfig(
-  baseConfig: NextConfig,
-  plugins: Array<(config: NextConfig) => NextConfig>,
-  overrides?: Partial<NextConfig>
+	baseConfig: NextConfig,
+	plugins: Array<(config: NextConfig) => NextConfig>,
+	overrides?: Partial<NextConfig>,
 ): NextConfig {
-  const configWithPlugins = plugins.reduce(
-    (acc, plugin) => plugin(acc),
-    baseConfig
-  );
+	const configWithPlugins = plugins.reduce(
+		(acc, plugin) => plugin(acc),
+		baseConfig,
+	);
 
-  if (overrides) {
-    return deepMerge(configWithPlugins, overrides);
-  }
+	if (overrides) {
+		return deepMerge(configWithPlugins, overrides);
+	}
 
-  return configWithPlugins;
+	return configWithPlugins;
 }

@@ -5,10 +5,10 @@ import { geist } from "@zap/fonts";
 import { _GlobalError } from "@zap/ui/pages/global-error";
 
 type ErrorBoundaryProps = {
-  reset: () => void;
-  error: Error & { digest?: string };
+	reset: () => void;
+	error: Error & { digest?: string };
 };
 
 export default function GlobalError({ reset, error }: ErrorBoundaryProps) {
-  return <_GlobalError error={error} font={geist} reset={reset} />;
+	return <_GlobalError error={error} font={geist} reset={reset} />;
 }

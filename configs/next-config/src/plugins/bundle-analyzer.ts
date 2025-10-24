@@ -6,5 +6,5 @@ import createBundleAnalyzer from "@next/bundle-analyzer";
  * It helps visualize the size of webpack output files with an interactive zoomable treemap.
  */
 export const withBundleAnalyzer = createBundleAnalyzer({
-  enabled: process.env.ANALYZE === "true",
+	enabled: process.env.ANALYZE === "true",
 });

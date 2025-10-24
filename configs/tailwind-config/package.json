@@ -1,21 +1,21 @@
 {
-  "name": "@zap/tailwind-config",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "@zap/typescript-config": "workspace:*",
-    "postcss": "catalog:",
-    "postcss-load-config": "catalog:",
-    "tailwindcss": "catalog:",
-    "typescript": "catalog:"
-  },
-  "exports": {
-    ".": "./src/base.css",
-    "./postcss": "./src/postcss.config.ts"
-  }
+	"name": "@zap/tailwind-config",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:",
+		"@zap/typescript-config": "workspace:*",
+		"postcss": "catalog:",
+		"postcss-load-config": "catalog:",
+		"tailwindcss": "catalog:",
+		"typescript": "catalog:"
+	},
+	"exports": {
+		".": "./src/base.css",
+		"./postcss": "./src/postcss.config.ts"
+	}
 }

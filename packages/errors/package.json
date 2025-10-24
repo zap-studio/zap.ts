@@ -1,37 +1,37 @@
 {
-  "name": "@zap/errors",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@orpc/client": "catalog:",
-    "@orpc/server": "catalog:",
-    "@zap/env": "workspace:*",
-    "client-only": "catalog:",
-    "server-only": "catalog:",
-    "sonner": "catalog:",
-    "zod": "catalog:"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "@zap/typescript-config": "workspace:*",
-    "typescript": "catalog:"
-  },
-  "exports": {
-    ".": "./src/index.ts",
-    "./client": "./src/client/index.ts",
-    "./edge": "./src/edge/index.ts",
-    "./server": "./src/server/index.ts",
-    "./server/handlers": "./src/server/handlers/index.ts",
-    "./server/handlers/*": "./src/server/handlers/*.ts",
-    "./server/utils/*": "./src/server/utils/*.ts",
-    "./constants": "./src/constants.ts",
-    "./types": "./src/types.ts",
-    "./utils/*": "./src/utils/*.ts",
-    "./http": "./src/http.ts",
-    "./uuid": "./src/uuid.ts"
-  }
+	"name": "@zap/errors",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@orpc/client": "catalog:",
+		"@orpc/server": "catalog:",
+		"@zap/env": "workspace:*",
+		"client-only": "catalog:",
+		"server-only": "catalog:",
+		"sonner": "catalog:",
+		"zod": "catalog:"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:",
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "catalog:"
+	},
+	"exports": {
+		".": "./src/index.ts",
+		"./client": "./src/client/index.ts",
+		"./edge": "./src/edge/index.ts",
+		"./server": "./src/server/index.ts",
+		"./server/handlers": "./src/server/handlers/index.ts",
+		"./server/handlers/*": "./src/server/handlers/*.ts",
+		"./server/utils/*": "./src/server/utils/*.ts",
+		"./constants": "./src/constants.ts",
+		"./types": "./src/types.ts",
+		"./utils/*": "./src/utils/*.ts",
+		"./http": "./src/http.ts",
+		"./uuid": "./src/uuid.ts"
+	}
 }

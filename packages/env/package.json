@@ -1,20 +1,20 @@
 {
-  "name": "@zap/env",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@t3-oss/env-core": "catalog:",
-    "zod": "catalog:"
-  },
-  "devDependencies": {
-    "@zap/typescript-config": "workspace:*",
-    "typescript": "catalog:"
-  },
-  "exports": {
-    ".": "./src/index.ts"
-  }
+	"name": "@zap/env",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@t3-oss/env-core": "catalog:",
+		"zod": "catalog:"
+	},
+	"devDependencies": {
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "catalog:"
+	},
+	"exports": {
+		".": "./src/index.ts"
+	}
 }

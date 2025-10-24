@@ -9,9 +9,9 @@ export type NextAppType = "default" | "pwa";
  * Options for overriding a base Next.js configuration.
  */
 export type NextConfigOptions = {
-  /**
-   * Override or extend any Next.js config properties.
-   * These will be deeply merged with the base configuration.
-   */
-  overrides?: Partial<NextConfig>;
+	/**
+	 * Override or extend any Next.js config properties.
+	 * These will be deeply merged with the base configuration.
+	 */
+	overrides?: Partial<NextConfig>;
 };

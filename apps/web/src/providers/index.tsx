@@ -9,15 +9,15 @@ import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { orpcQueryClient } from "@/lib/tanstack-query";
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  return (
-    <BaseProviders>
-      <NuqsAdapter>
-        <TanStackQueryProvider queryClient={orpcQueryClient}>
-          <TanStackFormProvider>
-            <AnalyticsProvider>{children}</AnalyticsProvider>
-          </TanStackFormProvider>
-        </TanStackQueryProvider>
-      </NuqsAdapter>
-    </BaseProviders>
-  );
+	return (
+		<BaseProviders>
+			<NuqsAdapter>
+				<TanStackQueryProvider queryClient={orpcQueryClient}>
+					<TanStackFormProvider>
+						<AnalyticsProvider>{children}</AnalyticsProvider>
+					</TanStackFormProvider>
+				</TanStackQueryProvider>
+			</NuqsAdapter>
+		</BaseProviders>
+	);
 }

@@ -9,22 +9,22 @@ const jiti = createJiti(fileURLToPath(import.meta.url));
 jiti.import("./src/app/env");
 
 const base = createBaseConfig("default", {
-  overrides: {
-    transpilePackages: [
-      "@zap/analytics",
-      "@zap/config",
-      "@zap/env",
-      "@zap/fonts",
-      "@zap/markdown",
-      "@zap/next-config",
-      "@zap/security",
-      "@zap/seo",
-      "@zap/shadcn",
-      "@zap/tailwind-config",
-      "@zap/typescript-config",
-      "@zap/ui",
-      "@zap/vitest-config",
-    ],
-  },
+	overrides: {
+		transpilePackages: [
+			"@zap/analytics",
+			"@zap/config",
+			"@zap/env",
+			"@zap/fonts",
+			"@zap/markdown",
+			"@zap/next-config",
+			"@zap/security",
+			"@zap/seo",
+			"@zap/shadcn",
+			"@zap/tailwind-config",
+			"@zap/typescript-config",
+			"@zap/ui",
+			"@zap/vitest-config",
+		],
+	},
 });
 export default composeConfig(base, [withMDX, withBundleAnalyzer]);

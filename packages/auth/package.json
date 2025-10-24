@@ -1,53 +1,53 @@
 {
-  "name": "@zap/auth",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@bprogress/next": "catalog:",
-    "@orpc/client": "catalog:",
-    "@polar-sh/better-auth": "catalog:",
-    "@t3-oss/env-core": "catalog:",
-    "@tanstack/react-form": "catalog:",
-    "@zap/async-state": "workspace:*",
-    "@zap/config": "workspace:*",
-    "@zap/db": "workspace:*",
-    "@zap/env": "workspace:*",
-    "@zap/errors": "workspace:*",
-    "@zap/shadcn": "workspace:*",
-    "@zap/ui": "workspace:*",
-    "@zap/utils": "workspace:*",
-    "better-auth": "catalog:",
-    "client-only": "catalog:",
-    "server-only": "catalog:",
-    "sonner": "catalog:",
-    "zod": "catalog:"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "@types/react": "catalog:",
-    "@zap/typescript-config": "workspace:*",
-    "typescript": "catalog:"
-  },
-  "peerDependencies": {
-    "next": "catalog:",
-    "react": "catalog:"
-  },
-  "exports": {
-    ".": "./src/index.ts",
-    "./*": "./src/*",
-    "./better-auth/*": "./src/better-auth/*.ts",
-    "./components/*": "./src/components/*.tsx",
-    "./forms/*": "./src/forms/*.tsx",
-    "./forms/form-context": "./src/forms/form-context.ts",
-    "./forms/form-hooks": "./src/forms/form-hooks.ts",
-    "./hooks": "./src/hooks/index.ts",
-    "./hooks/*": "./src/hooks/*.ts",
-    "./lib/*": "./src/lib/*.ts",
-    "./pages/*": "./src/pages/*.tsx",
-    "./rpc/orpc/*": "./src/rpc/orpc/*.ts"
-  }
+	"name": "@zap/auth",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@bprogress/next": "catalog:",
+		"@orpc/client": "catalog:",
+		"@polar-sh/better-auth": "catalog:",
+		"@t3-oss/env-core": "catalog:",
+		"@tanstack/react-form": "catalog:",
+		"@zap/async-state": "workspace:*",
+		"@zap/config": "workspace:*",
+		"@zap/db": "workspace:*",
+		"@zap/env": "workspace:*",
+		"@zap/errors": "workspace:*",
+		"@zap/shadcn": "workspace:*",
+		"@zap/ui": "workspace:*",
+		"@zap/utils": "workspace:*",
+		"better-auth": "catalog:",
+		"client-only": "catalog:",
+		"server-only": "catalog:",
+		"sonner": "catalog:",
+		"zod": "catalog:"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:",
+		"@types/react": "catalog:",
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "catalog:"
+	},
+	"peerDependencies": {
+		"next": "catalog:",
+		"react": "catalog:"
+	},
+	"exports": {
+		".": "./src/index.ts",
+		"./*": "./src/*",
+		"./better-auth/*": "./src/better-auth/*.ts",
+		"./components/*": "./src/components/*.tsx",
+		"./forms/*": "./src/forms/*.tsx",
+		"./forms/form-context": "./src/forms/form-context.ts",
+		"./forms/form-hooks": "./src/forms/form-hooks.ts",
+		"./hooks": "./src/hooks/index.ts",
+		"./hooks/*": "./src/hooks/*.ts",
+		"./lib/*": "./src/lib/*.ts",
+		"./pages/*": "./src/pages/*.tsx",
+		"./rpc/orpc/*": "./src/rpc/orpc/*.ts"
+	}
 }

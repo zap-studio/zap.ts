@@ -5,8 +5,8 @@ import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 type TanStackQueryProviderProps = {
-  children: React.ReactNode;
-  queryClient: QueryClient;
+	children: React.ReactNode;
+	queryClient: QueryClient;
 };
 
 /**
@@ -33,12 +33,12 @@ type TanStackQueryProviderProps = {
  * }
  */
 export function TanStackQueryProvider({
-  children,
-  queryClient,
+	children,
+	queryClient,
 }: TanStackQueryProviderProps) {
-  return (
-    <QueryClientProvider client={queryClient}>
-      {children} <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
-  );
+	return (
+		<QueryClientProvider client={queryClient}>
+			{children} <ReactQueryDevtools initialIsOpen={false} />
+		</QueryClientProvider>
+	);
 }

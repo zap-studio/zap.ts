@@ -1,28 +1,28 @@
 {
-  "name": "@zap/markdown",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "lucide-react": "catalog:",
-    "next-mdx-remote": "catalog:",
-    "react-syntax-highlighter": "catalog:"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "@types/react": "catalog:",
-    "@types/react-syntax-highlighter": "catalog:",
-    "@zap/typescript-config": "workspace:*",
-    "typescript": "catalog:"
-  },
-  "peerDependencies": {
-    "next": "catalog:",
-    "react": "catalog:"
-  },
-  "exports": {
-    "./mdx": "./src/mdx.tsx"
-  }
+	"name": "@zap/markdown",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"lucide-react": "catalog:",
+		"next-mdx-remote": "catalog:",
+		"react-syntax-highlighter": "catalog:"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:",
+		"@types/react": "catalog:",
+		"@types/react-syntax-highlighter": "catalog:",
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "catalog:"
+	},
+	"peerDependencies": {
+		"next": "catalog:",
+		"react": "catalog:"
+	},
+	"exports": {
+		"./mdx": "./src/mdx.tsx"
+	}
 }

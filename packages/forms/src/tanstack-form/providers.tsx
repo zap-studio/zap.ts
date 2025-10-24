@@ -5,7 +5,7 @@ import { TanStackDevtools } from "@tanstack/react-devtools";
 import { FormDevtoolsPlugin } from "@tanstack/react-form-devtools";
 
 type TanStackFormProviderProps = {
-  children: React.ReactNode;
+	children: React.ReactNode;
 };
 
 /**
@@ -22,9 +22,9 @@ type TanStackFormProviderProps = {
  * ```
  */
 export function TanStackFormProvider({ children }: TanStackFormProviderProps) {
-  return (
-    <>
-      {children} <TanStackDevtools plugins={[FormDevtoolsPlugin()]} />
-    </>
-  );
+	return (
+		<>
+			{children} <TanStackDevtools plugins={[FormDevtoolsPlugin()]} />
+		</>
+	);
 }

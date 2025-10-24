@@ -1,26 +1,26 @@
 {
-  "name": "@zap/crypto",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@t3-oss/env-core": "catalog:",
-    "@zap/env": "workspace:*",
-    "server-only": "catalog:",
-    "zod": "catalog:"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "@zap/typescript-config": "workspace:*",
-    "typescript": "catalog:"
-  },
-  "exports": {
-    ".": "./src/index.ts",
-    "./env": "./src/env.ts",
-    "./encrypt": "./src/encrypt.ts",
-    "./decrypt": "./src/decrypt.ts"
-  }
+	"name": "@zap/crypto",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@t3-oss/env-core": "catalog:",
+		"@zap/env": "workspace:*",
+		"server-only": "catalog:",
+		"zod": "catalog:"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:",
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "catalog:"
+	},
+	"exports": {
+		".": "./src/index.ts",
+		"./env": "./src/env.ts",
+		"./encrypt": "./src/encrypt.ts",
+		"./decrypt": "./src/decrypt.ts"
+	}
 }

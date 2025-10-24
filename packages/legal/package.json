@@ -1,32 +1,32 @@
 {
-  "name": "@zap/legal",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@zap/markdown": "workspace:*",
-    "@zap/shadcn": "workspace:*",
-    "gray-matter": "catalog:"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "@types/react": "catalog:",
-    "@zap/typescript-config": "workspace:*",
-    "typescript": "catalog:"
-  },
-  "peerDependencies": {
-    "next": "catalog:",
-    "react": "catalog:"
-  },
-  "exports": {
-    ".": "./src/index.ts",
-    "./components/*": "./src/components/*.tsx",
-    "./data/*": "./src/data/*.mdx",
-    "./pages/*": "./src/pages/*.tsx",
-    "./layout": "./src/layout.tsx",
-    "./*": "./src/*.ts"
-  }
+	"name": "@zap/legal",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@zap/markdown": "workspace:*",
+		"@zap/shadcn": "workspace:*",
+		"gray-matter": "catalog:"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:",
+		"@types/react": "catalog:",
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "catalog:"
+	},
+	"peerDependencies": {
+		"next": "catalog:",
+		"react": "catalog:"
+	},
+	"exports": {
+		".": "./src/index.ts",
+		"./components/*": "./src/components/*.tsx",
+		"./data/*": "./src/data/*.mdx",
+		"./pages/*": "./src/pages/*.tsx",
+		"./layout": "./src/layout.tsx",
+		"./*": "./src/*.ts"
+	}
 }

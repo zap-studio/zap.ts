@@ -8,39 +8,39 @@ import { AUTH_CONFIG } from "..";
 import { betterAuthClient } from "../better-auth/client";
 
 export function SessionButton() {
-  const { data: result } = betterAuthClient.useSession();
-  const session = result?.session;
+	const { data: result } = betterAuthClient.useSession();
+	const session = result?.session;
 
-  if (session) {
-    return (
-      <ZapButton asChild size="sm">
-        <Link href={{ pathname: ZAP_CORE_CONFIG.APP.APP_URL }}>Open App</Link>
-      </ZapButton>
-    );
-  }
+	if (session) {
+		return (
+			<ZapButton asChild size="sm">
+				<Link href={{ pathname: ZAP_CORE_CONFIG.APP.APP_URL }}>Open App</Link>
+			</ZapButton>
+		);
+	}
 
-  return (
-    <>
-      <ZapButton asChild variant="ghost">
-        <Link
-          className="font-medium text-muted-foreground text-sm transition-colors hover:text-foreground active:text-foreground"
-          href={{
-            pathname: AUTH_CONFIG.URLS.LOGIN,
-          }}
-        >
-          Login
-        </Link>
-      </ZapButton>
+	return (
+		<>
+			<ZapButton asChild variant="ghost">
+				<Link
+					className="font-medium text-muted-foreground text-sm transition-colors hover:text-foreground active:text-foreground"
+					href={{
+						pathname: AUTH_CONFIG.URLS.LOGIN,
+					}}
+				>
+					Login
+				</Link>
+			</ZapButton>
 
-      <ZapButton asChild size="sm">
-        <Link
-          href={{
-            pathname: AUTH_CONFIG.URLS.SIGN_UP,
-          }}
-        >
-          Get Started
-        </Link>
-      </ZapButton>
-    </>
-  );
+			<ZapButton asChild size="sm">
+				<Link
+					href={{
+						pathname: AUTH_CONFIG.URLS.SIGN_UP,
+					}}
+				>
+					Get Started
+				</Link>
+			</ZapButton>
+		</>
+	);
 }

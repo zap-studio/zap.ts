@@ -1,28 +1,28 @@
 {
-  "name": "@zap/next-config",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@zap/config": "workspace:*",
-    "@zap/security": "workspace:*"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "@zap/typescript-config": "workspace:*",
-    "typescript": "catalog:"
-  },
-  "peerDependencies": {
-    "@next/bundle-analyzer": "catalog:",
-    "@next/mdx": "catalog:",
-    "next": "catalog:"
-  },
-  "exports": {
-    ".": "./src/index.ts",
-    "./types": "./src/types/index.ts",
-    "./plugins/*": "./src/plugins/*.ts"
-  }
+	"name": "@zap/next-config",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@zap/config": "workspace:*",
+		"@zap/security": "workspace:*"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:",
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "catalog:"
+	},
+	"peerDependencies": {
+		"@next/bundle-analyzer": "catalog:",
+		"@next/mdx": "catalog:",
+		"next": "catalog:"
+	},
+	"exports": {
+		".": "./src/index.ts",
+		"./types": "./src/types/index.ts",
+		"./plugins/*": "./src/plugins/*.ts"
+	}
 }

@@ -1,37 +1,37 @@
 {
-  "name": "@zap/rpc",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@orpc/client": "catalog:",
-    "@orpc/react-query": "catalog:",
-    "@orpc/server": "catalog:",
-    "@zap/auth": "workspace:*",
-    "@zap/db": "workspace:*",
-    "@zap/errors": "workspace:*",
-    "client-only": "catalog:",
-    "drizzle-orm": "catalog:",
-    "server-only": "catalog:"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "@types/react": "catalog:",
-    "@types/web-push": "catalog:",
-    "@zap/typescript-config": "workspace:*",
-    "typescript": "catalog:"
-  },
-  "peerDependencies": {
-    "react": "catalog:",
-    "next": "catalog:"
-  },
-  "exports": {
-    "./orpc/client": "./src/orpc/client.ts",
-    "./orpc/middlewares/*": "./src/orpc/middlewares/*.ts",
-    "./orpc/router": "./src/orpc/router.ts",
-    "./orpc/server": "./src/orpc/server.ts"
-  }
+	"name": "@zap/rpc",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@orpc/client": "catalog:",
+		"@orpc/react-query": "catalog:",
+		"@orpc/server": "catalog:",
+		"@zap/auth": "workspace:*",
+		"@zap/db": "workspace:*",
+		"@zap/errors": "workspace:*",
+		"client-only": "catalog:",
+		"drizzle-orm": "catalog:",
+		"server-only": "catalog:"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:",
+		"@types/react": "catalog:",
+		"@types/web-push": "catalog:",
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "catalog:"
+	},
+	"peerDependencies": {
+		"react": "catalog:",
+		"next": "catalog:"
+	},
+	"exports": {
+		"./orpc/client": "./src/orpc/client.ts",
+		"./orpc/middlewares/*": "./src/orpc/middlewares/*.ts",
+		"./orpc/router": "./src/orpc/router.ts",
+		"./orpc/server": "./src/orpc/server.ts"
+	}
 }

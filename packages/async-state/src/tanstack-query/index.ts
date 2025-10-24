@@ -15,14 +15,14 @@ export interface ReactQueryClientOptions extends QueryClientConfig {}
  * });
  */
 export function createReactQueryClient(config: ReactQueryClientOptions = {}) {
-  const userDefaults = config.defaultOptions ?? {};
+	const userDefaults = config.defaultOptions ?? {};
 
-  const mergedDefaults: QueryClientConfig["defaultOptions"] = {
-    ...userDefaults,
-  };
+	const mergedDefaults: QueryClientConfig["defaultOptions"] = {
+		...userDefaults,
+	};
 
-  return new QueryClient({
-    ...config,
-    defaultOptions: mergedDefaults,
-  });
+	return new QueryClient({
+		...config,
+		defaultOptions: mergedDefaults,
+	});
 }

@@ -9,28 +9,28 @@ const jiti = createJiti(fileURLToPath(import.meta.url));
 jiti.import("./src/app/env");
 
 const base = createBaseConfig("pwa", {
-  overrides: {
-    transpilePackages: [
-      "@zap/analytics",
-      "@zap/async-state",
-      "@zap/auth",
-      "@zap/config",
-      "@zap/crypto",
-      "@zap/db",
-      "@zap/env",
-      "@zap/fonts",
-      "@zap/forms",
-      "@zap/markdown",
-      "@zap/next-config",
-      "@zap/rpc",
-      "@zap/security",
-      "@zap/seo",
-      "@zap/shadcn",
-      "@zap/tailwind-config",
-      "@zap/typescript-config",
-      "@zap/ui",
-      "@zap/vitest-config",
-    ],
-  },
+	overrides: {
+		transpilePackages: [
+			"@zap/analytics",
+			"@zap/async-state",
+			"@zap/auth",
+			"@zap/config",
+			"@zap/crypto",
+			"@zap/db",
+			"@zap/env",
+			"@zap/fonts",
+			"@zap/forms",
+			"@zap/markdown",
+			"@zap/next-config",
+			"@zap/rpc",
+			"@zap/security",
+			"@zap/seo",
+			"@zap/shadcn",
+			"@zap/tailwind-config",
+			"@zap/typescript-config",
+			"@zap/ui",
+			"@zap/vitest-config",
+		],
+	},
 });
 export default composeConfig(base, [withMDX, withBundleAnalyzer]);

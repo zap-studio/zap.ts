@@ -1,30 +1,30 @@
 {
-  "name": "@zap/async-state",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@orpc/client": "catalog:",
-    "@tanstack/react-query": "catalog:",
-    "@tanstack/react-query-devtools": "catalog:",
-    "@zap/errors": "workspace:*",
-    "client-only": "catalog:"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "@types/react": "catalog:",
-    "@zap/typescript-config": "workspace:*",
-    "typescript": "catalog:"
-  },
-  "peerDependencies": {
-    "react": "catalog:"
-  },
-  "exports": {
-    "./tanstack-query": "./src/tanstack-query/index.ts",
-    "./tanstack-query/*": "./src/tanstack-query/*.ts",
-    "./tanstack-query/providers": "./src/tanstack-query/providers.tsx"
-  }
+	"name": "@zap/async-state",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@orpc/client": "catalog:",
+		"@tanstack/react-query": "catalog:",
+		"@tanstack/react-query-devtools": "catalog:",
+		"@zap/errors": "workspace:*",
+		"client-only": "catalog:"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:",
+		"@types/react": "catalog:",
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "catalog:"
+	},
+	"peerDependencies": {
+		"react": "catalog:"
+	},
+	"exports": {
+		"./tanstack-query": "./src/tanstack-query/index.ts",
+		"./tanstack-query/*": "./src/tanstack-query/*.ts",
+		"./tanstack-query/providers": "./src/tanstack-query/providers.tsx"
+	}
 }

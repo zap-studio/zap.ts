@@ -1,18 +1,18 @@
 {
-  "name": "@zap/tsdown-config",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "@zap/typescript-config": "workspace:*",
-    "tsdown": "catalog:",
-    "typescript": "catalog:"
-  },
-  "exports": {
-    ".": "./src/index.ts"
-  }
+	"name": "@zap/tsdown-config",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:",
+		"@zap/typescript-config": "workspace:*",
+		"tsdown": "catalog:",
+		"typescript": "catalog:"
+	},
+	"exports": {
+		".": "./src/index.ts"
+	}
 }

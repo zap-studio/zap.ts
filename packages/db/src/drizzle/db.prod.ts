@@ -9,6 +9,6 @@ import { type DatabaseSchema, schema } from "./schema";
 const url = getDatabaseUrl();
 const client = neon(url);
 export const db: NeonHttpDatabase<DatabaseSchema> = drizzle({
-  client,
-  schema,
+	client,
+	schema,
 });

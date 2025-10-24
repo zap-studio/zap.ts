@@ -2,11 +2,11 @@ import { StandardRPCJsonSerializer } from "@orpc/client/standard";
 import { QueryClient, type QueryClientConfig } from "@tanstack/react-query";
 
 export const defaultSerializer = new StandardRPCJsonSerializer({
-  customJsonSerializers: [],
+	customJsonSerializers: [],
 });
 
 export interface OrpcReactQueryClientOptions extends QueryClientConfig {
-  serializer?: StandardRPCJsonSerializer;
+	serializer?: StandardRPCJsonSerializer;
 }
 
 /**
@@ -26,30 +26,30 @@ export interface OrpcReactQueryClientOptions extends QueryClientConfig {
  * });
  */
 export function createOrpcReactQueryClient({
-  serializer = defaultSerializer,
-  ...config
+	serializer = defaultSerializer,
+	...config
 }: OrpcReactQueryClientOptions = {}) {
-  const userDefaults = config.defaultOptions ?? {};
+	const userDefaults = config.defaultOptions ?? {};
 
-  const mergedDefaults: QueryClientConfig["defaultOptions"] = {
-    ...userDefaults,
-    dehydrate: {
-      serializeData(data) {
-        const [json, meta] = serializer.serialize(data);
-        return { json, meta };
-      },
-      ...(userDefaults.dehydrate ?? {}),
-    },
-    hydrate: {
-      deserializeData(data) {
-        return serializer.deserialize(data.json, data.meta);
-      },
-      ...(userDefaults.hydrate ?? {}),
-    },
-  };
+	const mergedDefaults: QueryClientConfig["defaultOptions"] = {
+		...userDefaults,
+		dehydrate: {
+			serializeData(data) {
+				const [json, meta] = serializer.serialize(data);
+				return { json, meta };
+			},
+			...(userDefaults.dehydrate ?? {}),
+		},
+		hydrate: {
+			deserializeData(data) {
+				return serializer.deserialize(data.json, data.meta);
+			},
+			...(userDefaults.hydrate ?? {}),
+		},
+	};
 
-  return new QueryClient({
-    ...config,
-    defaultOptions: mergedDefaults,
-  });
+	return new QueryClient({
+		...config,
+		defaultOptions: mergedDefaults,
+	});
 }

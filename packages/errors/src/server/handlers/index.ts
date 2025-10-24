@@ -8,45 +8,45 @@ import { generateCorrelationId, handleError, logSuccess } from "../utils";
  * Creates a wrapped handler function with built-in error handling, logging, and correlation tracking.
  */
 export function createHandler<T extends unknown[], R>(
-  handler: HandlerFunction<T, R>,
-  options: HandlerOptions & {
-    handlerType: HandlerType;
-    customErrorHandler?: (
-      error: unknown,
-      correlationId: string,
-      startTime: number,
-      options: HandlerOptions & { handlerType: HandlerType }
-    ) => { handled: boolean; result?: unknown };
-  }
+	handler: HandlerFunction<T, R>,
+	options: HandlerOptions & {
+		handlerType: HandlerType;
+		customErrorHandler?: (
+			error: unknown,
+			correlationId: string,
+			startTime: number,
+			options: HandlerOptions & { handlerType: HandlerType },
+		) => { handled: boolean; result?: unknown };
+	},
 ) {
-  return async (...args: T): Promise<R> => {
-    const correlationId = options.correlationId || generateCorrelationId();
-    const startTime = Date.now();
+	return async (...args: T): Promise<R> => {
+		const correlationId = options.correlationId || generateCorrelationId();
+		const startTime = Date.now();
 
-    try {
-      const result = await handler(...args);
+		try {
+			const result = await handler(...args);
 
-      if (__DEV__) {
-        logSuccess(correlationId, startTime, options);
-      }
+			if (__DEV__) {
+				logSuccess(correlationId, startTime, options);
+			}
 
-      return result;
-    } catch (error) {
-      if (options.customErrorHandler) {
-        const result = options.customErrorHandler(
-          error,
-          correlationId,
-          startTime,
-          options
-        );
-        if (result.handled) {
-          // Custom handler threw or will throw
-          return result.result as R;
-        }
-      }
-      return handleError(error, correlationId, startTime, options);
-    }
-  };
+			return result;
+		} catch (error) {
+			if (options.customErrorHandler) {
+				const result = options.customErrorHandler(
+					error,
+					correlationId,
+					startTime,
+					options,
+				);
+				if (result.handled) {
+					// Custom handler threw or will throw
+					return result.result as R;
+				}
+			}
+			return handleError(error, correlationId, startTime, options);
+		}
+	};
 }
 
 /**
@@ -65,13 +65,13 @@ export function createHandler<T extends unknown[], R>(
  * );
  */
 export function withApiHandler<T extends unknown[], R>(
-  handler: HandlerFunction<T, R>,
-  options: HandlerOptions = {}
+	handler: HandlerFunction<T, R>,
+	options: HandlerOptions = {},
 ) {
-  return createHandler(handler, {
-    ...options,
-    handlerType: "api-route",
-  });
+	return createHandler(handler, {
+		...options,
+		handlerType: "api-route",
+	});
 }
 
 /**
@@ -90,11 +90,11 @@ export function withApiHandler<T extends unknown[], R>(
  * );
  */
 export function withServerActionHandler<T extends unknown[], R>(
-  handler: HandlerFunction<T, R>,
-  options: HandlerOptions = {}
+	handler: HandlerFunction<T, R>,
+	options: HandlerOptions = {},
 ) {
-  return createHandler(handler, {
-    ...options,
-    handlerType: "server-action",
-  });
+	return createHandler(handler, {
+		...options,
+		handlerType: "server-action",
+	});
 }

@@ -1,40 +1,40 @@
 {
-  "name": "@zap/ui",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@bprogress/next": "catalog:",
-    "@zap/errors": "workspace:*",
-    "@zap/shadcn": "workspace:*",
-    "client-only": "catalog:",
-    "lucide-react": "catalog:",
-    "motion": "catalog:",
-    "next-themes": "catalog:",
-    "radix-ui": "catalog:"
-  },
-  "peerDependencies": {
-    "next": "catalog:",
-    "react": "catalog:",
-    "react-dom": "catalog:"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "catalog:",
-    "@types/node": "catalog:",
-    "@types/react": "catalog:",
-    "@types/react-dom": "catalog:",
-    "@zap/tailwind-config": "workspace:*",
-    "@zap/typescript-config": "workspace:*",
-    "tailwindcss": "catalog:",
-    "typescript": "catalog:"
-  },
-  "exports": {
-    "./components/core/*": "./src/components/core/*.tsx",
-    "./components/misc/*": "./src/components/misc/*.tsx",
-    "./pages/*": "./src/pages/*.tsx",
-    "./providers/*": "./src/providers/*.tsx"
-  }
+	"name": "@zap/ui",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@bprogress/next": "catalog:",
+		"@zap/errors": "workspace:*",
+		"@zap/shadcn": "workspace:*",
+		"client-only": "catalog:",
+		"lucide-react": "catalog:",
+		"motion": "catalog:",
+		"next-themes": "catalog:",
+		"radix-ui": "catalog:"
+	},
+	"peerDependencies": {
+		"next": "catalog:",
+		"react": "catalog:",
+		"react-dom": "catalog:"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "catalog:",
+		"@types/node": "catalog:",
+		"@types/react": "catalog:",
+		"@types/react-dom": "catalog:",
+		"@zap/tailwind-config": "workspace:*",
+		"@zap/typescript-config": "workspace:*",
+		"tailwindcss": "catalog:",
+		"typescript": "catalog:"
+	},
+	"exports": {
+		"./components/core/*": "./src/components/core/*.tsx",
+		"./components/misc/*": "./src/components/misc/*.tsx",
+		"./pages/*": "./src/pages/*.tsx",
+		"./providers/*": "./src/providers/*.tsx"
+	}
 }

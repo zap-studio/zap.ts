@@ -1,48 +1,48 @@
 {
-  "name": "@zap/shadcn",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@radix-ui/react-slot": "catalog:",
-    "class-variance-authority": "catalog:",
-    "clsx": "catalog:",
-    "cmdk": "catalog:",
-    "embla-carousel-react": "catalog:",
-    "input-otp": "catalog:",
-    "lucide-react": "catalog:",
-    "next-themes": "catalog:",
-    "radix-ui": "catalog:",
-    "react-day-picker": "catalog:",
-    "react-resizable-panels": "catalog:",
-    "recharts": "catalog:",
-    "sonner": "catalog:",
-    "tailwind-merge": "catalog:",
-    "tw-animate-css": "catalog:",
-    "vaul": "catalog:",
-    "zod": "catalog:"
-  },
-  "peerDependencies": {
-    "react": "catalog:",
-    "react-dom": "catalog:"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "catalog:",
-    "@types/node": "catalog:",
-    "@types/react": "catalog:",
-    "@types/react-dom": "catalog:",
-    "@zap/tailwind-config": "workspace:*",
-    "@zap/typescript-config": "workspace:*",
-    "tailwindcss": "catalog:",
-    "typescript": "catalog:"
-  },
-  "exports": {
-    "./globals.css": "./src/styles/globals.css",
-    "./ui/*": "./src/ui/*.tsx",
-    "./lib/*": "./src/lib/*.ts",
-    "./hooks/*": "./src/hooks/*.ts"
-  }
+	"name": "@zap/shadcn",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@radix-ui/react-slot": "catalog:",
+		"class-variance-authority": "catalog:",
+		"clsx": "catalog:",
+		"cmdk": "catalog:",
+		"embla-carousel-react": "catalog:",
+		"input-otp": "catalog:",
+		"lucide-react": "catalog:",
+		"next-themes": "catalog:",
+		"radix-ui": "catalog:",
+		"react-day-picker": "catalog:",
+		"react-resizable-panels": "catalog:",
+		"recharts": "catalog:",
+		"sonner": "catalog:",
+		"tailwind-merge": "catalog:",
+		"tw-animate-css": "catalog:",
+		"vaul": "catalog:",
+		"zod": "catalog:"
+	},
+	"peerDependencies": {
+		"react": "catalog:",
+		"react-dom": "catalog:"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "catalog:",
+		"@types/node": "catalog:",
+		"@types/react": "catalog:",
+		"@types/react-dom": "catalog:",
+		"@zap/tailwind-config": "workspace:*",
+		"@zap/typescript-config": "workspace:*",
+		"tailwindcss": "catalog:",
+		"typescript": "catalog:"
+	},
+	"exports": {
+		"./globals.css": "./src/styles/globals.css",
+		"./ui/*": "./src/ui/*.tsx",
+		"./lib/*": "./src/lib/*.ts",
+		"./hooks/*": "./src/hooks/*.ts"
+	}
 }

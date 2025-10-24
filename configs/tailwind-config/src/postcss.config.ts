@@ -1,7 +1,7 @@
 import type { Config } from "postcss-load-config";
 
 export const config: Config = {
-  plugins: { "@tailwindcss/postcss": {} },
+	plugins: { "@tailwindcss/postcss": {} },
 };
 
 /**
@@ -9,12 +9,12 @@ export const config: Config = {
  * This function merges the default configuration with any provided overrides.
  */
 export const createPostCSSConfig = (
-  overrides: Partial<Config> = {}
+	overrides: Partial<Config> = {},
 ): Config => ({
-  ...config,
-  ...overrides,
-  plugins: {
-    ...config.plugins,
-    ...overrides.plugins,
-  },
+	...config,
+	...overrides,
+	plugins: {
+		...config.plugins,
+		...overrides.plugins,
+	},
 });

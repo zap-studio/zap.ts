@@ -8,5 +8,5 @@ import type { DatabaseSchema } from "./schema";
 
 // FIXME: find a better way to export the correct db instance without type assertion
 export const db = (
-  __PROD__ ? dbProd : dbDev
+	__PROD__ ? dbProd : dbDev
 ) as NeonHttpDatabase<DatabaseSchema>;

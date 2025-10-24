@@ -1,10 +1,10 @@
 import "server-only";
 
 import {
-  type AnyRouter,
-  type ClientContext,
-  createRouterClient,
-  type InferRouterInitialContext,
+	type AnyRouter,
+	type ClientContext,
+	createRouterClient,
+	type InferRouterInitialContext,
 } from "@orpc/server";
 
 /**
@@ -24,13 +24,13 @@ import {
  * })
  */
 export function createOrpcServer<
-  T extends AnyRouter,
-  TClientContext extends ClientContext,
+	T extends AnyRouter,
+	TClientContext extends ClientContext,
 >(_router: T, options?: { context?: TClientContext }) {
-  return createRouterClient<T, TClientContext>(_router, {
-    context: async () =>
-      ({
-        ...options?.context,
-      }) as InferRouterInitialContext<T>,
-  });
+	return createRouterClient<T, TClientContext>(_router, {
+		context: async () =>
+			({
+				...options?.context,
+			}) as InferRouterInitialContext<T>,
+	});
 }

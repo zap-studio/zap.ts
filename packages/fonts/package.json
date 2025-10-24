@@ -12,7 +12,7 @@
 		"typescript": "^5.9.3"
 	},
 	"peerDependencies": {
-		"next": "15.5.4"
+		"next": "^16"
 	},
 	"exports": {
 		".": "./src/index.ts"

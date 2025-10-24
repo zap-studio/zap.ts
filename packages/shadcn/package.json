@@ -26,8 +26,8 @@
 		"zod": "^4.1.12"
 	},
 	"peerDependencies": {
-		"react": "^19.2.0",
-		"react-dom": "^19.2.0"
+		"react": "^19",
+		"react-dom": "^19"
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss": "^4.1.16",

@@ -15,9 +15,9 @@
 		"typescript": "^5.9.3"
 	},
 	"peerDependencies": {
-		"@next/bundle-analyzer": "^15.5.4",
-		"@next/mdx": "^15.5.4",
-		"next": "15.5.4"
+		"@next/bundle-analyzer": "^16",
+		"@next/mdx": "^16",
+		"next": "^16"
 	},
 	"exports": {
 		".": "./src/index.ts",

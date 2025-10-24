@@ -24,7 +24,7 @@
 		"build": "turbo run build",
 		"build:skip-env": "SKIP_ENV_VALIDATION=1 turbo run build",
 		"format": "npx ultracite fix",
-		"lint": "npx biome check .",
+		"lint": "npx ultracite check",
 		"start": "turbo run start",
 		"test": "turbo run test",
 		"test:watch": "turbo run test:watch",

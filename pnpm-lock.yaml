@@ -4,304 +4,61 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-catalogs:
-  default:
-    '@biomejs/biome':
-      specifier: 2.3.0
-      version: 2.3.0
-    '@bprogress/next':
-      specifier: ^3.2.12
-      version: 3.2.12
-    '@changesets/cli':
-      specifier: ^2.29.7
-      version: 2.29.7
-    '@commitlint/cli':
-      specifier: ^20.1.0
-      version: 20.1.0
-    '@commitlint/config-conventional':
-      specifier: ^20.0.0
-      version: 20.0.0
-    '@neondatabase/serverless':
-      specifier: ^1.0.2
-      version: 1.0.2
-    '@next/bundle-analyzer':
-      specifier: ^15.5.4
-      version: 15.5.6
-    '@next/mdx':
-      specifier: ^15.5.4
-      version: 15.5.6
-    '@orpc/client':
-      specifier: ^1.10.0
-      version: 1.10.0
-    '@orpc/react-query':
-      specifier: ^1.10.0
-      version: 1.10.0
-    '@orpc/server':
-      specifier: ^1.10.0
-      version: 1.10.0
-    '@playwright/test':
-      specifier: ^1.50.3
-      version: 1.56.1
-    '@polar-sh/better-auth':
-      specifier: ^1.1.11
-      version: 1.1.11
-    '@radix-ui/react-slot':
-      specifier: ^1.2.3
-      version: 1.2.3
-    '@t3-oss/env-core':
-      specifier: ^0.13.8
-      version: 0.13.8
-    '@t3-oss/env-nextjs':
-      specifier: ^0.13.8
-      version: 0.13.8
-    '@tailwindcss/postcss':
-      specifier: ^4.1.14
-      version: 4.1.16
-    '@tanstack/react-devtools':
-      specifier: ^0.7.7
-      version: 0.7.7
-    '@tanstack/react-form':
-      specifier: ^1.23.7
-      version: 1.23.8
-    '@tanstack/react-form-devtools':
-      specifier: ^0.1.7
-      version: 0.1.8
-    '@tanstack/react-query':
-      specifier: ^5.90.2
-      version: 5.90.5
-    '@tanstack/react-query-devtools':
-      specifier: ^5.90.2
-      version: 5.90.2
-    '@turbo/gen':
-      specifier: ^2.5.8
-      version: 2.5.8
-    '@types/node':
-      specifier: ^24.9.1
-      version: 24.9.1
-    '@types/pg':
-      specifier: ^8.15.5
-      version: 8.15.5
-    '@types/react':
-      specifier: ^19.2.0
-      version: 19.2.2
-    '@types/react-dom':
-      specifier: ^19.2.0
-      version: 19.2.2
-    '@types/react-syntax-highlighter':
-      specifier: ^15.5.13
-      version: 15.5.13
-    '@types/web-push':
-      specifier: ^3.6.4
-      version: 3.6.4
-    '@vercel/analytics':
-      specifier: ^1.5.0
-      version: 1.5.0
-    '@vercel/speed-insights':
-      specifier: ^1.2.0
-      version: 1.2.0
-    better-auth:
-      specifier: ^1.3.28
-      version: 1.3.29
-    class-variance-authority:
-      specifier: ^0.7.1
-      version: 0.7.1
-    client-only:
-      specifier: ^0.0.1
-      version: 0.0.1
-    clsx:
-      specifier: ^2.1.1
-      version: 2.1.1
-    cmdk:
-      specifier: ^1.1.1
-      version: 1.1.1
-    cross-env:
-      specifier: ^10.1.0
-      version: 10.1.0
-    dotenv:
-      specifier: ^17.2.3
-      version: 17.2.3
-    drizzle-kit:
-      specifier: ^0.31.5
-      version: 0.31.5
-    drizzle-orm:
-      specifier: ^0.44.6
-      version: 0.44.7
-    embla-carousel-react:
-      specifier: ^8.6.0
-      version: 8.6.0
-    gray-matter:
-      specifier: ^4.0.3
-      version: 4.0.3
-    input-otp:
-      specifier: ^1.4.2
-      version: 1.4.2
-    jiti:
-      specifier: ^2.4.2
-      version: 2.6.1
-    jsdom:
-      specifier: ^27.0.0
-      version: 27.0.1
-    lefthook:
-      specifier: ^2.0.1
-      version: 2.0.1
-    lucide-react:
-      specifier: ^0.545.0
-      version: 0.545.0
-    motion:
-      specifier: ^12.23.24
-      version: 12.23.24
-    next:
-      specifier: 15.5.4
-      version: 15.5.4
-    next-mdx-remote:
-      specifier: ^5.0.0
-      version: 5.0.0
-    next-sitemap:
-      specifier: ^4.2.3
-      version: 4.2.3
-    next-themes:
-      specifier: ^0.4.6
-      version: 0.4.6
-    nuqs:
-      specifier: ^2.7.1
-      version: 2.7.2
-    pg:
-      specifier: ^8.16.3
-      version: 8.16.3
-    playwright:
-      specifier: ^1.56.1
-      version: 1.56.1
-    postcss:
-      specifier: ^8.5.6
-      version: 8.5.6
-    postcss-load-config:
-      specifier: ^6.0.1
-      version: 6.0.1
-    posthog-js:
-      specifier: ^1.275.1
-      version: 1.280.0
-    posthog-node:
-      specifier: ^5.9.5
-      version: 5.10.3
-    radix-ui:
-      specifier: ^1.4.3
-      version: 1.4.3
-    react:
-      specifier: ^19.2.0
-      version: 19.2.0
-    react-day-picker:
-      specifier: ^9.11.1
-      version: 9.11.1
-    react-dom:
-      specifier: ^19.2.0
-      version: 19.2.0
-    react-resizable-panels:
-      specifier: ^3.0.6
-      version: 3.0.6
-    react-scan:
-      specifier: ^0.4.3
-      version: 0.4.3
-    react-syntax-highlighter:
-      specifier: ^16.0.0
-      version: 16.0.0
-    recharts:
-      specifier: 2.15.4
-      version: 2.15.4
-    rimraf:
-      specifier: ^6.0.1
-      version: 6.0.1
-    server-only:
-      specifier: ^0.0.1
-      version: 0.0.1
-    sonner:
-      specifier: ^2.0.7
-      version: 2.0.7
-    tailwind-merge:
-      specifier: ^3.3.1
-      version: 3.3.1
-    tailwindcss:
-      specifier: ^4.1.14
-      version: 4.1.16
-    tsdown:
-      specifier: ^0.15.8
-      version: 0.15.9
-    turbo:
-      specifier: ^2.5.8
-      version: 2.5.8
-    tw-animate-css:
-      specifier: ^1.4.0
-      version: 1.4.0
-    typescript:
-      specifier: ^5.9.3
-      version: 5.9.3
-    ultracite:
-      specifier: 6.0.0
-      version: 6.0.0
-    vaul:
-      specifier: ^1.1.2
-      version: 1.1.2
-    vitest:
-      specifier: ^3.2.4
-      version: 3.2.4
-    zod:
-      specifier: ^4.1.12
-      version: 4.1.12
-
 importers:
 
   .:
     dependencies:
       dotenv:
-        specifier: 'catalog:'
+        specifier: ^17.2.3
         version: 17.2.3
     devDependencies:
       '@biomejs/biome':
-        specifier: 'catalog:'
+        specifier: 2.3.0
         version: 2.3.0
       '@changesets/cli':
-        specifier: 'catalog:'
+        specifier: ^2.29.7
         version: 2.29.7(@types/node@24.9.1)
       '@commitlint/cli':
-        specifier: 'catalog:'
+        specifier: ^20.1.0
         version: 20.1.0(@types/node@24.9.1)(typescript@5.9.3)
       '@commitlint/config-conventional':
-        specifier: 'catalog:'
+        specifier: ^20.0.0
         version: 20.0.0
       '@turbo/gen':
-        specifier: 'catalog:'
+        specifier: ^2.5.8
         version: 2.5.8(@types/node@24.9.1)(typescript@5.9.3)
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       drizzle-kit:
-        specifier: 'catalog:'
+        specifier: ^0.31.5
         version: 0.31.5
       lefthook:
-        specifier: 'catalog:'
+        specifier: ^2.0.1
         version: 2.0.1
       rimraf:
-        specifier: 'catalog:'
+        specifier: ^6.0.1
         version: 6.0.1
       turbo:
-        specifier: 'catalog:'
+        specifier: ^2.5.8
         version: 2.5.8
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
       ultracite:
-        specifier: 'catalog:'
+        specifier: 6.0.0
         version: 6.0.0(@orpc/server@1.10.0(ws@8.18.3))(typescript@5.9.3)
 
   apps/marketing:
     dependencies:
       '@next/bundle-analyzer':
-        specifier: 'catalog:'
+        specifier: ^15.5.4
         version: 15.5.6
       '@next/mdx':
-        specifier: 'catalog:'
+        specifier: ^15.5.4
         version: 15.5.6(@mdx-js/react@3.1.1(@types/react@19.2.2)(react@19.2.0))
       '@t3-oss/env-nextjs':
-        specifier: 'catalog:'
+        specifier: ^0.13.8
         version: 0.13.8(typescript@5.9.3)(zod@4.1.12)
       '@zap/analytics':
         specifier: workspace:*
@@ -331,41 +88,41 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
       client-only:
-        specifier: 'catalog:'
+        specifier: ^0.0.1
         version: 0.0.1
       lucide-react:
-        specifier: 'catalog:'
+        specifier: ^0.545.0
         version: 0.545.0(react@19.2.0)
       next:
-        specifier: 'catalog:'
+        specifier: 15.5.4
         version: 15.5.4(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next-sitemap:
-        specifier: 'catalog:'
+        specifier: ^4.2.3
         version: 4.2.3(next@15.5.4(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       react:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0
       react-dom:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
       server-only:
-        specifier: 'catalog:'
+        specifier: ^0.0.1
         version: 0.0.1
       zod:
-        specifier: 'catalog:'
+        specifier: ^4.1.12
         version: 4.1.12
     devDependencies:
       '@tailwindcss/postcss':
-        specifier: 'catalog:'
+        specifier: ^4.1.14
         version: 4.1.16
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@types/react':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2
       '@types/react-dom':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2(@types/react@19.2.2)
       '@zap/tailwind-config':
         specifier: workspace:*
@@ -377,49 +134,49 @@ importers:
         specifier: workspace:*
         version: link:../../configs/vitest-config
       cross-env:
-        specifier: 'catalog:'
+        specifier: ^10.1.0
         version: 10.1.0
       jiti:
-        specifier: 'catalog:'
+        specifier: ^2.4.2
         version: 2.6.1
       jsdom:
-        specifier: 'catalog:'
+        specifier: ^27.0.0
         version: 27.0.1(postcss@8.5.6)
       react-scan:
-        specifier: 'catalog:'
+        specifier: ^0.4.3
         version: 0.4.3(@types/react@19.2.2)(next@15.5.4(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(rollup@4.52.5)
       tailwindcss:
-        specifier: 'catalog:'
+        specifier: ^4.1.14
         version: 4.1.16
       tw-animate-css:
-        specifier: 'catalog:'
+        specifier: ^1.4.0
         version: 1.4.0
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
       vitest:
-        specifier: 'catalog:'
+        specifier: ^3.2.4
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1)
 
   apps/web:
     dependencies:
       '@next/bundle-analyzer':
-        specifier: 'catalog:'
+        specifier: ^15.5.4
         version: 15.5.6
       '@next/mdx':
-        specifier: 'catalog:'
+        specifier: ^15.5.4
         version: 15.5.6(@mdx-js/react@3.1.1(@types/react@19.2.2)(react@19.2.0))
       '@orpc/client':
-        specifier: 'catalog:'
+        specifier: ^1.10.0
         version: 1.10.0
       '@orpc/react-query':
-        specifier: 'catalog:'
+        specifier: ^1.10.0
         version: 1.10.0(@orpc/client@1.10.0)(@tanstack/query-core@5.90.5)(@tanstack/react-query@5.90.5(react@19.2.0))(react@19.2.0)
       '@orpc/server':
-        specifier: 'catalog:'
+        specifier: ^1.10.0
         version: 1.10.0(ws@8.18.3)
       '@t3-oss/env-nextjs':
-        specifier: 'catalog:'
+        specifier: ^0.13.8
         version: 0.13.8(typescript@5.9.3)(zod@4.1.12)
       '@zap/analytics':
         specifier: workspace:*
@@ -464,47 +221,47 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
       client-only:
-        specifier: 'catalog:'
+        specifier: ^0.0.1
         version: 0.0.1
       lucide-react:
-        specifier: 'catalog:'
+        specifier: ^0.545.0
         version: 0.545.0(react@19.2.0)
       next:
-        specifier: 'catalog:'
+        specifier: 15.5.4
         version: 15.5.4(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next-sitemap:
-        specifier: 'catalog:'
+        specifier: ^4.2.3
         version: 4.2.3(next@15.5.4(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       nuqs:
-        specifier: 'catalog:'
-        version: 2.7.2(next@15.5.4(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)
+        specifier: ^2.7.1
+        version: 2.7.2(next@15.5.4(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)
       pg:
-        specifier: 'catalog:'
+        specifier: ^8.16.3
         version: 8.16.3
       react:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0
       react-dom:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
       server-only:
-        specifier: 'catalog:'
+        specifier: ^0.0.1
         version: 0.0.1
       zod:
-        specifier: 'catalog:'
+        specifier: ^4.1.12
         version: 4.1.12
     devDependencies:
       '@tailwindcss/postcss':
-        specifier: 'catalog:'
+        specifier: ^4.1.14
         version: 4.1.16
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@types/react':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2
       '@types/react-dom':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2(@types/react@19.2.2)
       '@zap/tailwind-config':
         specifier: workspace:*
@@ -516,37 +273,37 @@ importers:
         specifier: workspace:*
         version: link:../../configs/vitest-config
       cross-env:
-        specifier: 'catalog:'
+        specifier: ^10.1.0
         version: 10.1.0
       jiti:
-        specifier: 'catalog:'
+        specifier: ^2.4.2
         version: 2.6.1
       jsdom:
-        specifier: 'catalog:'
+        specifier: ^27.0.0
         version: 27.0.1(postcss@8.5.6)
       react-scan:
-        specifier: 'catalog:'
+        specifier: ^0.4.3
         version: 0.4.3(@types/react@19.2.2)(next@15.5.4(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(rollup@4.52.5)
       tailwindcss:
-        specifier: 'catalog:'
+        specifier: ^4.1.14
         version: 4.1.16
       tw-animate-css:
-        specifier: 'catalog:'
+        specifier: ^1.4.0
         version: 1.4.0
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
       vitest:
-        specifier: 'catalog:'
+        specifier: ^3.2.4
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1)
 
   configs/next-config:
     dependencies:
       '@next/bundle-analyzer':
-        specifier: 'catalog:'
+        specifier: ^15.5.4
         version: 15.5.6
       '@next/mdx':
-        specifier: 'catalog:'
+        specifier: ^15.5.4
         version: 15.5.6(@mdx-js/react@3.1.1(@types/react@19.2.2)(react@19.2.0))
       '@zap/config':
         specifier: workspace:*
@@ -555,30 +312,30 @@ importers:
         specifier: workspace:*
         version: link:../../packages/security
       next:
-        specifier: 'catalog:'
+        specifier: 15.5.4
         version: 15.5.4(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   configs/playwright-config:
     dependencies:
       playwright:
-        specifier: 'catalog:'
+        specifier: ^1.56.1
         version: 1.56.1
     devDependencies:
       '@playwright/test':
-        specifier: 'catalog:'
+        specifier: ^1.50.3
         version: 1.56.1
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   configs/tailwind-config:
@@ -587,16 +344,16 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
       postcss:
-        specifier: 'catalog:'
+        specifier: ^8.5.6
         version: 8.5.6
       postcss-load-config:
-        specifier: 'catalog:'
+        specifier: ^6.0.1
         version: 6.0.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(yaml@2.8.1)
       tailwindcss:
-        specifier: 'catalog:'
+        specifier: ^4.1.14
         version: 4.1.16
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   configs/tsdown-config:
@@ -605,10 +362,10 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
       tsdown:
-        specifier: 'catalog:'
+        specifier: ^0.15.8
         version: 0.15.9(typescript@5.9.3)
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   configs/typescript-config: {}
@@ -622,108 +379,108 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
       tsdown:
-        specifier: 'catalog:'
+        specifier: ^0.15.8
         version: 0.15.9(typescript@5.9.3)
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/analytics:
     dependencies:
       '@t3-oss/env-core':
-        specifier: 'catalog:'
+        specifier: ^0.13.8
         version: 0.13.8(typescript@5.9.3)(zod@4.1.12)
       '@vercel/analytics':
-        specifier: 'catalog:'
+        specifier: ^1.5.0
         version: 1.5.0(next@15.5.4(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)
       '@vercel/speed-insights':
-        specifier: 'catalog:'
+        specifier: ^1.2.0
         version: 1.2.0(next@15.5.4(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)
       '@zap/env':
         specifier: workspace:*
         version: link:../env
       client-only:
-        specifier: 'catalog:'
+        specifier: ^0.0.1
         version: 0.0.1
       next:
-        specifier: 'catalog:'
+        specifier: 15.5.4
         version: 15.5.4(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       posthog-js:
-        specifier: 'catalog:'
+        specifier: ^1.275.1
         version: 1.280.0
       posthog-node:
-        specifier: 'catalog:'
+        specifier: ^5.9.5
         version: 5.10.3
       react:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0
       zod:
-        specifier: 'catalog:'
+        specifier: ^4.1.12
         version: 4.1.12
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@types/react':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/async-state:
     dependencies:
       '@orpc/client':
-        specifier: 'catalog:'
+        specifier: ^1.10.0
         version: 1.10.0
       '@tanstack/react-query':
-        specifier: 'catalog:'
+        specifier: ^5.90.2
         version: 5.90.5(react@19.2.0)
       '@tanstack/react-query-devtools':
-        specifier: 'catalog:'
+        specifier: ^5.90.2
         version: 5.90.2(@tanstack/react-query@5.90.5(react@19.2.0))(react@19.2.0)
       '@zap/errors':
         specifier: workspace:*
         version: link:../errors
       client-only:
-        specifier: 'catalog:'
+        specifier: ^0.0.1
         version: 0.0.1
       react:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@types/react':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/auth:
     dependencies:
       '@bprogress/next':
-        specifier: 'catalog:'
+        specifier: ^3.2.12
         version: 3.2.12(next@15.5.4(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@orpc/client':
-        specifier: 'catalog:'
+        specifier: ^1.10.0
         version: 1.10.0
       '@polar-sh/better-auth':
-        specifier: 'catalog:'
+        specifier: ^1.1.11
         version: 1.1.11(@polar-sh/sdk@0.38.1)(@stripe/react-stripe-js@4.0.2(@stripe/stripe-js@7.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(@stripe/stripe-js@7.9.0)(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(better-auth@1.3.29(next@15.5.4(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(zod@4.1.12)
       '@t3-oss/env-core':
-        specifier: 'catalog:'
+        specifier: ^0.13.8
         version: 0.13.8(typescript@5.9.3)(zod@4.1.12)
       '@tanstack/react-form':
-        specifier: 'catalog:'
+        specifier: ^1.23.7
         version: 1.23.8(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@zap/async-state':
         specifier: workspace:*
@@ -750,38 +507,38 @@ importers:
         specifier: workspace:*
         version: link:../utils
       better-auth:
-        specifier: 'catalog:'
+        specifier: ^1.3.28
         version: 1.3.29(next@15.5.4(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       client-only:
-        specifier: 'catalog:'
+        specifier: ^0.0.1
         version: 0.0.1
       next:
-        specifier: 'catalog:'
+        specifier: 15.5.4
         version: 15.5.4(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0
       server-only:
-        specifier: 'catalog:'
+        specifier: ^0.0.1
         version: 0.0.1
       sonner:
-        specifier: 'catalog:'
+        specifier: ^2.0.7
         version: 2.0.7(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       zod:
-        specifier: 'catalog:'
+        specifier: ^4.1.12
         version: 4.1.12
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@types/react':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/config:
@@ -791,166 +548,166 @@ importers:
         version: link:../env
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/crypto:
     dependencies:
       '@t3-oss/env-core':
-        specifier: 'catalog:'
+        specifier: ^0.13.8
         version: 0.13.8(typescript@5.9.3)(zod@4.1.12)
       '@zap/env':
         specifier: workspace:*
         version: link:../env
       server-only:
-        specifier: 'catalog:'
+        specifier: ^0.0.1
         version: 0.0.1
       zod:
-        specifier: 'catalog:'
+        specifier: ^4.1.12
         version: 4.1.12
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/db:
     dependencies:
       '@neondatabase/serverless':
-        specifier: 'catalog:'
+        specifier: ^1.0.2
         version: 1.0.2
       '@t3-oss/env-core':
-        specifier: 'catalog:'
+        specifier: ^0.13.8
         version: 0.13.8(typescript@5.9.3)(zod@4.1.12)
       '@zap/env':
         specifier: workspace:*
         version: link:../env
       drizzle-orm:
-        specifier: 'catalog:'
+        specifier: ^0.44.6
         version: 0.44.7(@neondatabase/serverless@1.0.2)(@types/pg@8.15.5)(kysely@0.28.8)(pg@8.16.3)
       pg:
-        specifier: 'catalog:'
+        specifier: ^8.16.3
         version: 8.16.3
       zod:
-        specifier: 'catalog:'
+        specifier: ^4.1.12
         version: 4.1.12
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@types/pg':
-        specifier: 'catalog:'
+        specifier: ^8.15.5
         version: 8.15.5
       '@types/web-push':
-        specifier: 'catalog:'
+        specifier: ^3.6.4
         version: 3.6.4
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/env:
     dependencies:
       '@t3-oss/env-core':
-        specifier: 'catalog:'
+        specifier: ^0.13.8
         version: 0.13.8(typescript@5.9.3)(zod@4.1.12)
       zod:
-        specifier: 'catalog:'
+        specifier: ^4.1.12
         version: 4.1.12
     devDependencies:
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/errors:
     dependencies:
       '@orpc/client':
-        specifier: 'catalog:'
+        specifier: ^1.10.0
         version: 1.10.0
       '@orpc/server':
-        specifier: 'catalog:'
+        specifier: ^1.10.0
         version: 1.10.0(ws@8.18.3)
       '@zap/env':
         specifier: workspace:*
         version: link:../env
       client-only:
-        specifier: 'catalog:'
+        specifier: ^0.0.1
         version: 0.0.1
       server-only:
-        specifier: 'catalog:'
+        specifier: ^0.0.1
         version: 0.0.1
       sonner:
-        specifier: 'catalog:'
+        specifier: ^2.0.7
         version: 2.0.7(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       zod:
-        specifier: 'catalog:'
+        specifier: ^4.1.12
         version: 4.1.12
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/fonts:
     dependencies:
       next:
-        specifier: 'catalog:'
+        specifier: 15.5.4
         version: 15.5.4(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/forms:
     dependencies:
       '@tanstack/react-devtools':
-        specifier: 'catalog:'
+        specifier: ^0.7.7
         version: 0.7.7(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(csstype@3.1.3)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(solid-js@1.9.9)
       '@tanstack/react-form-devtools':
-        specifier: 'catalog:'
+        specifier: ^0.1.7
         version: 0.1.8(csstype@3.1.3)(react@19.2.0)(solid-js@1.9.9)
       react:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@types/react':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/legal:
@@ -962,72 +719,72 @@ importers:
         specifier: workspace:*
         version: link:../shadcn
       gray-matter:
-        specifier: 'catalog:'
+        specifier: ^4.0.3
         version: 4.0.3
       next:
-        specifier: 'catalog:'
+        specifier: 15.5.4
         version: 15.5.4(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@types/react':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/markdown:
     dependencies:
       lucide-react:
-        specifier: 'catalog:'
+        specifier: ^0.545.0
         version: 0.545.0(react@19.2.0)
       next:
-        specifier: 'catalog:'
+        specifier: 15.5.4
         version: 15.5.4(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next-mdx-remote:
-        specifier: 'catalog:'
+        specifier: ^5.0.0
         version: 5.0.0(@types/react@19.2.2)(react@19.2.0)
       react:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0
       react-syntax-highlighter:
-        specifier: 'catalog:'
+        specifier: ^16.0.0
         version: 16.0.0(react@19.2.0)
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@types/react':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2
       '@types/react-syntax-highlighter':
-        specifier: 'catalog:'
+        specifier: ^15.5.13
         version: 15.5.13
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/rpc:
     dependencies:
       '@orpc/client':
-        specifier: 'catalog:'
+        specifier: ^1.10.0
         version: 1.10.0
       '@orpc/react-query':
-        specifier: 'catalog:'
+        specifier: ^1.10.0
         version: 1.10.0(@orpc/client@1.10.0)(@tanstack/query-core@5.90.5)(@tanstack/react-query@5.90.5(react@19.2.0))(react@19.2.0)
       '@orpc/server':
-        specifier: 'catalog:'
+        specifier: ^1.10.0
         version: 1.10.0(ws@8.18.3)
       '@zap/auth':
         specifier: workspace:*
@@ -1039,47 +796,47 @@ importers:
         specifier: workspace:*
         version: link:../errors
       client-only:
-        specifier: 'catalog:'
+        specifier: ^0.0.1
         version: 0.0.1
       drizzle-orm:
-        specifier: 'catalog:'
+        specifier: ^0.44.6
         version: 0.44.7(@neondatabase/serverless@1.0.2)(@types/pg@8.15.5)(kysely@0.28.8)(pg@8.16.3)
       next:
-        specifier: 'catalog:'
+        specifier: 15.5.4
         version: 15.5.4(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0
       server-only:
-        specifier: 'catalog:'
+        specifier: ^0.0.1
         version: 0.0.1
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@types/react':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2
       '@types/web-push':
-        specifier: 'catalog:'
+        specifier: ^3.6.4
         version: 3.6.4
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/security:
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/seo:
@@ -1088,93 +845,93 @@ importers:
         specifier: workspace:*
         version: link:../config
       next:
-        specifier: 'catalog:'
+        specifier: 15.5.4
         version: 15.5.4(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next-sitemap:
-        specifier: 'catalog:'
+        specifier: ^4.2.3
         version: 4.2.3(next@15.5.4(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/shadcn:
     dependencies:
       '@radix-ui/react-slot':
-        specifier: 'catalog:'
+        specifier: ^1.2.3
         version: 1.2.3(@types/react@19.2.2)(react@19.2.0)
       class-variance-authority:
-        specifier: 'catalog:'
+        specifier: ^0.7.1
         version: 0.7.1
       clsx:
-        specifier: 'catalog:'
+        specifier: ^2.1.1
         version: 2.1.1
       cmdk:
-        specifier: 'catalog:'
+        specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       embla-carousel-react:
-        specifier: 'catalog:'
+        specifier: ^8.6.0
         version: 8.6.0(react@19.2.0)
       input-otp:
-        specifier: 'catalog:'
+        specifier: ^1.4.2
         version: 1.4.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       lucide-react:
-        specifier: 'catalog:'
+        specifier: ^0.545.0
         version: 0.545.0(react@19.2.0)
       next-themes:
-        specifier: 'catalog:'
+        specifier: ^0.4.6
         version: 0.4.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       radix-ui:
-        specifier: 'catalog:'
+        specifier: ^1.4.3
         version: 1.4.3(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0
       react-day-picker:
-        specifier: 'catalog:'
+        specifier: ^9.11.1
         version: 9.11.1(react@19.2.0)
       react-dom:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
       react-resizable-panels:
-        specifier: 'catalog:'
+        specifier: ^3.0.6
         version: 3.0.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       recharts:
-        specifier: 'catalog:'
+        specifier: 2.15.4
         version: 2.15.4(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       sonner:
-        specifier: 'catalog:'
+        specifier: ^2.0.7
         version: 2.0.7(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       tailwind-merge:
-        specifier: 'catalog:'
+        specifier: ^3.3.1
         version: 3.3.1
       tw-animate-css:
-        specifier: 'catalog:'
+        specifier: ^1.4.0
         version: 1.4.0
       vaul:
-        specifier: 'catalog:'
+        specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       zod:
-        specifier: 'catalog:'
+        specifier: ^4.1.12
         version: 4.1.12
     devDependencies:
       '@tailwindcss/postcss':
-        specifier: 'catalog:'
+        specifier: ^4.1.14
         version: 4.1.16
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@types/react':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2
       '@types/react-dom':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2(@types/react@19.2.2)
       '@zap/tailwind-config':
         specifier: workspace:*
@@ -1183,16 +940,16 @@ importers:
         specifier: workspace:*
         version: link:../../configs/typescript-config
       tailwindcss:
-        specifier: 'catalog:'
+        specifier: ^4.1.14
         version: 4.1.16
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/ui:
     dependencies:
       '@bprogress/next':
-        specifier: 'catalog:'
+        specifier: ^3.2.12
         version: 3.2.12(next@15.5.4(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@zap/errors':
         specifier: workspace:*
@@ -1201,41 +958,41 @@ importers:
         specifier: workspace:*
         version: link:../shadcn
       client-only:
-        specifier: 'catalog:'
+        specifier: ^0.0.1
         version: 0.0.1
       lucide-react:
-        specifier: 'catalog:'
+        specifier: ^0.545.0
         version: 0.545.0(react@19.2.0)
       motion:
-        specifier: 'catalog:'
+        specifier: ^12.23.24
         version: 12.23.24(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next:
-        specifier: 'catalog:'
+        specifier: 15.5.4
         version: 15.5.4(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next-themes:
-        specifier: 'catalog:'
+        specifier: ^0.4.6
         version: 0.4.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       radix-ui:
-        specifier: 'catalog:'
+        specifier: ^1.4.3
         version: 1.4.3(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0
       react-dom:
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
     devDependencies:
       '@tailwindcss/postcss':
-        specifier: 'catalog:'
+        specifier: ^4.1.14
         version: 4.1.16
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@types/react':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2
       '@types/react-dom':
-        specifier: 'catalog:'
+        specifier: ^19.2.0
         version: 19.2.2(@types/react@19.2.2)
       '@zap/tailwind-config':
         specifier: workspace:*
@@ -1244,10 +1001,10 @@ importers:
         specifier: workspace:*
         version: link:../../configs/typescript-config
       tailwindcss:
-        specifier: 'catalog:'
+        specifier: ^4.1.14
         version: 4.1.16
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
   packages/utils:
@@ -1256,17 +1013,17 @@ importers:
         specifier: workspace:*
         version: link:../errors
       zod:
-        specifier: 'catalog:'
+        specifier: ^4.1.12
         version: 4.1.12
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^24.9.1
         version: 24.9.1
       '@zap/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       typescript:
-        specifier: 'catalog:'
+        specifier: ^5.9.3
         version: 5.9.3
 
 packages:
@@ -11574,7 +11331,7 @@ snapshots:
     dependencies:
       path-key: 3.1.1
 
-  nuqs@2.7.2(next@15.5.4(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0):
+  nuqs@2.7.2(next@15.5.4(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0):
     dependencies:
       '@standard-schema/spec': 1.0.0
       react: 19.2.0

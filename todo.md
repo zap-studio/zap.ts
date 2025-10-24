@@ -74,7 +74,7 @@ These are fully reusable. Think of them as your internal library ecosystem.
 
 ## Package Manager: pnpm
 
-This project uses **pnpm** with workspaces and catalogs, managed through **Corepack**. pnpm provides fast, disk-efficient installations with strict dependency management.
+This project uses **pnpm** with workspaces, managed through **Corepack**. pnpm provides fast, disk-efficient installations with strict dependency management.
 
 ### Why pnpm?
 
@@ -82,25 +82,11 @@ This project uses **pnpm** with workspaces and catalogs, managed through **Corep
 - **Disk efficient**: Hard-links packages from a global store
 - **Strict dependency resolution**: Prevents phantom dependencies
 - **Built-in workspace support**: First-class monorepo features
-- **Catalogs**: Share dependency versions across workspace packages
 
 ### Key Configuration Files
 
-- `pnpm-workspace.yaml` - Workspace patterns and dependency catalog
+- `pnpm-workspace.yaml` - Workspace patterns
 - `package.json` - Package manager version controlled via Corepack
-
-### Using the Catalog
-
-The workspace catalog (in `pnpm-workspace.yaml`) defines shared dependency versions. To use a catalog version in any package:
-
-```json
-{
-  "dependencies": {
-    "react": "catalog:",
-    "next": "catalog:"
-  }
-}
-```
 
 ### Common Commands
 
@@ -231,7 +217,6 @@ updates:
 
 When switching from pnpm:
 - Delete `pnpm-lock.yaml` and `pnpm-workspace.yaml`
-- Convert catalog references in `package.json` files to explicit versions
 - Run install with the new package manager to generate its lockfile
 
 ## Publishing Packages with Changesets

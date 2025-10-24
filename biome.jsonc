@@ -2,6 +2,11 @@
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"extends": ["ultracite"],
 	"files": {
-		"includes": ["**", "!packages/shadcn/src"]
+		"includes": ["**", "!packages/shadcn/src", "!!**/dist"]
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
 	}
 }

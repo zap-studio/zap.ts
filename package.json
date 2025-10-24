@@ -42,12 +42,10 @@
 		"@commitlint/cli": "^20.1.0",
 		"@commitlint/config-conventional": "^20.0.0",
 		"@turbo/gen": "^2.5.8",
-		"@types/node": "^24.9.1",
 		"drizzle-kit": "^0.31.5",
 		"lefthook": "^2.0.1",
 		"rimraf": "^6.0.1",
 		"turbo": "^2.5.8",
-		"typescript": "^5.9.3",
 		"ultracite": "6.0.0"
 	}
 }

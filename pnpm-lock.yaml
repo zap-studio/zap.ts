@@ -27,9 +27,6 @@ importers:
       '@turbo/gen':
         specifier: ^2.5.8
         version: 2.5.8(@types/node@24.9.1)(typescript@5.9.3)
-      '@types/node':
-        specifier: ^24.9.1
-        version: 24.9.1
       drizzle-kit:
         specifier: ^0.31.5
         version: 0.31.5
@@ -42,9 +39,6 @@ importers:
       turbo:
         specifier: ^2.5.8
         version: 2.5.8
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
       ultracite:
         specifier: 6.0.0
         version: 6.0.0(@orpc/server@1.10.1(ws@8.18.3))(typescript@5.9.3)

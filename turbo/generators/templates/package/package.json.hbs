@@ -1,0 +1,17 @@
+{
+  "name": "@zap/{{ name }}",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@zap/typescript-config": "workspace:*",
+    "typescript": "latest"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

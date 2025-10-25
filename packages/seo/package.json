@@ -1,0 +1,25 @@
+{
+	"name": "@zap/seo",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@zap/config": "workspace:*"
+	},
+	"devDependencies": {
+		"@types/node": "^24.9.1",
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "^5.9.3"
+	},
+	"peerDependencies": {
+		"next": "^16",
+		"next-sitemap": "^4.2.3"
+	},
+	"exports": {
+		".": "./src/index.ts",
+		"./next-sitemap": "./src/next-sitemap.ts"
+	}
+}

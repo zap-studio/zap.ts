@@ -1,6 +1,7 @@
 pre-commit:
+  parallel: true
   jobs:
-    - run: bun x ultracite fix
+    - run: npx ultracite fix
       glob: 
         - "*.js"
         - "*.jsx"
@@ -10,3 +11,15 @@ pre-commit:
         - "*.jsonc"
         - "*.css"
       stage_fixed: true
+      
+    - run: pnpm check-types
+      glob:
+        - "*.js"
+        - "*.jsx"
+        - "*.ts"
+        - "*.tsx"
+
+commit-msg:
+  commands:
+    "lint commit message":
+      run: npx commitlint --edit {1}

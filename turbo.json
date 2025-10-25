@@ -1,22 +1,136 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "ui": "tui",
-  "tasks": {
-    "dev": {
-      "persistent": true,
-      "cache": false
-    },
-    "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["dist/**", ".next/**", "build/**", "!.next/cache/**"]
-    },
-    "test": {
-      "outputs": ["coverage/**"],
-      "dependsOn": ["^test"]
-    },
-    "typecheck": {
-      "dependsOn": ["^typecheck"]
-    }
-  }
+	"$schema": "https://turbo.build/schema.json",
+	"ui": "tui",
+	"globalDependencies": ["tsconfig.json", ".env*", "package.json"],
+	"globalEnv": [
+		"NODE_ENV",
+		"CI",
+		"VERCEL",
+		"VERCEL_ENV",
+		"VERCEL_URL",
+		"VERCEL_GIT_PROVIDER",
+		"VERCEL_GIT_REPO_OWNER",
+		"VERCEL_GIT_REPO_SLUG",
+		"VERCEL_GIT_COMMIT_SHA",
+		"VERCEL_GIT_COMMIT_MESSAGE",
+		"VERCEL_GIT_COMMIT_AUTHOR_LOGIN",
+		"VERCEL_GIT_COMMIT_AUTHOR_NAME",
+		"DATABASE_URL",
+		"DATABASE_URL_DEV",
+		"DATABASE_URL_PROD",
+		"AES_ENCRYPTION_KEY_HEX",
+		"NEXT_PUBLIC_POSTHOG_API_KEY",
+		"NEXT_PUBLIC_POSTHOG_HOST",
+		"SITE_URL",
+		"NEXT_PUBLIC_SITE_URL",
+		"ANALYZE",
+		"SKIP_ENV_VALIDATION"
+	],
+	"tasks": {
+		"dev": {
+			"dependsOn": ["dev:db:push"],
+			"persistent": true,
+			"cache": false
+		},
+		"build": {
+			"dependsOn": ["^build"],
+			"inputs": [
+				"$TURBO_DEFAULT$",
+				".env*",
+				"!**/*.test.{ts,tsx,js,jsx}",
+				"!**/*.spec.{ts,tsx,js,jsx}"
+			],
+			"outputs": ["dist/**", ".next/**", "build/**", "!.next/cache/**"],
+			"env": [
+				"NODE_ENV",
+				"CI",
+				"VERCEL",
+				"VERCEL_ENV",
+				"DATABASE_URL_DEV",
+				"DATABASE_URL_PROD",
+				"AES_ENCRYPTION_KEY_HEX",
+				"SITE_URL",
+				"NEXT_PUBLIC_SITE_URL",
+				"NEXT_PUBLIC_POSTHOG_API_KEY",
+				"NEXT_PUBLIC_POSTHOG_HOST",
+				"ANALYZE",
+				"SKIP_ENV_VALIDATION"
+			]
+		},
+		"start": {
+			"dependsOn": ["build", "db:push"],
+			"inputs": ["$TURBO_DEFAULT$", ".env*"],
+			"cache": false,
+			"persistent": true,
+			"env": [
+				"NODE_ENV",
+				"DATABASE_URL_DEV",
+				"DATABASE_URL_PROD",
+				"AES_ENCRYPTION_KEY_HEX",
+				"SITE_URL",
+				"NEXT_PUBLIC_SITE_URL",
+				"NEXT_PUBLIC_POSTHOG_API_KEY",
+				"NEXT_PUBLIC_POSTHOG_HOST"
+			]
+		},
+		"test": {
+			"dependsOn": ["^test", "@zap/vitest-config#build"],
+			"outputs": ["coverage/**"]
+		},
+		"merge-coverage": {
+			"inputs": ["coverage/raw/**"],
+			"outputs": ["coverage/merged/**"]
+		},
+		"report-coverage": {
+			"dependsOn": ["merge-coverage"],
+			"inputs": ["coverage/merged"],
+			"outputs": ["coverage/report/**"]
+		},
+		"test:watch": {
+			"cache": false,
+			"persistent": true
+		},
+		"e2e": {
+			"passThroughEnv": ["PLAYWRIGHT_*"],
+			"dependsOn": ["^build"]
+		},
+		"//#lint": {},
+		"//#format": {
+			"cache": false
+		},
+		"topo": {
+			"dependsOn": ["^topo"]
+		},
+		"check-types": {
+			"dependsOn": ["^build", "^typegen", "topo"],
+			"inputs": ["$TURBO_DEFAULT$", "tsconfig.json"],
+			"outputs": ["*.tsbuildinfo"],
+			"outputLogs": "new-only"
+		},
+		"typegen": {
+			"cache": false,
+			"outputs": [".next/types/**"]
+		},
+		"clean": {
+			"cache": false
+		},
+		"db:push": {
+			"dependsOn": ["db:up"],
+			"cache": false,
+			"env": ["DATABASE_URL_PROD", "DATABASE_URL_DEV"]
+		},
+		"dev:db:push": {
+			"dependsOn": ["dev:db:up"],
+			"cache": false,
+			"env": ["DATABASE_URL_DEV"]
+		},
+		"db:up": {
+			"cache": false,
+			"env": ["DATABASE_URL_PROD", "DATABASE_URL_DEV"]
+		},
+		"dev:db:up": {
+			"cache": false,
+			"env": ["DATABASE_URL_DEV"]
+		}
+	}
 }

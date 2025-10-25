@@ -1,0 +1,27 @@
+{
+	"name": "@zap/next-config",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@zap/config": "workspace:*",
+		"@zap/security": "workspace:*"
+	},
+	"devDependencies": {
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "^5.9.3"
+	},
+	"peerDependencies": {
+		"@next/bundle-analyzer": "^16",
+		"@next/mdx": "^16",
+		"next": "^16"
+	},
+	"exports": {
+		".": "./src/index.ts",
+		"./types": "./src/types/index.ts",
+		"./plugins/*": "./src/plugins/*.ts"
+	}
+}

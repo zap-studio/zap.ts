@@ -1,0 +1,12 @@
+packages:
+  - apps/*
+  - packages/*
+  - configs/*
+
+onlyBuiltDependencies:
+  - '@vercel/speed-insights'
+  - core-js
+  - core-js-pure
+  - esbuild
+  - lefthook
+  - sharp

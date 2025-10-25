@@ -1,0 +1,39 @@
+{
+	"name": "@zap/analytics",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@t3-oss/env-core": "^0.13.8",
+		"@vercel/analytics": "^1.5.0",
+		"@vercel/speed-insights": "^1.2.0",
+		"@zap/env": "workspace:*",
+		"client-only": "^0.0.1",
+		"posthog-js": "^1.280.1",
+		"posthog-node": "^5.10.3",
+		"zod": "^4.1.12"
+	},
+	"devDependencies": {
+		"@types/node": "^24.9.1",
+		"@types/react": "^19.2.2",
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "^5.9.3"
+	},
+	"peerDependencies": {
+		"next": "^16",
+		"react": "^19"
+	},
+	"exports": {
+		".": "./src/index.ts",
+		"./env": "./src/env.ts",
+		"./providers": "./src/providers.tsx",
+		"./types": "./src/types.ts",
+		"./vercel/providers": "./src/vercel/providers.tsx",
+		"./posthog/*": "./src/posthog/*.ts",
+		"./posthog/components": "./src/posthog/components.tsx",
+		"./posthog/providers": "./src/posthog/providers.tsx"
+	}
+}

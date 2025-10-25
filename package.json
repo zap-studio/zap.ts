@@ -1,28 +1,56 @@
 {
-  "name": "zap-ts-template",
-  "version": "0.0.0",
-  "devDependencies": {
-    "@zap/typescript-config": "workspace:*",
-    "@biomejs/biome": "2.2.5",
-    "@changesets/cli": "^2.29.7",
-    "lefthook": "^1.13.6",
-    "turbo": "^2.5.8",
-    "typescript": "^5.9.3",
-    "ultracite": "5.6.2"
-  },
-  "packageManager": "bun@1.2.23",
-  "private": false,
-  "scripts": {
-    "dev": "turbo run dev --parallel",
-    "build": "turbo run build",
-    "test": "turbo run test",
-    "typecheck": "turbo run typecheck",
-    "bootstrap": "bun install",
-    "format": "bun x ultracite fix",
-    "lint": "bun x biome check ."
-  },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+	"name": "@zap/monorepo",
+	"version": "0.0.0",
+	"packageManager": "pnpm@10.19.1-oidc-test.2+sha512.b5543daf8ffc33a0ba7fa34cfeca2f91b991406f1c2f5f58b2d109de2f07d0346fdf5ac22c45ecb7542e116b12da1641022e95f562fc06d547e933029d06f7d3",
+	"private": true,
+	"scripts": {
+		"db:check": "drizzle-kit check",
+		"dev:db:check": "drizzle-kit check --config=drizzle.config.dev.ts",
+		"db:export": "drizzle-kit export --config=drizzle.config.prod.ts",
+		"dev:db:export": "drizzle-kit export --config=drizzle.config.dev.ts",
+		"db:generate": "drizzle-kit generate --config=drizzle.config.prod.ts",
+		"dev:db:generate": "drizzle-kit generate --config=drizzle.config.dev.ts",
+		"db:migrate": "drizzle-kit migrate --config=drizzle.config.prod.ts",
+		"dev:db:migrate": "drizzle-kit migrate --config=drizzle.config.dev.ts",
+		"db:pull": "drizzle-kit pull --config=drizzle.config.prod.ts",
+		"dev:db:pull": "drizzle-kit pull --config=drizzle.config.dev.ts",
+		"db:push": "drizzle-kit push --config=drizzle.config.prod.ts",
+		"dev:db:push": "drizzle-kit push --config=drizzle.config.dev.ts",
+		"db:studio": "drizzle-kit studio --config=drizzle.config.prod.ts",
+		"dev:db:studio": "drizzle-kit studio --config=drizzle.config.dev.ts",
+		"db:up": "drizzle-kit up --config=drizzle.config.prod.ts",
+		"dev:db:up": "drizzle-kit up --config=drizzle.config.dev.ts",
+		"dev": "turbo run dev --parallel",
+		"build": "turbo run build",
+		"build:skip-env": "SKIP_ENV_VALIDATION=1 turbo run build",
+		"format": "npx ultracite fix",
+		"lint": "npx ultracite check",
+		"start": "turbo run start",
+		"test": "turbo run test",
+		"test:watch": "turbo run test:watch",
+		"test:coverage": "turbo run test -- --coverage && pnpm merge-coverage && pnpm report-coverage",
+		"merge-coverage": "rimraf coverage/merged && mkdir -p coverage/merged && find packages apps -name 'coverage' -type d -exec sh -c 'test -f \"$1/coverage-final.json\" && echo \"$1\"' _ {} \\; | xargs -I {} sh -c 'cp {}/coverage-final.json coverage/merged/$(echo {} | tr / -).json' || true",
+		"report-coverage": "nyc report --reporter=html --reporter=text --reporter=lcov --report-dir=coverage/report --temp-dir=coverage/merged",
+		"e2e": "turbo run e2e",
+		"check-types": "turbo run check-types",
+		"typegen": "turbo run typegen",
+		"clean": "turbo run clean && rimraf node_modules"
+	},
+	"dependencies": {
+		"dotenv": "^17.2.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.3.0",
+		"@changesets/cli": "^2.29.7",
+		"@commitlint/cli": "^20.1.0",
+		"@commitlint/config-conventional": "^20.0.0",
+		"@turbo/gen": "^2.5.8",
+		"@vitest/coverage-v8": "^4.0.3",
+		"drizzle-kit": "^0.31.5",
+		"lefthook": "^2.0.1",
+		"nyc": "^17.1.0",
+		"rimraf": "^6.0.1",
+		"turbo": "^2.5.8",
+		"ultracite": "6.0.0"
+	}
 }

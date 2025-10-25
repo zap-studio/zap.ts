@@ -5,13 +5,34 @@
 
 version: 2
 updates:
-  - package-ecosystem: "bun" # See documentation for possible values
+  - package-ecosystem: "npm" # pnpm uses npm ecosystem in dependabot
     directories:
       - "/"
-      - "/apps/marketing"
-      - "/apps/app"
+      - "/apps/api"
       - "/apps/docs"
+      - "/apps/marketing"
+      - "/apps/storybook"
+      - "/apps/waitlist"
+      - "/apps/web"
+      - "/configs/next-config"
+      - "/configs/playwright-config"
+      - "/configs/tailwind-config"
+      - "/configs/typescript-config"
+      - "/configs/vitest-config"
+      - "/packages/analytics"
+      - "/packages/async-state"
+      - "/packages/db"
+      - "/packages/config"
+      - "/packages/crypto"
+      - "/packages/errors"
+      - "/packages/fonts"
+      - "/packages/markdown"
+      - "/packages/rpc"
+      - "/packages/security"
+      - "/packages/seo"
+      - "/packages/shadcn"
       - "/packages/ui"
+      - "packages/utils"
     schedule:
       interval: "weekly"
   - package-ecosystem: "github-actions"

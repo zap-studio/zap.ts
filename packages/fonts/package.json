@@ -1,0 +1,20 @@
+{
+	"name": "@zap/fonts",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@types/node": "^24.9.1",
+		"@zap/typescript-config": "workspace:*",
+		"typescript": "^5.9.3"
+	},
+	"peerDependencies": {
+		"next": "^16"
+	},
+	"exports": {
+		".": "./src/index.ts"
+	}
+}

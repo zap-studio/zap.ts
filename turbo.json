@@ -74,7 +74,7 @@
 			]
 		},
 		"test": {
-			"dependsOn": ["^test", "@zap-studio/vitest-config#build"],
+			"dependsOn": ["^test", "@zap/vitest-config#build"],
 			"outputs": ["coverage/**"]
 		},
 		"merge-coverage": {

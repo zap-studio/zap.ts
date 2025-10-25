@@ -1,15 +1,13 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"extends": ["ultracite"],
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
 	"files": {
-		"includes": [
-			"**",
-			"!**/.next",
-			"!**/.source",
-			"!!**/dist",
-			"!!**/node_modules",
-			"!packages/shadcn/src"
-		]
+		"includes": ["**", "!**/.source", "!packages/shadcn/src"]
 	},
 	"css": {
 		"parser": {

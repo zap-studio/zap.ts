@@ -46,8 +46,8 @@ importers:
         specifier: ^2.5.8
         version: 2.5.8
       ultracite:
-        specifier: 6.0.0
-        version: 6.0.0(@orpc/server@1.10.1(ws@8.18.3))(typescript@5.9.3)
+        specifier: 6.0.1
+        version: 6.0.1(@orpc/server@1.10.1(ws@8.18.3))(typescript@5.9.3)
 
   apps/marketing:
     dependencies:
@@ -98,7 +98,7 @@ importers:
         version: 16.0.0(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next-sitemap:
         specifier: ^4.2.3
-        version: 4.2.3(next@16.0.0(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+        version: 4.2.3(next@16.0.0(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       react:
         specifier: ^19.2.0
         version: 19.2.0
@@ -231,7 +231,7 @@ importers:
         version: 16.0.0(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next-sitemap:
         specifier: ^4.2.3
-        version: 4.2.3(next@16.0.0(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+        version: 4.2.3(next@16.0.0(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       nuqs:
         specifier: ^2.7.2
         version: 2.7.2(next@16.0.0(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)
@@ -855,7 +855,7 @@ importers:
         version: 16.0.0(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next-sitemap:
         specifier: ^4.2.3
-        version: 4.2.3(next@16.0.0(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+        version: 4.2.3(next@16.0.0(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
     devDependencies:
       '@types/node':
         specifier: ^24.9.1
@@ -3348,8 +3348,8 @@ packages:
   '@tootallnate/quickjs-emscripten@0.23.0':
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
 
-  '@trpc/server@11.6.0':
-    resolution: {integrity: sha512-skTso0AWbOZck40jwNeYv++AMZXNWLUWdyk+pB5iVaYmEKTuEeMoPrEudR12VafbEU6tZa8HK3QhBfTYYHDCdg==}
+  '@trpc/server@11.7.0':
+    resolution: {integrity: sha512-BPpr3roKWpZnS92fWCg29e6hEwn1kzH8m65yXRkJfFqemgwckiyJ15NgR8zTe7RcMAeBEPpvqyAfL71rwaSJJw==}
     peerDependencies:
       typescript: '>=5.7.2'
 
@@ -3927,8 +3927,8 @@ packages:
     resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
     engines: {node: '>=14'}
 
-  commander@14.0.1:
-    resolution: {integrity: sha512-2JkV3gUZUVrbNA+1sjBOYLsMZ5cEEl8GTFP2a4AVz5hvasAMCQ1D2l2le/cX+pV4N6ZU17zjUahLpIXRrnWL8A==}
+  commander@14.0.2:
+    resolution: {integrity: sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ==}
     engines: {node: '>=20'}
 
   commander@7.2.0:
@@ -6647,8 +6647,8 @@ packages:
     engines: {node: '>=0.8.0'}
     hasBin: true
 
-  ultracite@6.0.0:
-    resolution: {integrity: sha512-Lu9rX70YCobQzh/1dRL8YqQHpKLW9PViMjg+KraKWXaDFJbMiHzLNS0n3xeNm6Ee6VacFJJpOAgdLwGfXnXKkg==}
+  ultracite@6.0.1:
+    resolution: {integrity: sha512-0DuRyGaKqHNqLrn1Z003c7cQNVWAYGRddOYDDO9gvsTMXeD9yo0mEZWqs2Tkf04MnH+kIDsjmw5YDVWQcEFJ7w==}
     hasBin: true
 
   unconfig@7.3.3:
@@ -9435,7 +9435,7 @@ snapshots:
 
   '@tootallnate/quickjs-emscripten@0.23.0': {}
 
-  '@trpc/server@11.6.0(typescript@5.9.3)':
+  '@trpc/server@11.7.0(typescript@5.9.3)':
     dependencies:
       typescript: 5.9.3
 
@@ -10016,7 +10016,7 @@ snapshots:
 
   commander@10.0.1: {}
 
-  commander@14.0.1: {}
+  commander@14.0.2: {}
 
   commander@7.2.0: {}
 
@@ -11666,7 +11666,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  next-sitemap@4.2.3(next@16.0.0(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)):
+  next-sitemap@4.2.3(next@16.0.0(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)):
     dependencies:
       '@corex/deepmerge': 4.0.43
       '@next/env': 13.5.11
@@ -12858,12 +12858,12 @@ snapshots:
 
   trough@2.2.0: {}
 
-  trpc-cli@0.12.0(@orpc/server@1.10.1(ws@8.18.3))(@trpc/server@11.6.0(typescript@5.9.3))(zod@4.1.12):
+  trpc-cli@0.12.0(@orpc/server@1.10.1(ws@8.18.3))(@trpc/server@11.7.0(typescript@5.9.3))(zod@4.1.12):
     dependencies:
-      commander: 14.0.1
+      commander: 14.0.2
     optionalDependencies:
       '@orpc/server': 1.10.1(ws@8.18.3)
-      '@trpc/server': 11.6.0(typescript@5.9.3)
+      '@trpc/server': 11.7.0(typescript@5.9.3)
       zod: 4.1.12
 
   ts-node@10.9.2(@types/node@24.9.1)(typescript@5.9.3):
@@ -12972,14 +12972,14 @@ snapshots:
   uglify-js@3.19.3:
     optional: true
 
-  ultracite@6.0.0(@orpc/server@1.10.1(ws@8.18.3))(typescript@5.9.3):
+  ultracite@6.0.1(@orpc/server@1.10.1(ws@8.18.3))(typescript@5.9.3):
     dependencies:
       '@clack/prompts': 0.11.0
-      '@trpc/server': 11.6.0(typescript@5.9.3)
+      '@trpc/server': 11.7.0(typescript@5.9.3)
       deepmerge: 4.3.1
       jsonc-parser: 3.3.1
       nypm: 0.6.2
-      trpc-cli: 0.12.0(@orpc/server@1.10.1(ws@8.18.3))(@trpc/server@11.6.0(typescript@5.9.3))(zod@4.1.12)
+      trpc-cli: 0.12.0(@orpc/server@1.10.1(ws@8.18.3))(@trpc/server@11.7.0(typescript@5.9.3))(zod@4.1.12)
       zod: 4.1.12
     transitivePeerDependencies:
       - '@orpc/server'

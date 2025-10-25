@@ -10,6 +10,13 @@ pre-commit:
         - "*.jsonc"
         - "*.css"
       stage_fixed: true
+    - run: pnpm check-types
+      stage_fixed: true
+      glob:
+        - "*.js"
+        - "*.jsx"
+        - "*.ts"
+        - "*.tsx"
 
 commit-msg:
   commands:

@@ -20,7 +20,7 @@
 		"@zap/shadcn": "workspace:*",
 		"@zap/ui": "workspace:*",
 		"@zap/utils": "workspace:*",
-		"better-auth": "^1.3.30",
+		"better-auth": "^1.3.31",
 		"client-only": "^0.0.1",
 		"server-only": "^0.0.1",
 		"sonner": "^2.0.7",

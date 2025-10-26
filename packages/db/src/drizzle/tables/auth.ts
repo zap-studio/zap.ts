@@ -63,8 +63,8 @@ export const verification = pgTable("verification", {
 	identifier: text("identifier").notNull(),
 	value: text("value").notNull(),
 	expiresAt: timestamp("expires_at").notNull(),
-	createdAt: timestamp("created_at"),
-	updatedAt: timestamp("updated_at"),
+	createdAt: timestamp("created_at").notNull(),
+	updatedAt: timestamp("updated_at").notNull(),
 });
 
 export const twoFactor = pgTable("two_factor", {
@@ -88,7 +88,7 @@ export const passkey = pgTable("passkey", {
 	deviceType: text("device_type").notNull(),
 	backedUp: boolean("backed_up").notNull(),
 	transports: text("transports"),
-	createdAt: timestamp("created_at"),
+	createdAt: timestamp("created_at").notNull(),
 });
 
 export const organization = pgTable("organization", {

@@ -7,7 +7,7 @@
 		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@orpc/client": "^1.10.1",
+		"@orpc/client": "^1.10.2",
 		"@orpc/server": "^1.10.1",
 		"@zap/env": "workspace:*",
 		"client-only": "^0.0.1",

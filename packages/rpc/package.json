@@ -8,7 +8,7 @@
 	},
 	"dependencies": {
 		"@orpc/client": "^1.10.1",
-		"@orpc/react-query": "^1.10.1",
+		"@orpc/react-query": "^1.10.2",
 		"@orpc/server": "^1.10.1",
 		"@zap/auth": "workspace:*",
 		"@zap/db": "workspace:*",

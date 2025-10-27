@@ -19,7 +19,7 @@
 	"dependencies": {
 		"@next/bundle-analyzer": "^16.0.0",
 		"@next/mdx": "^16.0.0",
-		"@orpc/client": "^1.10.1",
+		"@orpc/client": "^1.10.2",
 		"@orpc/react-query": "^1.10.1",
 		"@orpc/server": "^1.10.1",
 		"@t3-oss/env-nextjs": "^0.13.8",

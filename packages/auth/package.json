@@ -8,7 +8,7 @@
 	},
 	"dependencies": {
 		"@bprogress/next": "^3.2.12",
-		"@orpc/client": "^1.10.1",
+		"@orpc/client": "^1.10.2",
 		"@polar-sh/better-auth": "^1.1.11",
 		"@t3-oss/env-core": "^0.13.8",
 		"@tanstack/react-form": "^1.23.8",

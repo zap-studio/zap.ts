@@ -98,7 +98,7 @@ importers:
         version: 16.0.0(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next-sitemap:
         specifier: ^4.2.3
-        version: 4.2.3(next@16.0.0(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+        version: 4.2.3(next@16.0.0(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       react:
         specifier: ^19.2.0
         version: 19.2.0
@@ -167,11 +167,11 @@ importers:
         specifier: ^16.0.0
         version: 16.0.0(@mdx-js/react@3.1.1(@types/react@19.2.2)(react@19.2.0))
       '@orpc/client':
-        specifier: ^1.10.1
-        version: 1.10.1
+        specifier: ^1.10.2
+        version: 1.10.2
       '@orpc/react-query':
         specifier: ^1.10.1
-        version: 1.10.1(@orpc/client@1.10.1)(@tanstack/query-core@5.90.5)(@tanstack/react-query@5.90.5(react@19.2.0))(react@19.2.0)
+        version: 1.10.1(@orpc/client@1.10.2)(@tanstack/query-core@5.90.5)(@tanstack/react-query@5.90.5(react@19.2.0))(react@19.2.0)
       '@orpc/server':
         specifier: ^1.10.1
         version: 1.10.1(ws@8.18.3)
@@ -231,7 +231,7 @@ importers:
         version: 16.0.0(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next-sitemap:
         specifier: ^4.2.3
-        version: 4.2.3(next@16.0.0(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+        version: 4.2.3(next@16.0.0(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       nuqs:
         specifier: ^2.7.2
         version: 2.7.2(next@16.0.0(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)
@@ -437,8 +437,8 @@ importers:
   packages/async-state:
     dependencies:
       '@orpc/client':
-        specifier: ^1.10.1
-        version: 1.10.1
+        specifier: ^1.10.2
+        version: 1.10.2
       '@tanstack/react-query':
         specifier: ^5.90.5
         version: 5.90.5(react@19.2.0)
@@ -474,8 +474,8 @@ importers:
         specifier: ^3.2.12
         version: 3.2.12(next@16.0.0(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@orpc/client':
-        specifier: ^1.10.1
-        version: 1.10.1
+        specifier: ^1.10.2
+        version: 1.10.2
       '@polar-sh/better-auth':
         specifier: ^1.1.11
         version: 1.1.11(@polar-sh/sdk@0.39.1)(@stripe/react-stripe-js@4.0.2(@stripe/stripe-js@7.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(@stripe/stripe-js@7.9.0)(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(better-auth@1.3.30(next@16.0.0(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react-is@18.3.1)(react@19.2.0)(redux@5.0.1)(zod@4.1.12)
@@ -644,8 +644,8 @@ importers:
   packages/errors:
     dependencies:
       '@orpc/client':
-        specifier: ^1.10.1
-        version: 1.10.1
+        specifier: ^1.10.2
+        version: 1.10.2
       '@orpc/server':
         specifier: ^1.10.1
         version: 1.10.1(ws@8.18.3)
@@ -784,11 +784,11 @@ importers:
   packages/rpc:
     dependencies:
       '@orpc/client':
-        specifier: ^1.10.1
-        version: 1.10.1
+        specifier: ^1.10.2
+        version: 1.10.2
       '@orpc/react-query':
         specifier: ^1.10.1
-        version: 1.10.1(@orpc/client@1.10.1)(@tanstack/query-core@5.90.5)(@tanstack/react-query@5.90.5(react@19.2.0))(react@19.2.0)
+        version: 1.10.1(@orpc/client@1.10.2)(@tanstack/query-core@5.90.5)(@tanstack/react-query@5.90.5(react@19.2.0))(react@19.2.0)
       '@orpc/server':
         specifier: ^1.10.1
         version: 1.10.1(ws@8.18.3)
@@ -855,7 +855,7 @@ importers:
         version: 16.0.0(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next-sitemap:
         specifier: ^4.2.3
-        version: 4.2.3(next@16.0.0(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+        version: 4.2.3(next@16.0.0(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
     devDependencies:
       '@types/node':
         specifier: ^24.9.1
@@ -2017,6 +2017,9 @@ packages:
   '@orpc/client@1.10.1':
     resolution: {integrity: sha512-7KUATHA9ZIIzzO5yEUbEOj57IaQAsa7kXBq/oSFTNA/NFE8RDsfw5dFJbyX+LG2rhUV25fAQbUem6PRtfPHUhg==}
 
+  '@orpc/client@1.10.2':
+    resolution: {integrity: sha512-NxDtHfL/rhk7wf2PI6raRxs04nYQ3Kl50TRL8jXWL4PjKMoJ56SYNSDuVazXRgqCtY6qjinRw7qZgrr5GWBZIQ==}
+
   '@orpc/contract@1.10.1':
     resolution: {integrity: sha512-/Wpjtcj8TRPmba1MIegSz7w7wmPxDmEuC0nI1j7gQc14szUWMS99TRRQBadJhQplQIa2qhdQwsnXGdstBI9XvQ==}
 
@@ -2049,11 +2052,22 @@ packages:
       '@opentelemetry/api':
         optional: true
 
+  '@orpc/shared@1.10.2':
+    resolution: {integrity: sha512-TIH4sohjVJQ9UOSHrqJm+psCX3P6DVnzzB6ltohBMUwPXWvZgk8TTh4K3cMw2HhofvLylUtGe61uf5ReUiECLA==}
+    peerDependencies:
+      '@opentelemetry/api': '>=1.9.0'
+    peerDependenciesMeta:
+      '@opentelemetry/api':
+        optional: true
+
   '@orpc/standard-server-aws-lambda@1.10.1':
     resolution: {integrity: sha512-ERXNurtR8uzQiWFRuYwzjJmIn1536ytf4TgLGX7IWAkhxz1rkqXciQCSnMztfnmcV6XCaWoblAy4UJEvF/KCAw==}
 
   '@orpc/standard-server-fetch@1.10.1':
     resolution: {integrity: sha512-msA30xjKFLXwdqA0jynL1EXw8Rzo0S6DGr0UZRq6K8oy8UVDPdW24Gw55Yk2LzkYA+/GhqgCnzhQse1l92ZcrA==}
+
+  '@orpc/standard-server-fetch@1.10.2':
+    resolution: {integrity: sha512-1aEBLV8vTN+wgu76ukx5AuFdhp+LesSq4FUzITBzJ/Y0GuiCCanKH3iWNU6TtrbRR5iNvZG3jOHun9GqkRjlJQ==}
 
   '@orpc/standard-server-node@1.10.1':
     resolution: {integrity: sha512-xOjfI+LIM3Nmw1+y0kQsritDG5y36B5YBdBOA3ZBdm3dzBnsKYqkL306l3CKbnH6lzYKTT1/UANulKyWANsYtg==}
@@ -2061,8 +2075,14 @@ packages:
   '@orpc/standard-server-peer@1.10.1':
     resolution: {integrity: sha512-BD3L1WfkYrelwkLHf1hQ6T8gewQwavdvbXVYYH3V2WVK19f4krqROwngcmANvmfdWi68wJpnVqPj8b3KjJQxyQ==}
 
+  '@orpc/standard-server-peer@1.10.2':
+    resolution: {integrity: sha512-Kh1dEDT3Hhv+dA+UoftGe3ktTbdDeGQOMARMB9QWGVerJatxQRJbq89iGVY/q4RXOSQgI3Dkp0/irGaCvCXbSw==}
+
   '@orpc/standard-server@1.10.1':
     resolution: {integrity: sha512-s3J+AzGESj7JTvtk5jnJ+iRGWJ1KzQn1omuQdNGAiVLkxlk1QtfRIZYtR7ojUGqpLxetZ9FdO8SCdlTfeA3i6w==}
+
+  '@orpc/standard-server@1.10.2':
+    resolution: {integrity: sha512-5HYOkCGb/SuQIWml44dD9ygTDCTnauHEJdxaPMDDQZeDTUSA3lAIS9qZL4np9HEUTvITK6MbihXGVSRWIyr73A==}
 
   '@orpc/tanstack-query@1.10.1':
     resolution: {integrity: sha512-ZuoXxh0dMtge1X8JWDOgjeCnFjvjXv0KP5Xs5tzr18HNYlHKetHmlctd3aPyjLZ09vKuaco/vvgXlCnLC9Hwgg==}
@@ -7995,6 +8015,15 @@ snapshots:
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
+  '@orpc/client@1.10.2':
+    dependencies:
+      '@orpc/shared': 1.10.2
+      '@orpc/standard-server': 1.10.2
+      '@orpc/standard-server-fetch': 1.10.2
+      '@orpc/standard-server-peer': 1.10.2
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
+
   '@orpc/contract@1.10.1':
     dependencies:
       '@orpc/client': 1.10.1
@@ -8006,11 +8035,11 @@ snapshots:
 
   '@orpc/interop@1.10.1': {}
 
-  '@orpc/react-query@1.10.1(@orpc/client@1.10.1)(@tanstack/query-core@5.90.5)(@tanstack/react-query@5.90.5(react@19.2.0))(react@19.2.0)':
+  '@orpc/react-query@1.10.1(@orpc/client@1.10.2)(@tanstack/query-core@5.90.5)(@tanstack/react-query@5.90.5(react@19.2.0))(react@19.2.0)':
     dependencies:
-      '@orpc/client': 1.10.1
+      '@orpc/client': 1.10.2
       '@orpc/shared': 1.10.1
-      '@orpc/tanstack-query': 1.10.1(@orpc/client@1.10.1)(@tanstack/query-core@5.90.5)
+      '@orpc/tanstack-query': 1.10.1(@orpc/client@1.10.2)(@tanstack/query-core@5.90.5)
       '@tanstack/react-query': 5.90.5(react@19.2.0)
       react: 19.2.0
     transitivePeerDependencies:
@@ -8039,6 +8068,11 @@ snapshots:
       radash: 12.1.1
       type-fest: 5.1.0
 
+  '@orpc/shared@1.10.2':
+    dependencies:
+      radash: 12.1.1
+      type-fest: 5.1.0
+
   '@orpc/standard-server-aws-lambda@1.10.1':
     dependencies:
       '@orpc/shared': 1.10.1
@@ -8052,6 +8086,13 @@ snapshots:
     dependencies:
       '@orpc/shared': 1.10.1
       '@orpc/standard-server': 1.10.1
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
+
+  '@orpc/standard-server-fetch@1.10.2':
+    dependencies:
+      '@orpc/shared': 1.10.2
+      '@orpc/standard-server': 1.10.2
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
@@ -8070,15 +8111,28 @@ snapshots:
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
+  '@orpc/standard-server-peer@1.10.2':
+    dependencies:
+      '@orpc/shared': 1.10.2
+      '@orpc/standard-server': 1.10.2
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
+
   '@orpc/standard-server@1.10.1':
     dependencies:
       '@orpc/shared': 1.10.1
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
-  '@orpc/tanstack-query@1.10.1(@orpc/client@1.10.1)(@tanstack/query-core@5.90.5)':
+  '@orpc/standard-server@1.10.2':
     dependencies:
-      '@orpc/client': 1.10.1
+      '@orpc/shared': 1.10.2
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
+
+  '@orpc/tanstack-query@1.10.1(@orpc/client@1.10.2)(@tanstack/query-core@5.90.5)':
+    dependencies:
+      '@orpc/client': 1.10.2
       '@orpc/shared': 1.10.1
       '@tanstack/query-core': 5.90.5
     transitivePeerDependencies:
@@ -11666,7 +11720,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  next-sitemap@4.2.3(next@16.0.0(@babel/core@7.28.5)(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)):
+  next-sitemap@4.2.3(next@16.0.0(@playwright/test@1.56.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)):
     dependencies:
       '@corex/deepmerge': 4.0.43
       '@next/env': 13.5.11

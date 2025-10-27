@@ -9,7 +9,7 @@
 	"dependencies": {
 		"@orpc/client": "^1.10.1",
 		"@orpc/react-query": "^1.10.1",
-		"@orpc/server": "^1.10.1",
+		"@orpc/server": "^1.10.2",
 		"@zap/auth": "workspace:*",
 		"@zap/db": "workspace:*",
 		"@zap/errors": "workspace:*",

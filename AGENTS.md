@@ -11,6 +11,7 @@ Always run scripts via `pnpm run <script>` — never invoke the underlying CLIs 
 - GitHub Actions: always pin the latest released major version of every action (don't assume a version from memory).
 - Node.js: always use the latest released LTS line, for example: `node-version: lts/*` in `actions/setup-node`.
 - pnpm: managed by **Corepack**, never a separate setup action and never a global install. The pinned version lives in root `package.json`'s `packageManager` field; bump it with `corepack up` when a newer pnpm release is wanted.
+- Dependencies: **catalog mode by default**. Every version lives once in `pnpm-workspace.yaml`'s `catalog:` (or a named `catalogs:` entry for a dep that needs a second version), and every `package.json` references it with the `catalog:` protocol — never a version range duplicated across packages. Adding a new dependency means adding it to the catalog first, then `"<pkg>": "catalog:"` wherever it's used.
 
 ## Layout
 

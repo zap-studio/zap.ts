@@ -2,8 +2,38 @@
 
 SaaS starter kit monorepo. Currently scoped to `apps/web` only (TanStack Start on Cloudflare Workers).
 
-Design spec: `docs/superpowers/specs/2026-08-16-web-starter-design.md`.
+Full design: `docs/superpowers/specs/2026-08-16-web-starter-design.md`.
 
-Always run scripts via `pnpm run <script>` — never invoke the underlying CLIs directly.
+## Rule
 
-More to come.
+Always run scripts via `pnpm run <script>` — never invoke the underlying CLIs (`wrangler`, `drizzle-kit`, `vitest`, `oxlint`, `oxfmt`, ...) directly.
+
+## Layout
+
+```
+zap.ts/
+├── apps/
+│   └── web/          # TanStack Start app → Cloudflare Workers
+└── packages/          # shared code consumed as TS source by apps/web
+```
+
+## Stack
+
+| Dep | Docs |
+|---|---|
+| TanStack Start / Router | https://tanstack.com/llms.txt |
+| Cloudflare Workers / D1 | https://developers.cloudflare.com/llms.txt |
+| Drizzle ORM | https://orm.drizzle.team/llms.txt |
+| Better Auth | https://www.better-auth.com/llms.txt |
+| Stripe | https://docs.stripe.com/llms.txt |
+| Resend | https://resend.com/docs/llms.txt |
+| Base UI | https://base-ui.com/llms.txt |
+| Tailwind CSS | https://tailwindcss.com |
+| Zod | https://zod.dev/llms.txt |
+| @t3-oss/env-core | https://env.t3.gg |
+| Vitest | https://vitest.dev/llms.txt |
+| Ultracite (Oxlint + Oxfmt) | https://www.ultracite.ai/llms.txt |
+| tsdown | https://tsdown.dev/llms.txt |
+| Takumi (OG images) | https://takumi.kane.tw/llms.txt |
+| pnpm | https://pnpm.io |
+| @zap-studio/* | https://www.zapstudio.dev |

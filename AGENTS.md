@@ -23,21 +23,21 @@ zap.ts/
 
 ## Stack
 
-| Dep | Docs |
-|---|---|
-| TanStack Start / Router | https://tanstack.com/llms.txt |
-| Cloudflare Workers / D1 | https://developers.cloudflare.com/llms.txt |
-| Drizzle ORM | https://orm.drizzle.team/llms.txt |
-| Better Auth | https://www.better-auth.com/llms.txt |
-| Stripe | https://docs.stripe.com/llms.txt |
-| Resend | https://resend.com/docs/llms.txt |
-| Base UI | https://base-ui.com/llms.txt |
-| Tailwind CSS | https://tailwindcss.com |
-| Zod | https://zod.dev/llms.txt |
-| @t3-oss/env-core | https://env.t3.gg |
-| Vitest | https://vitest.dev/llms.txt |
-| Ultracite (Oxlint + Oxfmt) | https://www.ultracite.ai/llms.txt |
-| tsdown | https://tsdown.dev/llms.txt |
-| Takumi (OG images) | https://takumi.kane.tw/llms.txt |
-| pnpm | https://pnpm.io |
-| @zap-studio/* | https://www.zapstudio.dev |
+| Dep                        | Docs                                       |
+| -------------------------- | ------------------------------------------ |
+| TanStack Start / Router    | https://tanstack.com/llms.txt              |
+| Cloudflare Workers / D1    | https://developers.cloudflare.com/llms.txt |
+| Drizzle ORM                | https://orm.drizzle.team/llms.txt          |
+| Better Auth                | https://www.better-auth.com/llms.txt       |
+| Stripe                     | https://docs.stripe.com/llms.txt           |
+| Resend                     | https://resend.com/docs/llms.txt           |
+| Base UI                    | https://base-ui.com/llms.txt               |
+| Tailwind CSS               | https://tailwindcss.com                    |
+| Zod                        | https://zod.dev/llms.txt                   |
+| @t3-oss/env-core           | https://env.t3.gg                          |
+| Vitest                     | https://vitest.dev/llms.txt                |
+| Ultracite (Oxlint + Oxfmt) | https://www.ultracite.ai/llms.txt          |
+| tsdown                     | https://tsdown.dev/llms.txt                |
+| Takumi (OG images)         | https://takumi.kane.tw/llms.txt            |
+| pnpm                       | https://pnpm.io                            |
+| @zap-studio/*              | https://www.zapstudio.dev                  |

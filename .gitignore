@@ -1,0 +1,37 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+build/
+.output/
+.vite/
+*.tsbuildinfo
+
+# Cloudflare / Wrangler
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+# env
+.env
+.env.*
+!.env.example
+
+# test / coverage
+coverage/
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+
+# Agent-local state
+.claude/settings.local.json
+superpowers/

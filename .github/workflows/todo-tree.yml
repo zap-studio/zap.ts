@@ -1,0 +1,23 @@
+name: Todo Tree
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  scan-todos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: alexandretrotel/todo-tree-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          changed-only: true
+          new-only: true

@@ -4,21 +4,36 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    lefthook:
+      specifier: ^2.1.10
+      version: 2.1.10
+    oxfmt:
+      specifier: ^0.63.0
+      version: 0.63.0
+    oxlint:
+      specifier: ^1.78.0
+      version: 1.78.0
+    ultracite:
+      specifier: 7.10.5
+      version: 7.10.5
+
 importers:
 
   .:
     devDependencies:
       lefthook:
-        specifier: ^2.1.10
+        specifier: 'catalog:'
         version: 2.1.10
       oxfmt:
-        specifier: ^0.63.0
+        specifier: 'catalog:'
         version: 0.63.0
       oxlint:
-        specifier: ^1.78.0
+        specifier: 'catalog:'
         version: 1.78.0
       ultracite:
-        specifier: 7.10.5
+        specifier: 'catalog:'
         version: 7.10.5(oxfmt@0.63.0)(oxlint@1.78.0)
 
   packages/tsconfig: {}

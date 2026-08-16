@@ -34,4 +34,4 @@ Thumbs.db
 
 # Agent-local state
 .claude/settings.local.json
-/.superpowers/
+/superpowers/

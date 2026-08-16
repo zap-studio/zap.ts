@@ -1,8 +1,6 @@
 # AGENTS.md
 
-SaaS starter kit monorepo. Currently scoped to `apps/web` only (TanStack Start on Cloudflare Workers).
-
-Full design: `docs/superpowers/specs/2026-08-16-web-starter-design.md`.
+SaaS starter kit monorepo. Currently scoped to `apps/web` only.
 
 ## Rule
 

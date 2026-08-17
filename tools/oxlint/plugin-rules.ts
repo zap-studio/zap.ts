@@ -1,7 +1,9 @@
+import type { RuleSeverity } from "./rule-severity.ts";
+
 // Auto-derived from each plugin's own configs.recommended (installed package, not docs/memory).
 // Regenerate if the plugin versions in pnpm-workspace.yaml catalog change.
 
-const playwrightRules: Record<string, "error" | "warn"> = {
+const playwrightRules = {
   "playwright/consistent-spacing-between-blocks": "warn",
   "playwright/expect-expect": "warn",
   "playwright/max-nested-describe": "warn",
@@ -38,9 +40,9 @@ const playwrightRules: Record<string, "error" | "warn"> = {
   "playwright/valid-expect-in-promise": "error",
   "playwright/valid-test-tags": "error",
   "playwright/valid-title": "error",
-};
+} satisfies Record<string, RuleSeverity>;
 
-const regexpRules: Record<string, "error" | "warn"> = {
+const regexpRules = {
   "regexp/confusing-quantifier": "warn",
   "regexp/control-character-escape": "error",
   "regexp/match-any": "error",
@@ -101,9 +103,9 @@ const regexpRules: Record<string, "error" | "warn"> = {
   "regexp/sort-flags": "error",
   "regexp/strict": "error",
   "regexp/use-ignore-case": "error",
-};
+} satisfies Record<string, RuleSeverity>;
 
-const sonarjsRules: Record<string, "error" | "warn"> = {
+const sonarjsRules = {
   "sonarjs/anchor-precedence": "error",
   "sonarjs/argument-type": "error",
   "sonarjs/arguments-order": "error",
@@ -321,9 +323,9 @@ const sonarjsRules: Record<string, "error" | "warn"> = {
   "sonarjs/weak-ssl": "error",
   "sonarjs/x-powered-by": "error",
   "sonarjs/xml-parser-xxe": "error",
-};
+} satisfies Record<string, RuleSeverity>;
 
-const e18eRules: Record<string, "error" | "warn"> = {
+const e18eRules = {
   "e18e/ban-dependencies": "error",
   "e18e/prefer-array-at": "error",
   "e18e/prefer-array-fill": "error",
@@ -342,11 +344,11 @@ const e18eRules: Record<string, "error" | "warn"> = {
   "e18e/prefer-string-fromcharcode": "error",
   "e18e/prefer-timer-args": "error",
   "e18e/prefer-url-canparse": "error",
-};
+} satisfies Record<string, RuleSeverity>;
 
-export const pluginRules: Record<string, "error" | "warn"> = {
+export const pluginRules = {
   ...playwrightRules,
   ...regexpRules,
   ...sonarjsRules,
   ...e18eRules,
-};
+} satisfies Record<string, RuleSeverity>;

@@ -1,3 +1,5 @@
+import type { RuleSeverity } from "./rule-severity.ts";
+
 // Auto-derived from oxlint-plugin-react-doctor's own RECOMMENDED_RULES export (installed package, not docs/memory).
 // Regenerate if the oxlint-plugin-react-doctor version in pnpm-workspace.yaml catalog changes.
 //
@@ -10,7 +12,7 @@
 //   - the 33 native jsx-a11y/* rules oxlint ships (alt-text, anchor-ambiguous-text, ...
 //     full canonical list at https://oxc.rs/docs/guide/usage/linter/rules.html)
 
-export const reactDoctorRules: Record<string, "error" | "warn"> = {
+export const reactDoctorRules = {
   "react-doctor/activity-wraps-effect-heavy-subtree": "warn",
   "react-doctor/advanced-event-handler-refs": "warn",
   "react-doctor/anchor-target-exists": "warn",
@@ -553,4 +555,4 @@ export const reactDoctorRules: Record<string, "error" | "warn"> = {
   "react-doctor/zustand-no-get-during-initialization": "error",
   "react-doctor/zustand-no-mutating-state": "error",
   "react-doctor/zustand-no-whole-store-destructure": "warn",
-};
+} satisfies Record<string, RuleSeverity>;

@@ -27,7 +27,8 @@ zap.ts/
 | Dep                        | Docs                                       |
 | -------------------------- | ------------------------------------------ |
 | TanStack Start / Router    | https://tanstack.com/llms.txt              |
-| Cloudflare Workers / D1    | https://developers.cloudflare.com/llms.txt |
+| Cloudflare Workers / Hyperdrive | https://developers.cloudflare.com/llms.txt |
+| Neon Postgres              | https://neon.tech/docs                     |
 | Drizzle ORM                | https://orm.drizzle.team/llms.txt          |
 | Better Auth                | https://www.better-auth.com/llms.txt       |
 | Stripe                     | https://docs.stripe.com/llms.txt           |

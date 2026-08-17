@@ -1,6 +1,16 @@
 pre-commit:
+  parallel: true
   jobs:
-    - run: pnpm run fix
+    - name: lint
+      run: pnpm run lint:fix
+      glob:
+        - "**/*.js"
+        - "**/*.jsx"
+        - "**/*.ts"
+        - "**/*.tsx"
+      stage_fixed: true
+    - name: format
+      run: pnpm run format
       glob:
         - "**/*.js"
         - "**/*.jsx"

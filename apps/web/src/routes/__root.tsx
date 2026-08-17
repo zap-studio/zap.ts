@@ -1,6 +1,6 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 
-export const RootComponent = () => (
+const RootComponent = () => (
   <html lang="en" suppressHydrationWarning>
     <head>
       <HeadContent />

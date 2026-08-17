@@ -55,6 +55,14 @@ export default defineConfig({
     "anti-slop/no-widen-then-assert": "error",
     "anti-slop/require-safety-comment-for-type-assertion": "error",
   },
+  overrides: [
+    {
+      files: ["apps/web/src/routes/**"],
+      rules: {
+        "react-doctor/only-export-components": "off",
+      },
+    },
+  ],
   options: {
     typeAware: true,
     typeCheck: true,

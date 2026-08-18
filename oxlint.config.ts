@@ -1,7 +1,7 @@
 import { defineConfig } from "oxlint";
 
 import { pluginRules } from "./tools/oxlint/plugin-rules.ts";
-import { reactDoctorRules } from "./tools/oxlint/react-doctor-rules.ts";
+import { reactDoctorRules, tanstackReactDoctorRules } from "./tools/oxlint/react-doctor-rules.ts";
 
 export default defineConfig({
   plugins: [
@@ -29,12 +29,14 @@ export default defineConfig({
     "eslint-plugin-playwright",
     "eslint-plugin-regexp",
     "eslint-plugin-sonarjs",
+    "eslint-plugin-github",
     "@e18e/eslint-plugin",
     { name: "react-doctor", specifier: "oxlint-plugin-react-doctor" },
   ],
   rules: {
     ...pluginRules,
     ...reactDoctorRules,
+    ...tanstackReactDoctorRules,
     "import/no-cycle": ["error", { maxDepth: 3 }],
     "eslint/func-style": ["error", "expression"],
     "react/rules-of-hooks": "error",

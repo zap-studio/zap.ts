@@ -17,11 +17,13 @@ catalog:
   "@vitejs/plugin-react": ^6.0.5
   "@zap-studio/oxfmt": ^1.0.0
   "@zap-studio/oxlint": ^1.0.1
+  fallow: ^3.17.0
   lefthook: ^2.1.10
   oxfmt: ^0.63.0
   oxlint: ^1.78.0
   oxlint-tsgolint: ^7.0.2001
   react: ^19.2.8
+  react-doctor: ^0.9.12
   react-dom: ^19.2.8
   typescript: ^7.0.2
   vite: ^8.2.1

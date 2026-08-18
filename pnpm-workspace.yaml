@@ -5,6 +5,7 @@ allowBuilds:
   esbuild: true
   lefthook: true
   workerd: true
+catalogMode: prefer
 catalog:
   "@cloudflare/vite-plugin": ^1.52.1
   "@cloudflare/workers-types": ^5.20260816.1

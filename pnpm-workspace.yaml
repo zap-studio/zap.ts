@@ -16,7 +16,7 @@ catalog:
   "@types/react-dom": ^19.2.4
   "@vitejs/plugin-react": ^6.0.5
   "@zap-studio/oxfmt": ^1.0.0
-  "@zap-studio/oxlint": ^2.0.0
+  "@zap-studio/oxlint": ^2.1.0
   fallow: ^3.17.0
   lefthook: ^2.1.10
   oxfmt: ^0.63.0
@@ -30,4 +30,6 @@ catalog:
   wrangler: ^4.123.0
 minimumReleaseAgeExclude:
   - "@zap-studio/oxfmt@1.0.0"
-  - "@zap-studio/oxlint@1.0.0 || 1.0.1 || 2.0.0"
+  - "@zap-studio/oxlint@1.0.0 || 1.0.1 || 2.0.0 || 2.1.0"
+  - eslint-plugin-storybook@10.5.9
+  - storybook@10.5.9

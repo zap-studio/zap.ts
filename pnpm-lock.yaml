@@ -37,8 +37,8 @@ catalogs:
       specifier: ^1.0.0
       version: 1.0.0
     '@zap-studio/oxlint':
-      specifier: ^1.0.0
-      version: 1.0.0
+      specifier: ^1.0.1
+      version: 1.0.1
     lefthook:
       specifier: ^2.1.10
       version: 2.1.10
@@ -79,7 +79,7 @@ importers:
         version: 1.0.0(oxfmt@0.63.0)
       '@zap-studio/oxlint':
         specifier: 'catalog:'
-        version: 1.0.0(@oxlint/plugins@1.78.0)(eslint@9.39.5(jiti@2.7.0)(supports-color@10.2.2))(oxlint-tsgolint@7.0.2001)(oxlint@1.78.0(oxlint-tsgolint@7.0.2001))(supports-color@10.2.2)(typescript@6.0.3)
+        version: 1.0.1(@oxlint/plugins@1.78.0)(eslint@9.39.5(jiti@2.7.0)(supports-color@10.2.2))(oxlint-tsgolint@7.0.2001)(oxlint@1.78.0(oxlint-tsgolint@7.0.2001))(supports-color@10.2.2)(typescript@6.0.3)
       lefthook:
         specifier: 'catalog:'
         version: 2.1.10
@@ -1606,8 +1606,8 @@ packages:
     peerDependencies:
       oxfmt: ^0.63.0
 
-  '@zap-studio/oxlint@1.0.0':
-    resolution: {integrity: sha512-iWE0oFWRUG5+OwEbI0vEyW2ZqHkDbXS+nqZxjW7CpG/6Jmi5vJvQQb7026CzMAhgINJIvaAD+BRMdFlsG43SfQ==}
+  '@zap-studio/oxlint@1.0.1':
+    resolution: {integrity: sha512-br3t66cQdRUIWZ1Nw8w3bnxHVIUabFTiLcRtXAUiC9Xp/VGEkNVXittWGtSF7bCkS3zV/l+9k7npjD048ZpCQA==}
     engines: {node: '>=20.19.0'}
     peerDependencies:
       '@oxlint/plugins': ^1.78.0
@@ -4299,7 +4299,7 @@ snapshots:
     dependencies:
       oxfmt: 0.63.0
 
-  '@zap-studio/oxlint@1.0.0(@oxlint/plugins@1.78.0)(eslint@9.39.5(jiti@2.7.0)(supports-color@10.2.2))(oxlint-tsgolint@7.0.2001)(oxlint@1.78.0(oxlint-tsgolint@7.0.2001))(supports-color@10.2.2)(typescript@6.0.3)':
+  '@zap-studio/oxlint@1.0.1(@oxlint/plugins@1.78.0)(eslint@9.39.5(jiti@2.7.0)(supports-color@10.2.2))(oxlint-tsgolint@7.0.2001)(oxlint@1.78.0(oxlint-tsgolint@7.0.2001))(supports-color@10.2.2)(typescript@6.0.3)':
     dependencies:
       '@e18e/eslint-plugin': 0.8.0(eslint@9.39.5(jiti@2.7.0)(supports-color@10.2.2))(oxlint@1.78.0(oxlint-tsgolint@7.0.2001))
       '@oxlint/plugins': 1.78.0

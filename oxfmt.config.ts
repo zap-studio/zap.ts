@@ -15,5 +15,8 @@ export default defineConfig({
     newlinesBetween: true,
   },
   sortPackageJson: true,
-  sortTailwindcss: {},
+  sortTailwindcss: {
+    stylesheet: "./apps/web/src/styles.css",
+    functions: ["clsx", "cn"],
+  },
 });

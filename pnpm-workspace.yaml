@@ -30,4 +30,4 @@ catalog:
   wrangler: ^4.123.0
 minimumReleaseAgeExclude:
   - "@zap-studio/oxfmt@1.0.0"
-  - '@zap-studio/oxlint@1.0.0 || 1.0.1'
+  - "@zap-studio/oxlint@1.0.0 || 1.0.1"

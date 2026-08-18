@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
     "build": "vite build",
     "deploy": "wrangler deploy",
+    "dev": "vite dev",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

@@ -1,62 +1,23 @@
+import base from "@zap-studio/oxlint/base";
+import jsxRuntimeAutomatic from "@zap-studio/oxlint/jsx-runtime-automatic";
+import react from "@zap-studio/oxlint/react";
+import reactDoctor from "@zap-studio/oxlint/react-doctor";
+import reactPerf from "@zap-studio/oxlint/react-perf";
+import tanstackRouter from "@zap-studio/oxlint/tanstack-router";
+import tanstackStart from "@zap-studio/oxlint/tanstack-start";
 import { defineConfig } from "oxlint";
 
-import { pluginRules } from "./tools/oxlint/plugin-rules.ts";
-import { reactDoctorRules, tanstackReactDoctorRules } from "./tools/oxlint/react-doctor-rules.ts";
-
 export default defineConfig({
-  plugins: [
-    "eslint",
-    "typescript",
-    "unicorn",
-    "oxc",
-    "react",
-    "react-perf",
-    "import",
-    "jsx-a11y",
-    "jsdoc",
-    "node",
-    "promise",
-    "vitest",
+  extends: [
+    base,
+    react,
+    reactPerf,
+    reactDoctor,
+    jsxRuntimeAutomatic,
+    tanstackRouter,
+    tanstackStart,
   ],
-  ignorePatterns: [
-    "**/*.test.{ts,tsx}",
-    "**/*.spec.{ts,tsx}",
-    "**/routeTree.gen.ts",
-    "tools/oxlint/anti-slop/**",
-  ],
-  jsPlugins: [
-    { name: "anti-slop", specifier: "./tools/oxlint/anti-slop/index.ts" },
-    "eslint-plugin-playwright",
-    "eslint-plugin-regexp",
-    "eslint-plugin-sonarjs",
-    "eslint-plugin-github",
-    "@e18e/eslint-plugin",
-    { name: "react-doctor", specifier: "oxlint-plugin-react-doctor" },
-  ],
-  rules: {
-    ...pluginRules,
-    ...reactDoctorRules,
-    ...tanstackReactDoctorRules,
-    "import/no-cycle": ["error", { maxDepth: 3 }],
-    "eslint/func-style": ["error", "expression"],
-    "react/rules-of-hooks": "error",
-    "react/exhaustive-deps": "error",
-    "anti-slop/no-chained-type-assertions": "error",
-    "anti-slop/no-conditional-empty-object-spread": "error",
-    "anti-slop/no-known-value-widening": "error",
-    "anti-slop/no-module-mocking": "error",
-    "anti-slop/no-object-parameters": "error",
-    "anti-slop/no-reflect-apply": "error",
-    "anti-slop/no-reflect-get": "error",
-    "anti-slop/no-runtime-typeof": "error",
-    "anti-slop/no-shape-in-symbol-names": "error",
-    "anti-slop/no-unknown-parameters": "error",
-    "anti-slop/no-unknown-returns": "error",
-    "anti-slop/no-unknown-type-aliases": "error",
-    "anti-slop/no-unsafe-dictionary-type": "error",
-    "anti-slop/no-widen-then-assert": "error",
-    "anti-slop/require-safety-comment-for-type-assertion": "error",
-  },
+  ignorePatterns: ["**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}", "**/routeTree.gen.ts"],
   overrides: [
     {
       files: ["apps/web/src/routes/**"],
@@ -65,8 +26,4 @@ export default defineConfig({
       },
     },
   ],
-  options: {
-    typeAware: true,
-    typeCheck: true,
-  },
 });

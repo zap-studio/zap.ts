@@ -3,32 +3,32 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "pnpm --filter web run dev",
     "build": "pnpm -r --if-present run build",
-    "lint": "pnpm exec oxlint",
-    "lint:fix": "oxlint --fix",
-    "format": "oxfmt",
-    "format:check": "oxfmt --check",
-    "typecheck": "pnpm -r --if-present run typecheck",
-    "test": "pnpm -r --if-present run test",
     "db:generate": "pnpm --filter @zap-studio/db run generate",
     "db:migrate": "pnpm --filter @zap-studio/db run migrate",
     "db:studio": "pnpm --filter @zap-studio/db run studio",
     "deploy": "pnpm --filter web run deploy",
-    "prepare": "lefthook install"
+    "dev": "pnpm --filter web run dev",
+    "fallow": "fallow --summary",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "lint": "pnpm exec oxlint",
+    "lint:fix": "oxlint --fix",
+    "prepare": "lefthook install",
+    "react-doctor": "react-doctor --scope full --verbose",
+    "test": "pnpm -r --if-present run test",
+    "typecheck": "pnpm -r --if-present run typecheck"
   },
   "devDependencies": {
-    "@e18e/eslint-plugin": "catalog:",
     "@oxlint/plugins": "catalog:",
-    "eslint-plugin-github": "catalog:",
-    "eslint-plugin-playwright": "catalog:",
-    "eslint-plugin-regexp": "catalog:",
-    "eslint-plugin-sonarjs": "catalog:",
+    "@zap-studio/oxfmt": "catalog:",
+    "@zap-studio/oxlint": "catalog:",
+    "fallow": "catalog:",
     "lefthook": "catalog:",
     "oxfmt": "catalog:",
     "oxlint": "catalog:",
-    "oxlint-plugin-react-doctor": "catalog:",
-    "oxlint-tsgolint": "catalog:"
+    "oxlint-tsgolint": "catalog:",
+    "react-doctor": "catalog:"
   },
   "packageManager": "pnpm@11.22.0+sha512.1ff870c4c6133dfd88fb2afc46dd13d47f09c9794b438c6fdb47ca98caf3bc16381ee0be93a091b8e3824cf01f889f46d7d9e20910fb0be1ab0fb5baa80dd621"
 }

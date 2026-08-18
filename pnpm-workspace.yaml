@@ -20,7 +20,7 @@ catalog:
   fallow: ^3.17.0
   lefthook: ^2.1.10
   oxfmt: ^0.63.0
-  oxlint: ^1.79.0
+  oxlint: ^1.78.0
   oxlint-tsgolint: ^7.0.2001
   react: ^19.2.8
   react-doctor: ^0.9.12
@@ -31,23 +31,3 @@ catalog:
 minimumReleaseAgeExclude:
   - "@zap-studio/oxfmt@1.0.0"
   - "@zap-studio/oxlint@1.0.0 || 1.0.1 || 2.0.0"
-  - "@oxlint/binding-android-arm-eabi@1.79.0"
-  - "@oxlint/binding-android-arm64@1.79.0"
-  - "@oxlint/binding-darwin-arm64@1.79.0"
-  - "@oxlint/binding-darwin-x64@1.79.0"
-  - "@oxlint/binding-freebsd-x64@1.79.0"
-  - "@oxlint/binding-linux-arm-gnueabihf@1.79.0"
-  - "@oxlint/binding-linux-arm-musleabihf@1.79.0"
-  - "@oxlint/binding-linux-arm64-gnu@1.79.0"
-  - "@oxlint/binding-linux-arm64-musl@1.79.0"
-  - "@oxlint/binding-linux-ppc64-gnu@1.79.0"
-  - "@oxlint/binding-linux-riscv64-gnu@1.79.0"
-  - "@oxlint/binding-linux-riscv64-musl@1.79.0"
-  - "@oxlint/binding-linux-s390x-gnu@1.79.0"
-  - "@oxlint/binding-linux-x64-gnu@1.79.0"
-  - "@oxlint/binding-linux-x64-musl@1.79.0"
-  - "@oxlint/binding-openharmony-arm64@1.79.0"
-  - "@oxlint/binding-win32-arm64-msvc@1.79.0"
-  - "@oxlint/binding-win32-ia32-msvc@1.79.0"
-  - "@oxlint/binding-win32-x64-msvc@1.79.0"
-  - oxlint@1.79.0

@@ -39,16 +39,11 @@ zap.ts/
 
 ## Linting & formatting
 
-Oxlint and oxfmt are configured through [`@zap-studio/oxlint`](https://www.npmjs.com/package/@zap-studio/oxlint) and [`@zap-studio/oxfmt`](https://www.npmjs.com/package/@zap-studio/oxfmt) — Zap Studio's own presets, extended (not hand-rolled) in [`oxlint.config.ts`](./oxlint.config.ts) and [`oxfmt.config.ts`](./oxfmt.config.ts):
+Configs extend Zap Studio's presets, [`@zap-studio/oxlint`](https://www.npmjs.com/package/@zap-studio/oxlint) and [`@zap-studio/oxfmt`](https://www.npmjs.com/package/@zap-studio/oxfmt).
 
-- `oxlint.config.ts` extends the `tanstack` and `testing` presets.
-- `oxfmt.config.ts` extends the `tailwind` preset — sorted imports, sorted `package.json`, and Tailwind class sorting.
-
-Lefthook runs `lint:fix` and `format` on staged files pre-commit.
+Lefthook runs linting and formatting on staged files pre-commit.
 
 ## Code quality
 
-Two extra static analysis tools run outside of lint/format:
-
-- **[fallow](https://docs.fallow.tools)** — dead code, unused dependencies, circular imports, duplication, and complexity, configured in [`.fallowrc.json`](./.fallowrc.json).
-- **[react-doctor](https://react.doctor)** — React-specific diagnostics (hooks correctness, accessibility, performance, security) beyond what oxlint's `react-doctor` plugin rules cover statically.
+- **[fallow](https://docs.fallow.tools)** — dead code, unused deps, circular imports, duplication, complexity.
+- **[react-doctor](https://react.doctor)** — React hooks, accessibility, performance, security checks beyond oxlint's static `react-doctor` plugin rules.

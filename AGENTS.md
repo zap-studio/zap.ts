@@ -34,7 +34,7 @@ zap.ts/
 | Stripe                          | https://docs.stripe.com/llms.txt           |
 | Resend                          | https://resend.com/docs/llms.txt           |
 | Base UI                         | https://base-ui.com/llms.txt               |
-| Tailwind CSS                    | https://tailwindcss.com                    |
+| StyleX                          | https://stylexjs.com                       |
 | Zod                             | https://zod.dev/llms.txt                   |
 | @t3-oss/env-core                | https://env.t3.gg                          |
 | Vitest                          | https://vitest.dev/llms.txt                |

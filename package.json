@@ -3,19 +3,19 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "pnpm --filter web run dev",
     "build": "pnpm -r --if-present run build",
-    "lint": "pnpm exec oxlint",
-    "lint:fix": "oxlint --fix",
-    "format": "oxfmt",
-    "format:check": "oxfmt --check",
-    "typecheck": "pnpm -r --if-present run typecheck",
-    "test": "pnpm -r --if-present run test",
     "db:generate": "pnpm --filter @zap-studio/db run generate",
     "db:migrate": "pnpm --filter @zap-studio/db run migrate",
     "db:studio": "pnpm --filter @zap-studio/db run studio",
     "deploy": "pnpm --filter web run deploy",
-    "prepare": "lefthook install"
+    "dev": "pnpm --filter web run dev",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "lint": "pnpm exec oxlint",
+    "lint:fix": "oxlint --fix",
+    "prepare": "lefthook install",
+    "test": "pnpm -r --if-present run test",
+    "typecheck": "pnpm -r --if-present run typecheck"
   },
   "devDependencies": {
     "@oxlint/plugins": "catalog:",

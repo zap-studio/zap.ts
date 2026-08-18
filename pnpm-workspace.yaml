@@ -16,7 +16,7 @@ catalog:
   "@types/react-dom": ^19.2.4
   "@vitejs/plugin-react": ^6.0.5
   "@zap-studio/oxfmt": ^1.0.0
-  "@zap-studio/oxlint": ^1.0.1
+  "@zap-studio/oxlint": ^1.1.0
   fallow: ^3.17.0
   lefthook: ^2.1.10
   oxfmt: ^0.63.0

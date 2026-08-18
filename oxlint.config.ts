@@ -1,9 +1,9 @@
-import react from "@zap-studio/oxlint/react";
+import tanstack from "@zap-studio/oxlint/tanstack";
 import testing from "@zap-studio/oxlint/testing";
 import { defineConfig } from "oxlint";
 
 export default defineConfig({
-  extends: [react, testing],
+  extends: [tanstack, testing],
   ignorePatterns: ["**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}", "**/routeTree.gen.ts"],
   overrides: [
     {

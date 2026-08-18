@@ -1,17 +1,5 @@
 import type { RuleSeverity } from "./rule-severity.ts";
 
-// Auto-derived from oxlint-plugin-react-doctor's own RECOMMENDED_RULES export (installed package, not docs/memory).
-// Regenerate if the oxlint-plugin-react-doctor version in pnpm-workspace.yaml catalog changes.
-//
-// Excluded 39 of the package's 581 recommended rules because they duplicate a rule already
-// natively enabled elsewhere in oxlint.config.ts under a different plugin namespace (same
-// violation would otherwise get reported twice):
-//   - react/rules-of-hooks, react/exhaustive-deps (native react plugin, added directly)
-//   - the 4 native react-perf/* rules (jsx-no-jsx-as-prop, jsx-no-new-array-as-prop,
-//     jsx-no-new-function-as-prop, jsx-no-new-object-as-prop)
-//   - the 33 native jsx-a11y/* rules oxlint ships (alt-text, anchor-ambiguous-text, ...
-//     full canonical list at https://oxc.rs/docs/guide/usage/linter/rules.html)
-
 export const reactDoctorRules = {
   "react-doctor/activity-wraps-effect-heavy-subtree": "warn",
   "react-doctor/advanced-event-handler-refs": "warn",
@@ -555,4 +543,31 @@ export const reactDoctorRules = {
   "react-doctor/zustand-no-get-during-initialization": "error",
   "react-doctor/zustand-no-mutating-state": "error",
   "react-doctor/zustand-no-whole-store-destructure": "warn",
+} satisfies Record<string, RuleSeverity>;
+
+export const tanstackReactDoctorRules = {
+  "react-doctor/query-destructure-result": "warn",
+  "react-doctor/query-floating-mutate-async": "warn",
+  "react-doctor/query-mutation-missing-invalidation": "warn",
+  "react-doctor/query-no-mutation-in-effect-as-read": "warn",
+  "react-doctor/query-no-query-in-effect": "warn",
+  "react-doctor/query-no-rest-destructuring": "warn",
+  "react-doctor/query-no-usequery-for-mutation": "warn",
+  "react-doctor/query-no-void-query-fn": "warn",
+  "react-doctor/query-stable-query-client": "warn",
+  "react-doctor/tanstack-start-get-mutation": "warn",
+  "react-doctor/tanstack-start-loader-parallel-fetch": "warn",
+  "react-doctor/tanstack-start-missing-head-content": "warn",
+  "react-doctor/tanstack-start-missing-scripts": "warn",
+  "react-doctor/tanstack-start-no-anchor-element": "warn",
+  "react-doctor/tanstack-start-no-direct-fetch-in-loader": "warn",
+  "react-doctor/tanstack-start-no-dynamic-server-fn-import": "error",
+  "react-doctor/tanstack-start-no-navigate-in-render": "warn",
+  "react-doctor/tanstack-start-no-secrets-in-loader": "error",
+  "react-doctor/tanstack-start-no-use-server-in-handler": "error",
+  "react-doctor/tanstack-start-no-useeffect-fetch": "warn",
+  "react-doctor/tanstack-start-redirect-in-try-catch": "warn",
+  "react-doctor/tanstack-start-route-property-order": "error",
+  "react-doctor/tanstack-start-server-fn-method-order": "error",
+  "react-doctor/tanstack-start-server-fn-validate-input": "warn",
 } satisfies Record<string, RuleSeverity>;

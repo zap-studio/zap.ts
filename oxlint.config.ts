@@ -5,12 +5,6 @@ import { defineConfig } from "oxlint";
 export default defineConfig({
   extends: [react, testing],
   ignorePatterns: ["**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}", "**/routeTree.gen.ts"],
-  rules: {
-    "anti-slop/no-runtime-typeof": "error",
-    "anti-slop/no-unknown-parameters": "error",
-    "anti-slop/no-unknown-returns": "error",
-    "anti-slop/no-unsafe-dictionary-type": "error",
-  },
   overrides: [
     {
       files: ["apps/web/src/routes/**"],

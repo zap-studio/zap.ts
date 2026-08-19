@@ -4,9 +4,9 @@
   "type": "module",
   "scripts": {
     "build": "pnpm -r --if-present run build",
-    "db:generate": "pnpm --filter @zap-studio/db run generate",
-    "db:migrate": "pnpm --filter @zap-studio/db run migrate",
-    "db:studio": "pnpm --filter @zap-studio/db run studio",
+    "db:generate": "pnpm --filter @zap-ts/db run generate",
+    "db:migrate": "pnpm --filter @zap-ts/db run migrate",
+    "db:studio": "pnpm --filter @zap-ts/db run studio",
     "deploy": "pnpm --filter web run deploy",
     "dev": "pnpm --filter web run dev",
     "fallow": "fallow --summary",

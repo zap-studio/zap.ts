@@ -1,5 +1,5 @@
 {
-  "extends": "@zap-studio/tsconfig/base.json",
+  "extends": "@zap-ts/tsconfig/base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
     "types": ["vite/client"]

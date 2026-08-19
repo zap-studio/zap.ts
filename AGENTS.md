@@ -42,4 +42,4 @@ zap.ts/
 | tsdown                          | https://tsdown.dev/llms.txt                |
 | Takumi (OG images)              | https://takumi.kane.tw/llms.txt            |
 | pnpm                            | https://pnpm.io                            |
-| @zap-studio/*                   | https://www.zapstudio.dev                  |
+| @zap-studio/*                   | https://www.zapstudio.dev/llms.txt         |

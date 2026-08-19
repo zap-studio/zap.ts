@@ -138,7 +138,7 @@ importers:
       '@vitejs/plugin-react':
         specifier: 'catalog:'
         version: 6.0.5(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))
-      '@zap-studio/tsconfig':
+      '@zap-ts/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
       typescript:

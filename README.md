@@ -20,22 +20,22 @@ zap.ts/
 
 ## Scripts
 
-| Script         | Runs                                        | Does                                           |
-| -------------- | ------------------------------------------- | ---------------------------------------------- |
-| `dev`          | `pnpm --filter web run dev`                 | Starts the web app dev server                  |
-| `build`        | `pnpm -r --if-present run build`            | Builds every package/app that has a build step |
-| `deploy`       | `pnpm --filter web run deploy`              | Deploys the web app via Wrangler               |
-| `test`         | `pnpm -r --if-present run test`             | Runs every package/app's test suite            |
-| `typecheck`    | `pnpm -r --if-present run typecheck`        | Type-checks every package/app                  |
-| `lint`         | `pnpm exec oxlint`                          | Lints with oxlint                              |
-| `lint:fix`     | `oxlint --fix`                              | Lints and auto-fixes with oxlint               |
-| `format`       | `oxfmt`                                     | Formats with oxfmt                             |
-| `format:check` | `oxfmt --check`                             | Checks formatting without writing              |
-| `fallow`       | `fallow --summary`                          | Dead code, duplication, and complexity summary |
-| `react-doctor` | `react-doctor --scope full --verbose`       | Full React codebase health diagnostics         |
-| `db:generate`  | `pnpm --filter @zap-studio/db run generate` | Generates a Drizzle migration                  |
-| `db:migrate`   | `pnpm --filter @zap-studio/db run migrate`  | Applies migrations against Neon                |
-| `db:studio`    | `pnpm --filter @zap-studio/db run studio`   | Opens Drizzle Studio                           |
+| Script         | Runs                                    | Does                                           |
+| -------------- | --------------------------------------- | ---------------------------------------------- |
+| `dev`          | `pnpm --filter web run dev`             | Starts the web app dev server                  |
+| `build`        | `pnpm -r --if-present run build`        | Builds every package/app that has a build step |
+| `deploy`       | `pnpm --filter web run deploy`          | Deploys the web app via Wrangler               |
+| `test`         | `pnpm -r --if-present run test`         | Runs every package/app's test suite            |
+| `typecheck`    | `pnpm -r --if-present run typecheck`    | Type-checks every package/app                  |
+| `lint`         | `pnpm exec oxlint`                      | Lints with oxlint                              |
+| `lint:fix`     | `oxlint --fix`                          | Lints and auto-fixes with oxlint               |
+| `format`       | `oxfmt`                                 | Formats with oxfmt                             |
+| `format:check` | `oxfmt --check`                         | Checks formatting without writing              |
+| `fallow`       | `fallow --summary`                      | Dead code, duplication, and complexity summary |
+| `react-doctor` | `react-doctor --scope full --verbose`   | Full React codebase health diagnostics         |
+| `db:generate`  | `pnpm --filter @zap-ts/db run generate` | Generates a Drizzle migration                  |
+| `db:migrate`   | `pnpm --filter @zap-ts/db run migrate`  | Applies migrations against Neon                |
+| `db:studio`    | `pnpm --filter @zap-ts/db run studio`   | Opens Drizzle Studio                           |
 
 ## Linting & formatting
 

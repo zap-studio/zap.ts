@@ -24,22 +24,21 @@ zap.ts/
 
 ## Stack
 
-| Dep                             | Docs                                       |
-| ------------------------------- | ------------------------------------------ |
-| TanStack Start / Router         | https://tanstack.com/llms.txt              |
-| Cloudflare Workers / Hyperdrive | https://developers.cloudflare.com/llms.txt |
-| Neon Postgres                   | https://neon.tech/docs                     |
-| Drizzle ORM                     | https://orm.drizzle.team/llms.txt          |
-| Better Auth                     | https://www.better-auth.com/llms.txt       |
-| Stripe                          | https://docs.stripe.com/llms.txt           |
-| Resend                          | https://resend.com/docs/llms.txt           |
-| Base UI                         | https://base-ui.com/llms.txt               |
-| StyleX                          | https://stylexjs.com                       |
-| Zod                             | https://zod.dev/llms.txt                   |
-| @t3-oss/env-core                | https://env.t3.gg                          |
-| Vitest                          | https://vitest.dev/llms.txt                |
-| Oxlint + Oxfmt                  | https://oxc.rs/docs                        |
-| tsdown                          | https://tsdown.dev/llms.txt                |
-| Takumi (OG images)              | https://takumi.kane.tw/llms.txt            |
-| pnpm                            | https://pnpm.io                            |
-| @zap-studio/*                   | https://www.zapstudio.dev/llms.txt         |
+| Dep                             | Docs                                                          |
+| ------------------------------- | ------------------------------------------------------------- |
+| TanStack Start / Router         | https://tanstack.com/llms.txt                                 |
+| Cloudflare Workers / Hyperdrive | https://developers.cloudflare.com/llms.txt                    |
+| Neon Postgres                   | https://neon.tech/docs, https://neon.com/llms.txt             |
+| Drizzle ORM                     | https://orm.drizzle.team/llms.txt                             |
+| Better Auth                     | https://www.better-auth.com/llms.txt                          |
+| Stripe                          | https://docs.stripe.com/llms.txt                              |
+| Resend                          | https://resend.com/docs/llms.txt                              |
+| Base UI                         | https://base-ui.com/llms.txt                                  |
+| StyleX                          | https://stylexjs.com, https://stylexjs.com/docs/llm-resources |
+| Zod                             | https://zod.dev/llms.txt                                      |
+| Vitest                          | https://vitest.dev/llms.txt                                   |
+| Oxlint + Oxfmt                  | https://oxc.rs/docs, https://oxc.rs/llms.txt                  |
+| tsdown                          | https://tsdown.dev/llms.txt                                   |
+| Takumi (OG images)              | https://takumi.kane.tw/llms.txt                               |
+| pnpm                            | https://pnpm.io                                               |
+| @zap-studio/*                   | https://www.zapstudio.dev/llms.txt                            |

@@ -1,7 +1,5 @@
 # AGENTS.md
 
-SaaS starter kit monorepo. Currently scoped to `apps/web` only.
-
 ## Rule
 
 Always run scripts via `pnpm run <script>` — never invoke the underlying CLIs (`wrangler`, `drizzle-kit`, `vitest`, `oxlint`, `oxfmt`, ...) directly.

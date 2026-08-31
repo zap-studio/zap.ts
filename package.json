@@ -11,8 +11,8 @@
     "dev": "pnpm --filter web run dev",
     "format": "pnpm exec oxfmt",
     "format:check": "pnpm exec oxfmt --check",
-    "lint": "pnpm exec oxlint",
-    "lint:fix": "pnpm exec oxlint --fix",
+    "lint": "pnpm exec oxlint --type-aware --type-check",
+    "lint:fix": "pnpm exec oxlint --fix --type-aware --type-check",
     "prepare": "lefthook install",
     "test": "pnpm -r --if-present run test",
     "typecheck": "pnpm -r --if-present run typecheck"

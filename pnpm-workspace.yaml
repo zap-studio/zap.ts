@@ -6,28 +6,24 @@ allowBuilds:
   lefthook: true
   workerd: true
 catalog:
-  "@cloudflare/vite-plugin": ^1.52.1
-  "@cloudflare/workers-types": ^5.20260816.1
-  "@oxlint/plugins": ^1.78.0
-  "@tanstack/react-router": ^1.170.29
-  "@tanstack/react-start": ^1.168.46
-  "@types/node": ^26.2.0
+  "@cloudflare/vite-plugin": ^1.54.2
+  "@cloudflare/workers-types": ^5.20260830.1
+  "@oxlint/plugins": ^1.80.0
+  "@tanstack/react-router": ^1.170.32
+  "@tanstack/react-start": ^1.168.49
+  "@types/node": ^26.4.0
   "@types/react": ^19.2.18
-  "@types/react-dom": ^19.2.4
-  "@vitejs/plugin-react": ^6.0.5
+  "@types/react-dom": ^19.2.5
+  "@vitejs/plugin-react": ^6.1.1
   "@zap-studio/oxfmt": ^1.0.0
   "@zap-studio/oxlint": ^2.2.1
-  fallow: ^3.17.0
-  lefthook: ^2.1.10
-  oxfmt: ^0.63.0
-  oxlint: ^1.78.0
+  eslint: ^10.9.1
+  lefthook: ^2.1.12
+  oxfmt: ^0.65.0
+  oxlint: ^1.80.0
   oxlint-tsgolint: ^7.0.2001
   react: ^19.2.8
-  react-doctor: ^0.9.12
   react-dom: ^19.2.8
   typescript: ^7.0.2
-  vite: ^8.2.1
-  wrangler: ^4.123.0
-minimumReleaseAgeExclude:
-  - "@zap-studio/oxfmt@1.0.0"
-  - "@zap-studio/oxlint@1.0.0 || 1.0.1"
+  vite: ^8.2.2
+  wrangler: ^4.127.1

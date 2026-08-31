@@ -9,13 +9,11 @@
     "db:studio": "pnpm --filter @zap-studio/db run studio",
     "deploy": "pnpm --filter web run deploy",
     "dev": "pnpm --filter web run dev",
-    "fallow": "fallow --summary",
-    "format": "oxfmt",
-    "format:check": "oxfmt --check",
+    "format": "pnpm exec oxfmt",
+    "format:check": "pnpm exec oxfmt --check",
     "lint": "pnpm exec oxlint",
-    "lint:fix": "oxlint --fix",
+    "lint:fix": "pnpm exec oxlint --fix",
     "prepare": "lefthook install",
-    "react-doctor": "react-doctor --scope full --verbose",
     "test": "pnpm -r --if-present run test",
     "typecheck": "pnpm -r --if-present run typecheck"
   },
@@ -23,12 +21,11 @@
     "@oxlint/plugins": "catalog:",
     "@zap-studio/oxfmt": "catalog:",
     "@zap-studio/oxlint": "catalog:",
-    "fallow": "catalog:",
+    "eslint": "catalog:",
     "lefthook": "catalog:",
     "oxfmt": "catalog:",
     "oxlint": "catalog:",
-    "oxlint-tsgolint": "catalog:",
-    "react-doctor": "catalog:"
+    "oxlint-tsgolint": "catalog:"
   },
   "packageManager": "pnpm@12.1.0+sha512.d9b8276d97f6ec86e49815877f91ee9f63cee61f2063b304e43b6dab8fa07ce8a9afd46d2facd39f921e6a9d06b3c75a81349c7b888c2d22886bae0229901037"
 }

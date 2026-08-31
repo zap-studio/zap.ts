@@ -19,7 +19,7 @@ export default defineConfig({
     tanstackRouter,
     tanstackStart,
   ],
-  ignorePatterns: ["**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}", "**/routeTree.gen.ts"],
+  ignorePatterns: ["**/routeTree.gen.ts"],
   overrides: [
     {
       files: ["apps/web/src/routes/**"],

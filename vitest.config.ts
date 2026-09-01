@@ -1,0 +1,42 @@
+import { playwright } from "@vitest/browser-playwright";
+import { configDefaults, defineConfig } from "vitest/config";
+
+const isCI = process.env.CI !== undefined;
+
+export default defineConfig({
+  test: {
+    coverage: {
+      exclude: [...configDefaults.exclude],
+      provider: "v8",
+      reporter: ["lcov", "text"],
+    },
+    exclude: configDefaults.exclude,
+    globals: true,
+    outputFile: isCI ? { junit: "./coverage/junit.xml" } : undefined,
+    projects: [
+      {
+        extends: true,
+        test: {
+          environment: "node",
+          include: ["packages/**/*.node.test.ts", "apps/**/*.node.test.ts"],
+          name: { color: "green", label: "node" },
+        },
+      },
+      {
+        extends: true,
+        test: {
+          browser: {
+            enabled: true,
+            headless: true,
+            instances: [{ browser: "chromium" }],
+            provider: playwright(),
+          },
+          include: ["packages/**/*.browser.test.ts", "apps/**/*.browser.test.ts"],
+          name: { color: "cyan", label: "browser" },
+        },
+      },
+    ],
+    reporters: isCI ? ["junit"] : ["default"],
+    restoreMocks: true,
+  },
+});

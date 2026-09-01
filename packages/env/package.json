@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@types/node": "catalog:",
+    "@zap-ts/tsconfig": "workspace:*",
     "typescript": "catalog:"
   }
 }

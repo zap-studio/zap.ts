@@ -288,6 +288,9 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 26.4.0
+      '@zap-ts/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
       typescript:
         specifier: 'catalog:'
         version: 7.0.2

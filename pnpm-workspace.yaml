@@ -37,4 +37,4 @@ catalog:
   vitest: ^4.1.11
   wrangler: ^4.127.1
 minimumReleaseAgeExclude:
-  - '@zap-studio/env@1.0.0'
+  - "@zap-studio/env@1.0.0"

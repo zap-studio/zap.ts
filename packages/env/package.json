@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@opentelemetry/api": "^1.9.1",
-    "@zap-studio/env": "^1.0.0",
+    "@zap-studio/env": "^1.0.1",
     "zod": "^4.5.4"
   },
   "devDependencies": {

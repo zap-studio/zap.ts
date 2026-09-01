@@ -1,11 +1,6 @@
 packages:
   - "apps/*"
   - "packages/*"
-overrides:
-  # @zap-studio/env@1.0.0 ships "@zap-studio/validation": "workspace:*" in its published
-  # dependencies — a workspace-protocol specifier that only resolves inside the zap-studio
-  # monorepo, not here. Pin the real published version until that publish is fixed upstream.
-  "@zap-studio/validation": ^1.1.1
 allowBuilds:
   esbuild: true
   lefthook: true
@@ -37,4 +32,4 @@ catalog:
   vitest: ^4.1.11
   wrangler: ^4.127.1
 minimumReleaseAgeExclude:
-  - "@zap-studio/env@1.0.0"
+  - "@zap-studio/env@1.0.1"

@@ -14,18 +14,23 @@
     "lint": "pnpm exec oxlint --type-aware --type-check",
     "lint:fix": "pnpm exec oxlint --fix --type-aware --type-check",
     "prepare": "lefthook install",
-    "test": "pnpm -r --if-present run test",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "typecheck": "pnpm -r --if-present run typecheck"
   },
   "devDependencies": {
     "@oxlint/plugins": "catalog:",
+    "@vitest/browser-playwright": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
     "@zap-studio/oxfmt": "catalog:",
     "@zap-studio/oxlint": "catalog:",
     "eslint": "catalog:",
     "lefthook": "catalog:",
     "oxfmt": "catalog:",
     "oxlint": "catalog:",
-    "oxlint-tsgolint": "catalog:"
+    "oxlint-tsgolint": "catalog:",
+    "playwright": "catalog:",
+    "vitest": "catalog:"
   },
   "packageManager": "pnpm@12.2.1+sha512.f55ca68aacb9eb5ab69c66f828a98af89a32286703aef1f8da131ca7eab4d677f34bfa85e186467a919c0799df8b6f4aa240f7dc2919b33b3273190104162616"
 }

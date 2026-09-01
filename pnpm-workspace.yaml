@@ -1,6 +1,11 @@
 packages:
   - "apps/*"
   - "packages/*"
+overrides:
+  # @zap-studio/env@1.0.0 ships "@zap-studio/validation": "workspace:*" in its published
+  # dependencies — a workspace-protocol specifier that only resolves inside the zap-studio
+  # monorepo, not here. Pin the real published version until that publish is fixed upstream.
+  "@zap-studio/validation": ^1.1.1
 allowBuilds:
   esbuild: true
   lefthook: true
@@ -15,6 +20,8 @@ catalog:
   "@types/react": ^19.2.18
   "@types/react-dom": ^19.2.5
   "@vitejs/plugin-react": ^6.1.1
+  "@vitest/browser-playwright": ^4.1.11
+  "@vitest/coverage-v8": ^4.1.11
   "@zap-studio/oxfmt": ^1.0.0
   "@zap-studio/oxlint": ^2.2.1
   eslint: ^10.9.1
@@ -22,8 +29,12 @@ catalog:
   oxfmt: ^0.65.0
   oxlint: ^1.80.0
   oxlint-tsgolint: ^7.0.2001
+  playwright: ^1.62.1
   react: ^19.2.8
   react-dom: ^19.2.8
   typescript: ^7.0.2
   vite: ^8.2.2
+  vitest: ^4.1.11
   wrangler: ^4.127.1
+minimumReleaseAgeExclude:
+  - "@zap-studio/env@1.0.0"

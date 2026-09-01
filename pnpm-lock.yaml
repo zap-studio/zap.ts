@@ -233,7 +233,7 @@ importers:
       '@vitejs/plugin-react':
         specifier: 'catalog:'
         version: 6.1.1(vite@8.2.2(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))
-      '@zap-studio/tsconfig':
+      '@zap-ts/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
       typescript:
@@ -245,6 +245,8 @@ importers:
       wrangler:
         specifier: 'catalog:'
         version: 4.127.1(@cloudflare/workers-types@5.20260831.1)
+
+  packages/env: {}
 
   packages/tsconfig: {}
 

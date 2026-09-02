@@ -1,4 +1,4 @@
-import { allow, createPolicy, type Actions, type Resources, when } from "@zap-studio/permit";
+import { createPolicy, type Actions, type Resources, when } from "@zap-studio/permit";
 import { z } from "zod";
 
 const resources = {
@@ -20,7 +20,7 @@ export const organizationPolicy = createPolicy<PermissionsContext>({
   actions,
   rules: {
     organization: {
-      view: allow(),
+      view: when((ctx) => ctx.actor.role === "org:admin" || ctx.actor.role === "org:member"),
       "update-settings": when((ctx) => ctx.actor.role === "org:admin"),
       "manage-billing": when((ctx) => ctx.actor.role === "org:admin"),
       "invite-member": when((ctx) => ctx.actor.role === "org:admin"),

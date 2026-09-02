@@ -3,4 +3,10 @@
   "compatibility_date": "2026-08-01",
   "compatibility_flags": ["nodejs_compat"],
   "main": "@tanstack/react-start/server-entry",
+  "hyperdrive": [
+    {
+      "binding": "HYPERDRIVE",
+      "id": "f926bbaf3a884ba7b0ab90f130bb7bad",
+    },
+  ],
 }

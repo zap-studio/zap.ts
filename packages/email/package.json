@@ -1,0 +1,22 @@
+{
+  "name": "@zap-ts/email",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@zap-ts/env": "workspace:*",
+    "effect": "catalog:",
+    "resend": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@zap-ts/tsconfig": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

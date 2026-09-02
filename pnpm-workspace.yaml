@@ -7,7 +7,7 @@ allowBuilds:
   workerd: true
 catalog:
   "@cloudflare/vite-plugin": ^1.54.2
-  "@cloudflare/workers-types": ^5.20260831.1
+  "@cloudflare/workers-types": ^5.20260901.1
   "@oxlint/plugins": ^1.80.0
   "@tanstack/react-router": ^1.170.32
   "@tanstack/react-start": ^1.168.49

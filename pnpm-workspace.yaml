@@ -6,6 +6,8 @@ allowBuilds:
   lefthook: true
   workerd: true
 catalog:
+  "@clerk/backend": ^3.17.0
+  "@clerk/tanstack-react-start": ^1.5.10
   "@cloudflare/vite-plugin": ^1.54.2
   "@cloudflare/workers-types": ^5.20260901.1
   "@oxlint/plugins": ^1.80.0
@@ -19,6 +21,7 @@ catalog:
   "@vitest/coverage-v8": ^4.1.11
   "@zap-studio/oxfmt": ^1.0.0
   "@zap-studio/oxlint": ^2.2.1
+  "@zap-studio/permit": ^2.0.1
   drizzle-kit: ^0.31.10
   drizzle-orm: ^0.45.2
   effect: ^3.22.1
@@ -35,5 +38,9 @@ catalog:
   vite: ^8.2.2
   vitest: ^4.1.11
   wrangler: ^4.127.1
+  zod: ^4.5.4
 minimumReleaseAgeExclude:
   - "@zap-studio/env@1.0.1"
+  - "@zap-studio/permit@2.0.1"
+  - "@clerk/backend@3.17.0"
+  - "@clerk/tanstack-react-start@1.5.10"

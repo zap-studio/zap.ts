@@ -1,15 +1,18 @@
+import { ClerkProvider } from "@clerk/tanstack-react-start";
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 
 const RootComponent = () => (
-  <html lang="en" suppressHydrationWarning>
-    <head>
-      <HeadContent />
-    </head>
-    <body>
-      <Outlet />
-      <Scripts />
-    </body>
-  </html>
+  <ClerkProvider>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        <Outlet />
+        <Scripts />
+      </body>
+    </html>
+  </ClerkProvider>
 );
 
 export const Route = createRootRoute({

@@ -1,0 +1,4 @@
+{
+  "extends": "@zap-ts/tsconfig/base.json",
+  "include": ["src"]
+}

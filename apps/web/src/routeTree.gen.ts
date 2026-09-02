@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProtectedRouteImport } from './routes/_protected'
 import { Route as ProtectedDashboardRouteImport } from './routes/_protected.dashboard'
-import { Route as WebhooksSplatRouteImport } from './routes/webhooks/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,41 +27,32 @@ const ProtectedDashboardRoute = ProtectedDashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => ProtectedRoute,
 } as any)
-const WebhooksSplatRoute = WebhooksSplatRouteImport.update({
-  id: '/webhooks/$',
-  path: '/webhooks/$',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dashboard': typeof ProtectedDashboardRoute
-  '/webhooks/$': typeof WebhooksSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dashboard': typeof ProtectedDashboardRoute
-  '/webhooks/$': typeof WebhooksSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_protected': typeof ProtectedRouteWithChildren
   '/_protected/dashboard': typeof ProtectedDashboardRoute
-  '/webhooks/$': typeof WebhooksSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dashboard' | '/webhooks/$'
+  fullPaths: '/' | '/dashboard'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dashboard' | '/webhooks/$'
-  id: '__root__' | '/' | '/_protected' | '/_protected/dashboard' | '/webhooks/$'
+  to: '/' | '/dashboard'
+  id: '__root__' | '/' | '/_protected' | '/_protected/dashboard'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ProtectedRoute: typeof ProtectedRouteWithChildren
-  WebhooksSplatRoute: typeof WebhooksSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -88,13 +78,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProtectedDashboardRouteImport
       parentRoute: typeof ProtectedRoute
     }
-    '/webhooks/$': {
-      id: '/webhooks/$'
-      path: '/webhooks/$'
-      fullPath: '/webhooks/$'
-      preLoaderRoute: typeof WebhooksSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -113,7 +96,6 @@ const ProtectedRouteWithChildren = ProtectedRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ProtectedRoute: ProtectedRouteWithChildren,
-  WebhooksSplatRoute: WebhooksSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

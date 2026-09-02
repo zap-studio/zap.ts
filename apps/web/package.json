@@ -12,7 +12,6 @@
     "@clerk/tanstack-react-start": "catalog:",
     "@tanstack/react-router": "catalog:",
     "@tanstack/react-start": "catalog:",
-    "@zap-ts/webhooks": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:"
   },

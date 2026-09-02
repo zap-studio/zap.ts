@@ -7,7 +7,6 @@ export const env = createEnvironment({
   server: {
     BETTER_AUTH_SECRET: z.string().min(32),
     CLERK_SECRET_KEY: z.string().startsWith("sk_"),
-    CLERK_WEBHOOK_SIGNING_SECRET: z.string().startsWith("whsec_"),
   },
   client: {
     VITE_CLERK_PUBLISHABLE_KEY: z.string().startsWith("pk_"),

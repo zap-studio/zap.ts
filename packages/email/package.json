@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@zap-ts/env": "workspace:*",
+    "@zap-ts/environment": "workspace:*",
     "effect": "catalog:",
     "resend": "catalog:"
   },

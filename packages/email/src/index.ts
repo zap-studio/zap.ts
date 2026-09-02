@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 
-import { env } from "@zap-ts/env";
+import { env } from "@zap-ts/environment";
 import { Context, Data, Duration, Effect, Layer, Schedule } from "effect";
 import { Resend } from "resend";
 

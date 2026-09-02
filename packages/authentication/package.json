@@ -1,17 +1,17 @@
 {
-  "name": "@zap-ts/permissions",
+  "name": "@zap-ts/authentication",
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts",
-    "./organization": "./src/organization.ts"
+    ".": "./src/index.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@zap-studio/permit": "catalog:",
-    "zod": "catalog:"
+    "@clerk/backend": "catalog:",
+    "@clerk/tanstack-react-start": "catalog:",
+    "effect": "catalog:"
   },
   "devDependencies": {
     "@zap-ts/tsconfig": "workspace:*",

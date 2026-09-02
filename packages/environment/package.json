@@ -1,5 +1,5 @@
 {
-  "name": "@zap-ts/env",
+  "name": "@zap-ts/environment",
   "private": true,
   "type": "module",
   "exports": {

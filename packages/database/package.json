@@ -1,5 +1,5 @@
 {
-  "name": "@zap-ts/db",
+  "name": "@zap-ts/database",
   "private": true,
   "type": "module",
   "exports": {

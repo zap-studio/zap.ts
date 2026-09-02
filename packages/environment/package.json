@@ -1,5 +1,5 @@
 {
-  "name": "@zap-ts/auth",
+  "name": "@zap-ts/environment",
   "private": true,
   "type": "module",
   "exports": {
@@ -9,11 +9,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@clerk/backend": "catalog:",
-    "@clerk/tanstack-react-start": "catalog:",
-    "effect": "catalog:"
+    "@opentelemetry/api": "^1.9.1",
+    "@zap-studio/env": "^1.0.1",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
+    "@types/node": "catalog:",
     "@zap-ts/tsconfig": "workspace:*",
     "typescript": "catalog:"
   }

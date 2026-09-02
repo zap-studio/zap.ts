@@ -1,0 +1,20 @@
+{
+  "name": "@zap-ts/authorization",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./organization": "./src/organization.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@zap-studio/permit": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@zap-ts/tsconfig": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

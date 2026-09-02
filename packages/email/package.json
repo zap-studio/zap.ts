@@ -1,19 +1,21 @@
 {
-  "name": "@zap-ts/permissions",
+  "name": "@zap-ts/email",
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts",
-    "./organization": "./src/organization.ts"
+    ".": "./src/index.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@zap-studio/permit": "catalog:",
-    "zod": "catalog:"
+    "@zap-ts/environment": "workspace:*",
+    "effect": "catalog:",
+    "resend": "catalog:"
   },
   "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
     "@zap-ts/tsconfig": "workspace:*",
     "typescript": "catalog:"
   }

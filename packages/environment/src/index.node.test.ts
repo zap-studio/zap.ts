@@ -10,7 +10,7 @@ describe("env schema shape", () => {
         runtimeEnv: {},
         emptyStringAsUndefined: true,
       }),
-    ).toThrow();
+    ).toThrow("BETTER_AUTH_SECRET");
   });
 
   it("parses when all required vars are present", () => {

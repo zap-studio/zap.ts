@@ -1,1 +1,7 @@
-/* StyleX appends its aggregated output to this file at build time. */
+/* Hand-authored resets that StyleX can't express (no universal selector support).
+   StyleX appends its aggregated output below this at build time. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

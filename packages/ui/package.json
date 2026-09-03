@@ -1,0 +1,19 @@
+{
+  "name": "@zap-ts/ui",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./theme.stylex": "./src/theme.stylex.ts",
+    "./*": "./src/*.tsx"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@stylexjs/stylex": "catalog:"
+  },
+  "devDependencies": {
+    "@zap-ts/tsconfig": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

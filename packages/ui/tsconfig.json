@@ -1,0 +1,4 @@
+{
+  "extends": "@zap-ts/tsconfig/react.json",
+  "include": ["src"]
+}

@@ -4,8 +4,10 @@ import react from "@zap-studio/oxlint/react";
 import reactA11y from "@zap-studio/oxlint/react-a11y";
 import reactDoctor from "@zap-studio/oxlint/react-doctor";
 import reactPerf from "@zap-studio/oxlint/react-perf";
+import stylex from "@zap-studio/oxlint/stylex";
 import tanstackRouter from "@zap-studio/oxlint/tanstack-router";
 import tanstackStart from "@zap-studio/oxlint/tanstack-start";
+import vitest from "@zap-studio/oxlint/vitest";
 import { defineConfig } from "oxlint";
 
 export default defineConfig({
@@ -18,6 +20,8 @@ export default defineConfig({
     jsxRuntimeAutomatic,
     tanstackRouter,
     tanstackStart,
+    stylex,
+    vitest,
   ],
   ignorePatterns: ["**/routeTree.gen.ts"],
   rules: {

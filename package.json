@@ -9,6 +9,7 @@
     "db:studio": "pnpm --filter @zap-ts/database run studio",
     "deploy": "pnpm --filter web run deploy",
     "dev": "pnpm --filter web run dev",
+    "env:example": "pnpm --filter @zap-ts/environment run env:example",
     "format": "pnpm exec oxfmt",
     "format:check": "pnpm exec oxfmt --check",
     "lint": "pnpm exec oxlint --type-aware --type-check",

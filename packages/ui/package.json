@@ -3,8 +3,9 @@
   "private": true,
   "type": "module",
   "exports": {
-    "./theme.stylex": "./src/theme.stylex.ts",
-    "./*": "./src/*.tsx"
+    "./tokens/*": "./src/tokens/*.stylex.ts",
+    "./theme-provider": "./src/theme/theme-provider.tsx",
+    "./components/*": "./src/components/*.tsx"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"

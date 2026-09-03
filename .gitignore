@@ -36,3 +36,6 @@ Thumbs.db
 .claude/settings.local.json
 superpowers/
 .fallow/
+
+# migrations
+migrations/

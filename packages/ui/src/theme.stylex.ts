@@ -25,6 +25,8 @@ export const colors = stylex.defineVars({
 
   destructive: "#dc2626",
   destructiveFg: "#fafafa",
+
+  overlay: "rgba(0, 0, 0, 0.4)",
 });
 
 export const darkTheme = stylex.createTheme(colors, {
@@ -52,6 +54,8 @@ export const darkTheme = stylex.createTheme(colors, {
 
   destructive: "#ef4444",
   destructiveFg: "#fafafa",
+
+  overlay: "rgba(0, 0, 0, 0.6)",
 });
 
 export const radius = stylex.defineVars({
@@ -92,4 +96,27 @@ export const lineHeight = stylex.defineVars({
   tight: "1.25",
   normal: "1.5",
   relaxed: "1.75",
+});
+
+export const fontFamily = stylex.defineVars({
+  sans: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+  mono: "ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace",
+});
+
+export const controlHeight = stylex.defineVars({
+  sm: "28px",
+  md: "32px",
+  lg: "36px",
+});
+
+export const shadow = stylex.defineVars({
+  sm: "0 1px 2px rgba(0, 0, 0, 0.04)",
+  md: "0 4px 12px rgba(0, 0, 0, 0.08)",
+  lg: "0 12px 32px rgba(0, 0, 0, 0.12)",
+});
+
+export const shadowDark = stylex.createTheme(shadow, {
+  sm: "0 1px 2px rgba(0, 0, 0, 0.3)",
+  md: "0 4px 16px rgba(0, 0, 0, 0.5)",
+  lg: "0 16px 48px rgba(0, 0, 0, 0.6)",
 });

@@ -47,8 +47,6 @@ catalog:
   wrangler: ^4.128.0
   zod: ^4.5.4
 minimumReleaseAgeExclude:
-  - "@zap-studio/env@1.0.1"
-  - "@zap-studio/permit@2.0.1"
   - "@clerk/backend@3.17.0"
   - "@clerk/tanstack-react-start@1.5.10"
   - "@zap-studio/webhooks@2.1.0"

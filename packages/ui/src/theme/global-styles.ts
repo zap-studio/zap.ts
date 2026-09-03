@@ -7,7 +7,6 @@ const styles = stylex.create({
   body: {
     MozOsxFontSmoothing: "grayscale",
     WebkitFontSmoothing: "antialiased",
-    WebkitTapHighlightColor: "transparent",
     margin: 0,
     backgroundColor: colors.bg,
     color: colors.fg,

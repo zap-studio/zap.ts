@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@base-ui-components/react": "catalog:",
+    "@base-ui/react": "catalog:",
     "@stylexjs/stylex": "catalog:",
     "@zap-studio/react-hooks": "catalog:"
   },

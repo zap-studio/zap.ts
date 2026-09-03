@@ -20,6 +20,9 @@ export default defineConfig({
     tanstackStart,
   ],
   ignorePatterns: ["**/routeTree.gen.ts"],
+  rules: {
+    "sonarjs/todo-tag": "off",
+  },
   overrides: [
     {
       files: ["apps/web/src/routes/**"],

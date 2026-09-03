@@ -10,10 +10,17 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@stylexjs/stylex": "catalog:"
+    "@base-ui-components/react": "catalog:",
+    "@stylexjs/stylex": "catalog:",
+    "@zap-studio/react-hooks": "catalog:"
   },
   "devDependencies": {
+    "@types/react": "catalog:",
     "@zap-ts/tsconfig": "workspace:*",
+    "react": "catalog:",
     "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:"
   }
 }

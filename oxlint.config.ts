@@ -30,5 +30,11 @@ export default defineConfig({
         "react-doctor/only-export-components": "off",
       },
     },
+    {
+      files: ["packages/ui/src/**"],
+      rules: {
+        "sonarjs/no-wildcard-import": "off",
+      },
+    },
   ],
 });

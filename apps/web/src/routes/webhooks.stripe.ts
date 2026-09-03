@@ -4,9 +4,9 @@ import { BillingStrategy } from "@zap-ts/billing";
 import { parseStripeEvent, stripeVerify, toBillingWebhookEvent } from "@zap-ts/billing/stripe";
 // oxlint-disable-next-line sonarjs/no-implicit-dependencies -- Workers runtime built-in, not an npm package
 import { env as cloudflareEnv } from "cloudflare:workers";
-import { Effect, ManagedRuntime } from "effect";
+import { Effect } from "effect";
 
-import { buildBillingLayer } from "../lib/billing";
+import { runBilling } from "../lib/billing";
 
 const router = createWebhookRouter({ prefix: "/webhooks" });
 
@@ -20,20 +20,13 @@ router.register("/stripe", {
       return Response.json({ received: true });
     }
 
-    const runtime = ManagedRuntime.make(
-      buildBillingLayer(cloudflareEnv.HYPERDRIVE.connectionString),
+    await runBilling(
+      cloudflareEnv.HYPERDRIVE.connectionString,
+      Effect.gen(function* () {
+        const strategy = yield* BillingStrategy;
+        yield* strategy.onWebhookEvent(billingEvent);
+      }),
     );
-
-    try {
-      await runtime.runPromise(
-        Effect.gen(function* () {
-          const strategy = yield* BillingStrategy;
-          yield* strategy.onWebhookEvent(billingEvent);
-        }),
-      );
-    } finally {
-      await runtime.dispose();
-    }
 
     return Response.json({ received: true });
   },

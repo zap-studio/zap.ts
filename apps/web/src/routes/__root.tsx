@@ -1,6 +1,10 @@
 import { ClerkProvider } from "@clerk/tanstack-react-start";
 import { createRootRoute, HeadContent, Outlet, ScriptOnce, Scripts } from "@tanstack/react-router";
+import { bodyProps } from "@zap-ts/ui/global-styles";
 import { darkClassNames, ThemeProvider } from "@zap-ts/ui/theme-provider";
+
+import { DevStyleXInject } from "../dev-stylex-inject";
+import appCss from "../styles/app.css?url";
 
 const NO_FLASH_THEME_SCRIPT = `(function () {
   var stored = localStorage.getItem("zap-studio-theme");
@@ -13,9 +17,10 @@ const RootComponent = () => (
     <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <DevStyleXInject cssHref={appCss} />
         <ScriptOnce>{NO_FLASH_THEME_SCRIPT}</ScriptOnce>
       </head>
-      <body>
+      <body {...bodyProps}>
         <ThemeProvider>
           <Outlet />
         </ThemeProvider>

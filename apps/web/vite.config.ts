@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [
     cloudflare({ viteEnvironment: { name: "ssr" } }),
     tanstackStart(),
-    stylex({ useCSSLayers: true }),
+    stylex({ useCSSLayers: true, devPersistToDisk: true }),
     viteReact(),
   ],
   resolve: { tsconfigPaths: true },

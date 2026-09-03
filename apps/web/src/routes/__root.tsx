@@ -1,14 +1,24 @@
 import { ClerkProvider } from "@clerk/tanstack-react-start";
-import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
+import { createRootRoute, HeadContent, Outlet, ScriptOnce, Scripts } from "@tanstack/react-router";
+import { darkClassNames, ThemeProvider } from "@zap-ts/ui/theme-provider";
+
+const NO_FLASH_THEME_SCRIPT = `(function () {
+  var stored = localStorage.getItem("zap-studio-theme");
+  var isDark = stored === '"dark"' || (stored !== '"light"' && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  if (isDark) document.documentElement.classList.add(...${JSON.stringify(darkClassNames)});
+})();`;
 
 const RootComponent = () => (
   <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <ScriptOnce>{NO_FLASH_THEME_SCRIPT}</ScriptOnce>
       </head>
       <body>
-        <Outlet />
+        <ThemeProvider>
+          <Outlet />
+        </ThemeProvider>
         <Scripts />
       </body>
     </html>

@@ -1,8 +1,10 @@
 import { clerkMiddleware } from "@clerk/tanstack-react-start/server";
 import { createStart } from "@tanstack/react-start";
-import { env } from "@zap-ts/environment";
 
-const skipClerkMiddleware = import.meta.env.DEV && env.SKIP_CLERK_MIDDLEWARE;
+const skipClerkMiddleware =
+  import.meta.env.DEV &&
+  typeof process !== "undefined" &&
+  process.env["SKIP_CLERK_MIDDLEWARE"] === "true";
 
 export const startInstance = createStart(() => ({
   requestMiddleware: skipClerkMiddleware ? [] : [clerkMiddleware()],

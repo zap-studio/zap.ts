@@ -2,9 +2,11 @@ import * as stylex from "@stylexjs/stylex";
 import { useTheme as useThemeState } from "@zap-studio/react-hooks/state/use-theme";
 import { type ReactNode, useEffect } from "react";
 
-import { darkTheme } from "./theme.stylex";
+import { darkTheme, shadowDark } from "./theme.stylex";
 
-export const darkClassNames = (stylex.props(darkTheme).className ?? "").split(" ").filter(Boolean);
+export const darkClassNames = (stylex.props(darkTheme, shadowDark).className ?? "")
+  .split(" ")
+  .filter(Boolean);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const { resolvedTheme } = useThemeState();

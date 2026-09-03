@@ -215,6 +215,9 @@ catalogs:
     stripe:
       specifier: ^22.6.1
       version: 22.6.1
+    tsx:
+      specifier: ^4.23.13
+      version: 4.23.13
     typescript:
       specifier: ^7.0.2
       version: 7.0.2
@@ -396,7 +399,7 @@ importers:
         version: link:../environment
       drizzle-orm:
         specifier: 'catalog:'
-        version: 0.45.2(@opentelemetry/api@1.9.1)(postgres@3.4.9)
+        version: 0.45.2(@cloudflare/workers-types@5.20260902.1)(@opentelemetry/api@1.9.1)(postgres@3.4.9)
       effect:
         specifier: 'catalog:'
         version: 3.22.1
@@ -418,7 +421,7 @@ importers:
     dependencies:
       drizzle-orm:
         specifier: 'catalog:'
-        version: 0.45.2(@opentelemetry/api@1.9.1)(postgres@3.4.9)
+        version: 0.45.2(@cloudflare/workers-types@5.20260902.1)(@opentelemetry/api@1.9.1)(postgres@3.4.9)
       effect:
         specifier: 'catalog:'
         version: 3.22.1
@@ -485,6 +488,9 @@ importers:
       '@zap-ts/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      tsx:
+        specifier: 'catalog:'
+        version: 4.23.13
       typescript:
         specifier: 'catalog:'
         version: 7.0.2
@@ -6674,8 +6680,9 @@ snapshots:
       esbuild: 0.25.12
       tsx: 4.23.13
 
-  drizzle-orm@0.45.2(@opentelemetry/api@1.9.1)(postgres@3.4.9):
+  drizzle-orm@0.45.2(@cloudflare/workers-types@5.20260902.1)(@opentelemetry/api@1.9.1)(postgres@3.4.9):
     optionalDependencies:
+      '@cloudflare/workers-types': 5.20260902.1
       '@opentelemetry/api': 1.9.1
       postgres: 3.4.9
 

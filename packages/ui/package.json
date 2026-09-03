@@ -5,6 +5,7 @@
   "exports": {
     "./tokens/*": "./src/tokens/*.stylex.ts",
     "./theme-provider": "./src/theme/theme-provider.tsx",
+    "./global-styles": "./src/theme/global-styles.ts",
     "./components/*": "./src/components/*.tsx"
   },
   "scripts": {

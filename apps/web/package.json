@@ -13,6 +13,7 @@
     "@tanstack/react-router": "catalog:",
     "@tanstack/react-start": "catalog:",
     "@zap-studio/webhooks": "catalog:",
+    "@zap-ts/authorization": "workspace:*",
     "@zap-ts/billing": "workspace:*",
     "@zap-ts/database": "workspace:*",
     "@zap-ts/environment": "workspace:*",

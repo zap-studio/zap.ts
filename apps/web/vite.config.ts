@@ -5,11 +5,11 @@ import viteReact from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  // stylex must come before viteReact for Fast Refresh to keep working.
+  // stylex must be the first plugin for Fast Refresh and CSS aggregation to keep working.
   plugins: [
+    stylex({ useCSSLayers: true, devPersistToDisk: true }),
     cloudflare({ viteEnvironment: { name: "ssr" } }),
     tanstackStart(),
-    stylex({ useCSSLayers: true, devPersistToDisk: true }),
     viteReact(),
   ],
   resolve: { tsconfigPaths: true },

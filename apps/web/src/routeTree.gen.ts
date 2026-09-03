@@ -13,6 +13,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProtectedRouteImport } from './routes/_protected'
 import { Route as ProtectedDashboardRouteImport } from './routes/_protected.dashboard'
 import { Route as WebhooksStripeRouteImport } from './routes/webhooks.stripe'
+import { Route as ProtectedDashboardBillingRouteImport } from './routes/_protected.dashboard.billing'
+import { Route as ApiStripeCheckoutRouteImport } from './routes/api.stripe.checkout'
+import { Route as ApiStripePortalRouteImport } from './routes/api.stripe.portal'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -33,41 +36,83 @@ const WebhooksStripeRoute = WebhooksStripeRouteImport.update({
   path: '/webhooks/stripe',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProtectedDashboardBillingRoute =
+  ProtectedDashboardBillingRouteImport.update({
+    id: '/billing',
+    path: '/billing',
+    getParentRoute: () => ProtectedDashboardRoute,
+  } as any)
+const ApiStripeCheckoutRoute = ApiStripeCheckoutRouteImport.update({
+  id: '/api/stripe/checkout',
+  path: '/api/stripe/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiStripePortalRoute = ApiStripePortalRouteImport.update({
+  id: '/api/stripe/portal',
+  path: '/api/stripe/portal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/dashboard': typeof ProtectedDashboardRoute
+  '/dashboard': typeof ProtectedDashboardRouteWithChildren
   '/webhooks/stripe': typeof WebhooksStripeRoute
+  '/dashboard/billing': typeof ProtectedDashboardBillingRoute
+  '/api/stripe/checkout': typeof ApiStripeCheckoutRoute
+  '/api/stripe/portal': typeof ApiStripePortalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/dashboard': typeof ProtectedDashboardRoute
+  '/dashboard': typeof ProtectedDashboardRouteWithChildren
   '/webhooks/stripe': typeof WebhooksStripeRoute
+  '/dashboard/billing': typeof ProtectedDashboardBillingRoute
+  '/api/stripe/checkout': typeof ApiStripeCheckoutRoute
+  '/api/stripe/portal': typeof ApiStripePortalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_protected': typeof ProtectedRouteWithChildren
-  '/_protected/dashboard': typeof ProtectedDashboardRoute
+  '/_protected/dashboard': typeof ProtectedDashboardRouteWithChildren
   '/webhooks/stripe': typeof WebhooksStripeRoute
+  '/_protected/dashboard/billing': typeof ProtectedDashboardBillingRoute
+  '/api/stripe/checkout': typeof ApiStripeCheckoutRoute
+  '/api/stripe/portal': typeof ApiStripePortalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dashboard' | '/webhooks/stripe'
+  fullPaths:
+    | '/'
+    | '/dashboard'
+    | '/webhooks/stripe'
+    | '/dashboard/billing'
+    | '/api/stripe/checkout'
+    | '/api/stripe/portal'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dashboard' | '/webhooks/stripe'
+  to:
+    | '/'
+    | '/dashboard'
+    | '/webhooks/stripe'
+    | '/dashboard/billing'
+    | '/api/stripe/checkout'
+    | '/api/stripe/portal'
   id:
     | '__root__'
     | '/'
     | '/_protected'
     | '/_protected/dashboard'
     | '/webhooks/stripe'
+    | '/_protected/dashboard/billing'
+    | '/api/stripe/checkout'
+    | '/api/stripe/portal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ProtectedRoute: typeof ProtectedRouteWithChildren
   WebhooksStripeRoute: typeof WebhooksStripeRoute
+  ApiStripeCheckoutRoute: typeof ApiStripeCheckoutRoute
+  ApiStripePortalRoute: typeof ApiStripePortalRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -100,15 +145,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WebhooksStripeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_protected/dashboard/billing': {
+      id: '/_protected/dashboard/billing'
+      path: '/billing'
+      fullPath: '/dashboard/billing'
+      preLoaderRoute: typeof ProtectedDashboardBillingRouteImport
+      parentRoute: typeof ProtectedDashboardRoute
+    }
+    '/api/stripe/checkout': {
+      id: '/api/stripe/checkout'
+      path: '/api/stripe/checkout'
+      fullPath: '/api/stripe/checkout'
+      preLoaderRoute: typeof ApiStripeCheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/stripe/portal': {
+      id: '/api/stripe/portal'
+      path: '/api/stripe/portal'
+      fullPath: '/api/stripe/portal'
+      preLoaderRoute: typeof ApiStripePortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface ProtectedDashboardRouteChildren {
+  ProtectedDashboardBillingRoute: typeof ProtectedDashboardBillingRoute
+}
+
+const ProtectedDashboardRouteChildren: ProtectedDashboardRouteChildren = {
+  ProtectedDashboardBillingRoute: ProtectedDashboardBillingRoute,
+}
+
+const ProtectedDashboardRouteWithChildren =
+  ProtectedDashboardRoute._addFileChildren(ProtectedDashboardRouteChildren)
+
 interface ProtectedRouteChildren {
-  ProtectedDashboardRoute: typeof ProtectedDashboardRoute
+  ProtectedDashboardRoute: typeof ProtectedDashboardRouteWithChildren
 }
 
 const ProtectedRouteChildren: ProtectedRouteChildren = {
-  ProtectedDashboardRoute: ProtectedDashboardRoute,
+  ProtectedDashboardRoute: ProtectedDashboardRouteWithChildren,
 }
 
 const ProtectedRouteWithChildren = ProtectedRoute._addFileChildren(
@@ -119,6 +196,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ProtectedRoute: ProtectedRouteWithChildren,
   WebhooksStripeRoute: WebhooksStripeRoute,
+  ApiStripeCheckoutRoute: ApiStripeCheckoutRoute,
+  ApiStripePortalRoute: ApiStripePortalRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

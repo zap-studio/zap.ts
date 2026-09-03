@@ -3,3 +3,5 @@ declare namespace Cloudflare {
     HYPERDRIVE: Hyperdrive;
   }
 }
+
+declare module "virtual:stylex:runtime" {}

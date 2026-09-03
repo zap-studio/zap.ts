@@ -32,6 +32,7 @@ catalog:
   effect: ^3.22.1
   eslint: ^10.9.1
   lefthook: ^2.1.12
+  lucide-react: ^1.40.0
   oxfmt: ^0.66.0
   oxlint: ^1.81.0
   oxlint-tsgolint: ^7.0.2001

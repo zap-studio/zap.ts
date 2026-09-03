@@ -10,8 +10,10 @@ catalog:
   "@clerk/tanstack-react-start": ^1.5.10
   "@cloudflare/vite-plugin": ^1.54.3
   "@cloudflare/workers-types": ^5.20260902.1
+  "@base-ui-components/react": ^1.0.0-rc.0
   "@oxlint/plugins": ^1.81.0
   "@stylexjs/stylex": ^0.19.0
+  "@stylexjs/unplugin": ^0.19.0
   "@tanstack/react-router": ^1.170.32
   "@tanstack/react-start": ^1.168.49
   "@types/node": ^26.4.1
@@ -23,6 +25,7 @@ catalog:
   "@zap-studio/oxfmt": ^1.0.0
   "@zap-studio/oxlint": ^2.2.1
   "@zap-studio/permit": ^2.0.1
+  "@zap-studio/react-hooks": ^1.1.0
   "@zap-studio/webhooks": ^2.1.0
   drizzle-kit: ^0.31.10
   drizzle-orm: ^0.45.2

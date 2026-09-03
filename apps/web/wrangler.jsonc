@@ -7,6 +7,8 @@
     {
       "binding": "HYPERDRIVE",
       "id": "f926bbaf3a884ba7b0ab90f130bb7bad",
+      // TODO: Swap this with your own local Postgres database connection string.
+      "localConnectionString": "postgresql://trotelalexandre:localdev@localhost:5432/zap_ts",
     },
   ],
 }

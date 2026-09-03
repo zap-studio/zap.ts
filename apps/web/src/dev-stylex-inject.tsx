@@ -12,9 +12,9 @@ const DevStyleXInjectImpl = () => {
   return <link rel="stylesheet" href="/virtual:stylex.css" />;
 };
 
-export const DevStyleXInject = ({ cssHref }: { cssHref: string }) =>
-  import.meta.env.DEV ? (
-    <DevStyleXInjectImpl />
-  ) : (
-    cssHref && <link rel="stylesheet" href={cssHref} />
-  );
+export const DevStyleXInject = ({ cssHref }: { cssHref: string }) => (
+  <>
+    {import.meta.env.DEV && <DevStyleXInjectImpl />}
+    {cssHref && <link rel="stylesheet" href={cssHref} />}
+  </>
+);

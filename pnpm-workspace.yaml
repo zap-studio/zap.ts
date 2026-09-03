@@ -9,11 +9,11 @@ catalog:
   "@clerk/backend": ^3.17.0
   "@clerk/tanstack-react-start": ^1.5.10
   "@cloudflare/vite-plugin": ^1.54.3
-  "@cloudflare/workers-types": ^5.20260901.1
+  "@cloudflare/workers-types": ^5.20260902.1
   "@oxlint/plugins": ^1.81.0
   "@tanstack/react-router": ^1.170.32
   "@tanstack/react-start": ^1.168.49
-  "@types/node": ^26.4.0
+  "@types/node": ^26.4.1
   "@types/react": ^19.2.18
   "@types/react-dom": ^19.2.5
   "@vitejs/plugin-react": ^6.1.1
@@ -22,6 +22,7 @@ catalog:
   "@zap-studio/oxfmt": ^1.0.0
   "@zap-studio/oxlint": ^2.2.1
   "@zap-studio/permit": ^2.0.1
+  "@zap-studio/webhooks": ^2.1.0
   drizzle-kit: ^0.31.10
   drizzle-orm: ^0.45.2
   effect: ^3.22.1
@@ -35,6 +36,7 @@ catalog:
   react: ^19.2.8
   react-dom: ^19.2.8
   resend: ^6.25.0
+  stripe: ^22.6.1
   typescript: ^7.0.2
   vite: ^8.2.2
   vitest: ^4.1.11
@@ -45,3 +47,4 @@ minimumReleaseAgeExclude:
   - "@zap-studio/permit@2.0.1"
   - "@clerk/backend@3.17.0"
   - "@clerk/tanstack-react-start@1.5.10"
+  - "@zap-studio/webhooks@2.1.0"

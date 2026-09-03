@@ -1,1 +1,1 @@
-export { type OrganizationRole, organizationPolicy } from "./organization";
+export { isOrganizationRole, type OrganizationRole, organizationPolicy } from "./organization";

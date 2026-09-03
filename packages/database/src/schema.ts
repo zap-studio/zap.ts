@@ -1,5 +1,52 @@
-// @ts-expect-error -- no tables defined yet, imports kept for the first one
-// oxlint-disable-next-line no-unused-vars, sonarjs/unused-import
-import { pgTable, serial, timestamp } from "drizzle-orm/pg-core";
+import { boolean, integer, pgEnum, pgTable, text, timestamp } from "drizzle-orm/pg-core";
 
-export const schema = {};
+export const billingStrategyEnum = pgEnum("billing_strategy", [
+  "flat-subscription",
+  "tiered-subscription",
+  "per-seat",
+  "usage-based",
+]);
+
+export const billingStatusEnum = pgEnum("billing_status", [
+  "trialing",
+  "active",
+  "past_due",
+  "canceled",
+  "incomplete",
+  "unpaid",
+]);
+
+export const billingCustomers = pgTable("billing_customers", {
+  id: text("id").primaryKey(),
+  organizationId: text("organization_id").notNull().unique(),
+  provider: text("provider").notNull().default("stripe"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
+export const billingSubscriptions = pgTable("billing_subscriptions", {
+  id: text("id").primaryKey(),
+  organizationId: text("organization_id").notNull().unique(),
+  strategy: billingStrategyEnum("strategy").notNull(),
+  planId: text("plan_id").notNull(),
+  status: billingStatusEnum("status").notNull(),
+  quantity: integer("quantity"),
+  currentPeriodEnd: timestamp("current_period_end").notNull(),
+  trialEndsAt: timestamp("trial_ends_at"),
+  cancelAtPeriodEnd: boolean("cancel_at_period_end").notNull().default(false),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+});
+
+export const billingCreditLedger = pgTable("billing_credit_ledger", {
+  id: text("id").primaryKey(),
+  organizationId: text("organization_id").notNull(),
+  amount: integer("amount").notNull(),
+  reason: text("reason").notNull(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
+export const schema = {
+  billingCustomers,
+  billingSubscriptions,
+  billingCreditLedger,
+};

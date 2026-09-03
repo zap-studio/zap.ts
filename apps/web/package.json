@@ -12,6 +12,11 @@
     "@clerk/tanstack-react-start": "catalog:",
     "@tanstack/react-router": "catalog:",
     "@tanstack/react-start": "catalog:",
+    "@zap-studio/webhooks": "catalog:",
+    "@zap-ts/billing": "workspace:*",
+    "@zap-ts/database": "workspace:*",
+    "@zap-ts/environment": "workspace:*",
+    "effect": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"
   },

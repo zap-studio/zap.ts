@@ -9,7 +9,9 @@ import { radius } from "../tokens/radius.stylex";
 const styles = stylex.create({
   root: {
     borderRadius: radius.full,
+    borderStyle: "none",
     alignItems: "center",
+    appearance: "none",
     backgroundColor: {
       "[data-checked]": colors.primary,
       default: colors.secondary,

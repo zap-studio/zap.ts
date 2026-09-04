@@ -46,12 +46,12 @@ const RootComponent = () => (
 
 export const Route = createRootRoute({
   head: () => ({
+    // TODO: Replace placeholder manifest info (name, description, colors, icons) in
+    // apps/web/public/manifest.webmanifest for your app.
     links: [{ rel: "manifest", href: "/manifest.webmanifest" }],
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      // TODO: Replace placeholder manifest info (name, description, colors, icons) in
-      // apps/web/public/manifest.webmanifest for your app.
       { name: "theme-color", content: "#000000" },
       { title: SITE_NAME },
       {

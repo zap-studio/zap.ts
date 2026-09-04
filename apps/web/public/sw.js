@@ -1,4 +1,4 @@
-// TODO: Add cache-busting for hashed JS/CSS assets if you need offline support beyond the precached files below.
+// TODO: This is a starter service worker. Change the cache name and the list of cached files for your app.
 (function () {
   const CACHE_VERSION = "v1";
   const CACHE_NAME = `zap-ts-${CACHE_VERSION}`;

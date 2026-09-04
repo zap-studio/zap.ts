@@ -3,9 +3,6 @@ export const resolveTrialDays = (
   defaultTrialDays?: number,
 ): number | undefined => planTrialDays ?? defaultTrialDays;
 
-export const isTrialActive = (trialEndsAt: Date | null, now: Date = new Date()): boolean =>
-  trialEndsAt !== null && trialEndsAt.getTime() > now.getTime();
-
 export const withTrialDays = <T extends object>(
   opts: T,
   trialDays: number | undefined,

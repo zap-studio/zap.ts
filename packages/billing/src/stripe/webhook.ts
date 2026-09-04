@@ -4,7 +4,7 @@ import { VerificationError, type VerifyFn } from "@zap-studio/webhooks";
 import { env } from "@zap-ts/environment";
 import StripeSdk from "stripe";
 
-import type { BillingStatus, BillingWebhookEvent, BillingWebhookEventType } from "../_shared/types";
+import type { BillingStatus, BillingWebhookEvent, BillingWebhookEventType } from "../core/types";
 
 const decoder = new TextDecoder();
 

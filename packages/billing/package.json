@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/_shared/index.ts",
+    ".": "./src/core/index.ts",
     "./stripe": "./src/stripe/index.ts",
     "./subscription": "./src/subscription.ts"
   },

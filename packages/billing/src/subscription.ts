@@ -1,11 +1,12 @@
-import { Effect, Layer } from "effect";
+import { Effect } from "effect";
 
-import { BillingError } from "./_shared/errors";
-import { BillingProvider, type CheckoutOptions } from "./_shared/provider";
-import { BillingStore } from "./_shared/store";
-import { BillingStrategy, type BillingStrategyService } from "./_shared/strategy";
-import { resolveTrialDays, withTrialDays } from "./_shared/trial";
-import { applySubscriptionEvent } from "./_shared/webhook";
+import type { BillingWebhookEvent } from "./core/types";
+
+import { BillingError } from "./core/errors";
+import { BillingProvider, type CheckoutOptions } from "./core/provider";
+import { BillingStore } from "./core/store";
+import { resolveTrialDays, withTrialDays } from "./core/trial";
+import { applySubscriptionEvent } from "./core/webhook";
 
 export interface SubscriptionPlan {
   id: string;
@@ -18,67 +19,63 @@ export interface SubscriptionConfig {
   defaultTrialDays?: number;
 }
 
+export interface StartCheckoutInput {
+  organizationId: string;
+  customerEmail: string;
+  planId?: string;
+  quantity?: number;
+  successUrl: string;
+  cancelUrl: string;
+}
+
 // Tiered subscription billing: pick a plan by id, optionally with a seat `quantity`
 // on top (per-seat billing is just this plan's price multiplied by quantity in Stripe).
-export const makeSubscriptionStrategy = (
-  config: SubscriptionConfig,
-): Layer.Layer<BillingStrategy, never, BillingProvider | BillingStore> => {
+export const createSubscriptionBilling = (config: SubscriptionConfig) => {
   const findPlan = (planId: string | undefined): SubscriptionPlan | undefined =>
     config.plans.find((candidate) => candidate.id === planId);
 
-  return Layer.effect(
-    BillingStrategy,
+  const startCheckout = (
+    input: StartCheckoutInput,
+  ): Effect.Effect<{ url: string }, BillingError, BillingProvider> =>
     Effect.gen(function* () {
+      const plan = findPlan(input.planId);
+
+      if (!plan) {
+        return yield* Effect.fail(new BillingError({ cause: `unknown plan: ${input.planId}` }));
+      }
+
+      const checkoutOpts: CheckoutOptions = withTrialDays(
+        {
+          organizationId: input.organizationId,
+          customerEmail: input.customerEmail,
+          priceId: plan.priceId,
+          successUrl: input.successUrl,
+          cancelUrl: input.cancelUrl,
+        },
+        resolveTrialDays(plan.trialDays, config.defaultTrialDays),
+      );
+
+      if (input.quantity !== undefined) {
+        checkoutOpts.quantity = input.quantity;
+      }
+
       const provider = yield* BillingProvider;
+      return yield* provider.createCheckoutSession(checkoutOpts);
+    });
+
+  const onWebhookEvent = (
+    event: BillingWebhookEvent,
+  ): Effect.Effect<void, BillingError, BillingStore> =>
+    Effect.gen(function* () {
       const store = yield* BillingStore;
+      yield* applySubscriptionEvent(store, event);
+    });
 
-      const service: BillingStrategyService = {
-        startCheckout: (input) =>
-          Effect.gen(function* () {
-            const plan = findPlan(input.planId);
+  const resolveSubscriptionStatus = (organizationId: string) =>
+    Effect.gen(function* () {
+      const store = yield* BillingStore;
+      return yield* store.resolveSubscriptionStatus(organizationId);
+    });
 
-            if (!plan) {
-              return yield* Effect.fail(
-                new BillingError({ cause: `unknown plan: ${input.planId}` }),
-              );
-            }
-
-            const checkoutOpts: CheckoutOptions = withTrialDays(
-              {
-                organizationId: input.organizationId,
-                customerEmail: input.customerEmail,
-                priceId: plan.priceId,
-                successUrl: input.successUrl,
-                cancelUrl: input.cancelUrl,
-              },
-              resolveTrialDays(plan.trialDays, config.defaultTrialDays),
-            );
-
-            if (input.quantity !== undefined) {
-              checkoutOpts.quantity = input.quantity;
-            }
-
-            return yield* provider.createCheckoutSession(checkoutOpts);
-          }),
-
-        onWebhookEvent: (event) => applySubscriptionEvent(store, event),
-
-        resolveEntitlement: (organizationId) => store.resolveEntitlement(organizationId),
-      };
-
-      return service;
-    }),
-  );
+  return { startCheckout, onWebhookEvent, resolveSubscriptionStatus };
 };
-
-// Call whenever an organization's seat count changes (member joins or leaves) to keep
-// Stripe's subscription quantity, and therefore the invoiced seat count, in sync.
-// Only relevant for plans billed per seat.
-export const syncSeatCount = (
-  subscriptionId: string,
-  quantity: number,
-): Effect.Effect<void, BillingError, BillingProvider> =>
-  Effect.gen(function* () {
-    const provider = yield* BillingProvider;
-    yield* provider.updateSubscriptionQuantity(subscriptionId, quantity);
-  });

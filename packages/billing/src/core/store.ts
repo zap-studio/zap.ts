@@ -3,7 +3,7 @@ import { billingCustomers, billingSubscriptions } from "@zap-ts/database/schema"
 import { eq } from "drizzle-orm";
 import { Context, Effect, Layer } from "effect";
 
-import type { BillingStatus, Entitlement } from "./types";
+import type { BillingStatus, SubscriptionStatus } from "./types";
 
 import { BillingError } from "./errors";
 
@@ -22,7 +22,9 @@ export interface BillingStoreService {
   upsertCustomer: (organizationId: string, customerId: string) => Effect.Effect<void, BillingError>;
   getCustomerId: (organizationId: string) => Effect.Effect<string | null, BillingError>;
   upsertSubscription: (input: UpsertSubscriptionInput) => Effect.Effect<void, BillingError>;
-  resolveEntitlement: (organizationId: string) => Effect.Effect<Entitlement, BillingError>;
+  resolveSubscriptionStatus: (
+    organizationId: string,
+  ) => Effect.Effect<SubscriptionStatus, BillingError>;
 }
 
 export class BillingStore extends Context.Tag("BillingStore")<
@@ -71,9 +73,9 @@ export const BillingStoreLive: Layer.Layer<BillingStore, never, Database> = Laye
         catch: (cause) => new BillingError({ cause }),
       }).pipe(Effect.asVoid);
 
-    const resolveEntitlement = (organizationId: string) =>
+    const resolveSubscriptionStatus = (organizationId: string) =>
       Effect.tryPromise({
-        try: async (): Promise<Entitlement> => {
+        try: async (): Promise<SubscriptionStatus> => {
           const rows = await db
             .select()
             .from(billingSubscriptions)
@@ -106,7 +108,7 @@ export const BillingStoreLive: Layer.Layer<BillingStore, never, Database> = Laye
       upsertCustomer,
       getCustomerId,
       upsertSubscription,
-      resolveEntitlement,
+      resolveSubscriptionStatus,
     };
   }),
 );

@@ -19,7 +19,6 @@ export interface BillingProviderService {
     organizationId: string,
     returnUrl: string,
   ) => Effect.Effect<{ url: string }, BillingError>;
-  cancelSubscription: (subscriptionId: string) => Effect.Effect<void, BillingError>;
   updateSubscriptionQuantity: (
     subscriptionId: string,
     quantity: number,

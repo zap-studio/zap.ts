@@ -2,13 +2,13 @@ import type Stripe from "stripe";
 
 import { Effect, Layer } from "effect";
 
-import { BillingError } from "../_shared/errors";
+import { BillingError } from "../core/errors";
 import {
   BillingProvider,
   type BillingProviderService,
   type CheckoutOptions,
-} from "../_shared/provider";
-import { BillingStore } from "../_shared/store";
+} from "../core/provider";
+import { BillingStore } from "../core/store";
 import { StripeClient } from "./client";
 
 export const StripeBillingProviderLive: Layer.Layer<
@@ -92,12 +92,6 @@ export const StripeBillingProviderLive: Layer.Layer<
         return { url: session.url };
       });
 
-    const cancelSubscription: BillingProviderService["cancelSubscription"] = (subscriptionId) =>
-      Effect.tryPromise({
-        try: () => stripe.subscriptions.cancel(subscriptionId),
-        catch: (cause) => new BillingError({ cause }),
-      }).pipe(Effect.asVoid);
-
     const updateSubscriptionQuantity: BillingProviderService["updateSubscriptionQuantity"] = (
       subscriptionId,
       quantity,
@@ -125,7 +119,6 @@ export const StripeBillingProviderLive: Layer.Layer<
       createCustomer,
       createCheckoutSession,
       createPortalSession,
-      cancelSubscription,
       updateSubscriptionQuantity,
     };
 

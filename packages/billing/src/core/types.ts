@@ -6,13 +6,7 @@ export type BillingStatus =
   | "incomplete"
   | "unpaid";
 
-export interface BillingCustomer {
-  organizationId: string;
-  provider: "stripe";
-  providerCustomerId: string;
-}
-
-export interface Entitlement {
+export interface SubscriptionStatus {
   organizationId: string;
   active: boolean;
   planId: string | null;

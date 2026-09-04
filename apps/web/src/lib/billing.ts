@@ -1,12 +1,12 @@
-import { BillingProvider, BillingStore, BillingStoreLive, BillingStrategy } from "@zap-ts/billing";
+import { BillingProvider, BillingStore, BillingStoreLive } from "@zap-ts/billing";
 import { StripeBillingProviderLive, StripeClientLive } from "@zap-ts/billing/stripe";
-import { makeSubscriptionStrategy } from "@zap-ts/billing/subscription";
+import { createSubscriptionBilling } from "@zap-ts/billing/subscription";
 import { DatabaseLive } from "@zap-ts/database";
 import { Effect, Layer, ManagedRuntime } from "effect";
 
 // TODO: Replace these placeholder plan ids and Stripe price ids with your own. Pass a
 // `quantity` in `startCheckout` for a plan you want billed per seat.
-const strategy = makeSubscriptionStrategy({
+export const billing = createSubscriptionBilling({
   plans: [
     { id: "starter", priceId: "price_replace_me_starter" },
     { id: "team", priceId: "price_replace_me_team" },
@@ -21,14 +21,13 @@ const buildBillingLayer = (connectionString: string) => {
     Layer.provide(StripeClientLive),
     Layer.provide(storeLayer),
   );
-  const strategyLayer = strategy.pipe(Layer.provide(providerLayer), Layer.provide(storeLayer));
 
-  return Layer.mergeAll(providerLayer, storeLayer, strategyLayer);
+  return Layer.mergeAll(providerLayer, storeLayer);
 };
 
 export const runBilling = async <A, E>(
   connectionString: string,
-  effect: Effect.Effect<A, E, BillingProvider | BillingStore | BillingStrategy>,
+  effect: Effect.Effect<A, E, BillingProvider | BillingStore>,
 ): Promise<A> => {
   const runtime = ManagedRuntime.make(buildBillingLayer(connectionString));
 

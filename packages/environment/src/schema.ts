@@ -13,6 +13,7 @@ export const schema = {
   },
   client: {
     VITE_CLERK_PUBLISHABLE_KEY: z.string().startsWith("pk_"),
+    VITE_SITE_URL: z.url().optional(),
   },
   clientPrefix: "VITE_",
 } as const;

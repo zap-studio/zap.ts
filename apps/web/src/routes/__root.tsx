@@ -16,6 +16,12 @@ const NO_FLASH_THEME_SCRIPT = `(function () {
   if (isDark) document.documentElement.classList.add(...${JSON.stringify(darkClassNames)});
 })();`;
 
+const REGISTER_SW_SCRIPT = `if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/sw.js");
+  });
+}`;
+
 const RootComponent = () => (
   <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
@@ -23,6 +29,7 @@ const RootComponent = () => (
         <HeadContent />
         <DevStyleXInject cssHref={appCss} />
         <ScriptOnce>{NO_FLASH_THEME_SCRIPT}</ScriptOnce>
+        <ScriptOnce>{REGISTER_SW_SCRIPT}</ScriptOnce>
       </head>
       <body {...bodyProps}>
         <ThemeProvider>
@@ -39,9 +46,13 @@ const RootComponent = () => (
 
 export const Route = createRootRoute({
   head: () => ({
+    links: [{ rel: "manifest", href: "/manifest.webmanifest" }],
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      // TODO: Replace placeholder manifest info (name, description, colors, icons) in
+      // apps/web/public/manifest.webmanifest for your app.
+      { name: "theme-color", content: "#000000" },
       { title: SITE_NAME },
       {
         "script:ld+json": {

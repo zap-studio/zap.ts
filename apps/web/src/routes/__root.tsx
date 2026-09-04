@@ -16,12 +16,6 @@ const NO_FLASH_THEME_SCRIPT = `(function () {
   if (isDark) document.documentElement.classList.add(...${JSON.stringify(darkClassNames)});
 })();`;
 
-const REGISTER_SW_SCRIPT = `if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function () {
-    navigator.serviceWorker.register("/sw.js");
-  });
-}`;
-
 const RootComponent = () => (
   <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
@@ -29,7 +23,6 @@ const RootComponent = () => (
         <HeadContent />
         <DevStyleXInject cssHref={appCss} />
         <ScriptOnce>{NO_FLASH_THEME_SCRIPT}</ScriptOnce>
-        <ScriptOnce>{REGISTER_SW_SCRIPT}</ScriptOnce>
       </head>
       <body {...bodyProps}>
         <ThemeProvider>

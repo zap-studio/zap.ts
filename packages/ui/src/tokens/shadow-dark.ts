@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
 
-import { shadow } from "../tokens/shadow.stylex";
+import { shadow } from "./shadow.stylex";
 
 export const shadowDark = stylex.createTheme(shadow, {
   sm: "0 1px 2px rgba(0, 0, 0, 0.3)",

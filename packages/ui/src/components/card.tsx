@@ -48,6 +48,8 @@ const styles = stylex.create({
 });
 
 type DivProps = Omit<ComponentProps<"div">, "style"> & { style?: stylex.StyleXStyles };
+type H3Props = Omit<ComponentProps<"h3">, "style"> & { style?: stylex.StyleXStyles };
+type PProps = Omit<ComponentProps<"p">, "style"> & { style?: stylex.StyleXStyles };
 
 const Root = ({ style, ...props }: DivProps) => (
   <div {...stylex.props(styles.root, style)} {...props} />
@@ -55,12 +57,12 @@ const Root = ({ style, ...props }: DivProps) => (
 const Header = ({ style, ...props }: DivProps) => (
   <div {...stylex.props(styles.header, style)} {...props} />
 );
-const Title = ({ style, children, ...props }: DivProps) => (
+const Title = ({ style, children, ...props }: H3Props) => (
   <h3 {...stylex.props(styles.title, style)} {...props}>
     {children}
   </h3>
 );
-const Description = ({ style, ...props }: DivProps) => (
+const Description = ({ style, ...props }: PProps) => (
   <p {...stylex.props(styles.description, style)} {...props} />
 );
 const Content = ({ style, ...props }: DivProps) => (

@@ -9,9 +9,7 @@ const DevStyleXInjectImpl = () => {
     const load = async () => {
       try {
         await import("virtual:stylex:runtime");
-      } catch {
-        // dev-only fire-and-forget import; failures are non-fatal
-      }
+      } catch {}
     };
 
     void load();

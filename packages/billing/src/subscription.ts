@@ -28,8 +28,6 @@ export interface StartCheckoutInput {
   cancelUrl: string;
 }
 
-// Tiered subscription billing: pick a plan by id, optionally with a seat `quantity`
-// on top (per-seat billing is just this plan's price multiplied by quantity in Stripe).
 export const createSubscriptionBilling = (config: SubscriptionConfig) => {
   const findPlan = (planId: string | undefined): SubscriptionPlan | undefined =>
     config.plans.find((candidate) => candidate.id === planId);

@@ -13,6 +13,7 @@
     "@stylexjs/stylex": "catalog:",
     "@tanstack/react-router": "catalog:",
     "@tanstack/react-start": "catalog:",
+    "@zap-studio/react-hooks": "catalog:",
     "@zap-studio/webhooks": "catalog:",
     "@zap-ts/authorization": "workspace:*",
     "@zap-ts/billing": "workspace:*",

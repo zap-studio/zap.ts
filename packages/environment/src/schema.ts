@@ -6,7 +6,6 @@ export const schema = {
   server: {
     CLERK_SECRET_KEY: z.string().startsWith("sk_"),
     RESEND_API_KEY: z.string().startsWith("re_"),
-    SKIP_CLERK_MIDDLEWARE: z.stringbool().optional(),
     STRIPE_SECRET_KEY: z.string().startsWith("sk_"),
     STRIPE_WEBHOOK_SECRET: z.string().startsWith("whsec_"),
   },

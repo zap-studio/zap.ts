@@ -37,22 +37,6 @@ export default defineConfig({
         ],
       },
     }),
-    {
-      name: "debug-env",
-      closeBundle: {
-        order: "post",
-        handler() {
-          console.log(
-            "DEBUG closeBundle env:",
-            this.environment?.name,
-            "ssr:",
-            this.environment?.config?.build?.ssr,
-            "outDir:",
-            this.environment?.config?.build?.outDir,
-          );
-        },
-      },
-    },
   ],
   resolve: { tsconfigPaths: true },
   server: { port: 3000 },

@@ -49,3 +49,5 @@ catalog:
   vitest: ^5.0.0
   wrangler: ^4.128.0
   zod: ^4.5.4
+patchedDependencies:
+  vite-plugin-pwa@1.3.0: patches/vite-plugin-pwa@1.3.0.patch

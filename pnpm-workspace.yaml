@@ -18,10 +18,10 @@ catalog:
   "@tanstack/react-start": ^1.168.49
   "@types/node": ^26.4.1
   "@types/react": ^19.2.18
-  "@types/react-dom": ^19.2.5
+  "@types/react-dom": ^19.2.7
   "@vitejs/plugin-react": ^6.1.1
-  "@vitest/browser-playwright": ^4.1.11
-  "@vitest/coverage-v8": ^4.1.11
+  "@vitest/browser-playwright": ^5.0.0
+  "@vitest/coverage-v8": ^5.0.0
   "@zap-studio/oxfmt": ^1.0.0
   "@zap-studio/oxlint": ^2.2.1
   "@zap-studio/permit": ^2.0.1
@@ -45,7 +45,7 @@ catalog:
   tsx: ^4.23.13
   typescript: ^7.0.2
   vite: ^8.2.2
-  vitest: ^4.1.11
+  vitest: ^5.0.0
   wrangler: ^4.128.0
   zod: ^4.5.4
 minimumReleaseAgeExclude:

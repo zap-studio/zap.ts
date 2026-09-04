@@ -47,7 +47,10 @@ const styles = stylex.create({
       "[data-checked]": "translateX(18px)",
       default: "translateX(2px)",
     },
-    transitionDuration: "120ms",
+    transitionDuration: {
+      default: "120ms",
+      "@media (prefers-reduced-motion: reduce)": "0.01ms",
+    },
     transitionProperty: "transform",
     transitionTimingFunction: "ease-out",
     height: 16,

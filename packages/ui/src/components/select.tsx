@@ -67,7 +67,11 @@ const styles = stylex.create({
       "[data-starting-style]": "scale(0.96)",
       default: "scale(1)",
     },
-    transitionDuration: "120ms",
+    transformOrigin: "var(--transform-origin)",
+    transitionDuration: {
+      default: "120ms, 120ms",
+      "@media (prefers-reduced-motion: reduce)": "120ms, 0.01ms",
+    },
     transitionProperty: "opacity, transform",
     transitionTimingFunction: "ease-out",
     maxHeight: "var(--available-height)",

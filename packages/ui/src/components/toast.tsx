@@ -48,7 +48,10 @@ const styles = stylex.create({
       "[data-starting-style]": "translateX(100%)",
       default: "translateX(0)",
     },
-    transitionDuration: "200ms",
+    transitionDuration: {
+      default: "200ms, 200ms",
+      "@media (prefers-reduced-motion: reduce)": "200ms, 0.01ms",
+    },
     transitionProperty: "opacity, transform",
     transitionTimingFunction: "ease-out",
     borderLeftWidth: {
@@ -75,7 +78,10 @@ const styles = stylex.create({
     appearance: "none",
     backgroundColor: {
       default: "transparent",
-      ":hover": colors.accent,
+      ":hover": {
+        default: "transparent",
+        "@media (hover: hover) and (pointer: fine)": colors.accent,
+      },
     },
     color: colors.mutedFg,
     cursor: "pointer",

@@ -46,7 +46,10 @@ const styles = stylex.create({
       default: "scale(1)",
       ":active": "scale(0.97)",
     },
-    transitionDuration: "120ms",
+    transitionDuration: {
+      default: "120ms, 120ms, 120ms, 120ms",
+      "@media (prefers-reduced-motion: reduce)": "120ms, 120ms, 120ms, 0.01ms",
+    },
     transitionProperty: "background-color, border-color, color, transform",
     transitionTimingFunction: "ease-out",
   },
@@ -70,14 +73,20 @@ const styles = stylex.create({
     borderColor: colors.border,
     backgroundColor: {
       default: "transparent",
-      ":hover": colors.accent,
+      ":hover": {
+        default: "transparent",
+        "@media (hover: hover) and (pointer: fine)": colors.accent,
+      },
     },
     color: colors.fg,
   },
   ghost: {
     backgroundColor: {
       default: "transparent",
-      ":hover": colors.accent,
+      ":hover": {
+        default: "transparent",
+        "@media (hover: hover) and (pointer: fine)": colors.accent,
+      },
     },
     color: colors.fg,
   },

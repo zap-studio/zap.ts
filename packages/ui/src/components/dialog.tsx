@@ -47,7 +47,10 @@ const styles = stylex.create({
       "[data-starting-style]": "translate(-50%, -50%) scale(0.96)",
       default: "translate(-50%, -50%) scale(1)",
     },
-    transitionDuration: "150ms",
+    transitionDuration: {
+      default: "150ms, 150ms",
+      "@media (prefers-reduced-motion: reduce)": "150ms, 0.01ms",
+    },
     transitionProperty: "opacity, transform",
     transitionTimingFunction: "ease-out",
     left: "50%",

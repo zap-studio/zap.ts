@@ -37,7 +37,10 @@ const styles = stylex.create({
     appearance: "none",
     backgroundColor: {
       default: "transparent",
-      ":hover": colors.accent,
+      ":hover": {
+        default: "transparent",
+        "@media (hover: hover) and (pointer: fine)": colors.accent,
+      },
     },
     color: colors.fg,
     cursor: {

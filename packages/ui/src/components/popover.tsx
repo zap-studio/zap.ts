@@ -34,7 +34,10 @@ const styles = stylex.create({
       default: "scale(1)",
     },
     transformOrigin: "var(--transform-origin)",
-    transitionDuration: "150ms",
+    transitionDuration: {
+      default: "150ms, 150ms",
+      "@media (prefers-reduced-motion: reduce)": "150ms, 0.01ms",
+    },
     transitionProperty: "opacity, transform",
     transitionTimingFunction: "ease-out",
     minWidth: 200,

@@ -20,7 +20,10 @@ const styles = stylex.create({
     backgroundColor: {
       "[data-pressed]": colors.accent,
       default: "transparent",
-      ":hover": colors.accent,
+      ":hover": {
+        default: "transparent",
+        "@media (hover: hover) and (pointer: fine)": colors.accent,
+      },
     },
     color: colors.fg,
     cursor: {

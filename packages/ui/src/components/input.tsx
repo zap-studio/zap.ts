@@ -15,7 +15,6 @@ const styles = stylex.create({
       "[data-invalid]": colors.destructive,
       default: colors.input,
       ":focus-visible": colors.ring,
-      ":hover": colors.input,
     },
     borderRadius: radius.md,
     borderStyle: "solid",

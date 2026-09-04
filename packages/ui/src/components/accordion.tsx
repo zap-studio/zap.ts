@@ -48,14 +48,21 @@ const styles = stylex.create({
       "[data-panel-open]": "rotate(180deg)",
       default: "rotate(0deg)",
     },
-    transitionDuration: "150ms",
+    transitionDuration: {
+      default: "150ms",
+      "@media (prefers-reduced-motion: reduce)": "0.01ms",
+    },
     transitionProperty: "transform",
+    transitionTimingFunction: "ease-out",
   },
   panel: {
     overflow: "hidden",
     color: colors.mutedFg,
     fontSize: fontSize.sm,
-    transitionDuration: "150ms",
+    transitionDuration: {
+      default: "150ms",
+      "@media (prefers-reduced-motion: reduce)": "0.01ms",
+    },
     transitionProperty: "height",
     transitionTimingFunction: "ease-out",
     height: {

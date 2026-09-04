@@ -44,7 +44,10 @@ const styles = stylex.create({
     borderRadius: radius.full,
     backgroundColor: colors.primary,
     position: "absolute",
-    transitionDuration: "150ms",
+    transitionDuration: {
+      default: "150ms",
+      "@media (prefers-reduced-motion: reduce)": "0.01ms",
+    },
     transitionProperty: "left, width",
     transitionTimingFunction: "ease-out",
     bottom: -1,

@@ -4,11 +4,11 @@ import { Toast } from "@zap-ts/ui/components/toast";
 import { bodyProps } from "@zap-ts/ui/global-styles";
 import { darkClassNames, ThemeProvider } from "@zap-ts/ui/theme-provider";
 
+import { StylexDevRuntime } from "../components/stylex-dev-runtime";
 import { Toaster } from "../components/toaster";
 import { SITE_NAME, SITE_URL } from "../lib/site";
 import { toastManager } from "../lib/toast";
 import appCss from "../styles/app.css?url";
-import { StylexDevRuntime } from "../stylex-dev-runtime";
 
 const NO_FLASH_THEME_SCRIPT = `(function () {
   var stored = localStorage.getItem("zap-studio-theme");

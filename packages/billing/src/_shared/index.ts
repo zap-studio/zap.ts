@@ -1,4 +1,4 @@
-export { BillingError, EntitlementError } from "./errors";
+export { BillingError } from "./errors";
 export type { BillingProviderService, CheckoutOptions } from "./provider";
 export { BillingProvider } from "./provider";
 export type { BillingStoreService, UpsertSubscriptionInput } from "./store";
@@ -9,7 +9,6 @@ export { isTrialActive, resolveTrialDays } from "./trial";
 export type {
   BillingCustomer,
   BillingStatus,
-  BillingStrategyKind,
   BillingWebhookEvent,
   BillingWebhookEventType,
   Entitlement,

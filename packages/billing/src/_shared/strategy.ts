@@ -1,7 +1,7 @@
 import { Context, type Effect } from "effect";
 
 import type { BillingError } from "./errors";
-import type { BillingStrategyKind, BillingWebhookEvent, Entitlement } from "./types";
+import type { BillingWebhookEvent, Entitlement } from "./types";
 
 export interface StartCheckoutInput {
   organizationId: string;
@@ -13,7 +13,6 @@ export interface StartCheckoutInput {
 }
 
 export interface BillingStrategyService {
-  readonly kind: BillingStrategyKind;
   startCheckout: (input: StartCheckoutInput) => Effect.Effect<{ url: string }, BillingError>;
   onWebhookEvent: (event: BillingWebhookEvent) => Effect.Effect<void, BillingError>;
   resolveEntitlement: (organizationId: string) => Effect.Effect<Entitlement, BillingError>;

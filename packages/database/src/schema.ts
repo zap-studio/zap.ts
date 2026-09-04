@@ -1,12 +1,5 @@
 import { boolean, integer, pgEnum, pgTable, text, timestamp } from "drizzle-orm/pg-core";
 
-export const billingStrategyEnum = pgEnum("billing_strategy", [
-  "flat-subscription",
-  "tiered-subscription",
-  "per-seat",
-  "usage-based",
-]);
-
 export const billingStatusEnum = pgEnum("billing_status", [
   "trialing",
   "active",
@@ -26,7 +19,6 @@ export const billingCustomers = pgTable("billing_customers", {
 export const billingSubscriptions = pgTable("billing_subscriptions", {
   id: text("id").primaryKey(),
   organizationId: text("organization_id").notNull().unique(),
-  strategy: billingStrategyEnum("strategy").notNull(),
   planId: text("plan_id").notNull(),
   status: billingStatusEnum("status").notNull(),
   quantity: integer("quantity"),
@@ -37,16 +29,7 @@ export const billingSubscriptions = pgTable("billing_subscriptions", {
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
 
-export const billingCreditLedger = pgTable("billing_credit_ledger", {
-  id: text("id").primaryKey(),
-  organizationId: text("organization_id").notNull(),
-  amount: integer("amount").notNull(),
-  reason: text("reason").notNull(),
-  createdAt: timestamp("created_at").notNull().defaultNow(),
-});
-
 export const schema = {
   billingCustomers,
   billingSubscriptions,
-  billingCreditLedger,
 };

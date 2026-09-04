@@ -5,10 +5,7 @@
   "exports": {
     ".": "./src/_shared/index.ts",
     "./stripe": "./src/stripe/index.ts",
-    "./strategies/flat-subscription": "./src/strategies/flat-subscription/index.ts",
-    "./strategies/tiered-subscription": "./src/strategies/tiered-subscription/index.ts",
-    "./strategies/per-seat": "./src/strategies/per-seat/index.ts",
-    "./strategies/usage-based": "./src/strategies/usage-based/index.ts"
+    "./subscription": "./src/subscription.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"

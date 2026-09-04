@@ -1,0 +1,29 @@
+{
+  "name": "@zap-ts/ui",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tokens/*": "./src/tokens/*.stylex.ts",
+    "./theme-provider": "./src/theme/theme-provider.tsx",
+    "./global-styles": "./src/theme/global-styles.ts",
+    "./components/*": "./src/components/*.tsx"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@base-ui/react": "catalog:",
+    "@stylexjs/stylex": "catalog:",
+    "@zap-studio/react-hooks": "catalog:",
+    "lucide-react": "catalog:"
+  },
+  "devDependencies": {
+    "@types/react": "catalog:",
+    "@zap-ts/tsconfig": "workspace:*",
+    "react": "catalog:",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:"
+  }
+}

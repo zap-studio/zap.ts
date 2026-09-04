@@ -1,14 +1,35 @@
 import { ClerkProvider } from "@clerk/tanstack-react-start";
-import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
+import { createRootRoute, HeadContent, Outlet, ScriptOnce, Scripts } from "@tanstack/react-router";
+import { Toast } from "@zap-ts/ui/components/toast";
+import { bodyProps } from "@zap-ts/ui/global-styles";
+import { darkClassNames, ThemeProvider } from "@zap-ts/ui/theme-provider";
+
+import { Toaster } from "../components/toaster";
+import { DevStyleXInject } from "../dev-stylex-inject";
+import { toastManager } from "../lib/toast";
+import appCss from "../styles/app.css?url";
+
+const NO_FLASH_THEME_SCRIPT = `(function () {
+  var stored = localStorage.getItem("zap-studio-theme");
+  var isDark = stored === '"dark"' || (stored !== '"light"' && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  if (isDark) document.documentElement.classList.add(...${JSON.stringify(darkClassNames)});
+})();`;
 
 const RootComponent = () => (
   <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <DevStyleXInject cssHref={appCss} />
+        <ScriptOnce>{NO_FLASH_THEME_SCRIPT}</ScriptOnce>
       </head>
-      <body>
-        <Outlet />
+      <body {...bodyProps}>
+        <ThemeProvider>
+          <Toast.Provider toastManager={toastManager}>
+            <Outlet />
+            <Toaster />
+          </Toast.Provider>
+        </ThemeProvider>
         <Scripts />
       </body>
     </html>

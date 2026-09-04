@@ -6,6 +6,7 @@ dist/
 build/
 .output/
 .vite/
+.tanstack/
 *.tsbuildinfo
 
 # Cloudflare / Wrangler

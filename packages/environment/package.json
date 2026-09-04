@@ -6,6 +6,7 @@
     ".": "./src/index.ts"
   },
   "scripts": {
+    "env:example": "tsx scripts/generate-env-example.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
   "devDependencies": {
     "@types/node": "catalog:",
     "@zap-ts/tsconfig": "workspace:*",
+    "tsx": "catalog:",
     "typescript": "catalog:"
   }
 }

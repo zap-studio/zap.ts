@@ -1,7 +1,6 @@
 {
-  "extends": "@zap-ts/tsconfig/base.json",
+  "extends": "@zap-ts/tsconfig/react.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
     "types": ["vite/client", "@cloudflare/workers-types"]
   },
   "include": ["src"]

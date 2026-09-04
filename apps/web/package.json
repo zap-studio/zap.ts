@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/tanstack-react-start": "catalog:",
+    "@stylexjs/stylex": "catalog:",
     "@tanstack/react-router": "catalog:",
     "@tanstack/react-start": "catalog:",
     "@zap-studio/webhooks": "catalog:",
@@ -17,6 +18,7 @@
     "@zap-ts/billing": "workspace:*",
     "@zap-ts/database": "workspace:*",
     "@zap-ts/environment": "workspace:*",
+    "@zap-ts/ui": "workspace:*",
     "effect": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"
@@ -24,6 +26,7 @@
   "devDependencies": {
     "@cloudflare/vite-plugin": "catalog:",
     "@cloudflare/workers-types": "catalog:",
+    "@stylexjs/unplugin": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",

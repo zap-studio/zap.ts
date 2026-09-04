@@ -9,6 +9,7 @@
     "db:studio": "pnpm --filter @zap-ts/database run studio",
     "deploy": "pnpm --filter web run deploy",
     "dev": "pnpm --filter web run dev",
+    "env:example": "pnpm --filter @zap-ts/environment run env:example",
     "format": "pnpm exec oxfmt",
     "format:check": "pnpm exec oxfmt --check",
     "lint": "pnpm exec oxlint --type-aware --type-check",
@@ -32,5 +33,5 @@
     "playwright": "catalog:",
     "vitest": "catalog:"
   },
-  "packageManager": "pnpm@12.2.1+sha512.f55ca68aacb9eb5ab69c66f828a98af89a32286703aef1f8da131ca7eab4d677f34bfa85e186467a919c0799df8b6f4aa240f7dc2919b33b3273190104162616"
+  "packageManager": "pnpm@12.3.2+sha512.82f9035314646eea981adec85c711a21ab5f3b05659b3f9ce9d270cbb93e8a0f614da17922bae097902e2b860ee8eb6d5c1a7e89299a16877c0c243f36b8e15b"
 }

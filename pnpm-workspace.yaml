@@ -49,6 +49,3 @@ catalog:
   vitest: ^5.0.0
   wrangler: ^4.128.0
   zod: ^4.5.4
-minimumReleaseAgeExclude:
-  - "@zap-studio/webhooks@2.1.0"
-  - lucide-react@1.40.0

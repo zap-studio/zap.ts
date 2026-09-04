@@ -13,6 +13,7 @@ export default defineConfig({
     exclude: configDefaults.exclude,
     globals: true,
     outputFile: isCI ? { junit: "./coverage/junit.xml" } : undefined,
+    passWithNoTests: true,
     projects: [
       {
         extends: true,

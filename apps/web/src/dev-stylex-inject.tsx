@@ -6,8 +6,15 @@ const DevStyleXInjectImpl = () => {
       return;
     }
 
-    // oxlint-disable-next-line sonarjs/void-use -- dev-only fire-and-forget import; void is the only non-.then/.catch way to satisfy no-floating-promises
-    void import("virtual:stylex:runtime");
+    const load = async () => {
+      try {
+        await import("virtual:stylex:runtime");
+      } catch {
+        // dev-only fire-and-forget import; failures are non-fatal
+      }
+    };
+
+    void load();
   }, []);
   return <link rel="stylesheet" href="/virtual:stylex.css" />;
 };

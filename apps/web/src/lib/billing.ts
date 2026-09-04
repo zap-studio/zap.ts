@@ -14,7 +14,7 @@ const strategy = makeSubscriptionStrategy({
   defaultTrialDays: 14,
 });
 
-export const buildBillingLayer = (connectionString: string) => {
+const buildBillingLayer = (connectionString: string) => {
   const databaseLayer = DatabaseLive(connectionString);
   const storeLayer = BillingStoreLive.pipe(Layer.provide(databaseLayer));
   const providerLayer = StripeBillingProviderLive.pipe(

@@ -6,8 +6,18 @@ import { darkClassNames, ThemeProvider } from "@zap-ts/ui/theme-provider";
 
 import { Toaster } from "../components/toaster";
 import { DevStyleXInject } from "../dev-stylex-inject";
+import { SITE_NAME, SITE_URL } from "../lib/site";
 import { toastManager } from "../lib/toast";
 import appCss from "../styles/app.css?url";
+
+const ORGANIZATION_JSON_LD = {
+  __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+  }),
+};
 
 const NO_FLASH_THEME_SCRIPT = `(function () {
   var stored = localStorage.getItem("zap-studio-theme");
@@ -22,6 +32,7 @@ const RootComponent = () => (
         <HeadContent />
         <DevStyleXInject cssHref={appCss} />
         <ScriptOnce>{NO_FLASH_THEME_SCRIPT}</ScriptOnce>
+        <script type="application/ld+json" dangerouslySetInnerHTML={ORGANIZATION_JSON_LD} />
       </head>
       <body {...bodyProps}>
         <ThemeProvider>

@@ -4,8 +4,8 @@ import { Toast } from "@zap-ts/ui/components/toast";
 import { bodyProps } from "@zap-ts/ui/global-styles";
 import { darkClassNames, ThemeProvider } from "@zap-ts/ui/theme-provider";
 
+import { StylexDevRuntime } from "../components/stylex-dev-runtime";
 import { Toaster } from "../components/toaster";
-import { DevStyleXInject } from "../dev-stylex-inject";
 import { SITE_NAME, SITE_URL } from "../lib/site";
 import { toastManager } from "../lib/toast";
 import appCss from "../styles/app.css?url";
@@ -21,7 +21,8 @@ const RootComponent = () => (
     <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
-        <DevStyleXInject cssHref={appCss} />
+        <link rel="stylesheet" href={appCss} />
+        <StylexDevRuntime />
         <ScriptOnce>{NO_FLASH_THEME_SCRIPT}</ScriptOnce>
       </head>
       <body {...bodyProps}>
@@ -39,9 +40,13 @@ const RootComponent = () => (
 
 export const Route = createRootRoute({
   head: () => ({
+    // TODO: Replace placeholder manifest info (name, description, colors, icons) in
+    // apps/web/public/manifest.webmanifest for your app.
+    links: [{ rel: "manifest", href: "/manifest.webmanifest" }],
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "theme-color", content: "#000000" },
       { title: SITE_NAME },
       {
         "script:ld+json": {

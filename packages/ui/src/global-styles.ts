@@ -1,7 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
 
-import { colors } from "../tokens/colors.stylex";
-import { fontFamily } from "../tokens/font-family.stylex";
+import { colors } from "./tokens/colors.stylex";
+import { fontFamily } from "./tokens/font-family.stylex";
 
 const styles = stylex.create({
   body: {

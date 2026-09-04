@@ -1,12 +1,12 @@
 import { auth, clerkClient } from "@clerk/tanstack-react-start/server";
 import { createFileRoute } from "@tanstack/react-router";
 import { isOrganizationRole, organizationPolicy } from "@zap-ts/authorization";
-import { BillingProvider, BillingStore, BillingStrategy } from "@zap-ts/billing";
+import { BillingProvider, BillingStore } from "@zap-ts/billing";
 // oxlint-disable-next-line sonarjs/no-implicit-dependencies -- Workers runtime built-in, not an npm package
 import { env as cloudflareEnv } from "cloudflare:workers";
 import { Effect } from "effect";
 
-import { runBilling } from "../lib/billing";
+import { billing, runBilling } from "../lib/billing";
 
 export const Route = createFileRoute("/api/stripe/checkout")({
   server: {
@@ -36,6 +36,12 @@ export const Route = createFileRoute("/api/stripe/checkout")({
         }
 
         const origin = new URL(request.url).origin;
+        const formData = await request.formData();
+        const planId = formData.get("planId");
+
+        if (typeof planId !== "string") {
+          return new Response("Missing planId", { status: 400 });
+        }
 
         try {
           const session = await runBilling(
@@ -43,16 +49,16 @@ export const Route = createFileRoute("/api/stripe/checkout")({
             Effect.gen(function* () {
               const store = yield* BillingStore;
               const provider = yield* BillingProvider;
-              const strategy = yield* BillingStrategy;
 
               const existingCustomerId = yield* store.getCustomerId(orgId);
               if (!existingCustomerId) {
                 yield* provider.createCustomer(orgId, email);
               }
 
-              return yield* strategy.startCheckout({
+              return yield* billing.startCheckout({
                 organizationId: orgId,
                 customerEmail: email,
+                planId,
                 successUrl: `${origin}/dashboard/billing?checkout=success`,
                 cancelUrl: `${origin}/dashboard/billing?checkout=cancelled`,
               });

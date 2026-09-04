@@ -4,7 +4,7 @@ import { VerificationError, type VerifyFn } from "@zap-studio/webhooks";
 import { env } from "@zap-ts/environment";
 import StripeSdk from "stripe";
 
-import type { BillingStatus, BillingWebhookEvent, BillingWebhookEventType } from "../_shared/types";
+import type { BillingStatus, BillingWebhookEvent, BillingWebhookEventType } from "../core/types";
 
 const decoder = new TextDecoder();
 
@@ -44,8 +44,6 @@ const statusMap = {
   paused: null,
 } as const satisfies Record<Stripe.Subscription.Status, BillingStatus | null>;
 
-// Stripe's `Status` type includes an open-ended `OtherString` escape hatch for
-// future values, so lookups can't be exhaustively typed — unknown statuses fall to null.
 const toBillingStatus = (status: Stripe.Subscription.Status): BillingStatus | null => {
   if (!Object.hasOwn(statusMap, status)) {
     return null;
@@ -66,7 +64,6 @@ type SubscriptionEventType = keyof typeof subscriptionEventTypes;
 const isSubscriptionEvent = (type: string): type is SubscriptionEventType =>
   type in subscriptionEventTypes;
 
-// Stripe moved `current_period_end` from the subscription to each subscription item.
 const toWebhookEvent = (
   event: Stripe.Event,
   type: SubscriptionEventType,

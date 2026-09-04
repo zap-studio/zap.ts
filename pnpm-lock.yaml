@@ -110,9 +110,6 @@ catalogs:
     '@base-ui/react':
       specifier: ^1.7.0
       version: 1.7.0
-    '@clerk/backend':
-      specifier: ^3.17.1
-      version: 3.17.1
     '@clerk/tanstack-react-start':
       specifier: ^1.5.11
       version: 1.5.11
@@ -210,8 +207,8 @@ catalogs:
       specifier: ^19.2.8
       version: 19.2.8
     resend:
-      specifier: ^6.25.0
-      version: 6.25.0
+      specifier: ^6.26.0
+      version: 6.26.0
     stripe:
       specifier: ^22.6.1
       version: 22.6.1
@@ -362,9 +359,6 @@ importers:
 
   packages/authentication:
     dependencies:
-      '@clerk/backend':
-        specifier: 'catalog:'
-        version: 3.17.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@clerk/tanstack-react-start':
         specifier: 'catalog:'
         version: 1.5.11(@tanstack/react-router@1.170.32(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@tanstack/react-start@1.168.49(esbuild@0.28.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rolldown@1.2.7)(supports-color@10.2.2)(vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.0)))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -450,9 +444,6 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 7.0.2
-      vitest:
-        specifier: 'catalog:'
-        version: 5.0.0(@opentelemetry/api@1.9.1)(@types/node@26.4.1)(@vitest/browser-playwright@5.0.0)(@vitest/coverage-v8@5.0.0)(@vitest/ui@5.0.0)(vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.0))
 
   packages/email:
     dependencies:
@@ -464,7 +455,7 @@ importers:
         version: 3.22.1
       resend:
         specifier: 'catalog:'
-        version: 6.25.0
+        version: 6.26.0
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
@@ -4209,8 +4200,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.5.27:
-    resolution: {integrity: sha512-79Iho8QeYyooJ8e9lCRyTVlyTAkS/kXBYKff6TMzS3kEWGQ8Ds5UEtXpGrSUDLUWok6QTvxeYy0GO8fopHnaSA==}
+  postcss@8.5.28:
+    resolution: {integrity: sha512-RRuzqDtt5Y9h3quz5hWhK+TPnsmVs6WwSU6LkJMeY4HstUEDuYTG8UJSdawMRzmzAtV+KEoG8N3Qg2qLy5vM/A==}
     engines: {node: ^10 || ^12 || >=14}
 
   postgres@3.4.9:
@@ -4276,8 +4267,8 @@ packages:
   reselect@5.3.0:
     resolution: {integrity: sha512-XGoLeRAVzUTcJ1qkxPQhDJyIZ5d6zzZD9nT7AEZOaaU9UbWclhycElmhO+VD5bFeLuzhPBaOV2oXC8uG35ZSpg==}
 
-  resend@6.25.0:
-    resolution: {integrity: sha512-iptUEycs+6Hu+W8mExK708LrDiMYOuGgnCP+wTD5L4Zrqqd2B86h1oyAmNe0khZWQw0ccI7jz8OgAaplEsyaIA==}
+  resend@6.26.0:
+    resolution: {integrity: sha512-vkrULozV5nGF8o7tyun/t0+qFgtPpn+cyRhVqeorhOsPUNDiSc/9p/pn8AprdHqJpYaTvftpnQgWurW++FkCdw==}
     engines: {node: '>=20'}
     peerDependencies:
       '@react-email/render': '*'
@@ -7257,8 +7248,8 @@ snapshots:
     dependencies:
       '@typescript-eslint/utils': 8.69.0(eslint@10.9.1(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
       eslint: 10.9.1(jiti@2.7.0)(supports-color@10.2.2)
-      postcss: 8.5.27
-      postcss-nested: 7.0.2(postcss@8.5.27)
+      postcss: 8.5.28
+      postcss-nested: 7.0.2(postcss@8.5.28)
       synckit: 0.11.13
       tailwind-api-utils: 1.0.3(tailwindcss@4.3.3)
       tailwindcss: 4.3.3
@@ -8108,9 +8099,9 @@ snapshots:
 
   postal-mime@2.7.5: {}
 
-  postcss-nested@7.0.2(postcss@8.5.27):
+  postcss-nested@7.0.2(postcss@8.5.28):
     dependencies:
-      postcss: 8.5.27
+      postcss: 8.5.28
       postcss-selector-parser: 7.1.6
 
   postcss-selector-parser@7.1.6:
@@ -8120,7 +8111,7 @@ snapshots:
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.5.27:
+  postcss@8.5.28:
     dependencies:
       nanoid: 3.3.18
       picocolors: 1.1.1
@@ -8184,7 +8175,7 @@ snapshots:
 
   reselect@5.3.0: {}
 
-  resend@6.25.0:
+  resend@6.26.0:
     dependencies:
       postal-mime: 2.7.5
       standardwebhooks: 1.0.0
@@ -8630,7 +8621,7 @@ snapshots:
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
-      postcss: 8.5.27
+      postcss: 8.5.28
       rolldown: 1.2.7
       tinyglobby: 0.2.17
     optionalDependencies:

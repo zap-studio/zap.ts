@@ -2,10 +2,10 @@ import * as stylex from "@stylexjs/stylex";
 import { useTheme as useThemeState } from "@zap-studio/react-hooks/state/use-theme";
 import { createContext, type ReactNode, use, useEffect } from "react";
 
-import { darkTheme } from "./dark-theme";
-import { shadowDark } from "./shadow-dark";
+import { colorsDark } from "./tokens/colors-dark";
+import { shadowDark } from "./tokens/shadow-dark";
 
-export const darkClassNames = (stylex.props(darkTheme, shadowDark).className ?? "")
+export const darkClassNames = (stylex.props(colorsDark, shadowDark).className ?? "")
   .split(" ")
   .filter(Boolean);
 

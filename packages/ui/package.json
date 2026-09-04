@@ -4,8 +4,8 @@
   "type": "module",
   "exports": {
     "./tokens/*": "./src/tokens/*.stylex.ts",
-    "./theme-provider": "./src/theme/theme-provider.tsx",
-    "./global-styles": "./src/theme/global-styles.ts",
+    "./theme-provider": "./src/theme-provider.tsx",
+    "./global-styles": "./src/global-styles.ts",
     "./components/*": "./src/components/*.tsx"
   },
   "scripts": {

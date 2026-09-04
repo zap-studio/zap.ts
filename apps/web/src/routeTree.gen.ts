@@ -14,7 +14,7 @@ import { Route as ProtectedRouteImport } from './routes/_protected'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as ProtectedDashboardRouteImport } from './routes/_protected.dashboard'
 import { Route as ApiOgRouteImport } from './routes/api.og'
-import { Route as WebhooksStripeRouteImport } from './routes/webhooks.stripe'
+import { Route as WebhooksSplatRouteImport } from './routes/webhooks.$'
 import { Route as ProtectedDashboardIndexRouteImport } from './routes/_protected.dashboard.index'
 import { Route as ProtectedDashboardBillingRouteImport } from './routes/_protected.dashboard.billing'
 import { Route as ProtectedDashboardSettingsRouteImport } from './routes/_protected.dashboard.settings'
@@ -45,9 +45,9 @@ const ApiOgRoute = ApiOgRouteImport.update({
   path: '/api/og',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WebhooksStripeRoute = WebhooksStripeRouteImport.update({
-  id: '/webhooks/stripe',
-  path: '/webhooks/stripe',
+const WebhooksSplatRoute = WebhooksSplatRouteImport.update({
+  id: '/webhooks/$',
+  path: '/webhooks/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProtectedDashboardIndexRoute = ProtectedDashboardIndexRouteImport.update({
@@ -83,7 +83,7 @@ export interface FileRoutesByFullPath {
   '/robots.txt': typeof RobotsDottxtRoute
   '/dashboard': typeof ProtectedDashboardRouteWithChildren
   '/api/og': typeof ApiOgRoute
-  '/webhooks/stripe': typeof WebhooksStripeRoute
+  '/webhooks/$': typeof WebhooksSplatRoute
   '/dashboard/billing': typeof ProtectedDashboardBillingRoute
   '/dashboard/settings': typeof ProtectedDashboardSettingsRoute
   '/api/stripe/checkout': typeof ApiStripeCheckoutRoute
@@ -94,7 +94,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/api/og': typeof ApiOgRoute
-  '/webhooks/stripe': typeof WebhooksStripeRoute
+  '/webhooks/$': typeof WebhooksSplatRoute
   '/dashboard/billing': typeof ProtectedDashboardBillingRoute
   '/dashboard/settings': typeof ProtectedDashboardSettingsRoute
   '/api/stripe/checkout': typeof ApiStripeCheckoutRoute
@@ -108,7 +108,7 @@ export interface FileRoutesById {
   '/robots.txt': typeof RobotsDottxtRoute
   '/_protected/dashboard': typeof ProtectedDashboardRouteWithChildren
   '/api/og': typeof ApiOgRoute
-  '/webhooks/stripe': typeof WebhooksStripeRoute
+  '/webhooks/$': typeof WebhooksSplatRoute
   '/_protected/dashboard/billing': typeof ProtectedDashboardBillingRoute
   '/_protected/dashboard/settings': typeof ProtectedDashboardSettingsRoute
   '/api/stripe/checkout': typeof ApiStripeCheckoutRoute
@@ -122,7 +122,7 @@ export interface FileRouteTypes {
     | '/robots.txt'
     | '/dashboard'
     | '/api/og'
-    | '/webhooks/stripe'
+    | '/webhooks/$'
     | '/dashboard/billing'
     | '/dashboard/settings'
     | '/api/stripe/checkout'
@@ -133,7 +133,7 @@ export interface FileRouteTypes {
     | '/'
     | '/robots.txt'
     | '/api/og'
-    | '/webhooks/stripe'
+    | '/webhooks/$'
     | '/dashboard/billing'
     | '/dashboard/settings'
     | '/api/stripe/checkout'
@@ -146,7 +146,7 @@ export interface FileRouteTypes {
     | '/robots.txt'
     | '/_protected/dashboard'
     | '/api/og'
-    | '/webhooks/stripe'
+    | '/webhooks/$'
     | '/_protected/dashboard/billing'
     | '/_protected/dashboard/settings'
     | '/api/stripe/checkout'
@@ -159,7 +159,7 @@ export interface RootRouteChildren {
   ProtectedRoute: typeof ProtectedRouteWithChildren
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   ApiOgRoute: typeof ApiOgRoute
-  WebhooksStripeRoute: typeof WebhooksStripeRoute
+  WebhooksSplatRoute: typeof WebhooksSplatRoute
   ApiStripeCheckoutRoute: typeof ApiStripeCheckoutRoute
   ApiStripePortalRoute: typeof ApiStripePortalRoute
 }
@@ -201,11 +201,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiOgRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/webhooks/stripe': {
-      id: '/webhooks/stripe'
-      path: '/webhooks/stripe'
-      fullPath: '/webhooks/stripe'
-      preLoaderRoute: typeof WebhooksStripeRouteImport
+    '/webhooks/$': {
+      id: '/webhooks/$'
+      path: '/webhooks/$'
+      fullPath: '/webhooks/$'
+      preLoaderRoute: typeof WebhooksSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_protected/dashboard/': {
@@ -278,7 +278,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProtectedRoute: ProtectedRouteWithChildren,
   RobotsDottxtRoute: RobotsDottxtRoute,
   ApiOgRoute: ApiOgRoute,
-  WebhooksStripeRoute: WebhooksStripeRoute,
+  WebhooksSplatRoute: WebhooksSplatRoute,
   ApiStripeCheckoutRoute: ApiStripeCheckoutRoute,
   ApiStripePortalRoute: ApiStripePortalRoute,
 }

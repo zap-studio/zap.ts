@@ -2,11 +2,10 @@ import { Effect } from "effect";
 
 import type { BillingError } from "./errors";
 import type { BillingStoreService } from "./store";
-import type { BillingStrategyKind, BillingWebhookEvent } from "./types";
+import type { BillingWebhookEvent } from "./types";
 
 export const applySubscriptionEvent = (
   store: BillingStoreService,
-  strategy: BillingStrategyKind,
   event: BillingWebhookEvent,
 ): Effect.Effect<void, BillingError> =>
   Effect.gen(function* () {
@@ -18,7 +17,6 @@ export const applySubscriptionEvent = (
       yield* store.upsertSubscription({
         organizationId: event.organizationId,
         subscriptionId: event.subscriptionId,
-        strategy,
         planId: event.planId ?? "",
         status: "canceled",
         quantity: event.quantity,
@@ -33,7 +31,6 @@ export const applySubscriptionEvent = (
       yield* store.upsertSubscription({
         organizationId: event.organizationId,
         subscriptionId: event.subscriptionId,
-        strategy,
         planId: event.planId ?? "",
         status: event.status,
         quantity: event.quantity,

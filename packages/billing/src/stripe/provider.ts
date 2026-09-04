@@ -2,13 +2,13 @@ import type Stripe from "stripe";
 
 import { Effect, Layer } from "effect";
 
-import { BillingError } from "../_shared/errors";
+import { BillingError } from "../core/errors";
 import {
   BillingProvider,
   type BillingProviderService,
   type CheckoutOptions,
-} from "../_shared/provider";
-import { BillingStore } from "../_shared/store";
+} from "../core/provider";
+import { BillingStore } from "../core/store";
 import { StripeClient } from "./client";
 
 export const StripeBillingProviderLive: Layer.Layer<
@@ -92,12 +92,6 @@ export const StripeBillingProviderLive: Layer.Layer<
         return { url: session.url };
       });
 
-    const cancelSubscription: BillingProviderService["cancelSubscription"] = (subscriptionId) =>
-      Effect.tryPromise({
-        try: () => stripe.subscriptions.cancel(subscriptionId),
-        catch: (cause) => new BillingError({ cause }),
-      }).pipe(Effect.asVoid);
-
     const updateSubscriptionQuantity: BillingProviderService["updateSubscriptionQuantity"] = (
       subscriptionId,
       quantity,
@@ -121,32 +115,11 @@ export const StripeBillingProviderLive: Layer.Layer<
         });
       });
 
-    const reportUsage: BillingProviderService["reportUsage"] = (organizationId, eventName, value) =>
-      Effect.gen(function* () {
-        const customerId = yield* store.getCustomerId(organizationId);
-
-        if (!customerId) {
-          yield* Effect.fail(new BillingError({ cause: "no stripe customer for organization" }));
-          return;
-        }
-
-        yield* Effect.tryPromise({
-          try: () =>
-            stripe.billing.meterEvents.create({
-              event_name: eventName,
-              payload: { value: String(value), stripe_customer_id: customerId },
-            }),
-          catch: (cause) => new BillingError({ cause }),
-        });
-      }).pipe(Effect.asVoid);
-
     const service: BillingProviderService = {
       createCustomer,
       createCheckoutSession,
       createPortalSession,
-      cancelSubscription,
       updateSubscriptionQuantity,
-      reportUsage,
     };
 
     return service;

@@ -22,7 +22,8 @@
     "@zap-ts/ui": "workspace:*",
     "effect": "catalog:",
     "react": "catalog:",
-    "react-dom": "catalog:"
+    "react-dom": "catalog:",
+    "takumi-js": "catalog:"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "catalog:",

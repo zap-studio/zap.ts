@@ -42,12 +42,10 @@ catalog:
   react-dom: ^19.2.8
   resend: ^6.25.0
   stripe: ^22.6.1
+  takumi-js: ^2.13.5
   tsx: ^4.23.13
   typescript: ^7.0.2
   vite: ^8.2.2
   vitest: ^5.0.0
   wrangler: ^4.128.0
   zod: ^4.5.4
-minimumReleaseAgeExclude:
-  - "@zap-studio/webhooks@2.1.0"
-  - lucide-react@1.40.0

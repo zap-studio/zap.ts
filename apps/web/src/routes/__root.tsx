@@ -6,6 +6,7 @@ import { darkClassNames, ThemeProvider } from "@zap-ts/ui/theme-provider";
 
 import { Toaster } from "../components/toaster";
 import { DevStyleXInject } from "../dev-stylex-inject";
+import { SITE_NAME, SITE_URL } from "../lib/site";
 import { toastManager } from "../lib/toast";
 import appCss from "../styles/app.css?url";
 
@@ -41,7 +42,23 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "zap.ts" },
+      { title: SITE_NAME },
+      {
+        "script:ld+json": {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
+      },
+      {
+        "script:ld+json": {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
+      },
     ],
   }),
   component: RootComponent,

@@ -1,9 +1,12 @@
 import { ClerkProvider } from "@clerk/tanstack-react-start";
 import { createRootRoute, HeadContent, Outlet, ScriptOnce, Scripts } from "@tanstack/react-router";
+import { Toast } from "@zap-ts/ui/components/toast";
 import { bodyProps } from "@zap-ts/ui/global-styles";
 import { darkClassNames, ThemeProvider } from "@zap-ts/ui/theme-provider";
 
+import { Toaster } from "../components/toaster";
 import { DevStyleXInject } from "../dev-stylex-inject";
+import { toastManager } from "../lib/toast";
 import appCss from "../styles/app.css?url";
 
 const NO_FLASH_THEME_SCRIPT = `(function () {
@@ -22,7 +25,10 @@ const RootComponent = () => (
       </head>
       <body {...bodyProps}>
         <ThemeProvider>
-          <Outlet />
+          <Toast.Provider toastManager={toastManager}>
+            <Outlet />
+            <Toaster />
+          </Toast.Provider>
         </ThemeProvider>
         <Scripts />
       </body>

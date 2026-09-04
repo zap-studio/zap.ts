@@ -10,7 +10,6 @@
     "generate": "drizzle-kit generate",
     "migrate": "drizzle-kit migrate",
     "studio": "drizzle-kit studio",
-    "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -22,7 +21,6 @@
     "@types/node": "catalog:",
     "@zap-ts/tsconfig": "workspace:*",
     "drizzle-kit": "catalog:",
-    "typescript": "catalog:",
-    "vitest": "catalog:"
+    "typescript": "catalog:"
   }
 }

@@ -5,7 +5,7 @@ import type { BillingWebhookEvent } from "./core/types";
 import { BillingError } from "./core/errors";
 import { BillingProvider, type CheckoutOptions } from "./core/provider";
 import { BillingStore } from "./core/store";
-import { resolveTrialDays, withTrialDays } from "./core/trial";
+import { withTrialDays } from "./core/trial";
 import { applySubscriptionEvent } from "./core/webhook";
 
 export interface SubscriptionPlan {
@@ -16,7 +16,6 @@ export interface SubscriptionPlan {
 
 export interface SubscriptionConfig {
   plans: SubscriptionPlan[];
-  defaultTrialDays?: number;
 }
 
 export interface StartCheckoutInput {
@@ -50,7 +49,7 @@ export const createSubscriptionBilling = (config: SubscriptionConfig) => {
           successUrl: input.successUrl,
           cancelUrl: input.cancelUrl,
         },
-        resolveTrialDays(plan.trialDays, config.defaultTrialDays),
+        plan.trialDays,
       );
 
       if (input.quantity !== undefined) {

@@ -8,10 +8,9 @@ import { Effect, Layer, ManagedRuntime } from "effect";
 // `quantity` in `startCheckout` for a plan you want billed per seat.
 export const billing = createSubscriptionBilling({
   plans: [
-    { id: "starter", priceId: "price_replace_me_starter" },
-    { id: "team", priceId: "price_replace_me_team" },
+    { id: "starter", priceId: "price_replace_me_starter", trialDays: 14 },
+    { id: "team", priceId: "price_replace_me_team", trialDays: 14 },
   ],
-  defaultTrialDays: 14,
 });
 
 const buildBillingLayer = (connectionString: string) => {

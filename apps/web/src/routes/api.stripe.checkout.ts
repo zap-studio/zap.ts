@@ -36,6 +36,12 @@ export const Route = createFileRoute("/api/stripe/checkout")({
         }
 
         const origin = new URL(request.url).origin;
+        const formData = await request.formData();
+        const planId = formData.get("planId");
+
+        if (typeof planId !== "string") {
+          return new Response("Missing planId", { status: 400 });
+        }
 
         try {
           const session = await runBilling(
@@ -53,6 +59,7 @@ export const Route = createFileRoute("/api/stripe/checkout")({
               return yield* strategy.startCheckout({
                 organizationId: orgId,
                 customerEmail: email,
+                planId,
                 successUrl: `${origin}/dashboard/billing?checkout=success`,
                 cancelUrl: `${origin}/dashboard/billing?checkout=cancelled`,
               });

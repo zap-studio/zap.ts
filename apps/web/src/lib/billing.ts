@@ -1,16 +1,17 @@
 import { BillingProvider, BillingStore, BillingStoreLive, BillingStrategy } from "@zap-ts/billing";
-import { makePerSeatStrategy } from "@zap-ts/billing/strategies/per-seat";
 import { StripeBillingProviderLive, StripeClientLive } from "@zap-ts/billing/stripe";
+import { makeSubscriptionStrategy } from "@zap-ts/billing/subscription";
 import { DatabaseLive } from "@zap-ts/database";
 import { Effect, Layer, ManagedRuntime } from "effect";
 
-// TODO: Swap this for `makeFlatSubscriptionStrategy`, `makeTieredSubscriptionStrategy`, or
-// `makeUsageBasedStrategy` (from their respective `@zap-ts/billing/strategies/*`
-// subpaths) to change pricing models.
-const strategy = makePerSeatStrategy({
-  planId: "team",
-  priceId: "price_replace_me",
-  trialDays: 14,
+// TODO: Replace these placeholder plan ids and Stripe price ids with your own. Pass a
+// `quantity` in `startCheckout` for a plan you want billed per seat.
+const strategy = makeSubscriptionStrategy({
+  plans: [
+    { id: "starter", priceId: "price_replace_me_starter" },
+    { id: "team", priceId: "price_replace_me_team" },
+  ],
+  defaultTrialDays: 14,
 });
 
 export const buildBillingLayer = (connectionString: string) => {

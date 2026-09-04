@@ -121,32 +121,12 @@ export const StripeBillingProviderLive: Layer.Layer<
         });
       });
 
-    const reportUsage: BillingProviderService["reportUsage"] = (organizationId, eventName, value) =>
-      Effect.gen(function* () {
-        const customerId = yield* store.getCustomerId(organizationId);
-
-        if (!customerId) {
-          yield* Effect.fail(new BillingError({ cause: "no stripe customer for organization" }));
-          return;
-        }
-
-        yield* Effect.tryPromise({
-          try: () =>
-            stripe.billing.meterEvents.create({
-              event_name: eventName,
-              payload: { value: String(value), stripe_customer_id: customerId },
-            }),
-          catch: (cause) => new BillingError({ cause }),
-        });
-      }).pipe(Effect.asVoid);
-
     const service: BillingProviderService = {
       createCustomer,
       createCheckoutSession,
       createPortalSession,
       cancelSubscription,
       updateSubscriptionQuantity,
-      reportUsage,
     };
 
     return service;

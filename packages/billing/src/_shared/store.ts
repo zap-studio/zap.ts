@@ -1,20 +1,15 @@
 import { Database } from "@zap-ts/database";
-import {
-  billingCreditLedger,
-  billingCustomers,
-  billingSubscriptions,
-} from "@zap-ts/database/schema";
-import { eq, sql } from "drizzle-orm";
+import { billingCustomers, billingSubscriptions } from "@zap-ts/database/schema";
+import { eq } from "drizzle-orm";
 import { Context, Effect, Layer } from "effect";
 
-import type { BillingStatus, BillingStrategyKind, Entitlement } from "./types";
+import type { BillingStatus, Entitlement } from "./types";
 
-import { BillingError, EntitlementError } from "./errors";
+import { BillingError } from "./errors";
 
 export interface UpsertSubscriptionInput {
   organizationId: string;
   subscriptionId: string;
-  strategy: BillingStrategyKind;
   planId: string;
   status: BillingStatus;
   quantity: number | null;
@@ -28,19 +23,6 @@ export interface BillingStoreService {
   getCustomerId: (organizationId: string) => Effect.Effect<string | null, BillingError>;
   upsertSubscription: (input: UpsertSubscriptionInput) => Effect.Effect<void, BillingError>;
   resolveEntitlement: (organizationId: string) => Effect.Effect<Entitlement, BillingError>;
-  grantCredits: (
-    organizationId: string,
-    amount: number,
-    reason: string,
-    id?: string,
-  ) => Effect.Effect<void, BillingError>;
-  consumeCredits: (
-    organizationId: string,
-    amount: number,
-    reason: string,
-  ) => Effect.Effect<void, BillingError | EntitlementError>;
-  creditBalance: (organizationId: string) => Effect.Effect<number, BillingError>;
-  hasCreditHistory: (organizationId: string) => Effect.Effect<boolean, BillingError>;
 }
 
 export class BillingStore extends Context.Tag("BillingStore")<
@@ -106,7 +88,6 @@ export const BillingStoreLive: Layer.Layer<BillingStore, never, Database> = Laye
               planId: null,
               status: "no_subscription",
               trialEndsAt: null,
-              creditsRemaining: null,
             };
           }
 
@@ -116,68 +97,9 @@ export const BillingStoreLive: Layer.Layer<BillingStore, never, Database> = Laye
             planId: row.planId,
             status: row.status,
             trialEndsAt: row.trialEndsAt,
-            creditsRemaining: null,
           };
         },
         catch: (cause) => new BillingError({ cause }),
-      });
-
-    const creditBalance = (organizationId: string) =>
-      Effect.tryPromise({
-        try: async () => {
-          const rows = await db
-            .select({ total: sql<number>`coalesce(sum(${billingCreditLedger.amount}), 0)` })
-            .from(billingCreditLedger)
-            .where(eq(billingCreditLedger.organizationId, organizationId));
-          return rows[0]?.total ?? 0;
-        },
-        catch: (cause) => new BillingError({ cause }),
-      });
-
-    const hasCreditHistory = (organizationId: string) =>
-      Effect.tryPromise({
-        try: async () => {
-          const rows = await db
-            .select({ id: billingCreditLedger.id })
-            .from(billingCreditLedger)
-            .where(eq(billingCreditLedger.organizationId, organizationId))
-            .limit(1);
-          return rows.length > 0;
-        },
-        catch: (cause) => new BillingError({ cause }),
-      });
-
-    const grantCredits = (
-      organizationId: string,
-      amount: number,
-      reason: string,
-      id: string = crypto.randomUUID(),
-    ) =>
-      Effect.tryPromise({
-        try: () =>
-          db
-            .insert(billingCreditLedger)
-            .values({ id, organizationId, amount, reason })
-            .onConflictDoNothing(),
-        catch: (cause) => new BillingError({ cause }),
-      }).pipe(Effect.asVoid);
-
-    const consumeCredits = (organizationId: string, amount: number, reason: string) =>
-      Effect.gen(function* () {
-        const current = yield* creditBalance(organizationId);
-
-        if (current < amount) {
-          yield* Effect.fail(new EntitlementError({ reason: "insufficient_credits" }));
-          return;
-        }
-
-        yield* Effect.tryPromise({
-          try: () =>
-            db
-              .insert(billingCreditLedger)
-              .values({ id: crypto.randomUUID(), organizationId, amount: -amount, reason }),
-          catch: (cause) => new BillingError({ cause }),
-        });
       });
 
     return {
@@ -185,10 +107,6 @@ export const BillingStoreLive: Layer.Layer<BillingStore, never, Database> = Laye
       getCustomerId,
       upsertSubscription,
       resolveEntitlement,
-      grantCredits,
-      consumeCredits,
-      creditBalance,
-      hasCreditHistory,
     };
   }),
 );

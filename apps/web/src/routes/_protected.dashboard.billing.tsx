@@ -42,14 +42,17 @@ const BillingPage = () => {
       {entitlement.trialEndsAt ? (
         <p>Trial ends {new Date(entitlement.trialEndsAt).toLocaleDateString()}</p>
       ) : null}
-      {entitlement.creditsRemaining === null ? null : (
-        <p>Credits remaining: {entitlement.creditsRemaining}</p>
-      )}
 
       {canManageBilling ? (
         <>
+          {/* TODO: List your real plans here instead of these placeholder ids. */}
           <form action="/api/stripe/checkout" method="post">
-            <button type="submit">Upgrade</button>
+            <input name="planId" type="hidden" value="starter" />
+            <button type="submit">Upgrade to Starter</button>
+          </form>
+          <form action="/api/stripe/checkout" method="post">
+            <input name="planId" type="hidden" value="team" />
+            <button type="submit">Upgrade to Team</button>
           </form>
           <form action="/api/stripe/portal" method="post">
             <button type="submit">Manage billing</button>

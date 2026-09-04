@@ -24,11 +24,6 @@ export interface BillingProviderService {
     subscriptionId: string,
     quantity: number,
   ) => Effect.Effect<void, BillingError>;
-  reportUsage: (
-    organizationId: string,
-    eventName: string,
-    value: number,
-  ) => Effect.Effect<void, BillingError>;
 }
 
 export class BillingProvider extends Context.Tag("BillingProvider")<

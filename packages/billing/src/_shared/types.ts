@@ -1,9 +1,3 @@
-export type BillingStrategyKind =
-  | "flat-subscription"
-  | "tiered-subscription"
-  | "per-seat"
-  | "usage-based";
-
 export type BillingStatus =
   | "trialing"
   | "active"
@@ -24,7 +18,6 @@ export interface Entitlement {
   planId: string | null;
   status: BillingStatus | "no_subscription";
   trialEndsAt: Date | null;
-  creditsRemaining: number | null;
 }
 
 export type BillingWebhookEventType =

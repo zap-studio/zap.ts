@@ -10,15 +10,6 @@ import { SITE_NAME, SITE_URL } from "../lib/site";
 import { toastManager } from "../lib/toast";
 import appCss from "../styles/app.css?url";
 
-const ORGANIZATION_JSON_LD = {
-  __html: JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: SITE_NAME,
-    url: SITE_URL,
-  }),
-};
-
 const NO_FLASH_THEME_SCRIPT = `(function () {
   var stored = localStorage.getItem("zap-studio-theme");
   var isDark = stored === '"dark"' || (stored !== '"light"' && window.matchMedia("(prefers-color-scheme: dark)").matches);
@@ -32,7 +23,6 @@ const RootComponent = () => (
         <HeadContent />
         <DevStyleXInject cssHref={appCss} />
         <ScriptOnce>{NO_FLASH_THEME_SCRIPT}</ScriptOnce>
-        <script type="application/ld+json" dangerouslySetInnerHTML={ORGANIZATION_JSON_LD} />
       </head>
       <body {...bodyProps}>
         <ThemeProvider>
@@ -52,7 +42,23 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "zap.ts" },
+      { title: SITE_NAME },
+      {
+        "script:ld+json": {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
+      },
+      {
+        "script:ld+json": {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
+      },
     ],
   }),
   component: RootComponent,

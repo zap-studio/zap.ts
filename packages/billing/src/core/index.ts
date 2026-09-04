@@ -3,7 +3,6 @@ export type { BillingProviderService, CheckoutOptions } from "./provider";
 export { BillingProvider } from "./provider";
 export type { BillingStoreService, UpsertSubscriptionInput } from "./store";
 export { BillingStore, BillingStoreLive } from "./store";
-export { withTrialDays } from "./trial";
 export type {
   BillingStatus,
   BillingWebhookEvent,

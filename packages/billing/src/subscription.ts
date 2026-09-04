@@ -5,7 +5,6 @@ import type { BillingWebhookEvent } from "./core/types";
 import { BillingError } from "./core/errors";
 import { BillingProvider, type CheckoutOptions } from "./core/provider";
 import { BillingStore } from "./core/store";
-import { withTrialDays } from "./core/trial";
 import { applySubscriptionEvent } from "./core/webhook";
 
 export interface SubscriptionPlan {
@@ -41,16 +40,17 @@ export const createSubscriptionBilling = (config: SubscriptionConfig) => {
         return yield* Effect.fail(new BillingError({ cause: `unknown plan: ${input.planId}` }));
       }
 
-      const checkoutOpts: CheckoutOptions = withTrialDays(
-        {
-          organizationId: input.organizationId,
-          customerEmail: input.customerEmail,
-          priceId: plan.priceId,
-          successUrl: input.successUrl,
-          cancelUrl: input.cancelUrl,
-        },
-        plan.trialDays,
-      );
+      const checkoutOpts: CheckoutOptions = {
+        organizationId: input.organizationId,
+        customerEmail: input.customerEmail,
+        priceId: plan.priceId,
+        successUrl: input.successUrl,
+        cancelUrl: input.cancelUrl,
+      };
+
+      if (plan.trialDays !== undefined) {
+        checkoutOpts.trialDays = plan.trialDays;
+      }
 
       if (input.quantity !== undefined) {
         checkoutOpts.quantity = input.quantity;

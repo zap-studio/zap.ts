@@ -13,7 +13,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProtectedRouteImport } from './routes/_protected'
 import { Route as ProtectedDashboardRouteImport } from './routes/_protected.dashboard'
 import { Route as WebhooksStripeRouteImport } from './routes/webhooks.stripe'
+import { Route as ProtectedDashboardIndexRouteImport } from './routes/_protected.dashboard.index'
 import { Route as ProtectedDashboardBillingRouteImport } from './routes/_protected.dashboard.billing'
+import { Route as ProtectedDashboardSettingsRouteImport } from './routes/_protected.dashboard.settings'
 import { Route as ApiStripeCheckoutRouteImport } from './routes/api.stripe.checkout'
 import { Route as ApiStripePortalRouteImport } from './routes/api.stripe.portal'
 
@@ -36,10 +38,21 @@ const WebhooksStripeRoute = WebhooksStripeRouteImport.update({
   path: '/webhooks/stripe',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProtectedDashboardIndexRoute = ProtectedDashboardIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ProtectedDashboardRoute,
+} as any)
 const ProtectedDashboardBillingRoute =
   ProtectedDashboardBillingRouteImport.update({
     id: '/billing',
     path: '/billing',
+    getParentRoute: () => ProtectedDashboardRoute,
+  } as any)
+const ProtectedDashboardSettingsRoute =
+  ProtectedDashboardSettingsRouteImport.update({
+    id: '/settings',
+    path: '/settings',
     getParentRoute: () => ProtectedDashboardRoute,
   } as any)
 const ApiStripeCheckoutRoute = ApiStripeCheckoutRouteImport.update({
@@ -58,16 +71,19 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof ProtectedDashboardRouteWithChildren
   '/webhooks/stripe': typeof WebhooksStripeRoute
   '/dashboard/billing': typeof ProtectedDashboardBillingRoute
+  '/dashboard/settings': typeof ProtectedDashboardSettingsRoute
   '/api/stripe/checkout': typeof ApiStripeCheckoutRoute
   '/api/stripe/portal': typeof ApiStripePortalRoute
+  '/dashboard/': typeof ProtectedDashboardIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/dashboard': typeof ProtectedDashboardRouteWithChildren
   '/webhooks/stripe': typeof WebhooksStripeRoute
   '/dashboard/billing': typeof ProtectedDashboardBillingRoute
+  '/dashboard/settings': typeof ProtectedDashboardSettingsRoute
   '/api/stripe/checkout': typeof ApiStripeCheckoutRoute
   '/api/stripe/portal': typeof ApiStripePortalRoute
+  '/dashboard': typeof ProtectedDashboardIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -76,8 +92,10 @@ export interface FileRoutesById {
   '/_protected/dashboard': typeof ProtectedDashboardRouteWithChildren
   '/webhooks/stripe': typeof WebhooksStripeRoute
   '/_protected/dashboard/billing': typeof ProtectedDashboardBillingRoute
+  '/_protected/dashboard/settings': typeof ProtectedDashboardSettingsRoute
   '/api/stripe/checkout': typeof ApiStripeCheckoutRoute
   '/api/stripe/portal': typeof ApiStripePortalRoute
+  '/_protected/dashboard/': typeof ProtectedDashboardIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -86,16 +104,19 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/webhooks/stripe'
     | '/dashboard/billing'
+    | '/dashboard/settings'
     | '/api/stripe/checkout'
     | '/api/stripe/portal'
+    | '/dashboard/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/dashboard'
     | '/webhooks/stripe'
     | '/dashboard/billing'
+    | '/dashboard/settings'
     | '/api/stripe/checkout'
     | '/api/stripe/portal'
+    | '/dashboard'
   id:
     | '__root__'
     | '/'
@@ -103,8 +124,10 @@ export interface FileRouteTypes {
     | '/_protected/dashboard'
     | '/webhooks/stripe'
     | '/_protected/dashboard/billing'
+    | '/_protected/dashboard/settings'
     | '/api/stripe/checkout'
     | '/api/stripe/portal'
+    | '/_protected/dashboard/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -145,11 +168,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WebhooksStripeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_protected/dashboard/': {
+      id: '/_protected/dashboard/'
+      path: '/'
+      fullPath: '/dashboard/'
+      preLoaderRoute: typeof ProtectedDashboardIndexRouteImport
+      parentRoute: typeof ProtectedDashboardRoute
+    }
     '/_protected/dashboard/billing': {
       id: '/_protected/dashboard/billing'
       path: '/billing'
       fullPath: '/dashboard/billing'
       preLoaderRoute: typeof ProtectedDashboardBillingRouteImport
+      parentRoute: typeof ProtectedDashboardRoute
+    }
+    '/_protected/dashboard/settings': {
+      id: '/_protected/dashboard/settings'
+      path: '/settings'
+      fullPath: '/dashboard/settings'
+      preLoaderRoute: typeof ProtectedDashboardSettingsRouteImport
       parentRoute: typeof ProtectedDashboardRoute
     }
     '/api/stripe/checkout': {
@@ -171,10 +208,14 @@ declare module '@tanstack/react-router' {
 
 interface ProtectedDashboardRouteChildren {
   ProtectedDashboardBillingRoute: typeof ProtectedDashboardBillingRoute
+  ProtectedDashboardSettingsRoute: typeof ProtectedDashboardSettingsRoute
+  ProtectedDashboardIndexRoute: typeof ProtectedDashboardIndexRoute
 }
 
 const ProtectedDashboardRouteChildren: ProtectedDashboardRouteChildren = {
   ProtectedDashboardBillingRoute: ProtectedDashboardBillingRoute,
+  ProtectedDashboardSettingsRoute: ProtectedDashboardSettingsRoute,
+  ProtectedDashboardIndexRoute: ProtectedDashboardIndexRoute,
 }
 
 const ProtectedDashboardRouteWithChildren =

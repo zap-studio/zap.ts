@@ -18,12 +18,11 @@ const Home = () => {
     <main>
       <section>
         <h1>zap.ts</h1>
-        <p>Ship your SaaS.</p>
         <SignUpButton>
           <Button>Get started</Button>
         </SignUpButton>
       </section>
-      <footer>&copy; zap.ts</footer>
+      <footer>&copy; Alexandre Trotel</footer>
     </main>
   );
 };

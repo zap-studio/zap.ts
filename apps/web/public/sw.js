@@ -1,7 +1,4 @@
-// Hand-written service worker. No build-time codegen, so it only precaches
-// files that don't change name between deploys (icons, manifest, offline
-// fallback). Hashed JS/CSS chunks are left to the network — caching them
-// here would go stale on every deploy without a way to bust them.
+// TODO: Add cache-busting for hashed JS/CSS assets if you need offline support beyond the precached files below.
 (function () {
   const CACHE_VERSION = "v1";
   const CACHE_NAME = `zap-ts-${CACHE_VERSION}`;

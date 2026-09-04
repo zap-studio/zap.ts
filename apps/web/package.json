@@ -36,6 +36,8 @@
     "@zap-ts/tsconfig": "workspace:*",
     "typescript": "catalog:",
     "vite": "catalog:",
+    "vite-plugin-pwa": "^1.3.0",
+    "workbox-window": "^7.4.1",
     "wrangler": "catalog:"
   }
 }

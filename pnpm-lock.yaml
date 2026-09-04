@@ -110,9 +110,6 @@ catalogs:
     '@base-ui/react':
       specifier: ^1.7.0
       version: 1.7.0
-    '@clerk/backend':
-      specifier: ^3.17.1
-      version: 3.17.1
     '@clerk/tanstack-react-start':
       specifier: ^1.5.11
       version: 1.5.11
@@ -362,9 +359,6 @@ importers:
 
   packages/authentication:
     dependencies:
-      '@clerk/backend':
-        specifier: 'catalog:'
-        version: 3.17.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@clerk/tanstack-react-start':
         specifier: 'catalog:'
         version: 1.5.11(@tanstack/react-router@1.170.32(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@tanstack/react-start@1.168.49(esbuild@0.28.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rolldown@1.2.7)(rollup@4.63.1)(supports-color@10.2.2)(vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.0)))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)

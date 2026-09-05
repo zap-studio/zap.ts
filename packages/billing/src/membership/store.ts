@@ -1,6 +1,6 @@
 import { Database } from "@zap-ts/database";
 import { organizationMembers } from "@zap-ts/database/schema";
-import { and, eq, sql } from "drizzle-orm";
+import { and, count, eq } from "drizzle-orm";
 import { Context, Effect, Layer } from "effect";
 
 import { BillingError } from "../core/errors";
@@ -65,7 +65,7 @@ export const MembershipStoreLive: Layer.Layer<MembershipStore, never, Database> 
       Effect.tryPromise({
         try: async () => {
           const rows = await db
-            .select({ count: sql<number>`count(*)::int` })
+            .select({ count: count() })
             .from(organizationMembers)
             .where(
               and(

@@ -34,7 +34,7 @@ catalog:
   drizzle-kit: ^0.31.10
   drizzle-orm: ^0.45.2
   effect: ^3.22.1
-  eslint: ^10.9.1
+  eslint: ^10.10.0
   lefthook: ^2.1.12
   lucide-react: ^1.41.0
   oxfmt: ^0.66.0

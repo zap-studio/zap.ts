@@ -7,8 +7,12 @@ export const useIdentifyUser = () => {
   const posthog = usePostHog();
 
   useEffect(() => {
-    if (userId) {
-      posthog.identify(userId);
+    if (!userId) {
+      return undefined;
     }
+
+    posthog.identify(userId);
+
+    return () => posthog.reset();
   }, [userId, posthog]);
 };

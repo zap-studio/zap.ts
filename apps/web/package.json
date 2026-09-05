@@ -29,6 +29,7 @@
     "@cloudflare/vite-plugin": "catalog:",
     "@cloudflare/workers-types": "catalog:",
     "@stylexjs/unplugin": "catalog:",
+    "@tanstack/react-router-devtools": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",

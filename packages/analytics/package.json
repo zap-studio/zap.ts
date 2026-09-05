@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "@clerk/tanstack-react-start": "catalog:",
-    "@posthog/react": "^1.10.5",
+    "@posthog/react": "catalog:",
     "@zap-ts/environment": "workspace:*",
     "effect": "catalog:",
-    "posthog-js": "^1.427.2",
-    "posthog-node": "^5.51.6"
+    "posthog-js": "catalog:",
+    "posthog-node": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",

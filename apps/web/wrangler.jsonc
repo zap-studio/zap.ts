@@ -2,7 +2,7 @@
   "name": "zap-ts-web",
   "compatibility_date": "2026-08-01",
   "compatibility_flags": ["nodejs_compat"],
-  "main": "@tanstack/react-start/server-entry",
+  "main": "./src/server.ts",
   "hyperdrive": [
     {
       "binding": "HYPERDRIVE",

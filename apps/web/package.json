@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/tanstack-react-start": "catalog:",
+    "@sentry/tanstackstart-react": "catalog:",
     "@stylexjs/stylex": "catalog:",
     "@tanstack/react-router": "catalog:",
     "@tanstack/react-start": "catalog:",
@@ -20,6 +21,7 @@
     "@zap-ts/billing": "workspace:*",
     "@zap-ts/database": "workspace:*",
     "@zap-ts/environment": "workspace:*",
+    "@zap-ts/observability": "workspace:*",
     "@zap-ts/ui": "workspace:*",
     "effect": "catalog:",
     "react": "catalog:",

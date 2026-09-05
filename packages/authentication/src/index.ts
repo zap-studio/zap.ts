@@ -3,6 +3,11 @@ import { Context, Layer } from "effect";
 
 export { AuthenticationError } from "./errors";
 
-export class Clerk extends Context.Tag("Clerk")<Clerk, ReturnType<typeof clerkClient>>() {}
+export class Authentication extends Context.Tag("Authentication")<
+  Authentication,
+  ReturnType<typeof clerkClient>
+>() {}
 
-export const ClerkLive: Layer.Layer<Clerk> = Layer.sync(Clerk, () => clerkClient());
+export const AuthenticationLive: Layer.Layer<Authentication> = Layer.sync(Authentication, () =>
+  clerkClient(),
+);

@@ -1,17 +1,17 @@
 import type { LifecycleEvent } from "@zap-ts/billing/stripe";
 
-import { Clerk, ClerkLive } from "@zap-ts/authentication";
+import { Authentication, AuthenticationLive } from "@zap-ts/authentication";
 import { getOrganizationAdminEmails } from "@zap-ts/authentication/organization";
 import { Email, EmailLive, sendEmail } from "@zap-ts/email";
 import { Effect, Layer, ManagedRuntime } from "effect";
 
 import { lifecycleEmail } from "./billing-emails";
 
-const runtime = ManagedRuntime.make(Layer.mergeAll(ClerkLive, EmailLive));
+const runtime = ManagedRuntime.make(Layer.mergeAll(AuthenticationLive, EmailLive));
 
 const notifyOrganizationAdmins = (
   event: LifecycleEvent,
-): Effect.Effect<void, never, Clerk | Email> =>
+): Effect.Effect<void, never, Authentication | Email> =>
   Effect.gen(function* () {
     const adminEmails = yield* getOrganizationAdminEmails(event.organizationId).pipe(
       Effect.catchAll(() => Effect.succeed<string[]>([])),

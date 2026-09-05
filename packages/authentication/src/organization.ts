@@ -1,13 +1,13 @@
 import { Effect } from "effect";
 
 import { AuthenticationError } from "./errors";
-import { Clerk } from "./index";
+import { Authentication } from "./index";
 
 export const getOrganizationAdminEmails = (
   organizationId: string,
-): Effect.Effect<string[], AuthenticationError, Clerk> =>
+): Effect.Effect<string[], AuthenticationError, Authentication> =>
   Effect.gen(function* () {
-    const clerk = yield* Clerk;
+    const clerk = yield* Authentication;
 
     const { data: memberships } = yield* Effect.tryPromise({
       try: () => clerk.organizations.getOrganizationMembershipList({ organizationId, limit: 100 }),

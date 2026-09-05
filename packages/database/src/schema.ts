@@ -29,7 +29,17 @@ export const billingSubscriptions = pgTable("billing_subscriptions", {
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
 
+export const organizationMembers = pgTable("organization_members", {
+  id: text("id").primaryKey(),
+  organizationId: text("organization_id").notNull(),
+  userId: text("user_id").notNull(),
+  billable: boolean("billable").notNull().default(true),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+});
+
 export const schema = {
   billingCustomers,
   billingSubscriptions,
+  organizationMembers,
 };

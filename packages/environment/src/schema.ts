@@ -5,6 +5,7 @@ export const schema = {
   extends: [cloudflare],
   server: {
     CLERK_SECRET_KEY: z.string().startsWith("sk_"),
+    CLERK_WEBHOOK_SIGNING_SECRET: z.string().startsWith("whsec_"),
     POSTHOG_API_KEY: z.string().startsWith("phc_"),
     RESEND_API_KEY: z.string().startsWith("re_"),
     SENTRY_DSN: z.url().optional(),

@@ -4,6 +4,7 @@
   "type": "module",
   "exports": {
     ".": "./src/core/index.ts",
+    "./membership": "./src/membership/index.ts",
     "./stripe": "./src/stripe/index.ts",
     "./subscription": "./src/subscription.ts"
   },

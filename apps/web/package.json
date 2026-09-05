@@ -20,6 +20,7 @@
     "@zap-ts/billing": "workspace:*",
     "@zap-ts/database": "workspace:*",
     "@zap-ts/environment": "workspace:*",
+    "@zap-ts/observability": "workspace:*",
     "@zap-ts/ui": "workspace:*",
     "effect": "catalog:",
     "react": "catalog:",

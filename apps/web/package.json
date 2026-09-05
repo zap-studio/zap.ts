@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/tanstack-react-start": "catalog:",
+    "@sentry/tanstackstart-react": "catalog:",
     "@stylexjs/stylex": "catalog:",
     "@tanstack/react-router": "catalog:",
     "@tanstack/react-start": "catalog:",

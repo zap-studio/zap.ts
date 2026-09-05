@@ -1,5 +1,4 @@
 import { createWebhookRouter } from "@zap-studio/webhooks";
-import { getOrganizationAdminEmails } from "@zap-ts/authentication/organization";
 import { clerkVerify, parseClerkEvent } from "@zap-ts/authentication/webhook";
 import { applyMembershipEvent } from "@zap-ts/billing/membership";
 import {
@@ -10,11 +9,9 @@ import {
 } from "@zap-ts/billing/stripe";
 // oxlint-disable-next-line sonarjs/no-implicit-dependencies -- Workers runtime built-in, not an npm package
 import { env as cloudflareEnv } from "cloudflare:workers";
-import { Effect } from "effect";
 
 import { billing, runBilling } from "./billing";
-import { lifecycleEmail } from "./billing-emails";
-import { runEmail, sendEmail } from "./email";
+import { runLifecycleNotification } from "./notifications";
 
 const router = createWebhookRouter({ prefix: "/webhooks" });
 
@@ -34,15 +31,7 @@ router.register("/stripe", {
     const lifecycleEvent = toLifecycleEvent(stripeEvent);
 
     if (lifecycleEvent) {
-      const adminEmails = await getOrganizationAdminEmails(lifecycleEvent.organizationId);
-      const { subject, react } = lifecycleEmail(lifecycleEvent);
-
-      await runEmail(
-        Effect.all(
-          adminEmails.map((to) => sendEmail({ to, subject, react })),
-          { concurrency: "unbounded" },
-        ),
-      );
+      await runLifecycleNotification(lifecycleEvent);
     }
 
     return Response.json({ received: true });

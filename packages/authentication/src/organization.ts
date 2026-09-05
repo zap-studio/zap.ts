@@ -1,22 +1,32 @@
-import { clerkClient } from "@clerk/tanstack-react-start/server";
+import { Effect } from "effect";
 
-export const getOrganizationAdminEmails = async (organizationId: string): Promise<string[]> => {
-  const client = clerkClient();
-  const { data: memberships } = await client.organizations.getOrganizationMembershipList({
-    organizationId,
-    limit: 100,
-  });
+import { AuthenticationError } from "./errors";
+import { Clerk } from "./index";
 
-  const adminUserIds: string[] = [];
-  for (const membership of memberships) {
-    if (membership.role === "org:admin" && membership.publicUserData?.userId) {
-      adminUserIds.push(membership.publicUserData.userId);
+export const getOrganizationAdminEmails = (
+  organizationId: string,
+): Effect.Effect<string[], AuthenticationError, Clerk> =>
+  Effect.gen(function* () {
+    const clerk = yield* Clerk;
+
+    const { data: memberships } = yield* Effect.tryPromise({
+      try: () => clerk.organizations.getOrganizationMembershipList({ organizationId, limit: 100 }),
+      catch: (cause) => new AuthenticationError({ cause }),
+    });
+
+    const adminUserIds: string[] = [];
+    for (const membership of memberships) {
+      if (membership.role === "org:admin" && membership.publicUserData?.userId) {
+        adminUserIds.push(membership.publicUserData.userId);
+      }
     }
-  }
 
-  const users = await Promise.all(adminUserIds.map((userId) => client.users.getUser(userId)));
+    const users = yield* Effect.tryPromise({
+      try: () => Promise.all(adminUserIds.map((userId) => clerk.users.getUser(userId))),
+      catch: (cause) => new AuthenticationError({ cause }),
+    });
 
-  return users
-    .map((user) => user.emailAddresses[0]?.emailAddress)
-    .filter((email): email is string => email !== undefined);
-};
+    return users
+      .map((user) => user.emailAddresses[0]?.emailAddress)
+      .filter((email): email is string => email !== undefined);
+  });

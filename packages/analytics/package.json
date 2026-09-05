@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/client.tsx",
+    "./client": "./src/client.tsx",
     "./server": "./src/server.ts"
   },
   "scripts": {

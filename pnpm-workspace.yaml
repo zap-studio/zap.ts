@@ -2,6 +2,7 @@ packages:
   - "apps/*"
   - "packages/*"
 allowBuilds:
+  core-js: true
   esbuild: true
   lefthook: true
   workerd: true
@@ -49,3 +50,7 @@ catalog:
   vitest: ^5.0.0
   wrangler: ^4.129.0
   zod: ^4.5.4
+minimumReleaseAgeExclude:
+  - "@posthog/core@1.50.5"
+  - "@posthog/types@1.409.0"
+  - posthog-js@1.427.2

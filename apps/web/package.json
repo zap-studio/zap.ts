@@ -15,6 +15,7 @@
     "@tanstack/react-start": "catalog:",
     "@zap-studio/react-hooks": "catalog:",
     "@zap-studio/webhooks": "catalog:",
+    "@zap-ts/analytics": "workspace:*",
     "@zap-ts/authorization": "workspace:*",
     "@zap-ts/billing": "workspace:*",
     "@zap-ts/database": "workspace:*",

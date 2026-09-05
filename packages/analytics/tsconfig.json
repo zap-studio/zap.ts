@@ -1,0 +1,5 @@
+{
+  "extends": "@zap-ts/tsconfig/react.json",
+  "compilerOptions": { "types": ["node"] },
+  "include": ["src"]
+}

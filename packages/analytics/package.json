@@ -1,0 +1,29 @@
+{
+  "name": "@zap-ts/analytics",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/client.tsx",
+    "./server": "./src/server.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@clerk/tanstack-react-start": "catalog:",
+    "@posthog/react": "^1.10.5",
+    "@zap-ts/environment": "workspace:*",
+    "posthog-js": "^1.427.2",
+    "posthog-node": "^5.51.6"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@zap-ts/tsconfig": "workspace:*",
+    "react": "catalog:",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:"
+  }
+}

@@ -1,8 +1,8 @@
 import { createRouter } from "@tanstack/react-router";
 
-import { RouteError } from "./components/route-error";
-import { RouteNotFound } from "./components/route-not-found";
-import { RoutePending } from "./components/route-pending";
+import { RouteError } from "./components/error";
+import { RouteNotFound } from "./components/not-found";
+import { RoutePending } from "./components/pending";
 import { routeTree } from "./routeTree.gen";
 
 export const getRouter = () =>

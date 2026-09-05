@@ -59,6 +59,7 @@ export const StripeBillingProviderLive: Layer.Layer<
               line_items: [lineItem],
               subscription_data: subscriptionData,
               payment_method_collection: opts.trialDays === undefined ? "always" : "if_required",
+              // TODO: Turn on Stripe Tax in the dashboard, or remove automatic_tax below if you don't need it.
               automatic_tax: { enabled: true },
               billing_address_collection: "required",
               success_url: opts.successUrl,

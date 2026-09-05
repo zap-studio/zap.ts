@@ -18,6 +18,11 @@ export interface UpsertSubscriptionInput {
   cancelAtPeriodEnd: boolean;
 }
 
+export interface SeatSubscription {
+  subscriptionId: string;
+  quantity: number;
+}
+
 export interface BillingStoreService {
   upsertCustomer: (organizationId: string, customerId: string) => Effect.Effect<void, BillingError>;
   getCustomerId: (organizationId: string) => Effect.Effect<string | null, BillingError>;
@@ -25,6 +30,14 @@ export interface BillingStoreService {
   resolveSubscriptionStatus: (
     organizationId: string,
   ) => Effect.Effect<SubscriptionStatus, BillingError>;
+  /**
+   * Returns the organization's subscription only when it's billed per seat
+   * (i.e. it was checked out with a quantity). Returns `null` otherwise, so
+   * callers can treat that as a no-op instead of special-casing it.
+   */
+  getSeatSubscription: (
+    organizationId: string,
+  ) => Effect.Effect<SeatSubscription | null, BillingError>;
 }
 
 export class BillingStore extends Context.Tag("BillingStore")<
@@ -104,11 +117,31 @@ export const BillingStoreLive: Layer.Layer<BillingStore, never, Database> = Laye
         catch: (cause) => new BillingError({ cause }),
       });
 
+    const getSeatSubscription = (organizationId: string) =>
+      Effect.tryPromise({
+        try: async (): Promise<SeatSubscription | null> => {
+          const rows = await db
+            .select({ id: billingSubscriptions.id, quantity: billingSubscriptions.quantity })
+            .from(billingSubscriptions)
+            .where(eq(billingSubscriptions.organizationId, organizationId))
+            .limit(1);
+          const row = rows[0];
+
+          if (!row || row.quantity === null) {
+            return null;
+          }
+
+          return { subscriptionId: row.id, quantity: row.quantity };
+        },
+        catch: (cause) => new BillingError({ cause }),
+      });
+
     return {
       upsertCustomer,
       getCustomerId,
       upsertSubscription,
       resolveSubscriptionStatus,
+      getSeatSubscription,
     };
   }),
 );

@@ -47,6 +47,7 @@ catalog:
   react: ^19.2.8
   react-dom: ^19.2.8
   resend: ^6.26.0
+  standardwebhooks: ^1.1.1
   stripe: ^22.6.1
   takumi-js: ^2.13.5
   tsx: ^4.23.13

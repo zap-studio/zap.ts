@@ -224,6 +224,9 @@ catalogs:
     resend:
       specifier: ^6.26.0
       version: 6.26.0
+    standardwebhooks:
+      specifier: ^1.1.1
+      version: 1.1.1
     stripe:
       specifier: ^22.6.1
       version: 22.6.1
@@ -316,6 +319,9 @@ importers:
       '@zap-ts/analytics':
         specifier: workspace:*
         version: link:../../packages/analytics
+      '@zap-ts/authentication':
+        specifier: workspace:*
+        version: link:../../packages/authentication
       '@zap-ts/authorization':
         specifier: workspace:*
         version: link:../../packages/authorization
@@ -426,10 +432,22 @@ importers:
       '@clerk/tanstack-react-start':
         specifier: 'catalog:'
         version: 1.5.12(@tanstack/react-router@1.170.32(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@tanstack/react-start@1.168.49(esbuild@0.28.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rolldown@1.2.7)(supports-color@10.2.2)(vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.0)))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@zap-studio/webhooks':
+        specifier: 'catalog:'
+        version: 2.1.0(@opentelemetry/api@1.9.1)
+      '@zap-ts/environment':
+        specifier: workspace:*
+        version: link:../environment
       effect:
         specifier: 'catalog:'
         version: 3.22.1
+      standardwebhooks:
+        specifier: 'catalog:'
+        version: 1.1.1
     devDependencies:
+      '@types/node':
+        specifier: 'catalog:'
+        version: 26.4.1
       '@zap-ts/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig

@@ -1,7 +1,7 @@
 export { BillingError } from "./errors";
 export type { BillingProviderService, CheckoutOptions } from "./provider";
 export { BillingProvider } from "./provider";
-export type { BillingStoreService, UpsertSubscriptionInput } from "./store";
+export type { BillingStoreService, SeatSubscription, UpsertSubscriptionInput } from "./store";
 export { BillingStore, BillingStoreLive } from "./store";
 export type {
   BillingStatus,

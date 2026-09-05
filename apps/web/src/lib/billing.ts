@@ -1,4 +1,5 @@
 import { BillingProvider, BillingStore, BillingStoreLive } from "@zap-ts/billing";
+import { MembershipStore, MembershipStoreLive } from "@zap-ts/billing/membership";
 import { StripeBillingProviderLive, StripeClientLive } from "@zap-ts/billing/stripe";
 import { createSubscriptionBilling } from "@zap-ts/billing/subscription";
 import { DatabaseLive } from "@zap-ts/database";
@@ -16,17 +17,18 @@ export const billing = createSubscriptionBilling({
 const buildBillingLayer = (connectionString: string) => {
   const databaseLayer = DatabaseLive(connectionString);
   const storeLayer = BillingStoreLive.pipe(Layer.provide(databaseLayer));
+  const membershipStoreLayer = MembershipStoreLive.pipe(Layer.provide(databaseLayer));
   const providerLayer = StripeBillingProviderLive.pipe(
     Layer.provide(StripeClientLive),
     Layer.provide(storeLayer),
   );
 
-  return Layer.mergeAll(providerLayer, storeLayer);
+  return Layer.mergeAll(providerLayer, storeLayer, membershipStoreLayer);
 };
 
 export const runBilling = async <A, E>(
   connectionString: string,
-  effect: Effect.Effect<A, E, BillingProvider | BillingStore>,
+  effect: Effect.Effect<A, E, BillingProvider | BillingStore | MembershipStore>,
 ): Promise<A> => {
   const runtime = ManagedRuntime.make(buildBillingLayer(connectionString));
 

@@ -9,8 +9,6 @@ import { applySubscriptionEvent } from "./core/webhook";
 
 export interface SubscriptionPlan {
   id: string;
-  // Single-currency price ID. For multi-currency checkout, swap this for a
-  // map of currency -> price ID and resolve one from the checkout request.
   priceId: string;
   trialDays?: number;
 }

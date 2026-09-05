@@ -1,6 +1,7 @@
 import { ClerkProvider } from "@clerk/tanstack-react-start";
 import { createRootRoute, HeadContent, Outlet, ScriptOnce, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import { AnalyticsProvider } from "@zap-ts/analytics/client";
 import { Toast } from "@zap-ts/ui/components/toast";
 import { bodyProps } from "@zap-ts/ui/global-styles";
 import { darkClassNames, ThemeProvider } from "@zap-ts/ui/theme-provider";
@@ -19,24 +20,26 @@ const NO_FLASH_THEME_SCRIPT = `(function () {
 
 const RootComponent = () => (
   <ClerkProvider>
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <HeadContent />
-        <link rel="stylesheet" href={appCss} />
-        <StylexDevRuntime />
-        <ScriptOnce>{NO_FLASH_THEME_SCRIPT}</ScriptOnce>
-      </head>
-      <body {...bodyProps}>
-        <ThemeProvider>
-          <Toast.Provider toastManager={toastManager}>
-            <Outlet />
-            <Toaster />
-            {import.meta.env.DEV ? <TanStackRouterDevtools /> : null}
-          </Toast.Provider>
-        </ThemeProvider>
-        <Scripts />
-      </body>
-    </html>
+    <AnalyticsProvider>
+      <html lang="en" suppressHydrationWarning>
+        <head>
+          <HeadContent />
+          <link rel="stylesheet" href={appCss} />
+          <StylexDevRuntime />
+          <ScriptOnce>{NO_FLASH_THEME_SCRIPT}</ScriptOnce>
+        </head>
+        <body {...bodyProps}>
+          <ThemeProvider>
+            <Toast.Provider toastManager={toastManager}>
+              <Outlet />
+              <Toaster />
+              {import.meta.env.DEV ? <TanStackRouterDevtools /> : null}
+            </Toast.Provider>
+          </ThemeProvider>
+          <Scripts />
+        </body>
+      </html>
+    </AnalyticsProvider>
   </ClerkProvider>
 );
 

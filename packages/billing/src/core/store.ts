@@ -30,11 +30,6 @@ export interface BillingStoreService {
   resolveSubscriptionStatus: (
     organizationId: string,
   ) => Effect.Effect<SubscriptionStatus, BillingError>;
-  /**
-   * Returns the organization's subscription only when it's billed per seat
-   * (i.e. it was checked out with a quantity). Returns `null` otherwise, so
-   * callers can treat that as a no-op instead of special-casing it.
-   */
   getSeatSubscription: (
     organizationId: string,
   ) => Effect.Effect<SeatSubscription | null, BillingError>;

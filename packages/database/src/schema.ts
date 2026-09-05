@@ -29,8 +29,6 @@ export const billingSubscriptions = pgTable("billing_subscriptions", {
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
 
-// Mirrors Clerk organization memberships, so per-member `billable` can be toggled
-// independently of Clerk (which has no such concept) when syncing Stripe seat quantity.
 export const organizationMembers = pgTable("organization_members", {
   id: text("id").primaryKey(),
   organizationId: text("organization_id").notNull(),

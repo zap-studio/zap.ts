@@ -10,12 +10,6 @@ export interface MembershipEvent extends UpsertMemberInput {
   type: "created" | "deleted";
 }
 
-/**
- * Recomputes the organization's billable member count and pushes it to the
- * billing provider as the subscription quantity. No-op when the organization
- * has no subscription, or its subscription isn't billed per seat (see
- * `BillingStoreService.getSeatSubscription`).
- */
 export const syncSeatCount = (
   organizationId: string,
 ): Effect.Effect<void, BillingError, BillingStore | MembershipStore | BillingProvider> =>
@@ -34,11 +28,6 @@ export const syncSeatCount = (
     yield* provider.updateSubscriptionQuantity(seatSubscription.subscriptionId, quantity);
   });
 
-/**
- * Applies an organization-membership change (member added/removed) and keeps
- * the Stripe seat quantity in sync. Call this from the Clerk
- * `organizationMembership.created` / `organizationMembership.deleted` webhook handlers.
- */
 export const applyMembershipEvent = (
   event: MembershipEvent,
 ): Effect.Effect<void, BillingError, MembershipStore | BillingStore | BillingProvider> =>

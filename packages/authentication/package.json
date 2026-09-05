@@ -4,6 +4,7 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
+    "./organization": "./src/organization.ts",
     "./webhook": "./src/webhook.ts"
   },
   "scripts": {

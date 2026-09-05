@@ -21,6 +21,7 @@
     "@zap-ts/authorization": "workspace:*",
     "@zap-ts/billing": "workspace:*",
     "@zap-ts/database": "workspace:*",
+    "@zap-ts/email": "workspace:*",
     "@zap-ts/environment": "workspace:*",
     "@zap-ts/observability": "workspace:*",
     "@zap-ts/ui": "workspace:*",

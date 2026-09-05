@@ -1,11 +1,17 @@
 import { createWebhookRouter } from "@zap-studio/webhooks";
 import { clerkVerify, parseClerkEvent } from "@zap-ts/authentication/webhook";
 import { applyMembershipEvent } from "@zap-ts/billing/membership";
-import { parseStripeEvent, stripeVerify, toBillingWebhookEvent } from "@zap-ts/billing/stripe";
+import {
+  parseStripeEvent,
+  stripeVerify,
+  toBillingWebhookEvent,
+  toLifecycleEvent,
+} from "@zap-ts/billing/stripe";
 // oxlint-disable-next-line sonarjs/no-implicit-dependencies -- Workers runtime built-in, not an npm package
 import { env as cloudflareEnv } from "cloudflare:workers";
 
 import { billing, runBilling } from "./billing";
+import { runLifecycleNotification } from "./notifications";
 
 const router = createWebhookRouter({ prefix: "/webhooks" });
 
@@ -15,14 +21,18 @@ router.register("/stripe", {
     const stripeEvent = parseStripeEvent(ctx.rawBody);
     const billingEvent = toBillingWebhookEvent(stripeEvent);
 
-    if (!billingEvent) {
-      return Response.json({ received: true });
+    if (billingEvent) {
+      await runBilling(
+        cloudflareEnv.HYPERDRIVE.connectionString,
+        billing.onWebhookEvent(billingEvent),
+      );
     }
 
-    await runBilling(
-      cloudflareEnv.HYPERDRIVE.connectionString,
-      billing.onWebhookEvent(billingEvent),
-    );
+    const lifecycleEvent = toLifecycleEvent(stripeEvent);
+
+    if (lifecycleEvent) {
+      await runLifecycleNotification(lifecycleEvent);
+    }
 
     return Response.json({ received: true });
   },

@@ -331,6 +331,9 @@ importers:
       '@zap-ts/database':
         specifier: workspace:*
         version: link:../../packages/database
+      '@zap-ts/email':
+        specifier: workspace:*
+        version: link:../../packages/email
       '@zap-ts/environment':
         specifier: workspace:*
         version: link:../../packages/environment

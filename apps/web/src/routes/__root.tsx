@@ -1,5 +1,6 @@
 import { ClerkProvider } from "@clerk/tanstack-react-start";
 import { createRootRoute, HeadContent, Outlet, ScriptOnce, Scripts } from "@tanstack/react-router";
+import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { Toast } from "@zap-ts/ui/components/toast";
 import { bodyProps } from "@zap-ts/ui/global-styles";
 import { darkClassNames, ThemeProvider } from "@zap-ts/ui/theme-provider";
@@ -30,6 +31,7 @@ const RootComponent = () => (
           <Toast.Provider toastManager={toastManager}>
             <Outlet />
             <Toaster />
+            {import.meta.env.DEV ? <TanStackRouterDevtools /> : null}
           </Toast.Provider>
         </ThemeProvider>
         <Scripts />

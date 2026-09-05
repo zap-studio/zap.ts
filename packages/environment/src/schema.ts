@@ -12,7 +12,7 @@ export const schema = {
   },
   client: {
     VITE_CLERK_PUBLISHABLE_KEY: z.string().startsWith("pk_"),
-    VITE_POSTHOG_HOST: z.url().default("https://us.i.posthog.com"),
+    VITE_POSTHOG_HOST: z.url().default("https://eu.i.posthog.com"),
     VITE_POSTHOG_KEY: z.string().startsWith("phc_"),
     VITE_SITE_URL: z.url().optional(),
   },

@@ -377,6 +377,9 @@ importers:
       '@zap-ts/environment':
         specifier: workspace:*
         version: link:../environment
+      effect:
+        specifier: 'catalog:'
+        version: 3.22.1
       posthog-js:
         specifier: ^1.427.2
         version: 1.427.2(@types/react@19.2.18)(react@19.2.8)

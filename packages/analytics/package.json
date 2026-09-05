@@ -13,6 +13,7 @@
     "@clerk/tanstack-react-start": "catalog:",
     "@posthog/react": "^1.10.5",
     "@zap-ts/environment": "workspace:*",
+    "effect": "catalog:",
     "posthog-js": "^1.427.2",
     "posthog-node": "^5.51.6"
   },
